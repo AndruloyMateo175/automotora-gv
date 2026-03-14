@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
 AutomotoraGV - Sistema de Gestion
-Ejecutar: python3 server.py
-Acceder:  http://localhost:8765
 """
 
 import http.server
@@ -11,11 +9,8 @@ import json
 import hashlib
 import hmac
 import base64
-import datetime
-import threading
 import urllib.parse
 import os
-import sys
 import time
 import re
 
@@ -23,9 +18,7 @@ PORT = int(os.environ.get('PORT', 8765))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'automotora-gv-secret-2026')
 DB_PATH = '/data/automotora.db' if os.path.exists('/data') else 'db/automotora.db'
 
-print("AutomotoraGV - Servidor iniciando...")
-print(f"Puerto: {PORT}")
-print(f"Base de datos: {DB_PATH}")
+print(f"AutomotoraGV iniciando en puerto {PORT}")
 
 def get_db():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -104,6 +97,11 @@ def verify_token(token):
     return None
 
 def get_user_from_request(handler):
+    # Check Authorization header (Bearer token from localStorage)
+    auth = handler.headers.get('Authorization', '')
+    if auth.startswith('Bearer '):
+        return verify_token(auth[7:])
+    # Fallback: cookie
     cookie = handler.headers.get('Cookie', '')
     for part in cookie.split(';'):
         part = part.strip()
@@ -308,8 +306,15 @@ tr:hover td{background:#334155}
 let editingVehiculoId = null;
 let editingClienteId = null;
 
+// Token stored in sessionStorage to work with HTTPS proxy
+function getToken() { return sessionStorage.getItem('gv_token'); }
+function setToken(t) { sessionStorage.setItem('gv_token', t); }
+function clearToken() { sessionStorage.removeItem('gv_token'); }
+
 async function api(path, method='GET', body=null) {
   const opts = {method, headers:{'Content-Type':'application/json'}};
+  const token = getToken();
+  if (token) opts.headers['Authorization'] = 'Bearer ' + token;
   if (body) opts.body = JSON.stringify(body);
   const r = await fetch(path, opts);
   return r.json();
@@ -319,17 +324,18 @@ async function doLogin() {
   const username = document.getElementById('login-user').value;
   const password = document.getElementById('login-pass').value;
   const res = await api('/api/login', 'POST', {username, password});
-  if (res.ok) {
+  if (res.ok && res.token) {
+    setToken(res.token);
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     showSection('dashboard');
   } else {
-    document.getElementById('login-err').textContent = res.error || 'Error';
+    document.getElementById('login-err').textContent = res.error || 'Error al ingresar';
   }
 }
 
-async function doLogout() {
-  await api('/api/logout', 'POST');
+function doLogout() {
+  clearToken();
   location.reload();
 }
 
@@ -362,7 +368,7 @@ async function loadVehiculos() {
     '<tr><td>' + (v.marca||'') + '</td><td>' + (v.modelo||'') + '</td><td>' + (v.anio||'') + '</td><td>' + (v.chasis||'-') + '</td><td>' + (v.motor||'-') + '</td><td>' + (v.km||0).toLocaleString() + '</td><td>$' + (v.precio_venta||0).toLocaleString() + '</td>' +
     '<td><span class="badge ' + (v.estado==='stock'?'badge-green':'badge-blue') + '">' + v.estado + '</span></td>' +
     '<td>' + (v.proveedor||'-') + '</td>' +
-    '<td><button class="btn btn-primary btn-sm" onclick='editVehiculo(' + JSON.stringify(v) + ')'>Editar</button></td></tr>'
+    '<td><button class="btn btn-primary btn-sm" onclick=\'editVehiculo(' + JSON.stringify(v) + ')\'>Editar</button></td></tr>'
   ).join('') || '<tr><td colspan="10" style="text-align:center;color:#64748b;padding:24px">Sin registros</td></tr>';
 }
 
@@ -373,7 +379,7 @@ async function loadClientes() {
     '<tr><td>' + c.nombre + '</td><td><span class="badge badge-blue">' + (c.documento||'-') + '</span></td>' +
     '<td>' + (c.telefono ? '<a href="tel:' + c.telefono + '" style="color:#34d399">' + c.telefono + '</a>' : '-') + '</td>' +
     '<td>' + (c.email||'-') + '</td><td>' + (c.ciudad||'-') + '</td>' +
-    '<td><button class="btn btn-primary btn-sm" onclick='editCliente(' + JSON.stringify(c) + ')'>Editar</button></td></tr>'
+    '<td><button class="btn btn-primary btn-sm" onclick=\'editCliente(' + JSON.stringify(c) + ')\'>Editar</button></td></tr>'
   ).join('') || '<tr><td colspan="6" style="text-align:center;color:#64748b;padding:24px">Sin registros</td></tr>';
 }
 
@@ -498,12 +504,18 @@ async function saveVenta() {
 
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 
+// Check existing session
 (async () => {
-  const res = await api('/api/me');
-  if (res.username) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    showSection('dashboard');
+  const token = getToken();
+  if (token) {
+    const res = await api('/api/me');
+    if (res.username) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      showSection('dashboard');
+    } else {
+      clearToken();
+    }
   }
 })();
 </script>
@@ -583,7 +595,7 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
         if path == '/api/ventas':
             conn = get_db()
             rows = [dict(r) for r in conn.execute("""
-                SELECT v.id, v.fecha, v.precio, v.notas,
+                SELECT v.id, v.fecha, v.precio,
                        veh.marca, veh.modelo, c.nombre as cliente
                 FROM ventas v
                 LEFT JOIN vehiculos veh ON v.vehiculo_id=veh.id
@@ -609,25 +621,14 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
             conn.close()
             if row:
                 token = make_token(row['username'])
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json')
-                self.send_header('Set-Cookie', f'token={token}; Path=/; HttpOnly; SameSite=Lax')
-                resp = json.dumps({'ok': True}).encode()
-                self.send_header('Content-Length', len(resp))
-                self.end_headers()
-                self.wfile.write(resp)
+                # Return token in JSON so JS can store it (works with HTTPS proxy)
+                self.send_json({'ok': True, 'token': token})
             else:
                 self.send_json({'error': 'Usuario o contrasena incorrectos'}, 401)
             return
 
         if path == '/api/logout':
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json')
-            self.send_header('Set-Cookie', 'token=; Path=/; Max-Age=0')
-            resp = json.dumps({'ok': True}).encode()
-            self.send_header('Content-Length', len(resp))
-            self.end_headers()
-            self.wfile.write(resp)
+            self.send_json({'ok': True})
             return
 
         user = get_user_from_request(self)
@@ -711,8 +712,6 @@ if __name__ == '__main__':
     try:
         server = http.server.HTTPServer(('0.0.0.0', PORT), RequestHandler)
         print(f"AutomotoraGV corriendo en puerto {PORT}")
-        print(f"Usuarios: aacosta, gvillasuso, gyozzi")
-        print(f"Contrasena: AutoGV2026!")
         server.serve_forever()
     except Exception as e:
         print(f"Error: {e}")
