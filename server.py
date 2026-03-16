@@ -25,7 +25,7 @@ import struct
 HTML_CONTENT = r"""<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>AutomotoraGV</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -249,6 +249,44 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .sync-log-line.err{color:var(--rd)}
 .sync-progress{background:var(--bg4);border-radius:6px;height:8px;overflow:hidden;margin:10px 0}
 .sync-progress-fill{height:100%;background:var(--acc);border-radius:6px;transition:width .3s;width:0%}
+
+/* ── MOBILE RESPONSIVE ─────────────────────────────── */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed; left: -230px; top: 0; height: 100vh;
+    z-index: 200; transition: left .25s ease; width: 220px !important;
+  }
+  #sidebar.open { left: 0; }
+  #main { margin-left: 0 !important; padding: 12px !important; }
+  #topbar { padding: 10px 12px !important; }
+  #topbar h1 { font-size: 16px !important; }
+  .hamburger {
+    display: flex !important; position: fixed; top: 12px; left: 12px;
+    z-index: 300; background: var(--bg2); border: 1px solid var(--bg4);
+    border-radius: 8px; padding: 8px; cursor: pointer; flex-direction: column;
+    gap: 4px; align-items: center; justify-content: center;
+  }
+  .hamburger span { display: block; width: 20px; height: 2px; background: var(--tx1); border-radius: 2px; }
+  .sidebar-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5);
+    z-index: 150;
+  }
+  .sidebar-overlay.open { display: block; }
+  table { font-size: 12px !important; }
+  th, td { padding: 6px 8px !important; }
+  .cards-grid { grid-template-columns: 1fr !important; }
+  .stat-cards { grid-template-columns: 1fr 1fr !important; }
+  .ov > div { width: 95vw !important; max-height: 90vh; overflow-y: auto; }
+  #topbar .sync-btn span { display: none; }
+  .page-header { flex-direction: column; gap: 8px; align-items: flex-start !important; }
+  .filters-row { flex-wrap: wrap; gap: 6px !important; }
+  .filters-row select, .filters-row input { flex: 1 1 120px !important; }
+}
+@media (min-width: 769px) {
+  .hamburger { display: none !important; }
+  .sidebar-overlay { display: none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -752,6 +790,16 @@ async function api(path, opts={}){
 function openOv(id){document.getElementById('ov-'+id).classList.add('op')}
 function closeOv(id){document.getElementById('ov-'+id).classList.remove('op')}
 document.querySelectorAll('.ov').forEach(ov=>ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('op')}));
+
+
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  const ov = document.getElementById('sidebar-overlay');
+  sb.classList.toggle('open');
+  ov.classList.toggle('open');
+}
+// Cerrar sidebar al navegar en mobile
+const _origShowSection = typeof showSection === 'function' ? showSection : null;
 
 function initials(n){const w=(n||'').trim().split(/\s+/);return((w[0]?.[0]||'')+(w[1]?.[0]||'')).toUpperCase()}
 function celTd(v,title=''){return`<td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(title||v)}">${esc(v)}</td>`}
