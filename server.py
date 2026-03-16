@@ -442,6 +442,8 @@ class Handler(BaseHTTPRequestHandler):
                 except: pass
             conn.commit(); conn.close()
             self.send_json({'ok': True}); return
+        if path=='/api/clear':
+            conn=get_db();conn.execute('DELETE FROM ventas');conn.execute('DELETE FROM compras');conn.execute('DELETE FROM clientes');conn.commit();conn.close();self.send_json({'ok':True});return
         self.send_response(404); self.end_headers()
 
 if __name__ == '__main__':
