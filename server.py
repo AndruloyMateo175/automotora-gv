@@ -324,14 +324,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="login-box">
     <div class="login-logo">AutomotoraGV</div>
     <div class="login-title">AutomotoraGV</div>
-    <div class="login-sub">Sistema de gestion . Inicia sesion</div>
+    <div class="login-sub">Sistema de gestion ? Inicia sesion</div>
     <div class="lf-group">
       <label>Usuario</label>
       <input id="l-user" placeholder="aacosta / gvillasuso / gyozzi" autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
     <div class="lf-group">
       <label>Contrasena</label>
-      <input id="l-pass" type="password" placeholder="********" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      <input id="l-pass" type="password" placeholder="????????" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
     <button class="login-btn" onclick="doLogin()">Ingresar</button>
     <div class="login-err" id="l-err"></div>
@@ -349,8 +349,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <div class="sb-user">
       <div class="sb-avatar" id="sb-av">?</div>
       <div>
-        <div class="sb-uname" id="sb-nombre"></div>
-        <div class="sb-rol" id="sb-rol"></div>
+        <div class="sb-uname" id="sb-nombre">?</div>
+        <div class="sb-rol" id="sb-rol">?</div>
       </div>
     </div>
   </div>
@@ -364,24 +364,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <button class="ni" onclick="nav('ventas',this)" id="nav-ventas">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       Vendidos
-      <span class="badge-cnt" id="cnt-v"></span>
+      <span class="badge-cnt" id="cnt-v">?</span>
     </button>
     <button class="ni" onclick="nav('compras',this)" id="nav-compras">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       Comprados
-      <span class="badge-cnt" id="cnt-c"></span>
+      <span class="badge-cnt" id="cnt-c">?</span>
     </button>
     <div class="nl">Personas</div>
     <button class="ni" onclick="nav('clientes',this)" id="nav-clientes">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
       Clientes
-      <span class="badge-cnt" id="cnt-cl"></span>
+      <span class="badge-cnt" id="cnt-cl">?</span>
     </button>
     <div class="nl">Negocio</div>
     <button class="ni" onclick="nav('negocios',this)" id="nav-negocios">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
       Negocios
-      <span class="badge-cnt" id="cnt-neg"></span>
+      <span class="badge-cnt" id="cnt-neg">?</span>
     </button>
     <button class="ni" onclick="nav('facturacion',this)" id="nav-facturacion">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -391,7 +391,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <button class="ni" onclick="nav('stock',this)" id="nav-stock">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><path d="M10 12h4"/></svg>
       Stock
-      <span class="badge-cnt" id="cnt-stk"></span>
+      <span class="badge-cnt" id="cnt-stk">?</span>
     </button>
   </div>
   <div class="sb-bot">
@@ -474,7 +474,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>No</th><th></th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Year</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>No</th><th></th>
       </tr></thead><tbody id="v-body"><tr><td colspan="10"><div class="loading"><div class="loading-spin"></div><br>Cargando...</div></td></tr></tbody></table></div>
       <div class="pag" id="v-pag"></div>
     </div>
@@ -559,7 +559,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Chasis</th><th>Precio</th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Year</th><th>Chasis</th><th>Precio</th>
       </tr></thead><tbody id="fac-sf-body"></tbody></table></div>
     </div>
   </div>
@@ -596,14 +596,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Venta -->
 <div class="ov" id="ov-add-venta"><div class="mo-box">
-  <div class="mh"><h2>Nueva venta</h2><button class="mc-close" onclick="closeOv('add-venta')"></button></div>
+  <div class="mh"><h2>Nueva venta</h2><button class="mc-close" onclick="closeOv('add-venta')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g"><label>Marca</label><input id="av-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="av-modelo" placeholder="X3 xDrive 30e M Sport"></div>
-    <div class="fi-g"><label>Ano</label><input id="av-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Year</label><input id="av-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Fecha</label><input id="av-fecha" type="date"></div>
-    <div class="fi-g"><label>No Motor</label><input id="av-motor" placeholder="B0427843"></div>
-    <div class="fi-g"><label>No Chasis</label><input id="av-chasis" placeholder="WBA65GP03TN357736"></div>
+    <div class="fi-g"><label>N? Motor</label><input id="av-motor" placeholder="B0427843"></div>
+    <div class="fi-g"><label>N? Chasis</label><input id="av-chasis" placeholder="WBA65GP03TN357736"></div>
     <div class="fi-g full"><label>Cliente</label><input id="av-cliente" placeholder="Nombre completo del cliente"></div>
     <div class="fi-g"><label>Doc. cliente</label><input id="av-cliente-doc" placeholder="12345678"></div>
     <div class="fi-g"><label>Comprobante</label><input id="av-comp" placeholder="A 5200"></div>
@@ -615,14 +615,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Compra -->
 <div class="ov" id="ov-add-compra"><div class="mo-box">
-  <div class="mh"><h2>Nueva compra</h2><button class="mc-close" onclick="closeOv('add-compra')"></button></div>
+  <div class="mh"><h2>Nueva compra</h2><button class="mc-close" onclick="closeOv('add-compra')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g"><label>Marca</label><input id="ac-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="ac-modelo" placeholder="X1 xDrive 25e"></div>
-    <div class="fi-g"><label>Ano</label><input id="ac-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Year</label><input id="ac-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Fecha</label><input id="ac-fecha" type="date"></div>
-    <div class="fi-g"><label>No Motor</label><input id="ac-motor" placeholder="B48A20A"></div>
-    <div class="fi-g"><label>No Chasis / VIN</label><input id="ac-chasis" placeholder="WBA21EF0..."></div>
+    <div class="fi-g"><label>N? Motor</label><input id="ac-motor" placeholder="B48A20A"></div>
+    <div class="fi-g"><label>N? Chasis / VIN</label><input id="ac-chasis" placeholder="WBA21EF0..."></div>
     <div class="fi-g full"><label>Proveedor</label><input id="ac-prov" placeholder="Nombre del proveedor"></div>
     <div class="fi-g"><label>Precio</label><input id="ac-precio" type="number" placeholder="60000"></div>
     <div class="fi-g"><label>Moneda</label><select id="ac-moneda"><option>USD</option><option>UYU</option></select></div>
@@ -633,7 +633,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Cliente -->
 <div class="ov" id="ov-add-cliente"><div class="mo-box">
-  <div class="mh"><h2>Agregar cliente</h2><button class="mc-close" onclick="closeOv('add-cliente')"></button></div>
+  <div class="mh"><h2>Agregar cliente</h2><button class="mc-close" onclick="closeOv('add-cliente')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Nombre completo</label><input id="acl-nombre" placeholder="Nombre completo"></div>
     <div class="fi-g"><label>Documento (CI / RUT)</label><input id="acl-doc" placeholder="12345678"></div>
@@ -648,12 +648,12 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Negocio -->
 <div class="ov" id="ov-add-negocio"><div class="mo-box wide">
-  <div class="mh"><h2>Nuevo negocio</h2><button class="mc-close" onclick="closeOv('add-negocio')"></button></div>
+  <div class="mh"><h2>Nuevo negocio</h2><button class="mc-close" onclick="closeOv('add-negocio')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Cliente</label><input id="an-cliente" placeholder="Nombre del cliente"></div>
     <div class="fi-g"><label>Marca vehiculo</label><input id="an-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="an-modelo" placeholder="X3 xDrive 30e M Sport"></div>
-    <div class="fi-g"><label>Ano</label><input id="an-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Year</label><input id="an-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Chasis / VIN</label><input id="an-chasis" placeholder="WBA65GP..."></div>
     <div class="fi-g"><label>Precio venta</label><input id="an-precio" type="number" placeholder="85000"></div>
     <div class="fi-g"><label>Moneda</label><select id="an-moneda"><option>USD</option><option>UYU</option></select></div>
@@ -666,7 +666,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <option value="cuotas">Cuotas directas</option>
     </select></div>
     <div class="fi-g"><label>Fecha negocio</label><input id="an-fecha" type="date"></div>
-    <div class="fi-g"><label>No Cuotas (0 = pago unico)</label><input id="an-cuotas" type="number" value="0" min="0" oninput="toggleCuotas()"></div>
+    <div class="fi-g"><label>N? Cuotas (0 = pago unico)</label><input id="an-cuotas" type="number" value="0" min="0" oninput="toggleCuotas()"></div>
     <div id="cuotas-fields" style="display:none;grid-column:1/-1;display:none">
       <div class="fg">
         <div class="fi-g"><label>Monto por cuota</label><input id="an-monto-cuota" type="number" placeholder="2000"></div>
@@ -680,7 +680,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Stock -->
 <div class="ov" id="ov-add-stock"><div class="mo-box">
-  <div class="mh"><h2>Agregar item al stock</h2><button class="mc-close" onclick="closeOv('add-stock')"></button></div>
+  <div class="mh"><h2>Agregar item al stock</h2><button class="mc-close" onclick="closeOv('add-stock')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g"><label>Codigo</label><input id="as-codigo" placeholder="BMW-ACC-001"></div>
     <div class="fi-g"><label>Categoria</label><select id="as-cat"><option>Accesorio</option><option>Repuesto</option><option>Lubricante</option><option>Neumatico</option><option>Electronico</option><option>Otro</option></select></div>
@@ -699,14 +699,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Detalle generico -->
 <div class="ov" id="ov-detail"><div class="mo-box">
-  <div class="mh"><h2 id="det-t">Detalle</h2><button class="mc-close" onclick="closeOv('detail')"></button></div>
+  <div class="mh"><h2 id="det-t">Detalle</h2><button class="mc-close" onclick="closeOv('detail')">?</button></div>
   <div class="mb" id="det-b"></div>
   <div class="mf"><button class="btn pr" onclick="closeOv('detail')">Cerrar</button></div>
 </div></div>
 
 <!-- Detalle Negocio + Cuotas -->
 <div class="ov" id="ov-det-neg"><div class="mo-box wide">
-  <div class="mh"><h2 id="detneg-t">Negocio</h2><button class="mc-close" onclick="closeOv('det-neg')"></button></div>
+  <div class="mh"><h2 id="detneg-t">Negocio</h2><button class="mc-close" onclick="closeOv('det-neg')">?</button></div>
   <div class="mb" id="detneg-b"></div>
   <div class="mf">
     <button class="btn danger" id="btn-cerrar-neg" onclick="cerrarNegocio()">Marcar cerrado</button>
@@ -716,7 +716,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Movimiento Stock -->
 <div class="ov" id="ov-mov-stock"><div class="mo-box" style="width:380px">
-  <div class="mh"><h2>Movimiento de stock</h2><button class="mc-close" onclick="closeOv('mov-stock')"></button></div>
+  <div class="mh"><h2>Movimiento de stock</h2><button class="mc-close" onclick="closeOv('mov-stock')">?</button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Producto</label><input id="ms-nombre" readonly style="background:var(--bg4);color:var(--tx3)"></div>
     <div class="fi-g"><label>Tipo</label><select id="ms-tipo"><option value="entrada">Entrada</option><option value="salida">Salida</option></select></div>
@@ -728,9 +728,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Cambiar contrasena -->
 <div class="ov" id="ov-cambiar-pw"><div class="mo-box" style="width:400px">
-  <div class="mh"><h2>Cambiar contrasena</h2><button class="mc-close" onclick="closeOv('cambiar-pw')"></button></div>
+  <div class="mh"><h2>Cambiar contrasena</h2><button class="mc-close" onclick="closeOv('cambiar-pw')">?</button></div>
   <div class="mb">
-    <div class="fi-g full"><label>Contrasena actual</label><input type="password" id="cp-actual" placeholder="********" autocomplete="current-password"></div>
+    <div class="fi-g full"><label>Contrasena actual</label><input type="password" id="cp-actual" placeholder="????????" autocomplete="current-password"></div>
     <div class="fi-g full"><label>Nueva contrasena</label><input type="password" id="cp-nueva" placeholder="Minimo 6 caracteres" autocomplete="new-password"></div>
     <div class="fi-g full"><label>Confirmar nueva contrasena</label><input type="password" id="cp-confirma" placeholder="Repeti la nueva contrasena" autocomplete="new-password"></div>
   </div>
@@ -742,7 +742,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 
 <div class="ov" id="ov-sync"><div class="mo-box" style="width:520px">
-  <div class="mh"><h2>Actualizar desde eFactura</h2><button class="mc-close" onclick="closeOv('sync')"></button></div>
+  <div class="mh"><h2>Actualizar desde eFactura</h2><button class="mc-close" onclick="closeOv('sync')">?</button></div>
   <div class="mb">
     <p style="font-size:13px;color:var(--tx2);margin-bottom:18px">Este proceso lee los datos actuales de eFactura y sincroniza ventas, compras y clientes con la base de datos local.</p>
     <div style="display:flex;gap:10px;margin-bottom:18px">
@@ -767,8 +767,8 @@ let ME = JSON.parse(localStorage.getItem('bmw_me') || 'null');
 
 // -- UTILS --
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function fmt(n,mon='USD'){if(!n&&n!==0)return '';return(mon==='USD'?'U$S ':'$U ')+Number(n).toLocaleString('es-UY',{minimumFractionDigits:0,maximumFractionDigits:0})}
-function fdate(d){return d?d.substring(0,10):''}
+function fmt(n,mon='USD'){if(!n&&n!==0)return '?';return(mon==='USD'?'U$S ':'$U ')+Number(n).toLocaleString('es-UY',{minimumFractionDigits:0,maximumFractionDigits:0})}
+function fdate(d){return d?d.substring(0,10):'?'}
 
 function toast(msg, type='ok'){
   const t=document.getElementById('toast');
@@ -810,7 +810,7 @@ const BRAND_COLORS={
   'JAGUAR':['#002a20','#34d399'],'MERCEDES BENZ':['#0a1520','#93c5fd'],'AUDI':['#2a1500','#fbbf24'],
   'FERRARI':['#2a0000','#ff4444'],'PORSCHE':['#2a1000','#fb923c'],'VOLKSWAGEN':['#000a2a','#818cf8'],
 };
-function bb(m){if(!m)return'<span class="badge" style="background:var(--bg4);color:var(--tx3)"></span>';const c=BRAND_COLORS[m]||['#1a1a1a','#888'];return`<span class="badge" style="background:${c[0]};color:${c[1]}">${esc(m)}</span>`}
+function bb(m){if(!m)return'<span class="badge" style="background:var(--bg4);color:var(--tx3)">?</span>';const c=BRAND_COLORS[m]||['#1a1a1a','#888'];return`<span class="badge" style="background:${c[0]};color:${c[1]}">${esc(m)}</span>`}
 
 function renderPag(prefix, page, totalPages, total, from, ps, loadFn){
   const el=document.getElementById(prefix+'-pag');
@@ -822,7 +822,7 @@ function renderPag(prefix, page, totalPages, total, from, ps, loadFn){
     if(i===1||i===totalPages||(i>=page-2&&i<=page+2))btns+=`<button class="pb${i===page?' ac':''}" onclick="${loadFn}(${i})">${i}</button>`;
     else if(i===page-3||i===page+3)btns+=`<span style="padding:3px 4px;color:var(--tx3)">...</span>`;
   }
-  el.innerHTML=`<span class="pi">${from+1}${to} de ${total}</span><div class="pbs">${btns}</div>`;
+  el.innerHTML=`<span class="pi">${from+1}?${to} de ${total}</span><div class="pbs">${btns}</div>`;
 }
 
 // -- AUTH --
@@ -858,7 +858,7 @@ async function doCambiarPw(){
   if(nueva.length<6){toast('Minimo 6 caracteres','err');return;}
   try{
     await api('/api/change-password',{method:'POST',body:JSON.stringify({current_password:actual,new_password:nueva})});
-    toast('Contrasena actualizada ');
+    toast('Contrasena actualizada ?');
     closeOv('cambiar-pw');
     document.getElementById('cp-actual').value='';
     document.getElementById('cp-nueva').value='';
@@ -949,16 +949,16 @@ async function loadVentas(page){
     const tot=res.total, tp=Math.ceil(tot/PS)||1;
     document.getElementById('v-body').innerHTML=data.length?data.map((v,i)=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(v.fecha)}</td>
-      ${celTd(v.cliente||'',v.cliente)}
+      ${celTd(v.cliente||'?',v.cliente)}
       <td>${bb(v.marca)}</td>
-      ${celTd(v.modelo||'',v.modelo)}
-      <td style="color:var(--tx3);font-family:var(--mo);font-size:12px">${v.anio||''}</td>
-      <td class="mo" style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.motor)}">${esc(v.motor||'')}</td>
-      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.chasis)}">${esc(v.chasis||'')}</td>
+      ${celTd(v.modelo||'?',v.modelo)}
+      <td style="color:var(--tx3);font-family:var(--mo);font-size:12px">${v.anio||'?'}</td>
+      <td class="mo" style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.motor)}">${esc(v.motor||'?')}</td>
+      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.chasis)}">${esc(v.chasis||'?')}</td>
       <td class="pr-val" style="white-space:nowrap">${fmt(v.precio,v.moneda)}</td>
-      <td class="mo" style="white-space:nowrap;color:var(--tx3);font-size:11px">${v.comprobante||''}</td>
+      <td class="mo" style="white-space:nowrap;color:var(--tx3);font-size:11px">${v.comprobante||'?'}</td>
       <td><button class="btn sm" onclick="detVenta(${v.id})">Ver</button></td>
-    </tr>`).join(''):`<tr><td colspan="10"><div class="empty"><div class="empty-icon"></div>Sin resultados</div></td></tr>`;
+    </tr>`).join(''):`<tr><td colspan="10"><div class="empty"><div class="empty-icon">??</div>Sin resultados</div></td></tr>`;
     renderPag('v',vPg,tp,tot,(vPg-1)*PS,PS,'loadVentas');
   }catch(e){toast('Error cargando ventas','err')}
 }
@@ -993,12 +993,12 @@ async function detVenta(id){
   const v=vData.find(x=>x.id===id)||{};
   document.getElementById('det-t').textContent=(v.marca||'')+' '+(v.modelo||'');
   document.getElementById('det-b').innerHTML=[
-    ['Comprobante',`<span class="mo">${esc(v.comprobante||'')}</span>`],
-    ['Fecha',fdate(v.fecha)],['Cliente',`<strong>${esc(v.cliente||'')}</strong>`],
-    ['Documento',`<span class="mo">${v.cliente_doc||''}</span>`],
-    ['Marca',bb(v.marca)],['Modelo',esc(v.modelo||'')],['Ano',v.anio||''],
-    ['No Motor',`<span class="mo" style="color:var(--acc2)">${esc(v.motor||'')}</span>`],
-    ['No Chasis',`<span class="mo" style="color:var(--acc2)">${esc(v.chasis||'')}</span>`],
+    ['Comprobante',`<span class="mo">${esc(v.comprobante||'?')}</span>`],
+    ['Fecha',fdate(v.fecha)],['Cliente',`<strong>${esc(v.cliente||'?')}</strong>`],
+    ['Documento',`<span class="mo">${v.cliente_doc||'?'}</span>`],
+    ['Marca',bb(v.marca)],['Modelo',esc(v.modelo||'?')],['Year',v.anio||'?'],
+    ['N? Motor',`<span class="mo" style="color:var(--acc2)">${esc(v.motor||'?')}</span>`],
+    ['N? Chasis',`<span class="mo" style="color:var(--acc2)">${esc(v.chasis||'?')}</span>`],
     ['Precio',`<span class="pr-val">${fmt(v.precio,v.moneda)}</span>`],
   ].map(([l,val])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${val}</span></div>`).join('');
   openOv('detail');
@@ -1007,7 +1007,7 @@ async function detVenta(id){
 async function saveVenta(){
   const v={comprobante:document.getElementById('av-comp').value.trim(),fecha:document.getElementById('av-fecha').value,marca:document.getElementById('av-marca').value.trim().toUpperCase(),modelo:document.getElementById('av-modelo').value.trim().toUpperCase(),anio:parseInt(document.getElementById('av-anio').value)||null,motor:document.getElementById('av-motor').value.trim().toUpperCase(),chasis:document.getElementById('av-chasis').value.trim().toUpperCase(),cliente:document.getElementById('av-cliente').value.trim(),cliente_doc:document.getElementById('av-cliente-doc').value.trim(),precio:parseFloat(document.getElementById('av-precio').value)||0,moneda:document.getElementById('av-moneda').value};
   if(!v.marca||!v.cliente){toast('Marca y cliente son requeridos','err');return}
-  try{await api('/api/ventas',{method:'POST',body:JSON.stringify(v)});closeOv('add-venta');toast('Venta guardada ');loadVentas();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/ventas',{method:'POST',body:JSON.stringify(v)});closeOv('add-venta');toast('Venta guardada ?');loadVentas();}catch(e){toast('Error: '+e.message,'err')}
 }
 
 // -- COMPRAS --
@@ -1033,14 +1033,14 @@ async function loadCompras(page){
     const tot=res.total,tp=Math.ceil(tot/PS)||1;
     document.getElementById('c-body').innerHTML=res.data.length?res.data.map(c=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(c.fecha)}</td>
-      ${celTd(c.proveedor||'',c.proveedor)}
+      ${celTd(c.proveedor||'?',c.proveedor)}
       <td>${bb(c.marca)}</td>
-      ${celTd(c.modelo||c.detalle_original||'',c.modelo||c.detalle_original||'')}
-      <td class="mo" style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.motor||'')}</td>
-      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.chasis)}">${esc(c.chasis||'')}</td>
+      ${celTd(c.modelo||c.detalle_original||'?',c.modelo||c.detalle_original||'')}
+      <td class="mo" style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.motor||'?')}</td>
+      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.chasis)}">${esc(c.chasis||'?')}</td>
       <td class="pr-val" style="white-space:nowrap">${fmt(c.precio,c.moneda)}</td>
       <td><button class="btn sm" onclick="detCompra(${c.id})">Ver</button></td>
-    </tr>`).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon"></div>Sin resultados</div></td></tr>`;
+    </tr>`).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon">??</div>Sin resultados</div></td></tr>`;
     renderPag('c',cPg,tp,tot,(cPg-1)*PS,PS,'loadCompras');
   }catch(e){toast('Error cargando compras','err')}
 }
@@ -1048,18 +1048,18 @@ async function detCompra(id){
   const c=cData.find(x=>x.id===id)||{};
   document.getElementById('det-t').textContent=(c.marca||'')+' '+(c.modelo||'');
   document.getElementById('det-b').innerHTML=[
-    ['Fecha',fdate(c.fecha)],['Proveedor',`<strong>${esc(c.proveedor||'')}</strong>`],
-    ['Marca',bb(c.marca)],['Modelo',esc(c.modelo||'')],['Ano',c.anio||''],
-    ['No Motor',`<span class="mo" style="color:var(--acc2)">${esc(c.motor||'')}</span>`],
-    ['No Chasis',`<span class="mo" style="color:var(--acc2)">${esc(c.chasis||'')}</span>`],
-    ['Color',c.color||''],['Precio',`<span class="pr-val">${fmt(c.precio,c.moneda)}</span>`],
+    ['Fecha',fdate(c.fecha)],['Proveedor',`<strong>${esc(c.proveedor||'?')}</strong>`],
+    ['Marca',bb(c.marca)],['Modelo',esc(c.modelo||'?')],['Year',c.anio||'?'],
+    ['N? Motor',`<span class="mo" style="color:var(--acc2)">${esc(c.motor||'?')}</span>`],
+    ['N? Chasis',`<span class="mo" style="color:var(--acc2)">${esc(c.chasis||'?')}</span>`],
+    ['Color',c.color||'?'],['Precio',`<span class="pr-val">${fmt(c.precio,c.moneda)}</span>`],
   ].map(([l,v])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${v}</span></div>`).join('');
   openOv('detail');
 }
 async function saveCompra(){
   const v={fecha:document.getElementById('ac-fecha').value,marca:document.getElementById('ac-marca').value.trim().toUpperCase(),modelo:document.getElementById('ac-modelo').value.trim().toUpperCase(),anio:parseInt(document.getElementById('ac-anio').value)||null,motor:document.getElementById('ac-motor').value.trim().toUpperCase(),chasis:document.getElementById('ac-chasis').value.trim().toUpperCase(),proveedor:document.getElementById('ac-prov').value.trim(),precio:parseFloat(document.getElementById('ac-precio').value)||0,moneda:document.getElementById('ac-moneda').value,color:document.getElementById('ac-color').value.trim()};
   if(!v.marca||!v.proveedor){toast('Marca y proveedor son requeridos','err');return}
-  try{await api('/api/compras',{method:'POST',body:JSON.stringify(v)});closeOv('add-compra');toast('Compra guardada ');loadCompras();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/compras',{method:'POST',body:JSON.stringify(v)});closeOv('add-compra');toast('Compra guardada ?');loadCompras();}catch(e){toast('Error: '+e.message,'err')}
 }
 
 // -- CLIENTES --
@@ -1080,23 +1080,47 @@ async function loadClientes(page){
     document.getElementById('cl-body').innerHTML=res.data.length?res.data.map(cl=>{
       const nv=cl.compras?.length||0;
       return`<tr>
-        <td style="font-weight:600;white-space:nowrap">${esc(cl.nombre||'')}</td>
-        <td><span style="background:var(--accl);color:var(--acc);padding:2px 9px;border-radius:20px;font-family:var(--mo);font-size:11px">${esc(cl.doc||'')}</span></td>
+        <td style="font-weight:600;white-space:nowrap">${esc(cl.nombre||'?')}</td>
+        <td><span style="background:var(--accl);color:var(--acc);padding:2px 9px;border-radius:20px;font-family:var(--mo);font-size:11px">${esc(cl.doc||'?')}</span></td>
         ${celTd(cl.tipo_doc||'--',cl.tipo_doc)}
         ${celTd(cl.pais||'--',cl.pais)}
-        ${celTd(cl.tipo_doc||'',cl.tipo_doc)}
-        ${celTd(cl.pais||'',cl.pais)}
+        ${celTd(cl.tipo_doc||'?',cl.tipo_doc)}
+        ${celTd(cl.pais||'?',cl.pais)}
         
         
         
         
-        <td>${nv>0?`<span class="badge" style="background:var(--gnl);color:var(--gn)">${nv} veh.</span>`:'<span style="color:var(--tx3)"></span>'}</td>
+        <td>${nv>0?`<span class="badge" style="background:var(--gnl);color:var(--gn)">${nv} veh.</span>`:'<span style="color:var(--tx3)">?</span>'}</td>
         <td><button class="btn sm" onclick="detCliente(${cl.id})">Ver</button></td>
       </tr>`;
-    }).join(''):`<tr>
+    }).join(''):`<tr><td colspan="8"><div class="empty"><div class="empty-icon">??</div>Sin resultados</div></td></tr>`;
+    renderPag('cl',clPg,tp,tot,(clPg-1)*PS,PS,'loadClientes');
+  }catch(e){toast('Error cargando clientes','err')}
+}
+async function detCliente(id){
+  const cl=clData.find(x=>x.id===id)||{};
+  const ini=initials(cl.nombre);
+  const vehs=cl.compras||[];
+  document.getElementById('det-t').textContent=cl.nombre||'Cliente';
+  document.getElementById('det-b').innerHTML=`
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+      <div style="width:44px;height:44px;border-radius:50%;background:var(--accl);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:17px;font-weight:800;color:var(--acc);flex-shrink:0">${ini}</div>
+      <div><div style="font-family:var(--fh);font-size:17px;font-weight:700">${esc(cl.nombre||'?')}</div><div style="font-size:12px;color:var(--tx3)">${cl.relacion||'Cliente'}${cl.ciudad?' ? '+esc(cl.ciudad):''}</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      <div class="dr"><span class="dl">Documento</span><span class="dv mo">${cl.doc||'?'}</span></div>
+      <div class="dr"><span class="dl">Telefono</span><span class="dv">${cl.telefono?`<a href="tel:${cl.telefono}" style="color:var(--gn);text-decoration:none">${esc(cl.telefono)}</a>`:'?'}</span></div>
+      <div class="dr"><span class="dl">Ciudad</span><span class="dv">${esc(cl.ciudad||'?')}</span></div>
+      <div class="dr"><span class="dl">Mail</span><span class="dv">${cl.mail?`<a href="mailto:${cl.mail}" style="color:var(--bl);text-decoration:none">${esc(cl.mail)}</a>`:'?'}</span></div>
+      <div class="dr" style="grid-column:1/-1"><span class="dl">Direccion</span><span class="dv">${esc(cl.direccion||'?')}</span></div>
+    </div>
+    ${vehs.length?`<div style="margin-top:16px"><div style="font-family:var(--fh);font-size:12px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Vehiculos (${vehs.length})</div>
+    <table style="width:100%;font-size:12px;border-collapse:collapse"><thead><tr>${['Fecha','Marca','Modelo','Chasis','Precio'].map(h=>`<th style="padding:5px 8px;font-size:10px;color:var(--tx3);border-bottom:1px solid var(--bd);text-align:left">${h}</th>`).join('')}</tr></thead><tbody>
+    ${vehs.map(v=>`<tr>
+      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--tx3);border-bottom:1px solid var(--bd)">${fdate(v.fecha)}</td>
       <td style="padding:6px 8px;border-bottom:1px solid var(--bd)">${bb(v.marca)}</td>
-      <td style="padding:6px 8px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid var(--bd)">${esc(v.modelo||'')}</td>
-      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--acc2);border-bottom:1px solid var(--bd)">${esc(v.chasis||'')}</td>
+      <td style="padding:6px 8px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid var(--bd)">${esc(v.modelo||'?')}</td>
+      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--acc2);border-bottom:1px solid var(--bd)">${esc(v.chasis||'?')}</td>
       <td style="padding:6px 8px;font-family:var(--mo);font-size:12px;color:var(--acc2);border-bottom:1px solid var(--bd)">${fmt(v.precio,v.moneda)}</td>
     </tr>`).join('')}</tbody></table></div>`:''}`;
   openOv('detail');
@@ -1104,7 +1128,7 @@ async function loadClientes(page){
 async function saveCliente(){
   const v={nombre:document.getElementById('acl-nombre').value.trim().toUpperCase(),doc:document.getElementById('acl-doc').value.trim(),telefono:document.getElementById('acl-tel').value.trim(),direccion:document.getElementById('acl-dir').value.trim(),ciudad:document.getElementById('acl-ciudad').value.trim().toUpperCase(),mail:document.getElementById('acl-mail').value.trim(),relacion:document.getElementById('acl-rel').value};
   if(!v.nombre){toast('El nombre es requerido','err');return}
-  try{await api('/api/clientes',{method:'POST',body:JSON.stringify(v)});closeOv('add-cliente');toast('Cliente guardado ');loadClientes();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/clientes',{method:'POST',body:JSON.stringify(v)});closeOv('add-cliente');toast('Cliente guardado ?');loadClientes();}catch(e){toast('Error: '+e.message,'err')}
 }
 
 // -- NEGOCIOS --
@@ -1122,11 +1146,11 @@ async function loadNegocios(){
     document.getElementById('neg-list').innerHTML=res.data.length?res.data.map(n=>{
       const pend=n.cuotas_pendientes||0, tot=n.cuotas_total||0;
       const pct=tot?Math.round((tot-pend)/tot*100):100;
-      const metodoLabel={'contado':'Contado','financiado':'Financiado','leasing':'Leasing','permuta':'Permuta','credito':'Credito bancario','cuotas':'Cuotas directas'}[n.metodo_pago]||n.metodo_pago||'';
+      const metodoLabel={'contado':'Contado','financiado':'Financiado','leasing':'Leasing','permuta':'Permuta','credito':'Credito bancario','cuotas':'Cuotas directas'}[n.metodo_pago]||n.metodo_pago||'?';
       return`<div class="neg-card" onclick="detNegocio(${n.id})">
         <div class="neg-card-header">
           <div>
-            <div class="neg-cliente">${esc(n.cliente_nombre||'')}</div>
+            <div class="neg-cliente">${esc(n.cliente_nombre||'?')}</div>
             <div class="neg-vehiculo">${esc([n.vehiculo_marca,n.vehiculo_modelo,n.vehiculo_anio].filter(Boolean).join(' '))}</div>
           </div>
           <div style="text-align:right">
@@ -1135,17 +1159,17 @@ async function loadNegocios(){
           </div>
         </div>
         <div class="neg-metas">
-          <span class="neg-meta"> ${fdate(n.fecha_negocio)}</span>
+          <span class="neg-meta">?? ${fdate(n.fecha_negocio)}</span>
           ${n.vehiculo_chasis?`<span class="neg-meta mo" style="font-size:11px">${esc(n.vehiculo_chasis)}</span>`:''}
           <span class="badge" style="background:${n.estado==='activo'?'var(--gnl)':'var(--bg4)'};color:${n.estado==='activo'?'var(--gn)':'var(--tx3)'}">${n.estado}</span>
-          ${n.usuario_nombre?`<span class="neg-meta"> ${esc(n.usuario_nombre)}</span>`:''}
+          ${n.usuario_nombre?`<span class="neg-meta">?? ${esc(n.usuario_nombre)}</span>`:''}
         </div>
         ${tot>0?`<div class="neg-cuotas-bar">
           <div class="neg-cuotas-label"><span>Cuotas</span><span>${tot-pend}/${tot} pagadas</span></div>
           <div class="neg-cuotas-track"><div class="neg-cuotas-fill" style="width:${pct}%"></div></div>
         </div>`:''}
       </div>`;
-    }).join(''):`<div class="empty"><div class="empty-icon"></div>Sin negocios registrados</div>`;
+    }).join(''):`<div class="empty"><div class="empty-icon">??</div>Sin negocios registrados</div>`;
   }catch(e){toast('Error cargando negocios','err')}
 }
 
@@ -1163,19 +1187,19 @@ async function detNegocio(id){
       <span class="cuota-num">#${c.numero}</span>
       <span class="cuota-fecha">${fdate(c.fecha_vencimiento)}</span>
       <span class="cuota-monto">${fmt(c.monto,c.moneda)}</span>
-      ${c.pagada?`<span class="cuota-pagada"> Pagada</span>`:
-        c.fecha_vencimiento<hoy?`<span class="cuota-vencida"> Vencida</span><button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`:
+      ${c.pagada?`<span class="cuota-pagada">? Pagada</span>`:
+        c.fecha_vencimiento<hoy?`<span class="cuota-vencida">? Vencida</span><button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`:
         `<button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`}
     </div>`).join('')}</div>`;
   }
   document.getElementById('detneg-b').innerHTML=[
-    ['Cliente',`<strong>${esc(n.cliente_nombre||'')}</strong>`],
+    ['Cliente',`<strong>${esc(n.cliente_nombre||'?')}</strong>`],
     ['Vehiculo',esc([n.vehiculo_marca,n.vehiculo_modelo,n.vehiculo_anio].filter(Boolean).join(' '))],
-    ['Chasis',`<span class="mo" style="color:var(--acc2)">${esc(n.vehiculo_chasis||'')}</span>`],
+    ['Chasis',`<span class="mo" style="color:var(--acc2)">${esc(n.vehiculo_chasis||'?')}</span>`],
     ['Precio',`<span class="pr-val">${fmt(n.precio_venta,n.moneda)}</span>`],
-    ['Metodo',n.metodo_pago||''],['Fecha',fdate(n.fecha_negocio)],
+    ['Metodo',n.metodo_pago||'?'],['Fecha',fdate(n.fecha_negocio)],
     ['Estado',`<span class="badge" style="background:${n.estado==='activo'?'var(--gnl)':'var(--bg4)'};color:${n.estado==='activo'?'var(--gn)':'var(--tx3)'}">${n.estado}</span>`],
-    ['Notas',n.notas||''],
+    ['Notas',n.notas||'?'],
   ].map(([l,v])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${v}</span></div>`).join('')+cuotasHtml;
   document.getElementById('btn-cerrar-neg').style.display=n.estado==='activo'?'':'none';
   openOv('det-neg');
@@ -1183,7 +1207,7 @@ async function detNegocio(id){
 
 async function pagarCuota(cid,e){
   e.stopPropagation();
-  try{await api('/api/cuotas/pagar',{method:'POST',body:JSON.stringify({cuota_id:cid})});toast('Cuota marcada como pagada ');detNegocio(negDetId);}catch(e){toast('Error','err')}
+  try{await api('/api/cuotas/pagar',{method:'POST',body:JSON.stringify({cuota_id:cid})});toast('Cuota marcada como pagada ?');detNegocio(negDetId);}catch(e){toast('Error','err')}
 }
 
 async function cerrarNegocio(){
@@ -1213,7 +1237,7 @@ async function saveNegocio(){
     notas:document.getElementById('an-notas').value.trim(),
   };
   if(!v.cliente_nombre){toast('El cliente es requerido','err');return}
-  try{await api('/api/negocios',{method:'POST',body:JSON.stringify(v)});closeOv('add-negocio');toast('Negocio guardado ');loadNegocios();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/negocios',{method:'POST',body:JSON.stringify(v)});closeOv('add-negocio');toast('Negocio guardado ?');loadNegocios();}catch(e){toast('Error: '+e.message,'err')}
 }
 
 // -- FACTURACION --
@@ -1228,8 +1252,8 @@ async function loadFac(){
     const tC=compras.reduce((a,b)=>a+b.precio,0);
     const saldo=tV-tC;
     document.getElementById('fac-totales').innerHTML=`
-      <div class="fac-card v"><div class="fc-label">Total Ventas</div><div class="fc-val" style="color:var(--bl)">${fmt(tV,mon)}</div><div class="fc-sub">${ventas.length} vehiculos . ${mon}</div></div>
-      <div class="fac-card c"><div class="fc-label">Total Compras</div><div class="fc-val" style="color:var(--acc2)">${fmt(tC,mon)}</div><div class="fc-sub">${compras.length} vehiculos . ${mon}</div></div>
+      <div class="fac-card v"><div class="fc-label">Total Ventas</div><div class="fc-val" style="color:var(--bl)">${fmt(tV,mon)}</div><div class="fc-sub">${ventas.length} vehiculos ? ${mon}</div></div>
+      <div class="fac-card c"><div class="fc-label">Total Compras</div><div class="fc-val" style="color:var(--acc2)">${fmt(tC,mon)}</div><div class="fc-sub">${compras.length} vehiculos ? ${mon}</div></div>
       <div class="fac-card s"><div class="fc-label">Diferencia</div><div class="fc-val" style="color:${saldo>=0?'var(--gn)':'var(--rd)'}">${fmt(Math.abs(saldo),mon)}</div><div class="fc-sub">${saldo>=0?'Resultado positivo':'Resultado negativo'}</div></div>`;
     // Desglose por marca
     const mv={},mc={};
@@ -1239,11 +1263,11 @@ async function loadFac(){
     const mkC=Object.entries(mc).sort((a,b)=>b[1]-a[1]);
     document.getElementById('fac-desglose').innerHTML=`
       <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px">
-        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Ventas por marca . ${mon}</div>
+        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Ventas por marca ? ${mon}</div>
         ${mkV.map(([m,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px"><span style="color:var(--tx2)">${esc(m)}</span><span style="font-family:var(--mo);font-weight:600;color:var(--bl)">${fmt(v,mon)}</span></div>`).join('')}
       </div>
       <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px">
-        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Compras por marca . ${mon}</div>
+        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Compras por marca ? ${mon}</div>
         ${mkC.map(([m,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px"><span style="color:var(--tx2)">${esc(m)}</span><span style="font-family:var(--mo);font-weight:600;color:var(--acc2)">${fmt(v,mon)}</span></div>`).join('')}
       </div>`;
     // Sin facturar
@@ -1251,11 +1275,11 @@ async function loadFac(){
     document.getElementById('fac-sf-cnt').textContent=sf.length+' sin facturar';
     document.getElementById('fac-sf-body').innerHTML=sf.length?sf.map(v=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(v.fecha)}</td>
-      ${celTd(v.cliente||'',v.cliente)}<td>${bb(v.marca)}</td>${celTd(v.modelo||'',v.modelo)}
-      <td style="font-family:var(--mo);font-size:12px;color:var(--tx3)">${v.anio||''}</td>
-      <td class="mo" style="color:var(--acc2)">${esc(v.chasis||'')}</td>
+      ${celTd(v.cliente||'?',v.cliente)}<td>${bb(v.marca)}</td>${celTd(v.modelo||'?',v.modelo)}
+      <td style="font-family:var(--mo);font-size:12px;color:var(--tx3)">${v.anio||'?'}</td>
+      <td class="mo" style="color:var(--acc2)">${esc(v.chasis||'?')}</td>
       <td class="pr-val">${fmt(v.precio,v.moneda)}</td>
-    </tr>`).join(''):`<tr><td colspan="7"><div class="empty"><div class="empty-icon"></div>Sin vehiculos pendientes</div></td></tr>`;
+    </tr>`).join(''):`<tr><td colspan="7"><div class="empty"><div class="empty-icon">?</div>Sin vehiculos pendientes</div></td></tr>`;
   }catch(e){toast('Error cargando facturacion','err')}
 }
 
@@ -1274,16 +1298,16 @@ async function loadStock(){
     document.getElementById('stk-body').innerHTML=res.data.length?res.data.map(s=>{
       const bajo=s.cantidad<=3;
       return`<tr>
-        <td class="mo" style="font-size:11px;color:var(--tx3)">${esc(s.codigo||'')}</td>
-        ${celTd(s.nombre,'')}<td><span class="badge" style="background:var(--bg4);color:var(--tx2)">${esc(s.categoria||'')}</span></td>
-        ${celTd([s.marca_compatible,s.modelo_compatible].filter(Boolean).join(' . '),'')}
+        <td class="mo" style="font-size:11px;color:var(--tx3)">${esc(s.codigo||'?')}</td>
+        ${celTd(s.nombre,'')}<td><span class="badge" style="background:var(--bg4);color:var(--tx2)">${esc(s.categoria||'?')}</span></td>
+        ${celTd([s.marca_compatible,s.modelo_compatible].filter(Boolean).join(' ? '),'')}
         <td><span style="font-family:var(--mo);font-size:13px;font-weight:700;color:${bajo?'var(--rd)':'var(--gn)'}">${s.cantidad}</span></td>
         <td class="pr-val">${fmt(s.precio_costo,s.moneda)}</td>
         <td class="pr-val">${fmt(s.precio_venta,s.moneda)}</td>
-        ${celTd(s.ubicacion||'','')}
-        <td style="white-space:nowrap"><button class="btn sm" onclick="openMovStock(${s.id})"></button></td>
+        ${celTd(s.ubicacion||'?','')}
+        <td style="white-space:nowrap"><button class="btn sm" onclick="openMovStock(${s.id})">?</button></td>
       </tr>`;
-    }).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon"></div>Sin items en stock</div></td></tr>`;
+    }).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon">??</div>Sin items en stock</div></td></tr>`;
   }catch(e){toast('Error cargando stock','err')}
 }
 function openMovStock(id){
@@ -1295,12 +1319,12 @@ function openMovStock(id){
 }
 async function saveMovStock(){
   const v={stock_id:stkMovId,tipo:document.getElementById('ms-tipo').value,cantidad:parseInt(document.getElementById('ms-cant').value)||1,motivo:document.getElementById('ms-motivo').value.trim()};
-  try{await api('/api/stock/movimiento',{method:'POST',body:JSON.stringify(v)});closeOv('mov-stock');toast('Movimiento registrado ');loadStock();}catch(e){toast('Error','err')}
+  try{await api('/api/stock/movimiento',{method:'POST',body:JSON.stringify(v)});closeOv('mov-stock');toast('Movimiento registrado ?');loadStock();}catch(e){toast('Error','err')}
 }
 async function saveStock(){
   const v={codigo:document.getElementById('as-codigo').value.trim(),nombre:document.getElementById('as-nombre').value.trim(),categoria:document.getElementById('as-cat').value,marca_compatible:document.getElementById('as-marca').value.trim(),modelo_compatible:document.getElementById('as-modelo').value.trim(),cantidad:parseInt(document.getElementById('as-cant').value)||0,precio_costo:parseFloat(document.getElementById('as-costo').value)||0,precio_venta:parseFloat(document.getElementById('as-venta').value)||0,moneda:document.getElementById('as-moneda').value,ubicacion:document.getElementById('as-ubic').value.trim(),notas:document.getElementById('as-notas').value.trim()};
   if(!v.nombre){toast('El nombre es requerido','err');return}
-  try{await api('/api/stock',{method:'POST',body:JSON.stringify(v)});closeOv('add-stock');toast('Item guardado ');loadStock();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/stock',{method:'POST',body:JSON.stringify(v)});closeOv('add-stock');toast('Item guardado ?');loadStock();}catch(e){toast('Error: '+e.message,'err')}
 }
 
 // -- SYNC eFactura --
@@ -1344,19 +1368,19 @@ async function runSync(){
     let steps=0, total=(doVentas?1:0)+(doCompras?1:0)+(doClientes?1:0);
 
     if(doVentas){
-      syncLog(' Leyendo ventas_full.json...');
+      syncLog('?? Leyendo ventas_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='ventas';
       steps++;
     }
     if(doCompras){
-      syncLog(' Leyendo compras_full.json...');
+      syncLog('?? Leyendo compras_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='compras';
       steps++;
     }
     if(doClientes){
-      syncLog(' Leyendo clientes_full.json...');
+      syncLog('?? Leyendo clientes_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='clientes';
       steps++;
@@ -1368,18 +1392,18 @@ async function runSync(){
 
     document.getElementById('sync-prog-fill').style.width='100%';
     if(res){
-      syncLog(` Ventas: ${res.ventas_nuevas||0} nuevas (${res.ventas_total||0} total)`,'ok');
-      syncLog(` Compras: ${res.compras_nuevas||0} nuevas (${res.compras_total||0} total)`,'ok');
-      syncLog(` Clientes: ${res.clientes_nuevas||0} nuevos (${res.clientes_total||0} total)`,'ok');
-      syncLog(' Sincronizacion completada','ok');
+      syncLog(`? Ventas: ${res.ventas_nuevas||0} nuevas (${res.ventas_total||0} total)`,'ok');
+      syncLog(`? Compras: ${res.compras_nuevas||0} nuevas (${res.compras_total||0} total)`,'ok');
+      syncLog(`? Clientes: ${res.clientes_nuevas||0} nuevos (${res.clientes_total||0} total)`,'ok');
+      syncLog('? Sincronizacion completada','ok');
       document.getElementById('sync-status').textContent='Completado';
-      toast('Sincronizacion completada ');
+      toast('Sincronizacion completada ?');
       // Actualizar stats
       showApp();
     }
     btn.textContent='Completado';
   }catch(e){
-    syncLog(' Error: '+e.message,'err');
+    syncLog('? Error: '+e.message,'err');
     document.getElementById('sync-status').textContent='Error en sincronizacion';
     btn.disabled=false;btn.textContent='Reintentar';
     toast('Error en sincronizacion','err');
@@ -1615,7 +1639,7 @@ def init_db():
 
     conn.commit()
     conn.close()
-    print(f" Base de datos inicializada: {DB_PATH}")
+    print(f"? Base de datos inicializada: {DB_PATH}")
 
 # -- IMPORTAR DATOS EXISTENTES ----------------------------
 def import_json_data():
@@ -1626,7 +1650,7 @@ def import_json_data():
     # Verificar si ya hay datos
     count = c.execute("SELECT COUNT(*) FROM ventas").fetchone()[0]
     if count > 0:
-        print(f" Datos ya importados ({count} ventas)")
+        print(f"? Datos ya importados ({count} ventas)")
         conn.close()
         return
 
@@ -1641,7 +1665,7 @@ def import_json_data():
                 (v.get('comprobante'), v.get('fecha'), v.get('marca'), v.get('modelo'),
                  v.get('anio'), v.get('motor'), v.get('chasis'), v.get('cliente'),
                  v.get('cliente_doc'), v.get('precio',0), v.get('moneda','USD')))
-        print(f" {len(ventas)} ventas importadas")
+        print(f"? {len(ventas)} ventas importadas")
 
     # Importar compras
     compras_path = os.path.join(base, 'compras_full.json')
@@ -1655,7 +1679,7 @@ def import_json_data():
                  c_.get('motor'), c_.get('chasis'), c_.get('proveedor'),
                  c_.get('precio',0), c_.get('moneda','USD'), c_.get('color'),
                  c_.get('detalle_original')))
-        print(f" {len(compras)} compras importadas")
+        print(f"? {len(compras)} compras importadas")
 
     # Importar clientes
     clientes_path = os.path.join(base, 'clientes_full.json')
@@ -1668,7 +1692,7 @@ def import_json_data():
                 (cl.get('nombre'), cl.get('doc'), cl.get('telefono'),
                  cl.get('direccion'), cl.get('ciudad'), cl.get('mail'),
                  cl.get('relacion','Cliente')))
-        print(f" {len(clientes)} clientes importados")
+        print(f"? {len(clientes)} clientes importados")
 
     conn.commit()
     conn.close()
@@ -2426,7 +2450,7 @@ if __name__ == '__main__':
     os.makedirs(static_dir, exist_ok=True)
 
     server = http.server.ThreadingHTTPServer(('0.0.0.0', PORT), BMWHandler)
-    print(f"\n Servidor corriendo en puerto {PORT}")
+    print(f"\n? Servidor corriendo en puerto {PORT}")
     print(f"  Usuarios: aacosta / gvillasuso / gyozzi")
     print(f"  Contrasena por defecto: BMW2026!")
     print(f"\n  Ctrl+C para detener\n")
@@ -2434,4 +2458,4 @@ if __name__ == '__main__':
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\n Servidor detenido")
+        print("\n? Servidor detenido")
