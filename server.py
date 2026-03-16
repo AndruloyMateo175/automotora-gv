@@ -474,7 +474,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Year</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>No</th><th></th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>No</th><th></th>
       </tr></thead><tbody id="v-body"><tr><td colspan="10"><div class="loading"><div class="loading-spin"></div><br>Cargando...</div></td></tr></tbody></table></div>
       <div class="pag" id="v-pag"></div>
     </div>
@@ -559,7 +559,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Year</th><th>Chasis</th><th>Precio</th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Chasis</th><th>Precio</th>
       </tr></thead><tbody id="fac-sf-body"></tbody></table></div>
     </div>
   </div>
