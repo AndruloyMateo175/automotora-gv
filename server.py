@@ -21,7 +21,7 @@ import re
 import secrets
 import struct
 
-# ── HTML INCRUSTADO ──────────────────────────────────────
+# -- HTML INCRUSTADO --------------------------------------
 HTML_CONTENT = r"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +44,7 @@ HTML_CONTENT = r"""<!DOCTYPE html>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:14px;line-height:1.5;min-height:100vh}
 
-/* ── LOGIN ── */
+/* -- LOGIN -- */
 #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:var(--bg)}
 .login-box{background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:48px 40px;width:380px;max-width:96vw}
 .login-logo{font-family:var(--fh);font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--tx3);margin-bottom:6px}
@@ -58,7 +58,7 @@ body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:14px;l
 .login-btn:hover{background:var(--acc2)}
 .login-err{color:var(--rd);font-size:12.5px;margin-top:10px;text-align:center;min-height:18px}
 
-/* ── APP ── */
+/* -- APP -- */
 #app{display:none}
 .sb{position:fixed;left:0;top:0;bottom:0;width:230px;background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100}
 .sb-top{padding:24px 20px 20px;border-bottom:1px solid var(--bd)}
@@ -90,7 +90,7 @@ body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:14px;l
 .topbar-sub{font-size:12px;color:var(--tx3);margin-left:10px}
 .content{padding:22px 24px}
 
-/* ── MENU PRINCIPAL ── */
+/* -- MENU PRINCIPAL -- */
 .menu-hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 54px);padding:40px 24px}
 .menu-greeting{font-family:var(--fh);font-size:13px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
 .menu-title{font-family:var(--fh);font-size:30px;font-weight:800;margin-bottom:4px}
@@ -106,7 +106,7 @@ body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:14px;l
 .mc-arrow{position:absolute;bottom:18px;right:18px;opacity:0;transition:all .2s}
 .mc:hover .mc-arrow{opacity:1;transform:translateX(3px)}
 
-/* ── TOOLBAR + TABLE ── */
+/* -- TOOLBAR + TABLE -- */
 .tb{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
 .sw{position:relative;flex:1;min-width:200px;max-width:340px}
 .sw svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--tx3);pointer-events:none}
@@ -135,7 +135,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .pr-val{font-family:var(--mo);font-size:13px;font-weight:500;color:var(--acc2)}
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;font-family:var(--fh);letter-spacing:.3px}
 
-/* ── PAG ── */
+/* -- PAG -- */
 .pag{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-top:1px solid var(--bd);background:var(--bg3)}
 .pi{font-size:12px;color:var(--tx3)}
 .pbs{display:flex;gap:4px}
@@ -143,7 +143,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .pb:hover{background:var(--bg3);color:var(--tx)}
 .pb.ac{background:var(--acc);color:#0f0f0f;border-color:var(--acc);font-weight:700}
 
-/* ── MODAL ── */
+/* -- MODAL -- */
 .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .ov.op{display:flex}
 .mo-box{background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rl);width:560px;max-width:96vw;max-height:90vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.6);animation:slideUp .2s ease}
@@ -165,13 +165,13 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .fi-g textarea{resize:vertical;min-height:70px}
 .fi-g input::placeholder{color:var(--tx3)}
 
-/* ── DETAIL ROWS ── */
+/* -- DETAIL ROWS -- */
 .dr{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px}
 .dr:last-child{border-bottom:none}
 .dl{color:var(--tx3);width:120px;flex-shrink:0;font-size:11px;font-family:var(--fh);text-transform:uppercase;letter-spacing:.4px;padding-top:1px}
 .dv{color:var(--tx);word-break:break-all;flex:1}
 
-/* ── BRAND CHIPS ── */
+/* -- BRAND CHIPS -- */
 .brand-bar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
 .bchip{display:flex;align-items:center;gap:7px;padding:6px 13px;border-radius:9px;border:1px solid var(--bd);background:var(--bg2);cursor:pointer;transition:all .15s;user-select:none;font-family:var(--fh);font-size:12px;font-weight:700}
 .bchip:hover{border-color:var(--bd2);background:var(--bg3)}
@@ -179,14 +179,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .bchip.all.active{background:var(--acc);border-color:var(--acc);color:#0f0f0f}
 .bchip-cnt{font-family:var(--mo);font-size:11px;opacity:.7}
 
-/* ── LOADING / EMPTY ── */
+/* -- LOADING / EMPTY -- */
 .loading{text-align:center;padding:48px;color:var(--tx3);font-size:13px}
 .loading-spin{display:inline-block;width:20px;height:20px;border:2px solid var(--bd2);border-top-color:var(--acc);border-radius:50%;animation:spin .7s linear infinite;margin-bottom:10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{text-align:center;padding:48px;color:var(--tx3);font-size:13px}
 .empty-icon{font-size:32px;margin-bottom:8px}
 
-/* ── NEGOCIOS ── */
+/* -- NEGOCIOS -- */
 .neg-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px;margin-bottom:10px;transition:border-color .15s;cursor:pointer}
 .neg-card:hover{border-color:var(--bd2)}
 .neg-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
@@ -199,11 +199,11 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .neg-cuotas-track{background:var(--bg4);border-radius:4px;height:4px;overflow:hidden}
 .neg-cuotas-fill{height:100%;border-radius:4px;background:var(--gn);transition:width .4s}
 
-/* ── STOCK ── */
+/* -- STOCK -- */
 .stock-low{color:var(--rd) !important}
 .stock-ok{color:var(--gn) !important}
 
-/* ── FACTURACIÓN ── */
+/* -- FACTURACION -- */
 .fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
 .fac-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:22px 24px;position:relative;overflow:hidden}
 .fac-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
@@ -214,7 +214,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .fc-val{font-family:var(--mo);font-size:26px;font-weight:700;line-height:1;margin-bottom:4px}
 .fc-sub{font-size:12px;color:var(--tx3)}
 
-/* ── CUOTAS ── */
+/* -- CUOTAS -- */
 .cuota-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bd);gap:12px}
 .cuota-row:last-child{border-bottom:none}
 .cuota-num{font-family:var(--mo);font-size:11px;color:var(--tx3);width:40px;flex-shrink:0}
@@ -223,27 +223,27 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .cuota-pagada{color:var(--gn);font-size:11px;font-family:var(--fh);font-weight:700}
 .cuota-vencida{color:var(--rd);font-size:11px;font-family:var(--fh);font-weight:700}
 
-/* ── TOAST ── */
+/* -- TOAST -- */
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--bd2);border-radius:10px;padding:12px 18px;font-size:13px;color:var(--tx);z-index:999;transform:translateY(20px);opacity:0;transition:all .25s;box-shadow:0 4px 20px rgba(0,0,0,.4)}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.ok{border-left:3px solid var(--gn)}
 .toast.err{border-left:3px solid var(--rd)}
 
-/* ── SYNC BUTTON ── */
+/* -- SYNC BUTTON -- */
 .sync-btn{display:flex;align-items:center;gap:6px;font-family:var(--fn);font-size:12px;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--bd);cursor:pointer;background:var(--bg3);color:var(--tx2);transition:all .15s}
 .sync-btn:hover{border-color:var(--acc);color:var(--acc)}
 .sync-btn.syncing svg{animation:spin .7s linear infinite}
 
-/* ── PAGE ── */
+/* -- PAGE -- */
 .page{display:none}
 .page.active{display:block}
 
-/* ── SCROLLBAR ── */
+/* -- SCROLLBAR -- */
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:3px}
 
-/* ── SYNC MODAL ── */
+/* -- SYNC MODAL -- */
 .sync-log-line{font-family:var(--mo);font-size:12px;padding:4px 0;border-bottom:1px solid var(--bd);color:var(--tx2)}
 .sync-log-line.ok{color:var(--gn)}
 .sync-log-line.err{color:var(--rd)}
@@ -307,7 +307,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   var splash = document.getElementById('splash');
   // Fade in logo
   setTimeout(function(){ logo.style.opacity='1'; }, 100);
-  // Ocultar splash cuando la app esté lista (mínimo 2.5s)
+  // Ocultar splash cuando la app este lista (minimo 2.5s)
   window._splashReady = false;
   window._hideSplash = function(){
     if(window._splashReady) return;
@@ -319,38 +319,38 @@ tr:hover td{background:rgba(255,255,255,.02)}
 })();
 </script>
 
-<!-- ── LOGIN ── -->
+<!-- -- LOGIN -- -->
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">AutomotoraGV</div>
     <div class="login-title">AutomotoraGV</div>
-    <div class="login-sub">Sistema de gestión · Iniciá sesión</div>
+    <div class="login-sub">Sistema de gestion . Inicia sesion</div>
     <div class="lf-group">
       <label>Usuario</label>
       <input id="l-user" placeholder="aacosta / gvillasuso / gyozzi" autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
     <div class="lf-group">
-      <label>Contraseña</label>
-      <input id="l-pass" type="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      <label>Contrasena</label>
+      <input id="l-pass" type="password" placeholder="********" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
     <button class="login-btn" onclick="doLogin()">Ingresar</button>
     <div class="login-err" id="l-err"></div>
   </div>
 </div>
 
-<!-- ── APP ── -->
+<!-- -- APP -- -->
 <div id="app">
 
 <!-- SIDEBAR -->
 <nav class="sb">
   <div class="sb-top">
     <div class="sb-logo">AutomotoraGV</div>
-    <div class="sb-brand">Gestión</div>
+    <div class="sb-brand">Gestion</div>
     <div class="sb-user">
       <div class="sb-avatar" id="sb-av">?</div>
       <div>
-        <div class="sb-uname" id="sb-nombre">—</div>
-        <div class="sb-rol" id="sb-rol">—</div>
+        <div class="sb-uname" id="sb-nombre"></div>
+        <div class="sb-rol" id="sb-rol"></div>
       </div>
     </div>
   </div>
@@ -358,50 +358,50 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <div class="nl">Principal</div>
     <button class="ni active" onclick="nav('menu',this)" id="nav-menu">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-      Menú
+      Menu
     </button>
-    <div class="nl">Vehículos</div>
+    <div class="nl">Vehiculos</div>
     <button class="ni" onclick="nav('ventas',this)" id="nav-ventas">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       Vendidos
-      <span class="badge-cnt" id="cnt-v">—</span>
+      <span class="badge-cnt" id="cnt-v"></span>
     </button>
     <button class="ni" onclick="nav('compras',this)" id="nav-compras">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       Comprados
-      <span class="badge-cnt" id="cnt-c">—</span>
+      <span class="badge-cnt" id="cnt-c"></span>
     </button>
     <div class="nl">Personas</div>
     <button class="ni" onclick="nav('clientes',this)" id="nav-clientes">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
       Clientes
-      <span class="badge-cnt" id="cnt-cl">—</span>
+      <span class="badge-cnt" id="cnt-cl"></span>
     </button>
     <div class="nl">Negocio</div>
     <button class="ni" onclick="nav('negocios',this)" id="nav-negocios">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
       Negocios
-      <span class="badge-cnt" id="cnt-neg">—</span>
+      <span class="badge-cnt" id="cnt-neg"></span>
     </button>
     <button class="ni" onclick="nav('facturacion',this)" id="nav-facturacion">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-      Facturación
+      Facturacion
     </button>
     <div class="nl">Inventario</div>
     <button class="ni" onclick="nav('stock',this)" id="nav-stock">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><path d="M10 12h4"/></svg>
       Stock
-      <span class="badge-cnt" id="cnt-stk">—</span>
+      <span class="badge-cnt" id="cnt-stk"></span>
     </button>
   </div>
   <div class="sb-bot">
     <button class="sb-logout" onclick="openOv('ov-cambiar-pw')" style="margin-bottom:4px">
       <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-      Cambiar contraseña
+      Cambiar contrasena
     </button>
     <button class="sb-logout" onclick="doLogout()">
       <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-      Cerrar sesión
+      Cerrar sesion
     </button>
   </div>
 </nav>
@@ -419,16 +419,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="menu-hero">
     <div class="menu-greeting">Bienvenido</div>
     <div class="menu-title">BMW <span>Punta del Este</span></div>
-    <div class="menu-sub" id="menu-fecha-sub">Sistema de gestión</div>
+    <div class="menu-sub" id="menu-fecha-sub">Sistema de gestion</div>
     <div class="menu-grid">
       <div class="mc" onclick="nav('clientes',document.getElementById('nav-clientes'))">
         <div class="mc-icon" style="background:var(--gnl)"><svg width="22" height="22" fill="none" stroke="var(--gn)" stroke-width="1.7" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><div class="mc-label">Personas</div><div class="mc-name">Clientes</div><div class="mc-desc">Buscá por nombre, apellido o documento</div></div>
+        <div><div class="mc-label">Personas</div><div class="mc-name">Clientes</div><div class="mc-desc">Busca por nombre, apellido o documento</div></div>
         <svg class="mc-arrow" width="16" height="16" fill="none" stroke="var(--acc)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
       <div class="mc" onclick="nav('ventas',document.getElementById('nav-ventas'))">
         <div class="mc-icon" style="background:var(--bll)"><svg width="22" height="22" fill="none" stroke="var(--bl)" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <div><div class="mc-label">Vehículos</div><div class="mc-name">Autos Vendidos</div><div class="mc-desc">Historial completo de ventas con cliente y chasis</div></div>
+        <div><div class="mc-label">Vehiculos</div><div class="mc-name">Autos Vendidos</div><div class="mc-desc">Historial completo de ventas con cliente y chasis</div></div>
         <svg class="mc-arrow" width="16" height="16" fill="none" stroke="var(--acc)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
       <div class="mc" onclick="nav('compras',document.getElementById('nav-compras'))">
@@ -438,7 +438,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       </div>
       <div class="mc" onclick="nav('negocios',document.getElementById('nav-negocios'))">
         <div class="mc-icon" style="background:rgba(192,132,252,.1)"><svg width="22" height="22" fill="none" stroke="#c084fc" stroke-width="1.7" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-        <div><div class="mc-label">Negocio</div><div class="mc-name">Negocios</div><div class="mc-desc">Gestión de operaciones y cuotas pendientes</div></div>
+        <div><div class="mc-label">Negocio</div><div class="mc-name">Negocios</div><div class="mc-desc">Gestion de operaciones y cuotas pendientes</div></div>
         <svg class="mc-arrow" width="16" height="16" fill="none" stroke="var(--acc)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
       <div class="mc" onclick="nav('stock',document.getElementById('nav-stock'))">
@@ -448,7 +448,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       </div>
       <div class="mc" onclick="nav('facturacion',document.getElementById('nav-facturacion'))">
         <div class="mc-icon" style="background:var(--rdl)"><svg width="22" height="22" fill="none" stroke="var(--rd)" stroke-width="1.7" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div><div class="mc-label">Finanzas</div><div class="mc-name">Facturación</div><div class="mc-desc">Totales de compras, ventas y sin facturar</div></div>
+        <div><div class="mc-label">Finanzas</div><div class="mc-name">Facturacion</div><div class="mc-desc">Totales de compras, ventas y sin facturar</div></div>
         <svg class="mc-arrow" width="16" height="16" fill="none" stroke="var(--acc)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
     </div>
@@ -458,7 +458,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- VENTAS -->
 <div id="page-ventas" class="page">
   <div class="topbar">
-    <div style="display:flex;align-items:center"><div class="topbar-title">Vehículos Vendidos</div><span class="topbar-sub" id="v-total-sub"></span></div>
+    <div style="display:flex;align-items:center"><div class="topbar-title">Vehiculos Vendidos</div><span class="topbar-sub" id="v-total-sub"></span></div>
     <button class="btn pr" onclick="openOv('add-venta')">+ Nueva venta</button>
   </div>
   <div class="content">
@@ -468,13 +468,13 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <input id="v-q" placeholder="Buscar cliente, modelo, chasis, motor..." oninput="vPg=1;loadVentas()">
       </div>
       <select class="fi" id="v-m" style="display:none" onchange="vPg=1;loadVentas()"></select>
-      <select class="fi" id="v-a" onchange="vPg=1;loadVentas()"><option value="">Todos los años</option></select>
+      <select class="fi" id="v-a" onchange="vPg=1;loadVentas()"><option value="">Todos los anos</option></select>
       <select class="fi" id="v-mn" onchange="vPg=1;loadVentas()"><option value="">USD + UYU</option><option>USD</option><option>UYU</option></select>
-      <select class="fi" id="v-ps" onchange="vPg=1;loadVentas()"><option value="20">20/pág</option><option value="30">30/pág</option><option value="100">100/pág</option></select>
+      <select class="fi" id="v-ps" onchange="vPg=1;loadVentas()"><option value="20">20/pag</option><option value="30">30/pag</option><option value="100">100/pag</option></select>
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>Nº</th><th></th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Motor</th><th>Chasis</th><th>Precio</th><th>No</th><th></th>
       </tr></thead><tbody id="v-body"><tr><td colspan="10"><div class="loading"><div class="loading-spin"></div><br>Cargando...</div></td></tr></tbody></table></div>
       <div class="pag" id="v-pag"></div>
     </div>
@@ -484,7 +484,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- COMPRAS -->
 <div id="page-compras" class="page">
   <div class="topbar">
-    <div style="display:flex;align-items:center"><div class="topbar-title">Vehículos Comprados</div><span class="topbar-sub" id="c-total-sub"></span></div>
+    <div style="display:flex;align-items:center"><div class="topbar-title">Vehiculos Comprados</div><span class="topbar-sub" id="c-total-sub"></span></div>
     <button class="btn pr" onclick="openOv('add-compra')">+ Nueva compra</button>
   </div>
   <div class="content">
@@ -493,7 +493,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <input id="c-q" placeholder="Buscar proveedor, modelo, chasis..." oninput="cPg=1;loadCompras()">
       </div>
       <select class="fi" id="c-m" onchange="cPg=1;loadCompras()"><option value="">Todas las marcas</option></select>
-      <select class="fi" id="c-ps" onchange="cPg=1;loadCompras()"><option value="20">20/pág</option><option value="30">30/pág</option><option value="100">100/pág</option></select>
+      <select class="fi" id="c-ps" onchange="cPg=1;loadCompras()"><option value="20">20/pag</option><option value="30">30/pag</option><option value="100">100/pag</option></select>
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
@@ -515,12 +515,12 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="sw"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input id="cl-q" placeholder="Buscar nombre, apellido o documento..." oninput="clPg=1;loadClientes()">
       </div>
-      <select class="fi" id="cl-campo" onchange="clPg=1;loadClientes()"><option value="todos">Todos los campos</option><option value="nombre">Nombre / Apellido</option><option value="doc">Nº Documento</option></select>
-      <select class="fi" id="cl-ps" onchange="clPg=1;loadClientes()"><option value="20">20/pág</option><option value="30">30/pág</option><option value="100">100/pág</option></select>
+      <select class="fi" id="cl-campo" onchange="clPg=1;loadClientes()"><option value="todos">Todos los campos</option><option value="nombre">Nombre / Apellido</option><option value="doc">No Documento</option></select>
+      <select class="fi" id="cl-ps" onchange="clPg=1;loadClientes()"><option value="20">20/pag</option><option value="30">30/pag</option><option value="100">100/pag</option></select>
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Nombre</th><th>Documento</th><th>Tipo Doc</th><th>País</th><th>Vehículos</th><th></th>
+        <th>Nombre</th><th>Documento</th><th>Tipo Doc</th><th>Pais</th><th>Vehiculos</th><th></th>
       </tr></thead><tbody id="cl-body"></tbody></table></div>
       <div class="pag" id="cl-pag"></div>
     </div>
@@ -544,22 +544,22 @@ tr:hover td{background:rgba(255,255,255,.02)}
   </div>
 </div>
 
-<!-- FACTURACIÓN -->
+<!-- FACTURACION -->
 <div id="page-facturacion" class="page">
   <div class="topbar">
-    <div style="display:flex;align-items:center"><div class="topbar-title">Facturación</div></div>
+    <div style="display:flex;align-items:center"><div class="topbar-title">Facturacion</div></div>
     <select class="fi" id="fac-mon" onchange="loadFac()"><option value="USD">USD</option><option value="UYU">UYU</option></select>
   </div>
   <div class="content">
     <div class="fac-grid" id="fac-totales"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px" id="fac-desglose"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-      <div style="font-family:var(--fh);font-size:15px;font-weight:700">Vehículos sin facturar</div>
+      <div style="font-family:var(--fh);font-size:15px;font-weight:700">Vehiculos sin facturar</div>
       <div id="fac-sf-cnt" style="background:var(--rdl);color:var(--rd);font-size:12px;font-family:var(--mo);font-weight:700;padding:3px 12px;border-radius:20px"></div>
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Chasis</th><th>Precio</th>
+        <th>Fecha</th><th>Cliente</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Chasis</th><th>Precio</th>
       </tr></thead><tbody id="fac-sf-body"></tbody></table></div>
     </div>
   </div>
@@ -569,18 +569,18 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <div id="page-stock" class="page">
   <div class="topbar">
     <div style="display:flex;align-items:center"><div class="topbar-title">Stock</div><span class="topbar-sub" id="stk-total-sub"></span></div>
-    <button class="btn pr" onclick="openOv('add-stock')">+ Agregar ítem</button>
+    <button class="btn pr" onclick="openOv('add-stock')">+ Agregar item</button>
   </div>
   <div class="content">
     <div class="tb">
       <div class="sw"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input id="stk-q" placeholder="Buscar nombre, código, categoría..." oninput="loadStock()">
+        <input id="stk-q" placeholder="Buscar nombre, codigo, categoria..." oninput="loadStock()">
       </div>
-      <select class="fi" id="stk-cat" onchange="loadStock()"><option value="">Todas las categorías</option><option>Accesorio</option><option>Repuesto</option><option>Lubricante</option><option>Neumático</option><option>Electrónico</option><option>Otro</option></select>
+      <select class="fi" id="stk-cat" onchange="loadStock()"><option value="">Todas las categorias</option><option>Accesorio</option><option>Repuesto</option><option>Lubricante</option><option>Neumatico</option><option>Electronico</option><option>Otro</option></select>
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Código</th><th>Nombre</th><th>Categoría</th><th>Compatible con</th><th>Stock</th><th>Precio costo</th><th>Precio venta</th><th>Ubicación</th><th></th>
+        <th>Codigo</th><th>Nombre</th><th>Categoria</th><th>Compatible con</th><th>Stock</th><th>Precio costo</th><th>Precio venta</th><th>Ubicacion</th><th></th>
       </tr></thead><tbody id="stk-body"></tbody></table></div>
     </div>
   </div>
@@ -592,18 +592,18 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- ═══ MODALES ═══ -->
+<!-- === MODALES === -->
 
 <!-- Add Venta -->
 <div class="ov" id="ov-add-venta"><div class="mo-box">
-  <div class="mh"><h2>Nueva venta</h2><button class="mc-close" onclick="closeOv('add-venta')">×</button></div>
+  <div class="mh"><h2>Nueva venta</h2><button class="mc-close" onclick="closeOv('add-venta')"></button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g"><label>Marca</label><input id="av-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="av-modelo" placeholder="X3 xDrive 30e M Sport"></div>
-    <div class="fi-g"><label>Año</label><input id="av-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Ano</label><input id="av-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Fecha</label><input id="av-fecha" type="date"></div>
-    <div class="fi-g"><label>N° Motor</label><input id="av-motor" placeholder="B0427843"></div>
-    <div class="fi-g"><label>N° Chasis</label><input id="av-chasis" placeholder="WBA65GP03TN357736"></div>
+    <div class="fi-g"><label>No Motor</label><input id="av-motor" placeholder="B0427843"></div>
+    <div class="fi-g"><label>No Chasis</label><input id="av-chasis" placeholder="WBA65GP03TN357736"></div>
     <div class="fi-g full"><label>Cliente</label><input id="av-cliente" placeholder="Nombre completo del cliente"></div>
     <div class="fi-g"><label>Doc. cliente</label><input id="av-cliente-doc" placeholder="12345678"></div>
     <div class="fi-g"><label>Comprobante</label><input id="av-comp" placeholder="A 5200"></div>
@@ -615,14 +615,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Compra -->
 <div class="ov" id="ov-add-compra"><div class="mo-box">
-  <div class="mh"><h2>Nueva compra</h2><button class="mc-close" onclick="closeOv('add-compra')">×</button></div>
+  <div class="mh"><h2>Nueva compra</h2><button class="mc-close" onclick="closeOv('add-compra')"></button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g"><label>Marca</label><input id="ac-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="ac-modelo" placeholder="X1 xDrive 25e"></div>
-    <div class="fi-g"><label>Año</label><input id="ac-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Ano</label><input id="ac-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Fecha</label><input id="ac-fecha" type="date"></div>
-    <div class="fi-g"><label>N° Motor</label><input id="ac-motor" placeholder="B48A20A"></div>
-    <div class="fi-g"><label>N° Chasis / VIN</label><input id="ac-chasis" placeholder="WBA21EF0..."></div>
+    <div class="fi-g"><label>No Motor</label><input id="ac-motor" placeholder="B48A20A"></div>
+    <div class="fi-g"><label>No Chasis / VIN</label><input id="ac-chasis" placeholder="WBA21EF0..."></div>
     <div class="fi-g full"><label>Proveedor</label><input id="ac-prov" placeholder="Nombre del proveedor"></div>
     <div class="fi-g"><label>Precio</label><input id="ac-precio" type="number" placeholder="60000"></div>
     <div class="fi-g"><label>Moneda</label><select id="ac-moneda"><option>USD</option><option>UYU</option></select></div>
@@ -633,40 +633,40 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Cliente -->
 <div class="ov" id="ov-add-cliente"><div class="mo-box">
-  <div class="mh"><h2>Agregar cliente</h2><button class="mc-close" onclick="closeOv('add-cliente')">×</button></div>
+  <div class="mh"><h2>Agregar cliente</h2><button class="mc-close" onclick="closeOv('add-cliente')"></button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Nombre completo</label><input id="acl-nombre" placeholder="Nombre completo"></div>
     <div class="fi-g"><label>Documento (CI / RUT)</label><input id="acl-doc" placeholder="12345678"></div>
-    <div class="fi-g"><label>Teléfono</label><input id="acl-tel" placeholder="099 123 456"></div>
-    <div class="fi-g full"><label>Dirección</label><input id="acl-dir" placeholder="Calle y número"></div>
+    <div class="fi-g"><label>Telefono</label><input id="acl-tel" placeholder="099 123 456"></div>
+    <div class="fi-g full"><label>Direccion</label><input id="acl-dir" placeholder="Calle y numero"></div>
     <div class="fi-g"><label>Ciudad</label><input id="acl-ciudad" placeholder="Punta del Este"></div>
     <div class="fi-g"><label>Mail</label><input id="acl-mail" placeholder="correo@ejemplo.com"></div>
-    <div class="fi-g"><label>Relación</label><select id="acl-rel"><option>Cliente</option><option>Proveedor</option><option>Cliente/Proveedor</option></select></div>
+    <div class="fi-g"><label>Relacion</label><select id="acl-rel"><option>Cliente</option><option>Proveedor</option><option>Cliente/Proveedor</option></select></div>
   </div></div>
   <div class="mf"><button class="btn" onclick="closeOv('add-cliente')">Cancelar</button><button class="btn pr" onclick="saveCliente()">Guardar</button></div>
 </div></div>
 
 <!-- Add Negocio -->
 <div class="ov" id="ov-add-negocio"><div class="mo-box wide">
-  <div class="mh"><h2>Nuevo negocio</h2><button class="mc-close" onclick="closeOv('add-negocio')">×</button></div>
+  <div class="mh"><h2>Nuevo negocio</h2><button class="mc-close" onclick="closeOv('add-negocio')"></button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Cliente</label><input id="an-cliente" placeholder="Nombre del cliente"></div>
-    <div class="fi-g"><label>Marca vehículo</label><input id="an-marca" placeholder="BMW"></div>
+    <div class="fi-g"><label>Marca vehiculo</label><input id="an-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo</label><input id="an-modelo" placeholder="X3 xDrive 30e M Sport"></div>
-    <div class="fi-g"><label>Año</label><input id="an-anio" type="number" placeholder="2025"></div>
+    <div class="fi-g"><label>Ano</label><input id="an-anio" type="number" placeholder="2025"></div>
     <div class="fi-g"><label>Chasis / VIN</label><input id="an-chasis" placeholder="WBA65GP..."></div>
     <div class="fi-g"><label>Precio venta</label><input id="an-precio" type="number" placeholder="85000"></div>
     <div class="fi-g"><label>Moneda</label><select id="an-moneda"><option>USD</option><option>UYU</option></select></div>
-    <div class="fi-g"><label>Método de pago</label><select id="an-metodo">
+    <div class="fi-g"><label>Metodo de pago</label><select id="an-metodo">
       <option value="contado">Contado</option>
       <option value="financiado">Financiado</option>
       <option value="leasing">Leasing</option>
       <option value="permuta">Permuta</option>
-      <option value="credito">Crédito bancario</option>
+      <option value="credito">Credito bancario</option>
       <option value="cuotas">Cuotas directas</option>
     </select></div>
     <div class="fi-g"><label>Fecha negocio</label><input id="an-fecha" type="date"></div>
-    <div class="fi-g"><label>N° Cuotas (0 = pago único)</label><input id="an-cuotas" type="number" value="0" min="0" oninput="toggleCuotas()"></div>
+    <div class="fi-g"><label>No Cuotas (0 = pago unico)</label><input id="an-cuotas" type="number" value="0" min="0" oninput="toggleCuotas()"></div>
     <div id="cuotas-fields" style="display:none;grid-column:1/-1;display:none">
       <div class="fg">
         <div class="fi-g"><label>Monto por cuota</label><input id="an-monto-cuota" type="number" placeholder="2000"></div>
@@ -680,10 +680,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Add Stock -->
 <div class="ov" id="ov-add-stock"><div class="mo-box">
-  <div class="mh"><h2>Agregar ítem al stock</h2><button class="mc-close" onclick="closeOv('add-stock')">×</button></div>
+  <div class="mh"><h2>Agregar item al stock</h2><button class="mc-close" onclick="closeOv('add-stock')"></button></div>
   <div class="mb"><div class="fg">
-    <div class="fi-g"><label>Código</label><input id="as-codigo" placeholder="BMW-ACC-001"></div>
-    <div class="fi-g"><label>Categoría</label><select id="as-cat"><option>Accesorio</option><option>Repuesto</option><option>Lubricante</option><option>Neumático</option><option>Electrónico</option><option>Otro</option></select></div>
+    <div class="fi-g"><label>Codigo</label><input id="as-codigo" placeholder="BMW-ACC-001"></div>
+    <div class="fi-g"><label>Categoria</label><select id="as-cat"><option>Accesorio</option><option>Repuesto</option><option>Lubricante</option><option>Neumatico</option><option>Electronico</option><option>Otro</option></select></div>
     <div class="fi-g full"><label>Nombre</label><input id="as-nombre" placeholder="Nombre del producto"></div>
     <div class="fi-g"><label>Marca compatible</label><input id="as-marca" placeholder="BMW"></div>
     <div class="fi-g"><label>Modelo compatible</label><input id="as-modelo" placeholder="X3, X5, Serie 3..."></div>
@@ -691,22 +691,22 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <div class="fi-g"><label>Precio costo</label><input id="as-costo" type="number" placeholder="0"></div>
     <div class="fi-g"><label>Precio venta</label><input id="as-venta" type="number" placeholder="0"></div>
     <div class="fi-g"><label>Moneda</label><select id="as-moneda"><option>USD</option><option>UYU</option></select></div>
-    <div class="fi-g"><label>Ubicación</label><input id="as-ubic" placeholder="Estante A-3"></div>
+    <div class="fi-g"><label>Ubicacion</label><input id="as-ubic" placeholder="Estante A-3"></div>
     <div class="fi-g full"><label>Notas</label><input id="as-notas" placeholder="Observaciones..."></div>
   </div></div>
   <div class="mf"><button class="btn" onclick="closeOv('add-stock')">Cancelar</button><button class="btn pr" onclick="saveStock()">Guardar</button></div>
 </div></div>
 
-<!-- Detalle genérico -->
+<!-- Detalle generico -->
 <div class="ov" id="ov-detail"><div class="mo-box">
-  <div class="mh"><h2 id="det-t">Detalle</h2><button class="mc-close" onclick="closeOv('detail')">×</button></div>
+  <div class="mh"><h2 id="det-t">Detalle</h2><button class="mc-close" onclick="closeOv('detail')"></button></div>
   <div class="mb" id="det-b"></div>
   <div class="mf"><button class="btn pr" onclick="closeOv('detail')">Cerrar</button></div>
 </div></div>
 
 <!-- Detalle Negocio + Cuotas -->
 <div class="ov" id="ov-det-neg"><div class="mo-box wide">
-  <div class="mh"><h2 id="detneg-t">Negocio</h2><button class="mc-close" onclick="closeOv('det-neg')">×</button></div>
+  <div class="mh"><h2 id="detneg-t">Negocio</h2><button class="mc-close" onclick="closeOv('det-neg')"></button></div>
   <div class="mb" id="detneg-b"></div>
   <div class="mf">
     <button class="btn danger" id="btn-cerrar-neg" onclick="cerrarNegocio()">Marcar cerrado</button>
@@ -716,7 +716,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Movimiento Stock -->
 <div class="ov" id="ov-mov-stock"><div class="mo-box" style="width:380px">
-  <div class="mh"><h2>Movimiento de stock</h2><button class="mc-close" onclick="closeOv('mov-stock')">×</button></div>
+  <div class="mh"><h2>Movimiento de stock</h2><button class="mc-close" onclick="closeOv('mov-stock')"></button></div>
   <div class="mb"><div class="fg">
     <div class="fi-g full"><label>Producto</label><input id="ms-nombre" readonly style="background:var(--bg4);color:var(--tx3)"></div>
     <div class="fi-g"><label>Tipo</label><select id="ms-tipo"><option value="entrada">Entrada</option><option value="salida">Salida</option></select></div>
@@ -726,23 +726,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="mf"><button class="btn" onclick="closeOv('mov-stock')">Cancelar</button><button class="btn pr" onclick="saveMovStock()">Confirmar</button></div>
 </div></div>
 
-<!-- Cambiar contraseña -->
+<!-- Cambiar contrasena -->
 <div class="ov" id="ov-cambiar-pw"><div class="mo-box" style="width:400px">
-  <div class="mh"><h2>Cambiar contraseña</h2><button class="mc-close" onclick="closeOv('cambiar-pw')">×</button></div>
+  <div class="mh"><h2>Cambiar contrasena</h2><button class="mc-close" onclick="closeOv('cambiar-pw')"></button></div>
   <div class="mb">
-    <div class="fi-g full"><label>Contraseña actual</label><input type="password" id="cp-actual" placeholder="••••••••" autocomplete="current-password"></div>
-    <div class="fi-g full"><label>Nueva contraseña</label><input type="password" id="cp-nueva" placeholder="Mínimo 6 caracteres" autocomplete="new-password"></div>
-    <div class="fi-g full"><label>Confirmar nueva contraseña</label><input type="password" id="cp-confirma" placeholder="Repetí la nueva contraseña" autocomplete="new-password"></div>
+    <div class="fi-g full"><label>Contrasena actual</label><input type="password" id="cp-actual" placeholder="********" autocomplete="current-password"></div>
+    <div class="fi-g full"><label>Nueva contrasena</label><input type="password" id="cp-nueva" placeholder="Minimo 6 caracteres" autocomplete="new-password"></div>
+    <div class="fi-g full"><label>Confirmar nueva contrasena</label><input type="password" id="cp-confirma" placeholder="Repeti la nueva contrasena" autocomplete="new-password"></div>
   </div>
   <div class="mf">
     <button class="btn" onclick="closeOv('cambiar-pw')">Cancelar</button>
-    <button class="btn pr" onclick="doCambiarPw()">Actualizar contraseña</button>
+    <button class="btn pr" onclick="doCambiarPw()">Actualizar contrasena</button>
   </div>
 </div></div>
 
 
 <div class="ov" id="ov-sync"><div class="mo-box" style="width:520px">
-  <div class="mh"><h2>Actualizar desde eFactura</h2><button class="mc-close" onclick="closeOv('sync')">×</button></div>
+  <div class="mh"><h2>Actualizar desde eFactura</h2><button class="mc-close" onclick="closeOv('sync')"></button></div>
   <div class="mb">
     <p style="font-size:13px;color:var(--tx2);margin-bottom:18px">Este proceso lee los datos actuales de eFactura y sincroniza ventas, compras y clientes con la base de datos local.</p>
     <div style="display:flex;gap:10px;margin-bottom:18px">
@@ -756,7 +756,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   </div>
   <div class="mf">
     <button class="btn" onclick="closeOv('sync')">Cerrar</button>
-    <button class="btn pr" id="sync-run-btn" onclick="runSync()">Iniciar sincronización</button>
+    <button class="btn pr" id="sync-run-btn" onclick="runSync()">Iniciar sincronizacion</button>
   </div>
 </div></div>
 
@@ -765,10 +765,10 @@ const API = window.location.origin;
 let TOKEN = localStorage.getItem('bmw_token') || '';
 let ME = JSON.parse(localStorage.getItem('bmw_me') || 'null');
 
-// ── UTILS ──
+// -- UTILS --
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function fmt(n,mon='USD'){if(!n&&n!==0)return '—';return(mon==='USD'?'U$S ':'$U ')+Number(n).toLocaleString('es-UY',{minimumFractionDigits:0,maximumFractionDigits:0})}
-function fdate(d){return d?d.substring(0,10):'—'}
+function fmt(n,mon='USD'){if(!n&&n!==0)return '';return(mon==='USD'?'U$S ':'$U ')+Number(n).toLocaleString('es-UY',{minimumFractionDigits:0,maximumFractionDigits:0})}
+function fdate(d){return d?d.substring(0,10):''}
 
 function toast(msg, type='ok'){
   const t=document.getElementById('toast');
@@ -810,7 +810,7 @@ const BRAND_COLORS={
   'JAGUAR':['#002a20','#34d399'],'MERCEDES BENZ':['#0a1520','#93c5fd'],'AUDI':['#2a1500','#fbbf24'],
   'FERRARI':['#2a0000','#ff4444'],'PORSCHE':['#2a1000','#fb923c'],'VOLKSWAGEN':['#000a2a','#818cf8'],
 };
-function bb(m){if(!m)return'<span class="badge" style="background:var(--bg4);color:var(--tx3)">—</span>';const c=BRAND_COLORS[m]||['#1a1a1a','#888'];return`<span class="badge" style="background:${c[0]};color:${c[1]}">${esc(m)}</span>`}
+function bb(m){if(!m)return'<span class="badge" style="background:var(--bg4);color:var(--tx3)"></span>';const c=BRAND_COLORS[m]||['#1a1a1a','#888'];return`<span class="badge" style="background:${c[0]};color:${c[1]}">${esc(m)}</span>`}
 
 function renderPag(prefix, page, totalPages, total, from, ps, loadFn){
   const el=document.getElementById(prefix+'-pag');
@@ -820,12 +820,12 @@ function renderPag(prefix, page, totalPages, total, from, ps, loadFn){
   let btns='';
   for(let i=1;i<=totalPages;i++){
     if(i===1||i===totalPages||(i>=page-2&&i<=page+2))btns+=`<button class="pb${i===page?' ac':''}" onclick="${loadFn}(${i})">${i}</button>`;
-    else if(i===page-3||i===page+3)btns+=`<span style="padding:3px 4px;color:var(--tx3)">…</span>`;
+    else if(i===page-3||i===page+3)btns+=`<span style="padding:3px 4px;color:var(--tx3)">...</span>`;
   }
-  el.innerHTML=`<span class="pi">${from+1}–${to} de ${total}</span><div class="pbs">${btns}</div>`;
+  el.innerHTML=`<span class="pi">${from+1}${to} de ${total}</span><div class="pbs">${btns}</div>`;
 }
 
-// ── AUTH ──
+// -- AUTH --
 async function doLogin(){ if(window._hideSplash) window._hideSplash();
   const u=document.getElementById('l-user').value.trim();
   const p=document.getElementById('l-pass').value;
@@ -833,7 +833,7 @@ async function doLogin(){ if(window._hideSplash) window._hideSplash();
   try{
     const r=await fetch(API+'/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:u,password:p})});
     const data=await r.json();
-    if(!r.ok){document.getElementById('l-err').textContent=data.error||'Error al iniciar sesión';return}
+    if(!r.ok){document.getElementById('l-err').textContent=data.error||'Error al iniciar sesion';return}
     TOKEN=data.token; ME=data;
     localStorage.setItem('bmw_token',TOKEN);
     localStorage.setItem('bmw_me',JSON.stringify(ME));
@@ -853,17 +853,17 @@ async function doCambiarPw(){
   const actual=document.getElementById('cp-actual').value;
   const nueva=document.getElementById('cp-nueva').value;
   const confirma=document.getElementById('cp-confirma').value;
-  if(!actual||!nueva){toast('Completá todos los campos','err');return;}
-  if(nueva!==confirma){toast('Las contraseñas no coinciden','err');return;}
-  if(nueva.length<6){toast('Mínimo 6 caracteres','err');return;}
+  if(!actual||!nueva){toast('Completa todos los campos','err');return;}
+  if(nueva!==confirma){toast('Las contrasenas no coinciden','err');return;}
+  if(nueva.length<6){toast('Minimo 6 caracteres','err');return;}
   try{
     await api('/api/change-password',{method:'POST',body:JSON.stringify({current_password:actual,new_password:nueva})});
-    toast('Contraseña actualizada ✓');
+    toast('Contrasena actualizada ');
     closeOv('cambiar-pw');
     document.getElementById('cp-actual').value='';
     document.getElementById('cp-nueva').value='';
     document.getElementById('cp-confirma').value='';
-  }catch(e){toast(e.message||'Error al cambiar contraseña','err');}
+  }catch(e){toast(e.message||'Error al cambiar contrasena','err');}
 }
 
 
@@ -888,14 +888,14 @@ async function showApp(){ if(window._hideSplash) window._hideSplash();
   }catch(e){}
 }
 
-// Al cargar, si hay token válido, mostrar app
+// Al cargar, si hay token valido, mostrar app
 window.addEventListener('load',async()=>{
   if(TOKEN&&ME){
     try{const me=await api('/api/me');if(me)showApp();else doLogout();}catch(e){showApp();}
   }
 });
 
-// ── NAVEGACIÓN ──
+// -- NAVEGACION --
 function nav(page, btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.ni').forEach(b=>b.classList.remove('active'));
@@ -910,7 +910,7 @@ function nav(page, btn){
   else if(page==='stock')loadStock();
 }
 
-// ── VENTAS ──
+// -- VENTAS --
 let vPg=1, vBrandFilter='', vData=[], vBrandBuilt=false;
 
 async function loadVentas(page){
@@ -931,16 +931,16 @@ async function loadVentas(page){
     vData=res.data;
     document.getElementById('v-total-sub').textContent=`(${res.total} total)`;
 
-    // Filtrar año/moneda client-side
+    // Filtrar ano/moneda client-side
     let data=res.data;
     if(anio)data=data.filter(v=>String(v.anio)===anio);
     if(moneda)data=data.filter(v=>v.moneda===moneda);
 
-    // Años dropdown
+    // Anos dropdown
     if(!anio){
       const years=[...new Set(vData.filter(v=>v.anio).map(v=>v.anio))].sort((a,b)=>b-a);
       const sa=document.getElementById('v-a'),cur=sa.value;
-      sa.innerHTML='<option value="">Todos los años</option>'+years.map(y=>`<option${y==cur?' selected':''}>${y}</option>`).join('');
+      sa.innerHTML='<option value="">Todos los anos</option>'+years.map(y=>`<option${y==cur?' selected':''}>${y}</option>`).join('');
     }
 
     // Brand bar (solo primera vez)
@@ -949,16 +949,16 @@ async function loadVentas(page){
     const tot=res.total, tp=Math.ceil(tot/PS)||1;
     document.getElementById('v-body').innerHTML=data.length?data.map((v,i)=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(v.fecha)}</td>
-      ${celTd(v.cliente||'—',v.cliente)}
+      ${celTd(v.cliente||'',v.cliente)}
       <td>${bb(v.marca)}</td>
-      ${celTd(v.modelo||'—',v.modelo)}
-      <td style="color:var(--tx3);font-family:var(--mo);font-size:12px">${v.anio||'—'}</td>
-      <td class="mo" style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.motor)}">${esc(v.motor||'—')}</td>
-      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.chasis)}">${esc(v.chasis||'—')}</td>
+      ${celTd(v.modelo||'',v.modelo)}
+      <td style="color:var(--tx3);font-family:var(--mo);font-size:12px">${v.anio||''}</td>
+      <td class="mo" style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.motor)}">${esc(v.motor||'')}</td>
+      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.chasis)}">${esc(v.chasis||'')}</td>
       <td class="pr-val" style="white-space:nowrap">${fmt(v.precio,v.moneda)}</td>
-      <td class="mo" style="white-space:nowrap;color:var(--tx3);font-size:11px">${v.comprobante||'—'}</td>
+      <td class="mo" style="white-space:nowrap;color:var(--tx3);font-size:11px">${v.comprobante||''}</td>
       <td><button class="btn sm" onclick="detVenta(${v.id})">Ver</button></td>
-    </tr>`).join(''):`<tr><td colspan="10"><div class="empty"><div class="empty-icon">🔍</div>Sin resultados</div></td></tr>`;
+    </tr>`).join(''):`<tr><td colspan="10"><div class="empty"><div class="empty-icon"></div>Sin resultados</div></td></tr>`;
     renderPag('v',vPg,tp,tot,(vPg-1)*PS,PS,'loadVentas');
   }catch(e){toast('Error cargando ventas','err')}
 }
@@ -993,12 +993,12 @@ async function detVenta(id){
   const v=vData.find(x=>x.id===id)||{};
   document.getElementById('det-t').textContent=(v.marca||'')+' '+(v.modelo||'');
   document.getElementById('det-b').innerHTML=[
-    ['Comprobante',`<span class="mo">${esc(v.comprobante||'—')}</span>`],
-    ['Fecha',fdate(v.fecha)],['Cliente',`<strong>${esc(v.cliente||'—')}</strong>`],
-    ['Documento',`<span class="mo">${v.cliente_doc||'—'}</span>`],
-    ['Marca',bb(v.marca)],['Modelo',esc(v.modelo||'—')],['Año',v.anio||'—'],
-    ['N° Motor',`<span class="mo" style="color:var(--acc2)">${esc(v.motor||'—')}</span>`],
-    ['N° Chasis',`<span class="mo" style="color:var(--acc2)">${esc(v.chasis||'—')}</span>`],
+    ['Comprobante',`<span class="mo">${esc(v.comprobante||'')}</span>`],
+    ['Fecha',fdate(v.fecha)],['Cliente',`<strong>${esc(v.cliente||'')}</strong>`],
+    ['Documento',`<span class="mo">${v.cliente_doc||''}</span>`],
+    ['Marca',bb(v.marca)],['Modelo',esc(v.modelo||'')],['Ano',v.anio||''],
+    ['No Motor',`<span class="mo" style="color:var(--acc2)">${esc(v.motor||'')}</span>`],
+    ['No Chasis',`<span class="mo" style="color:var(--acc2)">${esc(v.chasis||'')}</span>`],
     ['Precio',`<span class="pr-val">${fmt(v.precio,v.moneda)}</span>`],
   ].map(([l,val])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${val}</span></div>`).join('');
   openOv('detail');
@@ -1007,10 +1007,10 @@ async function detVenta(id){
 async function saveVenta(){
   const v={comprobante:document.getElementById('av-comp').value.trim(),fecha:document.getElementById('av-fecha').value,marca:document.getElementById('av-marca').value.trim().toUpperCase(),modelo:document.getElementById('av-modelo').value.trim().toUpperCase(),anio:parseInt(document.getElementById('av-anio').value)||null,motor:document.getElementById('av-motor').value.trim().toUpperCase(),chasis:document.getElementById('av-chasis').value.trim().toUpperCase(),cliente:document.getElementById('av-cliente').value.trim(),cliente_doc:document.getElementById('av-cliente-doc').value.trim(),precio:parseFloat(document.getElementById('av-precio').value)||0,moneda:document.getElementById('av-moneda').value};
   if(!v.marca||!v.cliente){toast('Marca y cliente son requeridos','err');return}
-  try{await api('/api/ventas',{method:'POST',body:JSON.stringify(v)});closeOv('add-venta');toast('Venta guardada ✓');loadVentas();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/ventas',{method:'POST',body:JSON.stringify(v)});closeOv('add-venta');toast('Venta guardada ');loadVentas();}catch(e){toast('Error: '+e.message,'err')}
 }
 
-// ── COMPRAS ──
+// -- COMPRAS --
 let cPg=1, cData=[];
 async function loadCompras(page){
   if(page)cPg=page;
@@ -1033,14 +1033,14 @@ async function loadCompras(page){
     const tot=res.total,tp=Math.ceil(tot/PS)||1;
     document.getElementById('c-body').innerHTML=res.data.length?res.data.map(c=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(c.fecha)}</td>
-      ${celTd(c.proveedor||'—',c.proveedor)}
+      ${celTd(c.proveedor||'',c.proveedor)}
       <td>${bb(c.marca)}</td>
-      ${celTd(c.modelo||c.detalle_original||'—',c.modelo||c.detalle_original||'')}
-      <td class="mo" style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.motor||'—')}</td>
-      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.chasis)}">${esc(c.chasis||'—')}</td>
+      ${celTd(c.modelo||c.detalle_original||'',c.modelo||c.detalle_original||'')}
+      <td class="mo" style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.motor||'')}</td>
+      <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.chasis)}">${esc(c.chasis||'')}</td>
       <td class="pr-val" style="white-space:nowrap">${fmt(c.precio,c.moneda)}</td>
       <td><button class="btn sm" onclick="detCompra(${c.id})">Ver</button></td>
-    </tr>`).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon">🔍</div>Sin resultados</div></td></tr>`;
+    </tr>`).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon"></div>Sin resultados</div></td></tr>`;
     renderPag('c',cPg,tp,tot,(cPg-1)*PS,PS,'loadCompras');
   }catch(e){toast('Error cargando compras','err')}
 }
@@ -1048,21 +1048,21 @@ async function detCompra(id){
   const c=cData.find(x=>x.id===id)||{};
   document.getElementById('det-t').textContent=(c.marca||'')+' '+(c.modelo||'');
   document.getElementById('det-b').innerHTML=[
-    ['Fecha',fdate(c.fecha)],['Proveedor',`<strong>${esc(c.proveedor||'—')}</strong>`],
-    ['Marca',bb(c.marca)],['Modelo',esc(c.modelo||'—')],['Año',c.anio||'—'],
-    ['N° Motor',`<span class="mo" style="color:var(--acc2)">${esc(c.motor||'—')}</span>`],
-    ['N° Chasis',`<span class="mo" style="color:var(--acc2)">${esc(c.chasis||'—')}</span>`],
-    ['Color',c.color||'—'],['Precio',`<span class="pr-val">${fmt(c.precio,c.moneda)}</span>`],
+    ['Fecha',fdate(c.fecha)],['Proveedor',`<strong>${esc(c.proveedor||'')}</strong>`],
+    ['Marca',bb(c.marca)],['Modelo',esc(c.modelo||'')],['Ano',c.anio||''],
+    ['No Motor',`<span class="mo" style="color:var(--acc2)">${esc(c.motor||'')}</span>`],
+    ['No Chasis',`<span class="mo" style="color:var(--acc2)">${esc(c.chasis||'')}</span>`],
+    ['Color',c.color||''],['Precio',`<span class="pr-val">${fmt(c.precio,c.moneda)}</span>`],
   ].map(([l,v])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${v}</span></div>`).join('');
   openOv('detail');
 }
 async function saveCompra(){
   const v={fecha:document.getElementById('ac-fecha').value,marca:document.getElementById('ac-marca').value.trim().toUpperCase(),modelo:document.getElementById('ac-modelo').value.trim().toUpperCase(),anio:parseInt(document.getElementById('ac-anio').value)||null,motor:document.getElementById('ac-motor').value.trim().toUpperCase(),chasis:document.getElementById('ac-chasis').value.trim().toUpperCase(),proveedor:document.getElementById('ac-prov').value.trim(),precio:parseFloat(document.getElementById('ac-precio').value)||0,moneda:document.getElementById('ac-moneda').value,color:document.getElementById('ac-color').value.trim()};
   if(!v.marca||!v.proveedor){toast('Marca y proveedor son requeridos','err');return}
-  try{await api('/api/compras',{method:'POST',body:JSON.stringify(v)});closeOv('add-compra');toast('Compra guardada ✓');loadCompras();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/compras',{method:'POST',body:JSON.stringify(v)});closeOv('add-compra');toast('Compra guardada ');loadCompras();}catch(e){toast('Error: '+e.message,'err')}
 }
 
-// ── CLIENTES ──
+// -- CLIENTES --
 let clPg=1, clData=[];
 async function loadClientes(page){
   if(page)clPg=page;
@@ -1080,45 +1080,23 @@ async function loadClientes(page){
     document.getElementById('cl-body').innerHTML=res.data.length?res.data.map(cl=>{
       const nv=cl.compras?.length||0;
       return`<tr>
-        <td style="font-weight:600;white-space:nowrap">${esc(cl.nombre||'—')}</td>
-        <td><span style="background:var(--accl);color:var(--acc);padding:2px 9px;border-radius:20px;font-family:var(--mo);font-size:11px">${esc(cl.doc||'—')}</span></td>
-        ${celTd(cl.tipo_doc||'—',cl.tipo_doc)}
-        ${celTd(cl.pais||'—',cl.pais)}
+        <td style="font-weight:600;white-space:nowrap">${esc(cl.nombre||'')}</td>
+        <td><span style="background:var(--accl);color:var(--acc);padding:2px 9px;border-radius:20px;font-family:var(--mo);font-size:11px">${esc(cl.doc||'')}</span></td>
+        ${celTd(cl.tipo_doc||'--',cl.tipo_doc)}
+        ${celTd(cl.pais||'--',cl.pais)}
+        ${celTd(cl.tipo_doc||'',cl.tipo_doc)}
+        ${celTd(cl.pais||'',cl.pais)}
         
         
         
         
-        <td>${nv>0?`<span class="badge" style="background:var(--gnl);color:var(--gn)">${nv} veh.</span>`:'<span style="color:var(--tx3)">—</span>'}</td>
+        <td>${nv>0?`<span class="badge" style="background:var(--gnl);color:var(--gn)">${nv} veh.</span>`:'<span style="color:var(--tx3)"></span>'}</td>
         <td><button class="btn sm" onclick="detCliente(${cl.id})">Ver</button></td>
       </tr>`;
-    }).join(''):`<tr><td colspan="8"><div class="empty"><div class="empty-icon">👥</div>Sin resultados</div></td></tr>`;
-    renderPag('cl',clPg,tp,tot,(clPg-1)*PS,PS,'loadClientes');
-  }catch(e){toast('Error cargando clientes','err')}
-}
-async function detCliente(id){
-  const cl=clData.find(x=>x.id===id)||{};
-  const ini=initials(cl.nombre);
-  const vehs=cl.compras||[];
-  document.getElementById('det-t').textContent=cl.nombre||'Cliente';
-  document.getElementById('det-b').innerHTML=`
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-      <div style="width:44px;height:44px;border-radius:50%;background:var(--accl);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:17px;font-weight:800;color:var(--acc);flex-shrink:0">${ini}</div>
-      <div><div style="font-family:var(--fh);font-size:17px;font-weight:700">${esc(cl.nombre||'—')}</div><div style="font-size:12px;color:var(--tx3)">${cl.relacion||'Cliente'}${cl.ciudad?' · '+esc(cl.ciudad):''}</div></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-      <div class="dr"><span class="dl">Documento</span><span class="dv mo">${cl.doc||'—'}</span></div>
-      <div class="dr"><span class="dl">Teléfono</span><span class="dv">${cl.telefono?`<a href="tel:${cl.telefono}" style="color:var(--gn);text-decoration:none">${esc(cl.telefono)}</a>`:'—'}</span></div>
-      <div class="dr"><span class="dl">Ciudad</span><span class="dv">${esc(cl.ciudad||'—')}</span></div>
-      <div class="dr"><span class="dl">Mail</span><span class="dv">${cl.mail?`<a href="mailto:${cl.mail}" style="color:var(--bl);text-decoration:none">${esc(cl.mail)}</a>`:'—'}</span></div>
-      <div class="dr" style="grid-column:1/-1"><span class="dl">Dirección</span><span class="dv">${esc(cl.direccion||'—')}</span></div>
-    </div>
-    ${vehs.length?`<div style="margin-top:16px"><div style="font-family:var(--fh);font-size:12px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Vehículos (${vehs.length})</div>
-    <table style="width:100%;font-size:12px;border-collapse:collapse"><thead><tr>${['Fecha','Marca','Modelo','Chasis','Precio'].map(h=>`<th style="padding:5px 8px;font-size:10px;color:var(--tx3);border-bottom:1px solid var(--bd);text-align:left">${h}</th>`).join('')}</tr></thead><tbody>
-    ${vehs.map(v=>`<tr>
-      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--tx3);border-bottom:1px solid var(--bd)">${fdate(v.fecha)}</td>
+    }).join(''):`<tr>
       <td style="padding:6px 8px;border-bottom:1px solid var(--bd)">${bb(v.marca)}</td>
-      <td style="padding:6px 8px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid var(--bd)">${esc(v.modelo||'—')}</td>
-      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--acc2);border-bottom:1px solid var(--bd)">${esc(v.chasis||'—')}</td>
+      <td style="padding:6px 8px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid var(--bd)">${esc(v.modelo||'')}</td>
+      <td style="padding:6px 8px;font-family:var(--mo);font-size:11px;color:var(--acc2);border-bottom:1px solid var(--bd)">${esc(v.chasis||'')}</td>
       <td style="padding:6px 8px;font-family:var(--mo);font-size:12px;color:var(--acc2);border-bottom:1px solid var(--bd)">${fmt(v.precio,v.moneda)}</td>
     </tr>`).join('')}</tbody></table></div>`:''}`;
   openOv('detail');
@@ -1126,10 +1104,10 @@ async function detCliente(id){
 async function saveCliente(){
   const v={nombre:document.getElementById('acl-nombre').value.trim().toUpperCase(),doc:document.getElementById('acl-doc').value.trim(),telefono:document.getElementById('acl-tel').value.trim(),direccion:document.getElementById('acl-dir').value.trim(),ciudad:document.getElementById('acl-ciudad').value.trim().toUpperCase(),mail:document.getElementById('acl-mail').value.trim(),relacion:document.getElementById('acl-rel').value};
   if(!v.nombre){toast('El nombre es requerido','err');return}
-  try{await api('/api/clientes',{method:'POST',body:JSON.stringify(v)});closeOv('add-cliente');toast('Cliente guardado ✓');loadClientes();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/clientes',{method:'POST',body:JSON.stringify(v)});closeOv('add-cliente');toast('Cliente guardado ');loadClientes();}catch(e){toast('Error: '+e.message,'err')}
 }
 
-// ── NEGOCIOS ──
+// -- NEGOCIOS --
 let negData=[], negDetId=null;
 async function loadNegocios(){
   const q=document.getElementById('neg-q').value;
@@ -1144,11 +1122,11 @@ async function loadNegocios(){
     document.getElementById('neg-list').innerHTML=res.data.length?res.data.map(n=>{
       const pend=n.cuotas_pendientes||0, tot=n.cuotas_total||0;
       const pct=tot?Math.round((tot-pend)/tot*100):100;
-      const metodoLabel={'contado':'Contado','financiado':'Financiado','leasing':'Leasing','permuta':'Permuta','credito':'Crédito bancario','cuotas':'Cuotas directas'}[n.metodo_pago]||n.metodo_pago||'—';
+      const metodoLabel={'contado':'Contado','financiado':'Financiado','leasing':'Leasing','permuta':'Permuta','credito':'Credito bancario','cuotas':'Cuotas directas'}[n.metodo_pago]||n.metodo_pago||'';
       return`<div class="neg-card" onclick="detNegocio(${n.id})">
         <div class="neg-card-header">
           <div>
-            <div class="neg-cliente">${esc(n.cliente_nombre||'—')}</div>
+            <div class="neg-cliente">${esc(n.cliente_nombre||'')}</div>
             <div class="neg-vehiculo">${esc([n.vehiculo_marca,n.vehiculo_modelo,n.vehiculo_anio].filter(Boolean).join(' '))}</div>
           </div>
           <div style="text-align:right">
@@ -1157,17 +1135,17 @@ async function loadNegocios(){
           </div>
         </div>
         <div class="neg-metas">
-          <span class="neg-meta">📅 ${fdate(n.fecha_negocio)}</span>
+          <span class="neg-meta"> ${fdate(n.fecha_negocio)}</span>
           ${n.vehiculo_chasis?`<span class="neg-meta mo" style="font-size:11px">${esc(n.vehiculo_chasis)}</span>`:''}
           <span class="badge" style="background:${n.estado==='activo'?'var(--gnl)':'var(--bg4)'};color:${n.estado==='activo'?'var(--gn)':'var(--tx3)'}">${n.estado}</span>
-          ${n.usuario_nombre?`<span class="neg-meta">👤 ${esc(n.usuario_nombre)}</span>`:''}
+          ${n.usuario_nombre?`<span class="neg-meta"> ${esc(n.usuario_nombre)}</span>`:''}
         </div>
         ${tot>0?`<div class="neg-cuotas-bar">
           <div class="neg-cuotas-label"><span>Cuotas</span><span>${tot-pend}/${tot} pagadas</span></div>
           <div class="neg-cuotas-track"><div class="neg-cuotas-fill" style="width:${pct}%"></div></div>
         </div>`:''}
       </div>`;
-    }).join(''):`<div class="empty"><div class="empty-icon">📦</div>Sin negocios registrados</div>`;
+    }).join(''):`<div class="empty"><div class="empty-icon"></div>Sin negocios registrados</div>`;
   }catch(e){toast('Error cargando negocios','err')}
 }
 
@@ -1185,19 +1163,19 @@ async function detNegocio(id){
       <span class="cuota-num">#${c.numero}</span>
       <span class="cuota-fecha">${fdate(c.fecha_vencimiento)}</span>
       <span class="cuota-monto">${fmt(c.monto,c.moneda)}</span>
-      ${c.pagada?`<span class="cuota-pagada">✓ Pagada</span>`:
-        c.fecha_vencimiento<hoy?`<span class="cuota-vencida">⚠ Vencida</span><button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`:
+      ${c.pagada?`<span class="cuota-pagada"> Pagada</span>`:
+        c.fecha_vencimiento<hoy?`<span class="cuota-vencida"> Vencida</span><button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`:
         `<button class="btn sm" onclick="pagarCuota(${c.id},event)">Pagar</button>`}
     </div>`).join('')}</div>`;
   }
   document.getElementById('detneg-b').innerHTML=[
-    ['Cliente',`<strong>${esc(n.cliente_nombre||'—')}</strong>`],
-    ['Vehículo',esc([n.vehiculo_marca,n.vehiculo_modelo,n.vehiculo_anio].filter(Boolean).join(' '))],
-    ['Chasis',`<span class="mo" style="color:var(--acc2)">${esc(n.vehiculo_chasis||'—')}</span>`],
+    ['Cliente',`<strong>${esc(n.cliente_nombre||'')}</strong>`],
+    ['Vehiculo',esc([n.vehiculo_marca,n.vehiculo_modelo,n.vehiculo_anio].filter(Boolean).join(' '))],
+    ['Chasis',`<span class="mo" style="color:var(--acc2)">${esc(n.vehiculo_chasis||'')}</span>`],
     ['Precio',`<span class="pr-val">${fmt(n.precio_venta,n.moneda)}</span>`],
-    ['Método',n.metodo_pago||'—'],['Fecha',fdate(n.fecha_negocio)],
+    ['Metodo',n.metodo_pago||''],['Fecha',fdate(n.fecha_negocio)],
     ['Estado',`<span class="badge" style="background:${n.estado==='activo'?'var(--gnl)':'var(--bg4)'};color:${n.estado==='activo'?'var(--gn)':'var(--tx3)'}">${n.estado}</span>`],
-    ['Notas',n.notas||'—'],
+    ['Notas',n.notas||''],
   ].map(([l,v])=>`<div class="dr"><span class="dl">${l}</span><span class="dv">${v}</span></div>`).join('')+cuotasHtml;
   document.getElementById('btn-cerrar-neg').style.display=n.estado==='activo'?'':'none';
   openOv('det-neg');
@@ -1205,7 +1183,7 @@ async function detNegocio(id){
 
 async function pagarCuota(cid,e){
   e.stopPropagation();
-  try{await api('/api/cuotas/pagar',{method:'POST',body:JSON.stringify({cuota_id:cid})});toast('Cuota marcada como pagada ✓');detNegocio(negDetId);}catch(e){toast('Error','err')}
+  try{await api('/api/cuotas/pagar',{method:'POST',body:JSON.stringify({cuota_id:cid})});toast('Cuota marcada como pagada ');detNegocio(negDetId);}catch(e){toast('Error','err')}
 }
 
 async function cerrarNegocio(){
@@ -1235,10 +1213,10 @@ async function saveNegocio(){
     notas:document.getElementById('an-notas').value.trim(),
   };
   if(!v.cliente_nombre){toast('El cliente es requerido','err');return}
-  try{await api('/api/negocios',{method:'POST',body:JSON.stringify(v)});closeOv('add-negocio');toast('Negocio guardado ✓');loadNegocios();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/negocios',{method:'POST',body:JSON.stringify(v)});closeOv('add-negocio');toast('Negocio guardado ');loadNegocios();}catch(e){toast('Error: '+e.message,'err')}
 }
 
-// ── FACTURACIÓN ──
+// -- FACTURACION --
 async function loadFac(){
   const mon=document.getElementById('fac-mon').value;
   try{
@@ -1250,8 +1228,8 @@ async function loadFac(){
     const tC=compras.reduce((a,b)=>a+b.precio,0);
     const saldo=tV-tC;
     document.getElementById('fac-totales').innerHTML=`
-      <div class="fac-card v"><div class="fc-label">Total Ventas</div><div class="fc-val" style="color:var(--bl)">${fmt(tV,mon)}</div><div class="fc-sub">${ventas.length} vehículos · ${mon}</div></div>
-      <div class="fac-card c"><div class="fc-label">Total Compras</div><div class="fc-val" style="color:var(--acc2)">${fmt(tC,mon)}</div><div class="fc-sub">${compras.length} vehículos · ${mon}</div></div>
+      <div class="fac-card v"><div class="fc-label">Total Ventas</div><div class="fc-val" style="color:var(--bl)">${fmt(tV,mon)}</div><div class="fc-sub">${ventas.length} vehiculos . ${mon}</div></div>
+      <div class="fac-card c"><div class="fc-label">Total Compras</div><div class="fc-val" style="color:var(--acc2)">${fmt(tC,mon)}</div><div class="fc-sub">${compras.length} vehiculos . ${mon}</div></div>
       <div class="fac-card s"><div class="fc-label">Diferencia</div><div class="fc-val" style="color:${saldo>=0?'var(--gn)':'var(--rd)'}">${fmt(Math.abs(saldo),mon)}</div><div class="fc-sub">${saldo>=0?'Resultado positivo':'Resultado negativo'}</div></div>`;
     // Desglose por marca
     const mv={},mc={};
@@ -1261,11 +1239,11 @@ async function loadFac(){
     const mkC=Object.entries(mc).sort((a,b)=>b[1]-a[1]);
     document.getElementById('fac-desglose').innerHTML=`
       <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px">
-        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Ventas por marca · ${mon}</div>
+        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Ventas por marca . ${mon}</div>
         ${mkV.map(([m,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px"><span style="color:var(--tx2)">${esc(m)}</span><span style="font-family:var(--mo);font-weight:600;color:var(--bl)">${fmt(v,mon)}</span></div>`).join('')}
       </div>
       <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px">
-        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Compras por marca · ${mon}</div>
+        <div style="font-family:var(--fh);font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Compras por marca . ${mon}</div>
         ${mkC.map(([m,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px"><span style="color:var(--tx2)">${esc(m)}</span><span style="font-family:var(--mo);font-weight:600;color:var(--acc2)">${fmt(v,mon)}</span></div>`).join('')}
       </div>`;
     // Sin facturar
@@ -1273,15 +1251,15 @@ async function loadFac(){
     document.getElementById('fac-sf-cnt').textContent=sf.length+' sin facturar';
     document.getElementById('fac-sf-body').innerHTML=sf.length?sf.map(v=>`<tr>
       <td style="white-space:nowrap;font-family:var(--mo);font-size:12px;color:var(--tx3)">${fdate(v.fecha)}</td>
-      ${celTd(v.cliente||'—',v.cliente)}<td>${bb(v.marca)}</td>${celTd(v.modelo||'—',v.modelo)}
-      <td style="font-family:var(--mo);font-size:12px;color:var(--tx3)">${v.anio||'—'}</td>
-      <td class="mo" style="color:var(--acc2)">${esc(v.chasis||'—')}</td>
+      ${celTd(v.cliente||'',v.cliente)}<td>${bb(v.marca)}</td>${celTd(v.modelo||'',v.modelo)}
+      <td style="font-family:var(--mo);font-size:12px;color:var(--tx3)">${v.anio||''}</td>
+      <td class="mo" style="color:var(--acc2)">${esc(v.chasis||'')}</td>
       <td class="pr-val">${fmt(v.precio,v.moneda)}</td>
-    </tr>`).join(''):`<tr><td colspan="7"><div class="empty"><div class="empty-icon">✅</div>Sin vehículos pendientes</div></td></tr>`;
-  }catch(e){toast('Error cargando facturación','err')}
+    </tr>`).join(''):`<tr><td colspan="7"><div class="empty"><div class="empty-icon"></div>Sin vehiculos pendientes</div></td></tr>`;
+  }catch(e){toast('Error cargando facturacion','err')}
 }
 
-// ── STOCK ──
+// -- STOCK --
 let stkData=[], stkMovId=null;
 async function loadStock(){
   const q=document.getElementById('stk-q').value;
@@ -1296,16 +1274,16 @@ async function loadStock(){
     document.getElementById('stk-body').innerHTML=res.data.length?res.data.map(s=>{
       const bajo=s.cantidad<=3;
       return`<tr>
-        <td class="mo" style="font-size:11px;color:var(--tx3)">${esc(s.codigo||'—')}</td>
-        ${celTd(s.nombre,'')}<td><span class="badge" style="background:var(--bg4);color:var(--tx2)">${esc(s.categoria||'—')}</span></td>
-        ${celTd([s.marca_compatible,s.modelo_compatible].filter(Boolean).join(' · '),'')}
+        <td class="mo" style="font-size:11px;color:var(--tx3)">${esc(s.codigo||'')}</td>
+        ${celTd(s.nombre,'')}<td><span class="badge" style="background:var(--bg4);color:var(--tx2)">${esc(s.categoria||'')}</span></td>
+        ${celTd([s.marca_compatible,s.modelo_compatible].filter(Boolean).join(' . '),'')}
         <td><span style="font-family:var(--mo);font-size:13px;font-weight:700;color:${bajo?'var(--rd)':'var(--gn)'}">${s.cantidad}</span></td>
         <td class="pr-val">${fmt(s.precio_costo,s.moneda)}</td>
         <td class="pr-val">${fmt(s.precio_venta,s.moneda)}</td>
-        ${celTd(s.ubicacion||'—','')}
-        <td style="white-space:nowrap"><button class="btn sm" onclick="openMovStock(${s.id})">±</button></td>
+        ${celTd(s.ubicacion||'','')}
+        <td style="white-space:nowrap"><button class="btn sm" onclick="openMovStock(${s.id})"></button></td>
       </tr>`;
-    }).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon">📦</div>Sin ítems en stock</div></td></tr>`;
+    }).join(''):`<tr><td colspan="9"><div class="empty"><div class="empty-icon"></div>Sin items en stock</div></td></tr>`;
   }catch(e){toast('Error cargando stock','err')}
 }
 function openMovStock(id){
@@ -1317,22 +1295,22 @@ function openMovStock(id){
 }
 async function saveMovStock(){
   const v={stock_id:stkMovId,tipo:document.getElementById('ms-tipo').value,cantidad:parseInt(document.getElementById('ms-cant').value)||1,motivo:document.getElementById('ms-motivo').value.trim()};
-  try{await api('/api/stock/movimiento',{method:'POST',body:JSON.stringify(v)});closeOv('mov-stock');toast('Movimiento registrado ✓');loadStock();}catch(e){toast('Error','err')}
+  try{await api('/api/stock/movimiento',{method:'POST',body:JSON.stringify(v)});closeOv('mov-stock');toast('Movimiento registrado ');loadStock();}catch(e){toast('Error','err')}
 }
 async function saveStock(){
   const v={codigo:document.getElementById('as-codigo').value.trim(),nombre:document.getElementById('as-nombre').value.trim(),categoria:document.getElementById('as-cat').value,marca_compatible:document.getElementById('as-marca').value.trim(),modelo_compatible:document.getElementById('as-modelo').value.trim(),cantidad:parseInt(document.getElementById('as-cant').value)||0,precio_costo:parseFloat(document.getElementById('as-costo').value)||0,precio_venta:parseFloat(document.getElementById('as-venta').value)||0,moneda:document.getElementById('as-moneda').value,ubicacion:document.getElementById('as-ubic').value.trim(),notas:document.getElementById('as-notas').value.trim()};
   if(!v.nombre){toast('El nombre es requerido','err');return}
-  try{await api('/api/stock',{method:'POST',body:JSON.stringify(v)});closeOv('add-stock');toast('Ítem guardado ✓');loadStock();}catch(e){toast('Error: '+e.message,'err')}
+  try{await api('/api/stock',{method:'POST',body:JSON.stringify(v)});closeOv('add-stock');toast('Item guardado ');loadStock();}catch(e){toast('Error: '+e.message,'err')}
 }
 
-// ── SYNC eFactura ──
+// -- SYNC eFactura --
 function openSync(){
   document.getElementById('sync-log').style.display='none';
   document.getElementById('sync-log').innerHTML='';
   document.getElementById('sync-status').textContent='Listo para sincronizar';
   document.getElementById('sync-prog-fill').style.width='0%';
   document.getElementById('sync-run-btn').disabled=false;
-  document.getElementById('sync-run-btn').textContent='Iniciar sincronización';
+  document.getElementById('sync-run-btn').textContent='Iniciar sincronizacion';
   openOv('sync');
 }
 
@@ -1352,9 +1330,9 @@ async function runSync(){
 
   document.getElementById('sync-log').innerHTML='';
   document.getElementById('sync-log').style.display='block';
-  syncLog('Iniciando sincronización...');
+  syncLog('Iniciando sincronizacion...');
 
-  // Verificar si eFactura está abierto en el browser
+  // Verificar si eFactura esta abierto en el browser
   try{
     // Intentar leer datos de los JSONs locales (rebuild)
     document.getElementById('sync-status').textContent='Leyendo datos actuales...';
@@ -1366,19 +1344,19 @@ async function runSync(){
     let steps=0, total=(doVentas?1:0)+(doCompras?1:0)+(doClientes?1:0);
 
     if(doVentas){
-      syncLog('📊 Leyendo ventas_full.json...');
+      syncLog(' Leyendo ventas_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='ventas';
       steps++;
     }
     if(doCompras){
-      syncLog('🚗 Leyendo compras_full.json...');
+      syncLog(' Leyendo compras_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='compras';
       steps++;
     }
     if(doClientes){
-      syncLog('👥 Leyendo clientes_full.json...');
+      syncLog(' Leyendo clientes_full.json...');
       document.getElementById('sync-prog-fill').style.width=Math.round(20+steps/total*60)+'%';
       payload.tipo='clientes';
       steps++;
@@ -1390,21 +1368,21 @@ async function runSync(){
 
     document.getElementById('sync-prog-fill').style.width='100%';
     if(res){
-      syncLog(`✓ Ventas: ${res.ventas_nuevas||0} nuevas (${res.ventas_total||0} total)`,'ok');
-      syncLog(`✓ Compras: ${res.compras_nuevas||0} nuevas (${res.compras_total||0} total)`,'ok');
-      syncLog(`✓ Clientes: ${res.clientes_nuevas||0} nuevos (${res.clientes_total||0} total)`,'ok');
-      syncLog('✓ Sincronización completada','ok');
+      syncLog(` Ventas: ${res.ventas_nuevas||0} nuevas (${res.ventas_total||0} total)`,'ok');
+      syncLog(` Compras: ${res.compras_nuevas||0} nuevas (${res.compras_total||0} total)`,'ok');
+      syncLog(` Clientes: ${res.clientes_nuevas||0} nuevos (${res.clientes_total||0} total)`,'ok');
+      syncLog(' Sincronizacion completada','ok');
       document.getElementById('sync-status').textContent='Completado';
-      toast('Sincronización completada ✓');
+      toast('Sincronizacion completada ');
       // Actualizar stats
       showApp();
     }
     btn.textContent='Completado';
   }catch(e){
-    syncLog('✗ Error: '+e.message,'err');
-    document.getElementById('sync-status').textContent='Error en sincronización';
+    syncLog(' Error: '+e.message,'err');
+    document.getElementById('sync-status').textContent='Error en sincronizacion';
     btn.disabled=false;btn.textContent='Reintentar';
-    toast('Error en sincronización','err');
+    toast('Error en sincronizacion','err');
   }
 }
 
@@ -1414,7 +1392,7 @@ async function runSync(){
 """
 
 
-# ── CONFIG ──────────────────────────────────────────────
+# -- CONFIG ----------------------------------------------
 PORT = int(os.environ.get('PORT', 8765))
 _db_dir = '/data' if os.path.isdir('/data') else os.path.join(os.path.dirname(__file__), 'db')
 DB_PATH = os.path.join(_db_dir, 'bmw.db')
@@ -1424,7 +1402,7 @@ TOKEN_EXPIRY_HOURS = 8
 # Rate limiting para login
 _login_attempts = {}  # ip -> [timestamp, count]
 
-# ── JWT SIMPLE (sin dependencias) ───────────────────────
+# -- JWT SIMPLE (sin dependencias) -----------------------
 def b64url_encode(data):
     if isinstance(data, str):
         data = data.encode()
@@ -1473,7 +1451,7 @@ def check_password(pw, stored):
     except:
         return False
 
-# ── BASE DE DATOS ────────────────────────────────────────
+# -- BASE DE DATOS ----------------------------------------
 def get_db():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
@@ -1637,9 +1615,9 @@ def init_db():
 
     conn.commit()
     conn.close()
-    print(f"✓ Base de datos inicializada: {DB_PATH}")
+    print(f" Base de datos inicializada: {DB_PATH}")
 
-# ── IMPORTAR DATOS EXISTENTES ────────────────────────────
+# -- IMPORTAR DATOS EXISTENTES ----------------------------
 def import_json_data():
     base = os.path.dirname(__file__)
     conn = get_db()
@@ -1648,7 +1626,7 @@ def import_json_data():
     # Verificar si ya hay datos
     count = c.execute("SELECT COUNT(*) FROM ventas").fetchone()[0]
     if count > 0:
-        print(f"✓ Datos ya importados ({count} ventas)")
+        print(f" Datos ya importados ({count} ventas)")
         conn.close()
         return
 
@@ -1663,7 +1641,7 @@ def import_json_data():
                 (v.get('comprobante'), v.get('fecha'), v.get('marca'), v.get('modelo'),
                  v.get('anio'), v.get('motor'), v.get('chasis'), v.get('cliente'),
                  v.get('cliente_doc'), v.get('precio',0), v.get('moneda','USD')))
-        print(f"✓ {len(ventas)} ventas importadas")
+        print(f" {len(ventas)} ventas importadas")
 
     # Importar compras
     compras_path = os.path.join(base, 'compras_full.json')
@@ -1677,7 +1655,7 @@ def import_json_data():
                  c_.get('motor'), c_.get('chasis'), c_.get('proveedor'),
                  c_.get('precio',0), c_.get('moneda','USD'), c_.get('color'),
                  c_.get('detalle_original')))
-        print(f"✓ {len(compras)} compras importadas")
+        print(f" {len(compras)} compras importadas")
 
     # Importar clientes
     clientes_path = os.path.join(base, 'clientes_full.json')
@@ -1690,12 +1668,12 @@ def import_json_data():
                 (cl.get('nombre'), cl.get('doc'), cl.get('telefono'),
                  cl.get('direccion'), cl.get('ciudad'), cl.get('mail'),
                  cl.get('relacion','Cliente')))
-        print(f"✓ {len(clientes)} clientes importados")
+        print(f" {len(clientes)} clientes importados")
 
     conn.commit()
     conn.close()
 
-# ── SERVIDOR HTTP ────────────────────────────────────────
+# -- SERVIDOR HTTP ----------------------------------------
 def json_response(handler, data, status=200):
     body = json.dumps(data, ensure_ascii=False, default=str).encode('utf-8')
     handler.send_response(status)
@@ -1915,7 +1893,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
 
         json_response(self, {'error': 'No encontrado'}, 404)
 
-    # ── AUTH ──
+    # -- AUTH --
     def _login(self):
         body = read_body(self)
         username = body.get('username', '').lower().strip()
@@ -1924,7 +1902,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
 
         # Rate limiting
         if check_rate_limit(ip):
-            json_response(self, {'error': 'Demasiados intentos. Intentá en 5 minutos.'}, 429)
+            json_response(self, {'error': 'Demasiados intentos. Intenta en 5 minutos.'}, 429)
             return
 
         conn = get_db()
@@ -1932,7 +1910,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
 
         if not row or not check_password(password, row['password_hash']):
-            json_response(self, {'error': 'Usuario o contraseña incorrectos'}, 401)
+            json_response(self, {'error': 'Usuario o contrasena incorrectos'}, 401)
             return
 
         clear_rate_limit(ip)
@@ -1947,23 +1925,23 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         new_pw = body.get('new_password', '')
 
         if not new_pw or len(new_pw) < 6:
-            json_response(self, {'error': 'La nueva contraseña debe tener al menos 6 caracteres'}, 400)
+            json_response(self, {'error': 'La nueva contrasena debe tener al menos 6 caracteres'}, 400)
             return
 
         conn = get_db()
         row = conn.execute("SELECT * FROM usuarios WHERE id=?", (user['id'],)).fetchone()
         if not row or not check_password(current_pw, row['password_hash']):
             conn.close()
-            json_response(self, {'error': 'Contraseña actual incorrecta'}, 401)
+            json_response(self, {'error': 'Contrasena actual incorrecta'}, 401)
             return
 
         conn.execute("UPDATE usuarios SET password_hash=? WHERE id=?",
                      (hash_password(new_pw), user['id']))
         conn.commit()
         conn.close()
-        json_response(self, {'ok': True, 'message': 'Contraseña actualizada correctamente'})
+        json_response(self, {'ok': True, 'message': 'Contrasena actualizada correctamente'})
 
-    # ── VENTAS ──
+    # -- VENTAS --
     def _get_ventas(self, qs):
         conn = get_db()
         q = qs.get('q', [''])[0].lower()
@@ -2022,7 +2000,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, row)
 
-    # ── COMPRAS ──
+    # -- COMPRAS --
     def _get_compras(self, qs):
         conn = get_db()
         q = qs.get('q', [''])[0].lower()
@@ -2078,7 +2056,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, row)
 
-    # ── CLIENTES ──
+    # -- CLIENTES --
     def _get_clientes(self, qs):
         conn = get_db()
         q = qs.get('q', [''])[0].lower()
@@ -2153,7 +2131,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, row)
 
-    # ── NEGOCIOS ──
+    # -- NEGOCIOS --
     def _get_negocios(self, qs):
         conn = get_db()
         q = qs.get('q', [''])[0].lower()
@@ -2269,7 +2247,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, {'ok': True})
 
-    # ── STOCK ──
+    # -- STOCK --
     def _get_stock(self, qs):
         conn = get_db()
         q = qs.get('q', [''])[0].lower()
@@ -2338,7 +2316,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, row)
 
-    # ── STATS ──
+    # -- STATS --
     def _get_stats(self):
         conn = get_db()
         stats = {
@@ -2356,7 +2334,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         conn.close()
         json_response(self, stats)
 
-    # ── SYNC ──
+    # -- SYNC --
     def _sync_import(self, user):
         """Importar datos frescos desde los JSONs (cuando se actualicen desde eFactura)"""
         v = read_body(self)
@@ -2412,7 +2390,7 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         total_ventas = get_db().execute("SELECT COUNT(*) FROM ventas").fetchone()[0]
         json_response(self, {'ok': True, 'nuevos': count_new, 'total_ventas': total_ventas})
 
-    # ── SERVE FILES ──
+    # -- SERVE FILES --
     def _serve_html(self):
         body = HTML_CONTENT.encode('utf-8')
         self.send_response(200)
@@ -2434,10 +2412,10 @@ class BMWHandler(http.server.BaseHTTPRequestHandler):
         except FileNotFoundError:
             json_response(self, {'error': 'Archivo no encontrado'}, 404)
 
-# ── MAIN ─────────────────────────────────────────────────
+# -- MAIN -------------------------------------------------
 if __name__ == '__main__':
     print("=" * 50)
-    print("  AutomotoraGV - Servidor de Gestión")
+    print("  AutomotoraGV - Servidor de Gestion")
     print("=" * 50)
 
     init_db()
@@ -2448,12 +2426,12 @@ if __name__ == '__main__':
     os.makedirs(static_dir, exist_ok=True)
 
     server = http.server.ThreadingHTTPServer(('0.0.0.0', PORT), BMWHandler)
-    print(f"\n✓ Servidor corriendo en puerto {PORT}")
+    print(f"\n Servidor corriendo en puerto {PORT}")
     print(f"  Usuarios: aacosta / gvillasuso / gyozzi")
-    print(f"  Contraseña por defecto: BMW2026!")
+    print(f"  Contrasena por defecto: BMW2026!")
     print(f"\n  Ctrl+C para detener\n")
 
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\n✓ Servidor detenido")
+        print("\n Servidor detenido")
