@@ -497,7 +497,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Fecha</th><th>Proveedor</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Motor</th><th>Chasis / VIN</th><th>Precio</th><th></th>
+        <th>Fecha</th><th>Proveedor</th><th>Marca</th><th>Modelo</th><th>Chasis / VIN</th><th>Motor</th><th>Precio</th><th></th>
       </tr></thead><tbody id="c-body"></tbody></table></div>
       <div class="pag" id="c-pag"></div>
     </div>
@@ -520,7 +520,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="tc">
       <div class="tsc"><table><thead><tr>
-        <th>Nombre</th><th>Documento</th><th>Ciudad</th><th>Teléfono</th><th>Mail</th><th>Dirección</th><th>Vehículos</th><th></th>
+        <th>Nombre</th><th>Documento</th><th>Tipo Doc</th><th>País</th><th>Vehículos</th><th></th>
       </tr></thead><tbody id="cl-body"></tbody></table></div>
       <div class="pag" id="cl-pag"></div>
     </div>
@@ -915,7 +915,7 @@ let vPg=1, vBrandFilter='', vData=[], vBrandBuilt=false;
 
 async function loadVentas(page){
   if(page)vPg=page;
-  const PS=parseInt(document.getElementById('v-ps').value)||20;
+  const PS=50;
   const q=document.getElementById('v-q').value;
   const marca=document.getElementById('v-m').value;
   const anio=document.getElementById('v-a').value;
@@ -1014,7 +1014,7 @@ async function saveVenta(){
 let cPg=1, cData=[];
 async function loadCompras(page){
   if(page)cPg=page;
-  const PS=parseInt(document.getElementById('c-ps').value)||20;
+  const PS=50;
   const q=document.getElementById('c-q').value;
   const marca=document.getElementById('c-m').value;
   const params=new URLSearchParams({limit:PS,offset:(cPg-1)*PS});
@@ -1036,7 +1036,6 @@ async function loadCompras(page){
       ${celTd(c.proveedor||'—',c.proveedor)}
       <td>${bb(c.marca)}</td>
       ${celTd(c.modelo||c.detalle_original||'—',c.modelo||c.detalle_original||'')}
-      <td style="color:var(--tx3);font-family:var(--mo);font-size:12px">${c.anio||'—'}</td>
       <td class="mo" style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.motor||'—')}</td>
       <td class="mo" style="color:var(--acc2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.chasis)}">${esc(c.chasis||'—')}</td>
       <td class="pr-val" style="white-space:nowrap">${fmt(c.precio,c.moneda)}</td>
@@ -1067,7 +1066,7 @@ async function saveCompra(){
 let clPg=1, clData=[];
 async function loadClientes(page){
   if(page)clPg=page;
-  const PS=parseInt(document.getElementById('cl-ps').value)||20;
+  const PS=50;
   const q=document.getElementById('cl-q').value;
   const campo=document.getElementById('cl-campo').value;
   const params=new URLSearchParams({limit:PS,offset:(clPg-1)*PS});
@@ -1083,10 +1082,12 @@ async function loadClientes(page){
       return`<tr>
         <td style="font-weight:600;white-space:nowrap">${esc(cl.nombre||'—')}</td>
         <td><span style="background:var(--accl);color:var(--acc);padding:2px 9px;border-radius:20px;font-family:var(--mo);font-size:11px">${esc(cl.doc||'—')}</span></td>
-        ${celTd(cl.ciudad||'—',cl.ciudad)}
-        <td style="white-space:nowrap">${cl.telefono?`<a href="tel:${cl.telefono}" style="color:var(--gn);font-family:var(--mo);font-size:12px;text-decoration:none">${esc(cl.telefono)}</a>`:'<span style="color:var(--tx3)">—</span>'}</td>
-        ${celTd(cl.mail||'—',cl.mail)}
-        ${celTd(cl.direccion||'—',cl.direccion)}
+        ${celTd(cl.tipo_doc||'—',cl.tipo_doc)}
+        ${celTd(cl.pais||'—',cl.pais)}
+        
+        
+        
+        
         <td>${nv>0?`<span class="badge" style="background:var(--gnl);color:var(--gn)">${nv} veh.</span>`:'<span style="color:var(--tx3)">—</span>'}</td>
         <td><button class="btn sm" onclick="detCliente(${cl.id})">Ver</button></td>
       </tr>`;
