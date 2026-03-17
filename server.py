@@ -369,24 +369,24 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        parsed = urlparse(self.path)
-        path = parsed.path
-        qs = parse_qs(parsed.query)
-        if path in ('/', '/index.html'):
-            self.send_html(); return
-        if path == '/import-tool':
+        if self.path == '/import-tool':
             try:
                 with open('import_tool.html', 'rb') as f:
-                    html = f.read()
+                    html_content = f.read()
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html; charset=utf-8')
                 self.end_headers()
-                self.wfile.write(html)
+                self.wfile.write(html_content)
             except Exception as e:
                 self.send_response(500)
                 self.end_headers()
                 self.wfile.write(str(e).encode())
             return
+                parsed = urlparse(self.path)
+        path = parsed.path
+        qs = parse_qs(parsed.query)
+        if path in ('/', '/index.html'):
+            self.send_html(); return
         user = check_session(self)
         if not user:
             self.send_json({'error': 'unauthorized'}, 401); return
