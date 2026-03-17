@@ -1,0 +1,6002 @@
+[
+  {
+    "fecha": "2025-02-14",
+    "cliente": "Marianela Melgar",
+    "comprobante": "e-Factura A 2163",
+    "precio_usd": 110990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214611230014 | Pago: Contado | TC: 43.326"
+  },
+  {
+    "fecha": "2025-02-10",
+    "cliente": "Bikova s.a",
+    "comprobante": "e-Factura A 2162",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213706730016 | Pago: Contado | TC: 43.428"
+  },
+  {
+    "fecha": "2025-02-06",
+    "cliente": "DANBET S.A.",
+    "comprobante": "e-Factura A 2161",
+    "precio_usd": 109900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216453140016 | Pago: Contado | TC: 43.481"
+  },
+  {
+    "fecha": "2025-01-31",
+    "cliente": "CESAR ALFREDO BOIBO VESPA",
+    "comprobante": "e-Ticket A 3201",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30687519 | Pago: Contado | TC: 43.33"
+  },
+  {
+    "fecha": "2025-01-31",
+    "cliente": "SYSDOS S.A.",
+    "comprobante": "e-Factura A 2160",
+    "precio_usd": 98990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216820350019 | Pago: Contado | TC: 43.33"
+  },
+  {
+    "fecha": "2025-01-30",
+    "cliente": "MOBARI S.A.",
+    "comprobante": "e-Factura A 2159",
+    "precio_usd": 199990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218081030016 | Pago: Contado | TC: 43.257"
+  },
+  {
+    "fecha": "2025-01-28",
+    "cliente": "DORENE JOAN LENZ",
+    "comprobante": "e-Ticket A 3200",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64878471 | Pago: Contado | TC: 43.457"
+  },
+  {
+    "fecha": "2025-01-27",
+    "cliente": "DANIEL ARAJA",
+    "comprobante": "e-Ticket A 3199",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12088040 | Pago: Contado | TC: 43.243"
+  },
+  {
+    "fecha": "2025-01-23",
+    "cliente": "EDEGAR VAZ MARTINS",
+    "comprobante": "e-Ticket A 3198",
+    "precio_usd": 98990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58438693 | Pago: Contado | TC: 43.458"
+  },
+  {
+    "fecha": "2025-01-21",
+    "cliente": "LASCA SIENRA LORENA SORAYA",
+    "comprobante": "e-Factura A 2157",
+    "precio_usd": 51990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219028150019 | Pago: Contado | TC: 43.746"
+  },
+  {
+    "fecha": "2025-01-21",
+    "cliente": "SPZ SAS",
+    "comprobante": "e-Factura A 2158",
+    "precio_usd": 31500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 220011640011 | Pago: Contado | TC: 43.746"
+  },
+  {
+    "fecha": "2025-01-18",
+    "cliente": "BELDINCO S A",
+    "comprobante": "e-Factura A 2156",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213640610018 | Pago: Contado | TC: 43.954"
+  },
+  {
+    "fecha": "2025-01-17",
+    "cliente": "PIXAL SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2155",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214441930010 | Pago: Contado | TC: 43.975"
+  },
+  {
+    "fecha": "2025-01-16",
+    "cliente": "Alejandro Walter Vivanco",
+    "comprobante": "e-Ticket A 3197",
+    "precio_usd": 85000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13214087 | Pago: Contado | TC: 44.047"
+  },
+  {
+    "fecha": "2025-01-15",
+    "cliente": "DIEGO GABRIEL FERNANDEZ VERRONE",
+    "comprobante": "e-Ticket A 3195",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19500580 | Pago: Contado | TC: 43.962"
+  },
+  {
+    "fecha": "2025-01-15",
+    "cliente": "GASTON RUSSO LEAL",
+    "comprobante": "e-Ticket A 3196",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 49730907 | Pago: Contado | TC: 43.962"
+  },
+  {
+    "fecha": "2025-01-09",
+    "cliente": "CONFIR S.A.",
+    "comprobante": "e-Factura A 2154",
+    "precio_usd": 145000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211463340017 | Pago: Contado | TC: 43.934"
+  },
+  {
+    "fecha": "2025-01-04",
+    "cliente": "PABLO GUZMAN CASAL AMORIN",
+    "comprobante": "NC eTicket A 604",
+    "precio_usd": -49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13639224 | Pago: Contado | TC: 43.97"
+  },
+  {
+    "fecha": "2025-01-04",
+    "cliente": "PABLO GUZMAN CASAL AMORIN",
+    "comprobante": "e-Ticket A 3194",
+    "precio_usd": 44990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13639224 | Pago: Contado | TC: 43.97"
+  },
+  {
+    "fecha": "2025-01-03",
+    "cliente": "PABLO GUZMAN CASAL AMORIN",
+    "comprobante": "e-Ticket A 3192",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13639224 | Pago: Contado | TC: 43.9"
+  },
+  {
+    "fecha": "2025-01-03",
+    "cliente": "MARTA LAVINTMAN",
+    "comprobante": "e-Ticket A 3193",
+    "precio_usd": 45000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64665319 | Pago: Contado | TC: 43.9"
+  },
+  {
+    "fecha": "2025-01-02",
+    "cliente": "Maskini s.a",
+    "comprobante": "e-Factura A 2153",
+    "precio_usd": 189990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 160305370014 | Pago: Contado | TC: 44.066"
+  },
+  {
+    "fecha": "2025-01-02",
+    "cliente": "Daniel Ageitos",
+    "comprobante": "e-Ticket A 3191",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13297674 | Pago: Contado | TC: 44.066"
+  },
+  {
+    "fecha": "2024-12-30",
+    "cliente": "German Gentile",
+    "comprobante": "e-Ticket A 3189",
+    "precio_usd": 199000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37097056 | Pago: Contado | TC: 43.661"
+  },
+  {
+    "fecha": "2024-12-30",
+    "cliente": "GABRIELA PEREZ RIBOIRA",
+    "comprobante": "e-Ticket A 3190",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37329554 | Pago: Contado | TC: 43.661"
+  },
+  {
+    "fecha": "2024-12-27",
+    "cliente": "DANIEL NUÑEZ",
+    "comprobante": "e-Ticket A 3187",
+    "precio_usd": 109990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40332334 | Pago: Contado | TC: 43.85"
+  },
+  {
+    "fecha": "2024-12-27",
+    "cliente": "JIMENA BAIKOVICIUS BRAUN",
+    "comprobante": "e-Ticket A 3188",
+    "precio_usd": 50990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 52500557 | Pago: Contado | TC: 43.85"
+  },
+  {
+    "fecha": "2024-12-23",
+    "cliente": "Maximo Baccanelli",
+    "comprobante": "e-Ticket A 3185",
+    "precio_usd": 159000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62466163 | Pago: Contado | TC: 44.494"
+  },
+  {
+    "fecha": "2024-12-23",
+    "cliente": "ARAJA DONATO MAXIMILIANO",
+    "comprobante": "e-Ticket A 3186",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 45546649 | Pago: Contado | TC: 44.494"
+  },
+  {
+    "fecha": "2024-12-21",
+    "cliente": "CARLOS MONDINO",
+    "comprobante": "e-Ticket A 3184",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 38394857 | Pago: Contado | TC: 44.494"
+  },
+  {
+    "fecha": "2024-12-17",
+    "cliente": "JOSEFINA CAMPOS",
+    "comprobante": "e-Ticket A 3182",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64914526 | Pago: Contado | TC: 44.361"
+  },
+  {
+    "fecha": "2024-12-17",
+    "cliente": "GARIMANNO ARREBILLAGA CAROLINA",
+    "comprobante": "e-Ticket A 3183",
+    "precio_usd": 62990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61922465 | Pago: Contado | TC: 44.361"
+  },
+  {
+    "fecha": "2024-12-13",
+    "cliente": "SANDRA VALENTI FABIANO",
+    "comprobante": "e-Ticket A 3181",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53826974 | Pago: Contado | TC: 44.281"
+  },
+  {
+    "fecha": "2024-12-12",
+    "cliente": "ALEJANDRA MARCELA TOLEDO BASUALDO",
+    "comprobante": "e-Ticket A 3180",
+    "precio_usd": 175000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60916285 | Pago: Contado | TC: 44.433"
+  },
+  {
+    "fecha": "2024-12-12",
+    "cliente": "BALBI TAMBORINI EDUARDO ADOLFO",
+    "comprobante": "e-Factura A 2152",
+    "precio_usd": 179990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211823580014 | Pago: Contado | TC: 44.433"
+  },
+  {
+    "fecha": "2024-12-11",
+    "cliente": "CASTRO BONIZZI ELBIO CARLOS",
+    "comprobante": "e-Factura A 2151",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 020117560019 | Pago: Contado | TC: 44.028"
+  },
+  {
+    "fecha": "2024-12-10",
+    "cliente": "MARYSTAY S.A.",
+    "comprobante": "e-Factura A 2150",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212511650015 | Pago: Contado | TC: 43.726"
+  },
+  {
+    "fecha": "2024-12-09",
+    "cliente": "MIRVIAN SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2149",
+    "precio_usd": 56000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214979810011 | Pago: Contado | TC: 43.543"
+  },
+  {
+    "fecha": "2024-11-30",
+    "cliente": "Rola ltda",
+    "comprobante": "e-Factura A 2148",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100101140017 | Pago: Contado | TC: 43.158"
+  },
+  {
+    "fecha": "2024-11-29",
+    "cliente": "RICARDO MILLER",
+    "comprobante": "e-Ticket A 3179",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65838248 | Pago: Contado | TC: 43.157"
+  },
+  {
+    "fecha": "2024-11-27",
+    "cliente": "Luis Mariano Pataro",
+    "comprobante": "e-Ticket A 3178",
+    "precio_usd": 61000.0,
+    "moneda": "USD",
+    "detalle": "Doc: m7604895 | Pago: Contado | TC: 42.82"
+  },
+  {
+    "fecha": "2024-11-22",
+    "cliente": "Andres Gigena",
+    "comprobante": "e-Ticket A 3177",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48973170 | Pago: Contado | TC: 42.609"
+  },
+  {
+    "fecha": "2024-11-21",
+    "cliente": "VICTOR LEVY",
+    "comprobante": "e-Ticket A 3176",
+    "precio_usd": 114000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63835476 | Pago: Contado | TC: 42.509"
+  },
+  {
+    "fecha": "2024-11-18",
+    "cliente": "JULIO ALEJANDRO AMBROSONI GARCIA",
+    "comprobante": "e-Ticket A 3175",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12643595 | Pago: Contado | TC: 42.913"
+  },
+  {
+    "fecha": "2024-11-16",
+    "cliente": "LUIS ALBERTO GULARTE SRL",
+    "comprobante": "e-Factura A 2147",
+    "precio_usd": 129900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 080161050016 | Pago: Contado | TC: 42.913"
+  },
+  {
+    "fecha": "2024-11-13",
+    "cliente": "FABIAN FERNANDEZ BANQUERO",
+    "comprobante": "e-Ticket A 3173",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30093100 | Pago: Contado | TC: 42.469"
+  },
+  {
+    "fecha": "2024-11-13",
+    "cliente": "NICOLAS LEVY",
+    "comprobante": "e-Ticket A 3174",
+    "precio_usd": 88990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64382191 | Pago: Contado | TC: 42.469"
+  },
+  {
+    "fecha": "2024-11-07",
+    "cliente": "MANUEL ADUR PADIA",
+    "comprobante": "e-Ticket A 3172",
+    "precio_usd": 88900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60102923 | Pago: Contado | TC: 41.763"
+  },
+  {
+    "fecha": "2024-11-06",
+    "cliente": "DONEGHAL SOCIEDAD ANONIMA",
+    "comprobante": "NC eFactura A 606",
+    "precio_usd": -69400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170126350016 | Pago: Contado | TC: 41.559"
+  },
+  {
+    "fecha": "2024-11-06",
+    "cliente": "DONEGHAL SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2144",
+    "precio_usd": 69490.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170126350016 | Pago: Contado | TC: 41.559"
+  },
+  {
+    "fecha": "2024-11-06",
+    "cliente": "FELVENT S.A.",
+    "comprobante": "e-Factura A 2145",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217162780017 | Pago: Contado | TC: 41.559"
+  },
+  {
+    "fecha": "2024-11-06",
+    "cliente": "Maguinor s.a",
+    "comprobante": "e-Factura A 2146",
+    "precio_usd": 177990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212691040016 | Pago: Contado | TC: 41.559"
+  },
+  {
+    "fecha": "2024-11-06",
+    "cliente": "Maria Martina Reboledo",
+    "comprobante": "e-Ticket A 3171",
+    "precio_usd": 135990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34702436 | Pago: Contado | TC: 41.559"
+  },
+  {
+    "fecha": "2024-11-05",
+    "cliente": "DONEGHAL SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2143",
+    "precio_usd": 69400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170126350016 | Pago: Contado | TC: 41.598"
+  },
+  {
+    "fecha": "2024-11-02",
+    "cliente": "MARTIN GOLDBERG",
+    "comprobante": "e-Ticket A 3170",
+    "precio_usd": 44490.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64260402 | Pago: Contado | TC: 41.589"
+  },
+  {
+    "fecha": "2024-11-01",
+    "cliente": "OFTALMOLOGIA MALDONADO SRL",
+    "comprobante": "e-Factura A 2142",
+    "precio_usd": 74900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218565360014 | Pago: Contado | TC: 41.649"
+  },
+  {
+    "fecha": "2024-10-31",
+    "cliente": "MALALA SAS",
+    "comprobante": "e-Factura A 2141",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219664380011 | Pago: Contado | TC: 41.4"
+  },
+  {
+    "fecha": "2024-10-29",
+    "cliente": "FREDY GASTON BATISTA MARTINI",
+    "comprobante": "e-Ticket A 3169",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 43521613 | Pago: Contado | TC: 40.984"
+  },
+  {
+    "fecha": "2024-10-28",
+    "cliente": "CARLOS GONZALEZ",
+    "comprobante": "e-Ticket A 3168",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25205146 | Pago: Contado | TC: 41.556"
+  },
+  {
+    "fecha": "2024-10-28",
+    "cliente": "LOGIMED SRL",
+    "comprobante": "e-Factura A 2140",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218506090014 | Pago: Contado | TC: 41.556"
+  },
+  {
+    "fecha": "2024-10-26",
+    "cliente": "ORLANDO DOMINGO SPAGNI MORETTI",
+    "comprobante": "e-Ticket A 3167",
+    "precio_usd": 84000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 44378033 | Pago: Contado | TC: 41.556"
+  },
+  {
+    "fecha": "2024-10-18",
+    "cliente": "SUSANA FAJARDO GIMENEZ",
+    "comprobante": "e-Ticket A 3165",
+    "precio_usd": 59900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58036926 | Pago: Contado | TC: 41.63"
+  },
+  {
+    "fecha": "2024-10-18",
+    "cliente": "MARIA SOFIA BAYARRES",
+    "comprobante": "e-Factura A 2137",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216505700017 | Pago: Contado | TC: 41.63"
+  },
+  {
+    "fecha": "2024-10-18",
+    "cliente": "HUGHES Y ASOCIADOS S.A.S.",
+    "comprobante": "e-Factura A 2138",
+    "precio_usd": 49000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218885380016 | Pago: Contado | TC: 41.63"
+  },
+  {
+    "fecha": "2024-10-18",
+    "cliente": "ALFREDO RAUL PAOLILLO BASTON",
+    "comprobante": "e-Ticket A 3166",
+    "precio_usd": 108900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17612199 | Pago: Contado | TC: 41.63"
+  },
+  {
+    "fecha": "2024-10-18",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "e-Factura A 2139",
+    "precio_usd": 188990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 41.63"
+  },
+  {
+    "fecha": "2024-10-15",
+    "cliente": "BUCIAK  FEDERICO",
+    "comprobante": "e-Ticket A 3164",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66552665 | Pago: Contado | TC: 41.424"
+  },
+  {
+    "fecha": "2024-10-11",
+    "cliente": "HAZI GYERMAN ELIZABETH ESTHER",
+    "comprobante": "e-Ticket A 3162",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27243023 | Pago: Contado | TC: 41.726"
+  },
+  {
+    "fecha": "2024-10-11",
+    "cliente": "DATANOVA SRL",
+    "comprobante": "e-Factura A 2135",
+    "precio_usd": 229900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218593360015 | Pago: Contado | TC: 41.726"
+  },
+  {
+    "fecha": "2024-10-11",
+    "cliente": "DATANOVA SRL",
+    "comprobante": "NC eFactura A 605",
+    "precio_usd": -229900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218593360015 | Pago: Contado | TC: 41.726"
+  },
+  {
+    "fecha": "2024-10-11",
+    "cliente": "DATANOVA UY SAS",
+    "comprobante": "e-Factura A 2136",
+    "precio_usd": 229900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100848480011 | Pago: Contado | TC: 41.726"
+  },
+  {
+    "fecha": "2024-10-11",
+    "cliente": "SIGISMUND OTTO HABSBURG",
+    "comprobante": "e-Ticket A 3163",
+    "precio_usd": 38000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32817649 | Pago: Contado | TC: 41.726"
+  },
+  {
+    "fecha": "2024-10-04",
+    "cliente": "PAULA SIGUENZA",
+    "comprobante": "e-Ticket A 3161",
+    "precio_usd": 63990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62171477 | Pago: Contado | TC: 41.67"
+  },
+  {
+    "fecha": "2024-09-25",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 2133",
+    "precio_usd": 209900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 42.254"
+  },
+  {
+    "fecha": "2024-09-25",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 2134",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 42.254"
+  },
+  {
+    "fecha": "2024-09-23",
+    "cliente": "CIRIMEL SA",
+    "comprobante": "e-Factura A 2131",
+    "precio_usd": 129990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217092090017 | Pago: Contado | TC: 41.677"
+  },
+  {
+    "fecha": "2024-09-23",
+    "cliente": "FIVILIFE S.A.",
+    "comprobante": "e-Factura A 2132",
+    "precio_usd": 179990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217207850019 | Pago: Contado | TC: 41.677"
+  },
+  {
+    "fecha": "2024-09-23",
+    "cliente": "JENNY LYLIAN ARBON RODRIGUEZ",
+    "comprobante": "e-Ticket A 3160",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13214361 | Pago: Contado | TC: 41.677"
+  },
+  {
+    "fecha": "2024-09-12",
+    "cliente": "SUITEDECO S A",
+    "comprobante": "e-Factura A 2130",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214914010010 | Pago: Contado | TC: 41.027"
+  },
+  {
+    "fecha": "2024-09-03",
+    "cliente": "LAS PINOCHAS S.A.",
+    "comprobante": "e-Factura A 2129",
+    "precio_usd": 79900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211528800017 | Pago: Contado | TC: 40.296"
+  },
+  {
+    "fecha": "2024-08-31",
+    "cliente": "LESTONSUR SA",
+    "comprobante": "e-Factura A 2128",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215489740015 | Pago: Contado | TC: 40.335"
+  },
+  {
+    "fecha": "2024-08-31",
+    "cliente": "OLGA CAIRO",
+    "comprobante": "e-Ticket A 3158",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25728332 | Pago: Contado | TC: 40.335"
+  },
+  {
+    "fecha": "2024-08-31",
+    "cliente": "FERMAN PACKER MICHEL SEBASTIAN",
+    "comprobante": "e-Ticket A 3159",
+    "precio_usd": 159900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27634834 | Pago: Contado | TC: 40.335"
+  },
+  {
+    "fecha": "2024-08-30",
+    "cliente": "ESTEFANIA ARDILES",
+    "comprobante": "e-Ticket A 3157",
+    "precio_usd": 189000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65902316 | Pago: Contado | TC: 40.347"
+  },
+  {
+    "fecha": "2024-08-30",
+    "cliente": "OLKANY S.A.",
+    "comprobante": "e-Factura A 2127",
+    "precio_usd": 195000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216344500011 | Pago: Contado | TC: 40.347"
+  },
+  {
+    "fecha": "2024-08-23",
+    "cliente": "BERNARDO HALEGUA LEONOFF",
+    "comprobante": "e-Ticket A 3156",
+    "precio_usd": 230000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14681654 | Pago: Contado | TC: 40.348"
+  },
+  {
+    "fecha": "2024-08-16",
+    "cliente": "Mauricio Aguiar",
+    "comprobante": "e-Ticket A 3155",
+    "precio_usd": 61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40734807 | Pago: Contado | TC: 40.33"
+  },
+  {
+    "fecha": "2024-08-05",
+    "cliente": "Gustavo Gastaldi Fontana",
+    "comprobante": "e-Ticket A 3154",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10750530 | Pago: Contado | TC: 40.459"
+  },
+  {
+    "fecha": "2024-07-31",
+    "cliente": "VIVIANA HECHT SZYLDWACH",
+    "comprobante": "e-Ticket A 3153",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36169993 | Pago: Contado | TC: 40.282"
+  },
+  {
+    "fecha": "2024-07-30",
+    "cliente": "TEYCORAL S A",
+    "comprobante": "e-Factura A 2126",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212836070018 | Pago: Contado | TC: 40.281"
+  },
+  {
+    "fecha": "2024-07-29",
+    "cliente": "RICHARD JESUS ALVAREZ IBANES",
+    "comprobante": "e-Ticket A 3152",
+    "precio_usd": 92000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17503706 | Pago: Contado | TC: 40.261"
+  },
+  {
+    "fecha": "2024-07-26",
+    "cliente": "ESTHER MATILDE MAYO MERCHAN",
+    "comprobante": "e-Ticket A 3151",
+    "precio_usd": 67500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17734872 | Pago: Contado | TC: 40.28"
+  },
+  {
+    "fecha": "2024-07-20",
+    "cliente": "GLOW SAS",
+    "comprobante": "e-Factura A 2125",
+    "precio_usd": 73900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218756990012 | Pago: Contado | TC: 40.454"
+  },
+  {
+    "fecha": "2024-07-19",
+    "cliente": "OBRAS ELECTRICAS SRL",
+    "comprobante": "e-Factura A 2124",
+    "precio_usd": 92990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215413650015 | Pago: Contado | TC: 40.284"
+  },
+  {
+    "fecha": "2024-07-16",
+    "cliente": "KELTEN S.A.",
+    "comprobante": "e-Factura A 2123",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215429350016 | Pago: Contado | TC: 40.145"
+  },
+  {
+    "fecha": "2024-07-13",
+    "cliente": "SILVA COLOMER GERARDO",
+    "comprobante": "e-Factura A 2122",
+    "precio_usd": 109990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217574470015 | Pago: Contado | TC: 40.103"
+  },
+  {
+    "fecha": "2024-07-09",
+    "cliente": "Martin canadell",
+    "comprobante": "e-Ticket A 3150",
+    "precio_usd": 67990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29556929 | Pago: Contado | TC: 40.061"
+  },
+  {
+    "fecha": "2024-07-05",
+    "cliente": "ACOSTA GORFAIN ALEX JESUS",
+    "comprobante": "e-Factura A 2121",
+    "precio_usd": 188990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215815020016 | Pago: Contado | TC: 39.961"
+  },
+  {
+    "fecha": "2024-07-04",
+    "cliente": "LEANDRO ALONSO",
+    "comprobante": "e-Ticket A 3149",
+    "precio_usd": 89900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63600605 | Pago: Contado | TC: 40.042"
+  },
+  {
+    "fecha": "2024-07-03",
+    "cliente": "RUBEN MARTINEZ",
+    "comprobante": "e-Ticket A 3146",
+    "precio_usd": 236990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30109444 | Pago: Contado | TC: 40.288"
+  },
+  {
+    "fecha": "2024-07-03",
+    "cliente": "ROBERTO GERVASIO BEDEK",
+    "comprobante": "e-Ticket A 3147",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 26090526 | Pago: Contado | TC: 40.288"
+  },
+  {
+    "fecha": "2024-07-03",
+    "cliente": "MAURO DI BONO FERNANDEZ",
+    "comprobante": "e-Ticket A 3148",
+    "precio_usd": 59900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 42951863 | Pago: Contado | TC: 40.288"
+  },
+  {
+    "fecha": "2024-07-01",
+    "cliente": "FIVILIFE S.A.",
+    "comprobante": "NC eFactura A 604",
+    "precio_usd": -169990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217207850019 | Pago: Contado | TC: 39.989"
+  },
+  {
+    "fecha": "2024-06-17",
+    "cliente": "Narelux s.a",
+    "comprobante": "e-Factura A 2118",
+    "precio_usd": 169900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213581640017 | Pago: Contado | TC: 39.256"
+  },
+  {
+    "fecha": "2024-06-17",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 2119",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 39.256"
+  },
+  {
+    "fecha": "2024-06-13",
+    "cliente": "OSTRY SILVIA",
+    "comprobante": "NC eTicket A 603",
+    "precio_usd": -61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64583945 | Pago: Contado | TC: 39.179"
+  },
+  {
+    "fecha": "2024-06-13",
+    "cliente": "OSTRY SILVIA",
+    "comprobante": "e-Ticket A 3145",
+    "precio_usd": 61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64583945 | Pago: Contado | TC: 39.179"
+  },
+  {
+    "fecha": "2024-06-12",
+    "cliente": "S.A. Casil Inc.",
+    "comprobante": "e-Factura A 2117",
+    "precio_usd": 174990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 080024900018 | Pago: Contado | TC: 39.089"
+  },
+  {
+    "fecha": "2024-06-12",
+    "cliente": "FEDERICO B¨UKER",
+    "comprobante": "e-Ticket A 3143",
+    "precio_usd": 78000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58764545 | Pago: Contado | TC: 39.089"
+  },
+  {
+    "fecha": "2024-06-12",
+    "cliente": "SANTIGO GUZMAN KARABAJICH",
+    "comprobante": "e-Ticket A 3144",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18836839 | Pago: Contado | TC: 39.089"
+  },
+  {
+    "fecha": "2024-05-31",
+    "cliente": "PABLO EUGENIO RIVEIRO PIÑEIRO",
+    "comprobante": "e-Ticket A 3142",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13598185 | Pago: Contado | TC: 38.709"
+  },
+  {
+    "fecha": "2024-05-31",
+    "cliente": "SAMBIX SAS",
+    "comprobante": "e-Factura A 2120",
+    "precio_usd": 75000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218960360013 | Pago: Contado | TC: 38.709"
+  },
+  {
+    "fecha": "2024-05-29",
+    "cliente": "FIVILIFE S.A.",
+    "comprobante": "e-Factura A 2116",
+    "precio_usd": 169990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217207850019 | Pago: Contado | TC: 38.529"
+  },
+  {
+    "fecha": "2024-05-21",
+    "cliente": "DANIEL VELAZQUEZ",
+    "comprobante": "e-Ticket A 3141",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27977016 | Pago: Contado | TC: 38.408"
+  },
+  {
+    "fecha": "2024-05-13",
+    "cliente": "MILTON MAZZA QUIROZ",
+    "comprobante": "NC eFactura A 603",
+    "precio_usd": -169900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214512700012 | Pago: Contado | TC: 38.511"
+  },
+  {
+    "fecha": "2024-05-11",
+    "cliente": "LIROTEN SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2115",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218076400013 | Pago: Contado | TC: 38.511"
+  },
+  {
+    "fecha": "2024-05-09",
+    "cliente": "RENE JOSE SERGIO MATALON",
+    "comprobante": "e-Ticket A 3138",
+    "precio_usd": 75500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13851319 | Pago: Contado | TC: 38.431"
+  },
+  {
+    "fecha": "2024-05-06",
+    "cliente": "SALVADOR PABLO CHIARA REQUENA",
+    "comprobante": "e-Ticket A 3137",
+    "precio_usd": 105990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14713017 | Pago: Contado | TC: 38.078"
+  },
+  {
+    "fecha": "2024-05-04",
+    "cliente": "Marcos Escalante",
+    "comprobante": "e-Ticket A 3136",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63954903 | Pago: Contado | TC: 38.078"
+  },
+  {
+    "fecha": "2024-05-03",
+    "cliente": "Hernan Cattaneo",
+    "comprobante": "e-Ticket A 3135",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64745359 | Pago: Contado | TC: 38.194"
+  },
+  {
+    "fecha": "2024-04-30",
+    "cliente": "ELVA SUSANA BALBO",
+    "comprobante": "e-Ticket A 3130",
+    "precio_usd": 122000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64696130 | Pago: Contado | TC: 38.298"
+  },
+  {
+    "fecha": "2024-04-30",
+    "cliente": "Federico Shcolnik",
+    "comprobante": "e-Ticket A 3131",
+    "precio_usd": 94990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 50350700 | Pago: Contado | TC: 38.298"
+  },
+  {
+    "fecha": "2024-04-30",
+    "cliente": "Raul taboas",
+    "comprobante": "e-Ticket A 3132",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28351297 | Pago: Contado | TC: 38.298"
+  },
+  {
+    "fecha": "2024-04-30",
+    "cliente": "Maria Martina Reboledo",
+    "comprobante": "e-Ticket A 3133",
+    "precio_usd": 175000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34702436 | Pago: Contado | TC: 38.298"
+  },
+  {
+    "fecha": "2024-04-30",
+    "cliente": "Susana morra",
+    "comprobante": "e-Ticket A 3134",
+    "precio_usd": 77000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62358928 | Pago: Contado | TC: 38.298"
+  },
+  {
+    "fecha": "2024-04-24",
+    "cliente": "ANTHONY RHYAN SILVA GUARINO",
+    "comprobante": "e-Ticket A 3129",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 52215015 | Pago: Contado | TC: 38.346"
+  },
+  {
+    "fecha": "2024-04-24",
+    "cliente": "CORREA AUTOMOVILES",
+    "comprobante": "e-Factura A 2114",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 200092650018 | Pago: Contado | TC: 38.346"
+  },
+  {
+    "fecha": "2024-04-23",
+    "cliente": "SABATAY RAUL GOLIGER GOLDMAN",
+    "comprobante": "NC eTicket A 602",
+    "precio_usd": -79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10613958 | Pago: Contado | TC: 38.506"
+  },
+  {
+    "fecha": "2024-04-23",
+    "cliente": "SABATAY RAUL GOLIGER GOLDMAN",
+    "comprobante": "e-Ticket A 3128",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10613958 | Pago: Contado | TC: 38.506"
+  },
+  {
+    "fecha": "2024-04-22",
+    "cliente": "SABATAY RAUL GOLIGER GOLDMAN",
+    "comprobante": "e-Ticket A 3127",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10613958 | Pago: Contado | TC: 38.506"
+  },
+  {
+    "fecha": "2024-04-21",
+    "cliente": "SERVITEXXA SRL",
+    "comprobante": "e-Factura A 2113",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170007720014 | Pago: Contado | TC: 38.506"
+  },
+  {
+    "fecha": "2024-04-17",
+    "cliente": "GRACIE PAGANOTTI",
+    "comprobante": "e-Ticket A 3126",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 57155929 | Pago: Contado | TC: 39.223"
+  },
+  {
+    "fecha": "2024-04-16",
+    "cliente": "Luciano menghini",
+    "comprobante": "NC eTicket A 601",
+    "precio_usd": -77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 38.891"
+  },
+  {
+    "fecha": "2024-04-16",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 3125",
+    "precio_usd": 235990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 38.891"
+  },
+  {
+    "fecha": "2024-04-15",
+    "cliente": "Paula Andrea Rodríguez",
+    "comprobante": "e-Ticket A 3124",
+    "precio_usd": 249900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65113696 | Pago: Contado | TC: 38.788"
+  },
+  {
+    "fecha": "2024-04-12",
+    "cliente": "MARCELO BARROS",
+    "comprobante": "e-Ticket A 3122",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15361540 | Pago: Contado | TC: 38.664"
+  },
+  {
+    "fecha": "2024-04-12",
+    "cliente": "JULIO FEDERICO ODDONE",
+    "comprobante": "e-Ticket A 3123",
+    "precio_usd": 79900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35874030 | Pago: Contado | TC: 38.664"
+  },
+  {
+    "fecha": "2024-04-12",
+    "cliente": "OFINUL S.A",
+    "comprobante": "e-Factura A 2112",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213715980011 | Pago: Contado | TC: 38.664"
+  },
+  {
+    "fecha": "2024-04-11",
+    "cliente": "CARLOS GONZALEZ",
+    "comprobante": "e-Ticket A 3121",
+    "precio_usd": 167990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25205146 | Pago: Contado | TC: 38.538"
+  },
+  {
+    "fecha": "2024-04-10",
+    "cliente": "DAVID GERMAN SCROBOGNA MELLER",
+    "comprobante": "e-Ticket A 3120",
+    "precio_usd": 199990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64776227 | Pago: Contado | TC: 38.494"
+  },
+  {
+    "fecha": "2024-04-09",
+    "cliente": "ROSANE TESCHKE KUNST",
+    "comprobante": "e-Ticket A 3119",
+    "precio_usd": 169990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60375936 | Pago: Contado | TC: 38.792"
+  },
+  {
+    "fecha": "2024-04-08",
+    "cliente": "FOBIRAL S.A.",
+    "comprobante": "e-Factura A 2111",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217263480019 | Pago: Contado | TC: 38.521"
+  },
+  {
+    "fecha": "2024-04-05",
+    "cliente": "JUFEL SRL",
+    "comprobante": "e-Factura A 2110",
+    "precio_usd": 36000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216955350017 | Pago: Contado | TC: 38.24"
+  },
+  {
+    "fecha": "2024-04-05",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 3118",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 38.24"
+  },
+  {
+    "fecha": "2024-04-04",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 3115",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 38.247"
+  },
+  {
+    "fecha": "2024-04-04",
+    "cliente": "RUBEN JULIAN RAMIREZ CASTRO",
+    "comprobante": "e-Ticket A 3116",
+    "precio_usd": 54990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 26466030 | Pago: Contado | TC: 38.247"
+  },
+  {
+    "fecha": "2024-04-04",
+    "cliente": "MAURICIO GONZALO OTAROLA MUÑOZ",
+    "comprobante": "e-Ticket A 3117",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 158916045 | Pago: Contado | TC: 38.247"
+  },
+  {
+    "fecha": "2024-04-02",
+    "cliente": "KREATORY S.A",
+    "comprobante": "e-Factura A 2109",
+    "precio_usd": 112000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212210700013 | Pago: Contado | TC: 37.857"
+  },
+  {
+    "fecha": "2024-04-01",
+    "cliente": "MILTON MAZZA QUIROZ",
+    "comprobante": "e-Factura A 2108",
+    "precio_usd": 169900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214512700012 | Pago: Contado | TC: 37.552"
+  },
+  {
+    "fecha": "2024-04-01",
+    "cliente": "MILTON MAZZA QUIROZ",
+    "comprobante": "e-Ticket A 3139",
+    "precio_usd": 169900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18977859 | Pago: Contado | TC: 37.552"
+  },
+  {
+    "fecha": "2024-03-27",
+    "cliente": "LUIS  SALAVERRIA",
+    "comprobante": "e-Ticket A 3114",
+    "precio_usd": 239900.0,
+    "moneda": "UYU",
+    "detalle": "Doc: 15921142 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2024-03-25",
+    "cliente": "FREIJO  RICARDO GUILLERMO",
+    "comprobante": "e-Ticket A 3113",
+    "precio_usd": 105990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64120317 | Pago: Contado | TC: 37.89"
+  },
+  {
+    "fecha": "2024-03-21",
+    "cliente": "PERLAMEL S.A.",
+    "comprobante": "e-Factura A 2107",
+    "precio_usd": 175990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217427650019 | Pago: Contado | TC: 38.095"
+  },
+  {
+    "fecha": "2024-03-18",
+    "cliente": "LEO KRAKOWIAK",
+    "comprobante": "e-Ticket A 3112",
+    "precio_usd": 167990.0,
+    "moneda": "USD",
+    "detalle": "Doc: FT153207 | Pago: Contado | TC: 38.454"
+  },
+  {
+    "fecha": "2024-03-14",
+    "cliente": "SEBASTIAN TOBAL",
+    "comprobante": "e-Ticket A 3110",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33776335 | Pago: Contado | TC: 38.641"
+  },
+  {
+    "fecha": "2024-03-14",
+    "cliente": "Lucio Di Santo",
+    "comprobante": "e-Ticket A 3111",
+    "precio_usd": 60000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 93851955 | Pago: Contado | TC: 38.641"
+  },
+  {
+    "fecha": "2024-03-13",
+    "cliente": "Careza s.a",
+    "comprobante": "e-Factura A 2106",
+    "precio_usd": 165000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215405680016 | Pago: Contado | TC: 38.789"
+  },
+  {
+    "fecha": "2024-03-11",
+    "cliente": "MARIA MERCEDES PEREZ BERINDUAGUE",
+    "comprobante": "e-Ticket A 3109",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 39315165 | Pago: Contado | TC: 38.756"
+  },
+  {
+    "fecha": "2024-03-07",
+    "cliente": "DANIEL MARTIN BUENO ALVARADO",
+    "comprobante": "e-Ticket A 3108",
+    "precio_usd": 129990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28708135 | Pago: Contado | TC: 38.962"
+  },
+  {
+    "fecha": "2024-03-06",
+    "cliente": "VICTOR  BAZZANO",
+    "comprobante": "e-Ticket A 3106",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40734136 | Pago: Contado | TC: 39.051"
+  },
+  {
+    "fecha": "2024-03-06",
+    "cliente": "ROBERTO DE LARA CAMPOS SHELDON",
+    "comprobante": "e-Ticket A 3107",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: FW960098 | Pago: Contado | TC: 39.051"
+  },
+  {
+    "fecha": "2024-03-05",
+    "cliente": "GUSTAVO PESCADERE",
+    "comprobante": "e-Ticket A 3105",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13100508 | Pago: Contado | TC: 38.998"
+  },
+  {
+    "fecha": "2024-03-04",
+    "cliente": "FERMAN PACKER ALAIN ROGER",
+    "comprobante": "e-Ticket A 3104",
+    "precio_usd": 170000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30137837 | Pago: Contado | TC: 38.927"
+  },
+  {
+    "fecha": "2024-03-02",
+    "cliente": "MONTERO PEREZ DANIEL GUSTAVO",
+    "comprobante": "e-Ticket A 3102",
+    "precio_usd": 169000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28763020 | Pago: Contado | TC: 38.927"
+  },
+  {
+    "fecha": "2024-03-02",
+    "cliente": "FERMAN PACKER MICHEL SEBASTIAN",
+    "comprobante": "e-Ticket A 3103",
+    "precio_usd": 174900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27634834 | Pago: Contado | TC: 38.927"
+  },
+  {
+    "fecha": "2024-02-26",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "NC eFactura A 602",
+    "precio_usd": -120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 39.063"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "TRIOS LIGHTING LTDA",
+    "comprobante": "e-Factura A 2101",
+    "precio_usd": 89900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216864260015 | Pago: Contado | TC: 39.083"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "IVANNA CARDOZO",
+    "comprobante": "e-Ticket A 3101",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 31890882 | Pago: Contado | TC: 39.083"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "GASTON ACUÑA",
+    "comprobante": "e-Factura A 2102",
+    "precio_usd": 58790.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216571920011 | Pago: Contado | TC: 39.083"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "e-Factura A 2103",
+    "precio_usd": 120000.0,
+    "moneda": "UYU",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "e-Factura A 2104",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 39.083"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "NC eFactura A 601",
+    "precio_usd": -120000.0,
+    "moneda": "UYU",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2024-02-23",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "e-Factura A 2105",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 39.083"
+  },
+  {
+    "fecha": "2024-02-22",
+    "cliente": "",
+    "comprobante": "e-Ticket A 2252",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-22",
+    "cliente": "",
+    "comprobante": "e-Factura A 1196",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-22",
+    "cliente": "",
+    "comprobante": "NC eTicket A 303",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-22",
+    "cliente": "",
+    "comprobante": "NC eFactura A 301",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-21",
+    "cliente": "Porto Seguro - Seguros Del Uruguay S.A.",
+    "comprobante": "e-Factura A 1195",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213240630011 | Pago: Contado | TC: 39.055"
+  },
+  {
+    "fecha": "2024-02-17",
+    "cliente": "JOSE ALBERTO LUCAS",
+    "comprobante": "e-Ticket A 2251",
+    "precio_usd": 76400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 05885301743 | Pago: Contado | TC: 39.137"
+  },
+  {
+    "fecha": "2024-02-16",
+    "cliente": "",
+    "comprobante": "ND eTicket A 2",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-16",
+    "cliente": "",
+    "comprobante": "ND eFactura A 1",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-16",
+    "cliente": "ALVARO DANIEL RODRIGUEZ LOIS",
+    "comprobante": "e-Ticket A 2250",
+    "precio_usd": 113990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13961835 | Pago: Contado | TC: 39.102"
+  },
+  {
+    "fecha": "2024-02-16",
+    "cliente": "Odisan s.a",
+    "comprobante": "e-Factura A 1194",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214585680011 | Pago: Contado | TC: 39.102"
+  },
+  {
+    "fecha": "2024-02-14",
+    "cliente": "JOSE FRANCISCO LARCHER",
+    "comprobante": "e-Ticket A 2248",
+    "precio_usd": 93990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11863918 | Pago: Contado | TC: 39.163"
+  },
+  {
+    "fecha": "2024-02-14",
+    "cliente": "AGUIRRE  OLGA MARIA",
+    "comprobante": "e-Ticket A 2249",
+    "precio_usd": 79500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64786957 | Pago: Contado | TC: 39.163"
+  },
+  {
+    "fecha": "2024-02-12",
+    "cliente": "",
+    "comprobante": "ND eBoleta de entrada A 1",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2024-02-01",
+    "cliente": "Andreia Menghini",
+    "comprobante": "NC eTicket A 302",
+    "precio_usd": -100000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62449404 | Pago: Contado | TC: 39.164"
+  },
+  {
+    "fecha": "2024-02-01",
+    "cliente": "Andreia Menghini",
+    "comprobante": "e-Ticket A 2246",
+    "precio_usd": 175000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62449404 | Pago: Contado | TC: 39.164"
+  },
+  {
+    "fecha": "2024-02-01",
+    "cliente": "MARTIN HONORIO MOCORREA ROEMMERS",
+    "comprobante": "e-Ticket A 2247",
+    "precio_usd": 124990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64755960 | Pago: Contado | TC: 39.164"
+  },
+  {
+    "fecha": "2024-01-23",
+    "cliente": "JOSE FELIX MELAMED SOLKOVICH",
+    "comprobante": "e-Ticket A 2245",
+    "precio_usd": 56990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11773711 | Pago: Contado | TC: 38.745"
+  },
+  {
+    "fecha": "2024-01-16",
+    "cliente": "Temir Alfredo Porras Poncelon",
+    "comprobante": "e-Ticket A 2244",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64162414 | Pago: Contado | TC: 39.135"
+  },
+  {
+    "fecha": "2024-01-11",
+    "cliente": "GARAGE DIGITAL LTDA",
+    "comprobante": "e-Factura A 1193",
+    "precio_usd": 88000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214938140011 | Pago: Contado | TC: 39.334"
+  },
+  {
+    "fecha": "2024-01-10",
+    "cliente": "SORSEL S.A",
+    "comprobante": "e-Factura A 1192",
+    "precio_usd": 121990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215409090019 | Pago: Contado | TC: 39.439"
+  },
+  {
+    "fecha": "2024-01-09",
+    "cliente": "VENTURINO DUPIN ADRIANA",
+    "comprobante": "e-Factura A 1191",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215061560015 | Pago: Contado | TC: 39.339"
+  },
+  {
+    "fecha": "2024-01-03",
+    "cliente": "ADRIAN IGLESIAS",
+    "comprobante": "e-Ticket A 2242",
+    "precio_usd": 122000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65138238 | Pago: Contado | TC: 39.092"
+  },
+  {
+    "fecha": "2024-01-03",
+    "cliente": "ELISA MARIA CARABALLO",
+    "comprobante": "e-Ticket A 2243",
+    "precio_usd": 121990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64588729 | Pago: Contado | TC: 39.092"
+  },
+  {
+    "fecha": "2023-12-22",
+    "cliente": "LEANDRO MACHADO FAVARELLI",
+    "comprobante": "e-Ticket A 2239",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18838053 | Pago: Contado | TC: 39.365"
+  },
+  {
+    "fecha": "2023-12-22",
+    "cliente": "FELIPE CABALLERO AMORIN",
+    "comprobante": "NC eTicket A 301",
+    "precio_usd": -209990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29115442 | Pago: Contado | TC: 39.365"
+  },
+  {
+    "fecha": "2023-12-22",
+    "cliente": "FELIPE CABALLERO AMORIN",
+    "comprobante": "e-Ticket A 2240",
+    "precio_usd": 209990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29115442 | Pago: Contado | TC: 39.365"
+  },
+  {
+    "fecha": "2023-12-22",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 2241",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 39.365"
+  },
+  {
+    "fecha": "2023-12-18",
+    "cliente": "ALBA DIONISIA SUAREZ LENCINA",
+    "comprobante": "e-Ticket A 2238",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35401841 | Pago: Contado | TC: 39.388"
+  },
+  {
+    "fecha": "2023-12-16",
+    "cliente": "Mario Casco",
+    "comprobante": "e-Ticket A 2236",
+    "precio_usd": 125000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32188678 | Pago: Contado | TC: 39.388"
+  },
+  {
+    "fecha": "2023-12-16",
+    "cliente": "FELIPE CABALLERO AMORIN",
+    "comprobante": "e-Ticket A 2237",
+    "precio_usd": 209990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29115442 | Pago: Contado | TC: 39.388"
+  },
+  {
+    "fecha": "2023-12-11",
+    "cliente": "CARLOS GONZALEZ",
+    "comprobante": "e-Ticket A 2234",
+    "precio_usd": 188990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25205146 | Pago: Contado | TC: 39.308"
+  },
+  {
+    "fecha": "2023-12-11",
+    "cliente": "FRANCISCO  ROSALES",
+    "comprobante": "e-Ticket A 2235",
+    "precio_usd": 188990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 47988310 | Pago: Contado | TC: 39.308"
+  },
+  {
+    "fecha": "2023-12-08",
+    "cliente": "EDUARDO GUIDO GRINBAUM",
+    "comprobante": "e-Ticket A 2233",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64655861 | Pago: Contado | TC: 39.127"
+  },
+  {
+    "fecha": "2023-12-07",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 2232",
+    "precio_usd": 62000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 39.07"
+  },
+  {
+    "fecha": "2023-12-02",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 1190",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 38.974"
+  },
+  {
+    "fecha": "2023-11-27",
+    "cliente": "MULDINOR SAS",
+    "comprobante": "e-Factura A 1189",
+    "precio_usd": 49900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219208510013 | Pago: Contado | TC: 39.246"
+  },
+  {
+    "fecha": "2023-11-24",
+    "cliente": "Andreia Menghini",
+    "comprobante": "e-Ticket A 2231",
+    "precio_usd": 100000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62449404 | Pago: Contado | TC: 39.297"
+  },
+  {
+    "fecha": "2023-11-11",
+    "cliente": "ANTONIA CAYETANA ROBIROSA",
+    "comprobante": "e-Ticket A 2229",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64630724 | Pago: Contado | TC: 39.807"
+  },
+  {
+    "fecha": "2023-11-11",
+    "cliente": "Rola ltda",
+    "comprobante": "e-Factura A 1188",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100101140017 | Pago: Contado | TC: 39.807"
+  },
+  {
+    "fecha": "2023-11-11",
+    "cliente": "GUSTAVO BORDES LEONE",
+    "comprobante": "e-Ticket A 2230",
+    "precio_usd": 105990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18992974 | Pago: Contado | TC: 39.807"
+  },
+  {
+    "fecha": "2023-11-10",
+    "cliente": "Arboreal s.a",
+    "comprobante": "e-Factura A 1187",
+    "precio_usd": 153990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217274570014 | Pago: Contado | TC: 39.875"
+  },
+  {
+    "fecha": "2023-11-07",
+    "cliente": "MIGUEL A COLLETTE S R L",
+    "comprobante": "e-Factura A 1186",
+    "precio_usd": 121990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 040140390013 | Pago: Contado | TC: 39.927"
+  },
+  {
+    "fecha": "2023-11-04",
+    "cliente": "Labtech s.a",
+    "comprobante": "e-Factura A 1184",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214496250011 | Pago: Contado | TC: 39.821"
+  },
+  {
+    "fecha": "2023-11-04",
+    "cliente": "ARDAX S.A.",
+    "comprobante": "e-Factura A 1185",
+    "precio_usd": 121990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216288440012 | Pago: Contado | TC: 39.821"
+  },
+  {
+    "fecha": "2023-10-23",
+    "cliente": "GADOLAR S.A.",
+    "comprobante": "e-Factura A 1183",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215145690017 | Pago: Contado | TC: 39.942"
+  },
+  {
+    "fecha": "2023-10-19",
+    "cliente": "CEAR S.A.",
+    "comprobante": "e-Factura A 1182",
+    "precio_usd": 121990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213821960010 | Pago: Contado | TC: 39.885"
+  },
+  {
+    "fecha": "2023-10-14",
+    "cliente": "OSTRY SILVIA",
+    "comprobante": "e-Ticket A 3140",
+    "precio_usd": 61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64583945 | Pago: Contado | TC: 39.94"
+  },
+  {
+    "fecha": "2023-10-13",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 1180",
+    "precio_usd": 179990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 39.953"
+  },
+  {
+    "fecha": "2023-10-13",
+    "cliente": "IVAN MAURICIO SERRON SOSA",
+    "comprobante": "e-Factura A 1181",
+    "precio_usd": 80990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150732040011 | Pago: Contado | TC: 39.953"
+  },
+  {
+    "fecha": "2023-10-12",
+    "cliente": "OLIMPIO MATARAZZO",
+    "comprobante": "e-Ticket A 2228",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65533725 | Pago: Contado | TC: 39.733"
+  },
+  {
+    "fecha": "2023-10-11",
+    "cliente": "INDUTOP S.A.",
+    "comprobante": "e-Factura A 1179",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211858950012 | Pago: Contado | TC: 39.967"
+  },
+  {
+    "fecha": "2023-10-10",
+    "cliente": "ANDRE JAKURSKI",
+    "comprobante": "e-Ticket A 2227",
+    "precio_usd": 169990.0,
+    "moneda": "USD",
+    "detalle": "Doc: F0245291 | Pago: Contado | TC: 39.857"
+  },
+  {
+    "fecha": "2023-09-27",
+    "cliente": "Ignacio Gercar Santos",
+    "comprobante": "e-Ticket A 2226",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19798674 | Pago: Contado | TC: 38.285"
+  },
+  {
+    "fecha": "2023-09-16",
+    "cliente": "TEFLER COMPANY S.A.",
+    "comprobante": "e-Factura A 1178",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217397640010 | Pago: Contado | TC: 38.054"
+  },
+  {
+    "fecha": "2023-09-14",
+    "cliente": "FADENAL S.A",
+    "comprobante": "e-Factura A 1177",
+    "precio_usd": 94990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213649640017 | Pago: Contado | TC: 38.281"
+  },
+  {
+    "fecha": "2023-09-12",
+    "cliente": "JONRON SAS",
+    "comprobante": "e-Factura A 1176",
+    "precio_usd": 18000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219236320010 | Pago: Contado | TC: 38.069"
+  },
+  {
+    "fecha": "2023-09-08",
+    "cliente": "FIORELLA GUARINO",
+    "comprobante": "e-Factura A 1175",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216188260012 | Pago: Contado | TC: 38.02"
+  },
+  {
+    "fecha": "2023-09-07",
+    "cliente": "INDEPENDENCIA SRL",
+    "comprobante": "e-Factura A 1174",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211950440017 | Pago: Contado | TC: 37.87"
+  },
+  {
+    "fecha": "2023-09-05",
+    "cliente": "gaston savoi diz",
+    "comprobante": "e-Ticket A 2224",
+    "precio_usd": 72990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11895422 | Pago: Contado | TC: 37.754"
+  },
+  {
+    "fecha": "2023-09-05",
+    "cliente": "DANIEL BALIAN",
+    "comprobante": "e-Ticket A 2225",
+    "precio_usd": 103000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13074177 | Pago: Contado | TC: 37.754"
+  },
+  {
+    "fecha": "2023-09-01",
+    "cliente": "María Victoria Ressia Gatti",
+    "comprobante": "e-Ticket A 2223",
+    "precio_usd": 61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33185423 | Pago: Contado | TC: 37.592"
+  },
+  {
+    "fecha": "2023-08-29",
+    "cliente": "Luis frassia",
+    "comprobante": "e-Ticket A 2222",
+    "precio_usd": 99900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62358912 | Pago: Contado | TC: 37.696"
+  },
+  {
+    "fecha": "2023-08-28",
+    "cliente": "Maria Rosa Chercasky",
+    "comprobante": "e-Ticket A 2221",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61910088 | Pago: Contado | TC: 37.686"
+  },
+  {
+    "fecha": "2023-08-25",
+    "cliente": "FABIANA BEATRIZ CASSETTA PELERINO",
+    "comprobante": "e-Ticket A 2220",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27414276 | Pago: Contado | TC: 37.686"
+  },
+  {
+    "fecha": "2023-08-16",
+    "cliente": "RICARDO PERDOMO",
+    "comprobante": "e-Factura A 1173",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100348000010 | Pago: Contado | TC: 38.007"
+  },
+  {
+    "fecha": "2023-08-14",
+    "cliente": "Mariano Esteban Yabran Perez",
+    "comprobante": "e-Ticket A 2219",
+    "precio_usd": 154990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 51510195 | Pago: Contado | TC: 37.883"
+  },
+  {
+    "fecha": "2023-08-10",
+    "cliente": "Narelux s.a",
+    "comprobante": "e-Factura A 1172",
+    "precio_usd": 222990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213581640017 | Pago: Contado | TC: 37.952"
+  },
+  {
+    "fecha": "2023-08-10",
+    "cliente": "Victor del orrio",
+    "comprobante": "e-Ticket A 2218",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13042164 | Pago: Contado | TC: 37.952"
+  },
+  {
+    "fecha": "2023-08-09",
+    "cliente": "alejandro bibiloni lopez",
+    "comprobante": "e-Ticket A 2217",
+    "precio_usd": 67990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 59791214 | Pago: Contado | TC: 38.031"
+  },
+  {
+    "fecha": "2023-08-08",
+    "cliente": "Carlos Costabel",
+    "comprobante": "e-Ticket A 2216",
+    "precio_usd": 118000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36121961 | Pago: Contado | TC: 38.055"
+  },
+  {
+    "fecha": "2023-08-02",
+    "cliente": "NATICA S.A",
+    "comprobante": "e-Factura A 1171",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214810400017 | Pago: Contado | TC: 37.496"
+  },
+  {
+    "fecha": "2023-08-01",
+    "cliente": "RODNEY DALTON PASTURA ORTIZ",
+    "comprobante": "e-Ticket A 2215",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 7494133 | Pago: Contado | TC: 37.429"
+  },
+  {
+    "fecha": "2023-07-31",
+    "cliente": "ARIEL DAYAN",
+    "comprobante": "e-Ticket A 2213",
+    "precio_usd": 83000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62392415 | Pago: Contado | TC: 37.664"
+  },
+  {
+    "fecha": "2023-07-31",
+    "cliente": "GABRIEL TOBARIAS PAULIK",
+    "comprobante": "e-Ticket A 2214",
+    "precio_usd": 93990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 57498424 | Pago: Contado | TC: 37.664"
+  },
+  {
+    "fecha": "2023-07-31",
+    "cliente": "GRABA SA",
+    "comprobante": "e-Factura A 1170",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212822320017 | Pago: Contado | TC: 37.664"
+  },
+  {
+    "fecha": "2023-07-28",
+    "cliente": "JUAN GALIMBERTI JONES",
+    "comprobante": "e-Ticket A 2212",
+    "precio_usd": 145000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28608967 | Pago: Contado | TC: 37.741"
+  },
+  {
+    "fecha": "2023-07-26",
+    "cliente": "DAVID KOPEL",
+    "comprobante": "e-Ticket A 2211",
+    "precio_usd": 77000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11139880 | Pago: Contado | TC: 37.643"
+  },
+  {
+    "fecha": "2023-07-26",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "e-Factura A 1169",
+    "precio_usd": 155000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 37.643"
+  },
+  {
+    "fecha": "2023-07-24",
+    "cliente": "MARIA DEL CARMEN FUHR",
+    "comprobante": "e-Ticket A 2210",
+    "precio_usd": 125000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 55769097 | Pago: Contado | TC: 37.963"
+  },
+  {
+    "fecha": "2023-07-19",
+    "cliente": "ALDENIAR S.A.",
+    "comprobante": "e-Factura A 1168",
+    "precio_usd": 99900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217552800012 | Pago: Contado | TC: 38.055"
+  },
+  {
+    "fecha": "2023-07-05",
+    "cliente": "Julio Lojo Bocca",
+    "comprobante": "e-Ticket A 2209",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58857552 | Pago: Contado | TC: 37.493"
+  },
+  {
+    "fecha": "2023-07-03",
+    "cliente": "GONZALO VALLEJOS",
+    "comprobante": "e-Ticket A 2208",
+    "precio_usd": 77000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 24171210 | Pago: Contado | TC: 37.408"
+  },
+  {
+    "fecha": "2023-07-03",
+    "cliente": "TUNIMAX S.A.",
+    "comprobante": "e-Factura A 1167",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214317630019 | Pago: Contado | TC: 37.408"
+  },
+  {
+    "fecha": "2023-06-30",
+    "cliente": "Varinter s.a",
+    "comprobante": "e-Factura A 1166",
+    "precio_usd": 125000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216252530011 | Pago: Contado | TC: 37.521"
+  },
+  {
+    "fecha": "2023-06-30",
+    "cliente": "Varinter s.a",
+    "comprobante": "e-Factura A 1165",
+    "precio_usd": 0,
+    "moneda": "UYU",
+    "detalle": "Doc: 216252530011 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2023-06-21",
+    "cliente": "CATIREY S.A.",
+    "comprobante": "e-Factura A 1164",
+    "precio_usd": 69000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214944810015 | Pago: Contado | TC: 37.931"
+  },
+  {
+    "fecha": "2023-06-17",
+    "cliente": "FABIAN PESSANO",
+    "comprobante": "e-Ticket A 2207",
+    "precio_usd": 60000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13521794 | Pago: Contado | TC: 38.02"
+  },
+  {
+    "fecha": "2023-06-16",
+    "cliente": "Careza s.a",
+    "comprobante": "e-Factura A 1163",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215405680016 | Pago: Contado | TC: 38.173"
+  },
+  {
+    "fecha": "2023-06-16",
+    "cliente": "Vanesa Marcus",
+    "comprobante": "e-Ticket A 2205",
+    "precio_usd": 72900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63963093 | Pago: Contado | TC: 38.173"
+  },
+  {
+    "fecha": "2023-06-16",
+    "cliente": "LUIS GIACHERO",
+    "comprobante": "e-Ticket A 2206",
+    "precio_usd": 79900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28382870 | Pago: Contado | TC: 38.173"
+  },
+  {
+    "fecha": "2023-06-14",
+    "cliente": "Nadetir s.a",
+    "comprobante": "e-Factura A 1162",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215132810019 | Pago: Contado | TC: 38.427"
+  },
+  {
+    "fecha": "2023-06-12",
+    "cliente": "ERIKA HUTTON",
+    "comprobante": "e-Ticket A 2203",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 38561509 | Pago: Contado | TC: 38.705"
+  },
+  {
+    "fecha": "2023-06-12",
+    "cliente": "ERIKA HUTTON",
+    "comprobante": "e-Ticket A 2204",
+    "precio_usd": 256000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 38561509 | Pago: Contado | TC: 38.705"
+  },
+  {
+    "fecha": "2023-06-10",
+    "cliente": "MARIA FERNANDA MORA FERNANDEZ",
+    "comprobante": "e-Ticket A 2202",
+    "precio_usd": 70000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35274840 | Pago: Contado | TC: 38.705"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "MARTIN CAVALLI",
+    "comprobante": "e-Ticket A 2193",
+    "precio_usd": 136000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63718583 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Claudio Feuermann",
+    "comprobante": "e-Ticket A 2194",
+    "precio_usd": 136000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 56680983 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Pablo Zavaleta",
+    "comprobante": "e-Ticket A 2195",
+    "precio_usd": 59900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64234603 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Denise Tupy Tavares",
+    "comprobante": "e-Ticket A 2196",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63285899 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Rafael anavitarte",
+    "comprobante": "e-Ticket A 2197",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10396544 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Maximo Baccanelli",
+    "comprobante": "e-Ticket A 2198",
+    "precio_usd": 49900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62466163 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Paula Andrea Gercar Santos",
+    "comprobante": "e-Ticket A 2199",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17618604 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Sandra Martinez Gañete",
+    "comprobante": "e-Ticket A 2200",
+    "precio_usd": 63000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 26149535 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-31",
+    "cliente": "Eduardo Savastano",
+    "comprobante": "e-Ticket A 2201",
+    "precio_usd": 59990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64152853 | Pago: Contado | TC: 38.739"
+  },
+  {
+    "fecha": "2023-05-23",
+    "cliente": "MIGUEL  HERNANDEZ",
+    "comprobante": "e-Ticket A 2189",
+    "precio_usd": 97990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34994667 | Pago: Contado | TC: 38.856"
+  },
+  {
+    "fecha": "2023-05-23",
+    "cliente": "ELIZABETH MISA",
+    "comprobante": "e-Ticket A 2190",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 16723476 | Pago: Contado | TC: 38.856"
+  },
+  {
+    "fecha": "2023-05-23",
+    "cliente": "JOSE IGNACIO VASQUEZ",
+    "comprobante": "e-Ticket A 2191",
+    "precio_usd": 129000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35091248 | Pago: Contado | TC: 38.856"
+  },
+  {
+    "fecha": "2023-05-23",
+    "cliente": "LEONARDO  CASTIÑEIRAS",
+    "comprobante": "e-Ticket A 2192",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18377352 | Pago: Contado | TC: 38.856"
+  },
+  {
+    "fecha": "2023-05-23",
+    "cliente": "Portizul s.a",
+    "comprobante": "e-Factura A 1161",
+    "precio_usd": 179900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215491460016 | Pago: Contado | TC: 38.856"
+  },
+  {
+    "fecha": "2023-05-17",
+    "cliente": "Marcos Escalante",
+    "comprobante": "e-Ticket A 2188",
+    "precio_usd": 122990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63954903 | Pago: Contado | TC: 38.945"
+  },
+  {
+    "fecha": "2023-05-15",
+    "cliente": "ESTELA ISABEL ROSSI",
+    "comprobante": "e-Ticket A 2187",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63954840 | Pago: Contado | TC: 38.968"
+  },
+  {
+    "fecha": "2023-05-10",
+    "cliente": "Maguinor s.a",
+    "comprobante": "e-Factura A 1160",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212691040016 | Pago: Contado | TC: 38.86"
+  },
+  {
+    "fecha": "2023-05-10",
+    "cliente": "Alejandra Casado Garat",
+    "comprobante": "e-Ticket A 2186",
+    "precio_usd": 165990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64330803 | Pago: Contado | TC: 38.86"
+  },
+  {
+    "fecha": "2023-05-08",
+    "cliente": "JORGE RICARDO PALMES",
+    "comprobante": "e-Ticket A 2185",
+    "precio_usd": 67990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62325961 | Pago: Contado | TC: 38.83"
+  },
+  {
+    "fecha": "2023-04-26",
+    "cliente": "VASCOSUNIDOS SRL",
+    "comprobante": "e-Factura A 1159",
+    "precio_usd": 26900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 180316170016 | Pago: Contado | TC: 38.715"
+  },
+  {
+    "fecha": "2023-04-25",
+    "cliente": "MATIAS WOLOSKI",
+    "comprobante": "e-Ticket A 2184",
+    "precio_usd": 151890.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64599588 | Pago: Contado | TC: 38.896"
+  },
+  {
+    "fecha": "2023-04-24",
+    "cliente": "Willy roland furtado aguilar",
+    "comprobante": "e-Ticket A 2182",
+    "precio_usd": 71000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28599831 | Pago: Contado | TC: 38.955"
+  },
+  {
+    "fecha": "2023-04-24",
+    "cliente": "LUCAS BRUCCO",
+    "comprobante": "e-Ticket A 2183",
+    "precio_usd": 166000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64980242 | Pago: Contado | TC: 38.955"
+  },
+  {
+    "fecha": "2023-04-24",
+    "cliente": "ALCATOQE SRL",
+    "comprobante": "e-Factura A 1158",
+    "precio_usd": 60000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218476440012 | Pago: Contado | TC: 38.955"
+  },
+  {
+    "fecha": "2023-04-21",
+    "cliente": "Sabrina Mara Giorgi",
+    "comprobante": "e-Ticket A 2181",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64856013 | Pago: Contado | TC: 39.017"
+  },
+  {
+    "fecha": "2023-04-12",
+    "cliente": "ESTEKORAL S.A.",
+    "comprobante": "e-Factura A 1157",
+    "precio_usd": 122000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216679490018 | Pago: Contado | TC: 38.615"
+  },
+  {
+    "fecha": "2023-03-31",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 1155",
+    "precio_usd": 168990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 38.835"
+  },
+  {
+    "fecha": "2023-03-31",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 1156",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 38.835"
+  },
+  {
+    "fecha": "2023-03-31",
+    "cliente": "RODNEY DALTON PASTURA ORTIZ",
+    "comprobante": "e-Ticket A 2179",
+    "precio_usd": 169000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 7494133 | Pago: Contado | TC: 38.835"
+  },
+  {
+    "fecha": "2023-03-31",
+    "cliente": "Hediber Oddone Soca",
+    "comprobante": "e-Ticket A 2180",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 27167619 | Pago: Contado | TC: 38.835"
+  },
+  {
+    "fecha": "2023-03-29",
+    "cliente": "NICOLAS PADILLA",
+    "comprobante": "e-Ticket A 2177",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 44592352 | Pago: Contado | TC: 38.715"
+  },
+  {
+    "fecha": "2023-03-29",
+    "cliente": "JORGE ROTONDO",
+    "comprobante": "e-Ticket A 2178",
+    "precio_usd": 70000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11111064 | Pago: Contado | TC: 38.715"
+  },
+  {
+    "fecha": "2023-03-28",
+    "cliente": "Alejandro Hirmas Musalem",
+    "comprobante": "e-Ticket A 2176",
+    "precio_usd": 165000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65565465 | Pago: Contado | TC: 38.78"
+  },
+  {
+    "fecha": "2023-03-25",
+    "cliente": "FINCOPET S.A",
+    "comprobante": "e-Factura A 1154",
+    "precio_usd": 195000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218127210011 | Pago: Contado | TC: 38.935"
+  },
+  {
+    "fecha": "2023-03-22",
+    "cliente": "NATURAL GRASS MEAT BROKERS SRL",
+    "comprobante": "e-Factura A 1153",
+    "precio_usd": 567.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218139820014 | Pago: Contado | TC: 38.945"
+  },
+  {
+    "fecha": "2023-03-20",
+    "cliente": "ALEJANDRA ARIAS",
+    "comprobante": "e-Ticket A 2175",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48844941 | Pago: Contado | TC: 39.496"
+  },
+  {
+    "fecha": "2023-03-20",
+    "cliente": "TRANSPORTES LA HUELLA SRL",
+    "comprobante": "e-Factura A 1152",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 040420290019 | Pago: Contado | TC: 39.496"
+  },
+  {
+    "fecha": "2023-03-18",
+    "cliente": "NATURAL GRASS MEAT BROKERS SRL",
+    "comprobante": "e-Factura A 1150",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 218139820014 | Pago: Contado | TC: 39.496"
+  },
+  {
+    "fecha": "2023-03-18",
+    "cliente": "NATURAL GRASS MEAT BROKERS SRL",
+    "comprobante": "e-Factura A 1151",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218139820014 | Pago: Contado | TC: 39.496"
+  },
+  {
+    "fecha": "2023-03-14",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 1148",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 39.333"
+  },
+  {
+    "fecha": "2023-03-14",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 1149",
+    "precio_usd": 145000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 39.333"
+  },
+  {
+    "fecha": "2023-03-13",
+    "cliente": "JAVIER DINES",
+    "comprobante": "e-Ticket A 2174",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17400514 | Pago: Contado | TC: 39.261"
+  },
+  {
+    "fecha": "2023-03-11",
+    "cliente": "S.A. Casil Inc.",
+    "comprobante": "e-Factura A 1147",
+    "precio_usd": 164000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 080024900018 | Pago: Contado | TC: 39.261"
+  },
+  {
+    "fecha": "2023-03-06",
+    "cliente": "Tadministra srl",
+    "comprobante": "e-Factura A 1146",
+    "precio_usd": 76000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217497860012 | Pago: Contado | TC: 39.428"
+  },
+  {
+    "fecha": "2023-03-03",
+    "cliente": "FEIBAL S.A.",
+    "comprobante": "e-Factura A 1145",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214850920011 | Pago: Contado | TC: 39.137"
+  },
+  {
+    "fecha": "2023-03-01",
+    "cliente": "LILIANA MIKOLAYCHUK",
+    "comprobante": "e-Ticket A 2173",
+    "precio_usd": 77000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 56709147 | Pago: Contado | TC: 38.893"
+  },
+  {
+    "fecha": "2023-02-28",
+    "cliente": "Nestor López mato",
+    "comprobante": "e-Ticket A 2168",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53539359 | Pago: Contado | TC: 39.037"
+  },
+  {
+    "fecha": "2023-02-28",
+    "cliente": "Mariana Dardano",
+    "comprobante": "e-Ticket A 2169",
+    "precio_usd": 57990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37319620 | Pago: Contado | TC: 39.037"
+  },
+  {
+    "fecha": "2023-02-28",
+    "cliente": "Carlos Schargorodsky",
+    "comprobante": "e-Ticket A 2170",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 47624718 | Pago: Contado | TC: 39.037"
+  },
+  {
+    "fecha": "2023-02-28",
+    "cliente": "Andreia Menghini",
+    "comprobante": "e-Ticket A 2171",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62449404 | Pago: Contado | TC: 39.037"
+  },
+  {
+    "fecha": "2023-02-28",
+    "cliente": "Wilson Ardito",
+    "comprobante": "e-Ticket A 2172",
+    "precio_usd": 147000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62449363 | Pago: Contado | TC: 39.037"
+  },
+  {
+    "fecha": "2023-02-24",
+    "cliente": "STEPHANIE NAVILIAT INNELLA",
+    "comprobante": "e-Ticket A 2167",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 42534413 | Pago: Contado | TC: 38.553"
+  },
+  {
+    "fecha": "2023-02-23",
+    "cliente": "ABEL HERNANDEZ",
+    "comprobante": "e-Ticket A 2166",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 46565987 | Pago: Contado | TC: 38.866"
+  },
+  {
+    "fecha": "2023-02-10",
+    "cliente": "DETISOL S.A",
+    "comprobante": "e-Factura A 1144",
+    "precio_usd": 85000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212978490017 | Pago: Contado | TC: 39.105"
+  },
+  {
+    "fecha": "2023-02-09",
+    "cliente": "GONZALEZ BRERA ,SEBASTIAN Y CRESCI NUÑEZ , GABRIELA",
+    "comprobante": "e-Factura A 1143",
+    "precio_usd": 54000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 130201210019 | Pago: Contado | TC: 39.092"
+  },
+  {
+    "fecha": "2023-02-06",
+    "cliente": "TIME TOWER SA",
+    "comprobante": "e-Factura A 1142",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212528750018 | Pago: Contado | TC: 39.119"
+  },
+  {
+    "fecha": "2023-01-27",
+    "cliente": "SEBASTIAN PIACENZA",
+    "comprobante": "e-Ticket A 2164",
+    "precio_usd": 120990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34787418 | Pago: Contado | TC: 38.958"
+  },
+  {
+    "fecha": "2023-01-27",
+    "cliente": "OSTRY SILVIA",
+    "comprobante": "e-Ticket A 2165",
+    "precio_usd": 59990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64583945 | Pago: Contado | TC: 38.958"
+  },
+  {
+    "fecha": "2023-01-18",
+    "cliente": "DOSTEMBER S.A.",
+    "comprobante": "e-Factura A 1140",
+    "precio_usd": 110990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217584030018 | Pago: Contado | TC: 39.584"
+  },
+  {
+    "fecha": "2023-01-18",
+    "cliente": "ARETMA SAS",
+    "comprobante": "e-Factura A 1141",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218723000013 | Pago: Contado | TC: 39.584"
+  },
+  {
+    "fecha": "2023-01-13",
+    "cliente": "ESTEFANIA SCHABSIS",
+    "comprobante": "e-Ticket A 2163",
+    "precio_usd": 94990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64958411 | Pago: Contado | TC: 39.643"
+  },
+  {
+    "fecha": "2023-01-10",
+    "cliente": "Sebastian Krummel",
+    "comprobante": "e-Ticket A 2162",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58787333 | Pago: Contado | TC: 39.823"
+  },
+  {
+    "fecha": "2023-01-03",
+    "cliente": "MILTON MAZZA QUIROZ",
+    "comprobante": "e-Factura A 1138",
+    "precio_usd": 130000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214512700012 | Pago: Contado | TC: 39.795"
+  },
+  {
+    "fecha": "2023-01-03",
+    "cliente": "PARKLEN S.A",
+    "comprobante": "e-Factura A 1139",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216303050011 | Pago: Contado | TC: 39.795"
+  },
+  {
+    "fecha": "2022-12-26",
+    "cliente": "Unilam  s.a",
+    "comprobante": "e-Factura A 1136",
+    "precio_usd": 165900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215123530017 | Pago: Contado | TC: 39.1"
+  },
+  {
+    "fecha": "2022-12-26",
+    "cliente": "RENILERIO S.A",
+    "comprobante": "e-Factura A 1137",
+    "precio_usd": 47000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218963790019 | Pago: Contado | TC: 39.1"
+  },
+  {
+    "fecha": "2022-12-21",
+    "cliente": "Claudia Patricia Artús Moreira",
+    "comprobante": "e-Ticket A 2161",
+    "precio_usd": 96990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36190300 | Pago: Contado | TC: 38.412"
+  },
+  {
+    "fecha": "2022-12-20",
+    "cliente": "CIA ARAMINTA",
+    "comprobante": "e-Factura A 1135",
+    "precio_usd": 52000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213157250010 | Pago: Contado | TC: 38.826"
+  },
+  {
+    "fecha": "2022-12-17",
+    "cliente": "Gisela Santichia",
+    "comprobante": "e-Ticket A 2160",
+    "precio_usd": 72000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25001522 | Pago: Contado | TC: 38.848"
+  },
+  {
+    "fecha": "2022-12-16",
+    "cliente": "MARIA SOLEDAD FERRARO",
+    "comprobante": "e-Ticket A 2159",
+    "precio_usd": 67500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30633790 | Pago: Contado | TC: 38.788"
+  },
+  {
+    "fecha": "2022-12-14",
+    "cliente": "Aldo Amadeo Dalchiele",
+    "comprobante": "e-Ticket A 2158",
+    "precio_usd": 39000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64774605 | Pago: Contado | TC: 38.683"
+  },
+  {
+    "fecha": "2022-12-14",
+    "cliente": "Bikova s.a",
+    "comprobante": "e-Factura A 1134",
+    "precio_usd": 75000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213706730016 | Pago: Contado | TC: 38.683"
+  },
+  {
+    "fecha": "2022-12-13",
+    "cliente": "DOSTEMBER S.A.",
+    "comprobante": "e-Factura A 1133",
+    "precio_usd": 88000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217584030018 | Pago: Contado | TC: 38.81"
+  },
+  {
+    "fecha": "2022-12-09",
+    "cliente": "Gustavo voituret",
+    "comprobante": "e-Factura A 1131",
+    "precio_usd": 166000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214975360011 | Pago: Contado | TC: 39.029"
+  },
+  {
+    "fecha": "2022-12-09",
+    "cliente": "GALLOTTI VINDROLA, GABRIEL",
+    "comprobante": "e-Factura A 1132",
+    "precio_usd": 46000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213286380018 | Pago: Contado | TC: 39.029"
+  },
+  {
+    "fecha": "2022-12-06",
+    "cliente": "Roberto Groesman Wagmaister",
+    "comprobante": "e-Ticket A 2157",
+    "precio_usd": 93000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64870190 | Pago: Contado | TC: 39.305"
+  },
+  {
+    "fecha": "2022-12-01",
+    "cliente": "Monica Quiroga de Kursner",
+    "comprobante": "e-Ticket A 2155",
+    "precio_usd": 169900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 59779505 | Pago: Contado | TC: 39.392"
+  },
+  {
+    "fecha": "2022-12-01",
+    "cliente": "Marisa Ibarra Riccetto",
+    "comprobante": "e-Ticket A 2156",
+    "precio_usd": 42580.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34983381 | Pago: Contado | TC: 39.392"
+  },
+  {
+    "fecha": "2022-11-22",
+    "cliente": "Ro Ma Ltda",
+    "comprobante": "e-Factura A 1130",
+    "precio_usd": 159900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 030132130019 | Pago: Contado | TC: 39.534"
+  },
+  {
+    "fecha": "2022-11-18",
+    "cliente": "MADERBLU S.A",
+    "comprobante": "e-Factura A 1129",
+    "precio_usd": 65000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216170490016 | Pago: Contado | TC: 40.117"
+  },
+  {
+    "fecha": "2022-11-16",
+    "cliente": "S . A . E . T . A",
+    "comprobante": "e-Factura A 1128",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 210134210018 | Pago: Contado | TC: 39.711"
+  },
+  {
+    "fecha": "2022-11-16",
+    "cliente": "Raul Carlos Pissinis",
+    "comprobante": "e-Ticket A 2154",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65168594 | Pago: Contado | TC: 39.711"
+  },
+  {
+    "fecha": "2022-11-12",
+    "cliente": "Alfredo Merlis",
+    "comprobante": "e-Ticket A 2153",
+    "precio_usd": 119000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64862684 | Pago: Contado | TC: 39.978"
+  },
+  {
+    "fecha": "2022-11-12",
+    "cliente": "Laura Gabriela Larrosa Lescano",
+    "comprobante": "e-Factura A 1127",
+    "precio_usd": 78000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215860490018 | Pago: Contado | TC: 39.978"
+  },
+  {
+    "fecha": "2022-11-10",
+    "cliente": "DAMIAN CHRYNIEWIECKI",
+    "comprobante": "e-Ticket A 2152",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64872728 | Pago: Contado | TC: 40.108"
+  },
+  {
+    "fecha": "2022-11-07",
+    "cliente": "Unilam  s.a",
+    "comprobante": "e-Factura A 1126",
+    "precio_usd": 198900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215123530017 | Pago: Contado | TC: 39.872"
+  },
+  {
+    "fecha": "2022-11-01",
+    "cliente": "ROCIO SOLEDAD RAÑA",
+    "comprobante": "e-Ticket A 2151",
+    "precio_usd": 58000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 39327733 | Pago: Contado | TC: 40.608"
+  },
+  {
+    "fecha": "2022-10-31",
+    "cliente": "ADAM EL DIM",
+    "comprobante": "e-Ticket A 2150",
+    "precio_usd": 65000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65465043 | Pago: Contado | TC: 40.569"
+  },
+  {
+    "fecha": "2022-10-28",
+    "cliente": "DATANOVA SRL",
+    "comprobante": "e-Factura A 1124",
+    "precio_usd": 45000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218593360015 | Pago: Contado | TC: 40.765"
+  },
+  {
+    "fecha": "2022-10-28",
+    "cliente": "Nicolas lopez",
+    "comprobante": "e-Factura A 1125",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214561280013 | Pago: Contado | TC: 40.765"
+  },
+  {
+    "fecha": "2022-10-27",
+    "cliente": "JOSE LUIS BASILICO",
+    "comprobante": "e-Ticket A 2149",
+    "precio_usd": 74000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 59622942 | Pago: Contado | TC: 40.976"
+  },
+  {
+    "fecha": "2022-10-18",
+    "cliente": "SADARIL S.A",
+    "comprobante": "e-Factura A 1123",
+    "precio_usd": 95000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214468470010 | Pago: Contado | TC: 41.205"
+  },
+  {
+    "fecha": "2022-10-11",
+    "cliente": "Gustavo Dendi",
+    "comprobante": "e-Factura A 1122",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211375060012 | Pago: Contado | TC: 41.057"
+  },
+  {
+    "fecha": "2022-10-07",
+    "cliente": "ALFREDO DAVEREDE",
+    "comprobante": "e-Ticket A 2148",
+    "precio_usd": 68000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61862192 | Pago: Contado | TC: 40.934"
+  },
+  {
+    "fecha": "2022-10-06",
+    "cliente": "ARAJA DONATO MAXIMILIANO",
+    "comprobante": "e-Ticket A 2147",
+    "precio_usd": 125000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 45546649 | Pago: Contado | TC: 40.981"
+  },
+  {
+    "fecha": "2022-09-30",
+    "cliente": "ANA CAROLINA CARBALLAL",
+    "comprobante": "e-Ticket A 2146",
+    "precio_usd": 67990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 38355081 | Pago: Contado | TC: 41.59"
+  },
+  {
+    "fecha": "2022-09-16",
+    "cliente": "Gabriel Alberto Lescano",
+    "comprobante": "e-Ticket A 2143",
+    "precio_usd": 82990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65181887 | Pago: Contado | TC: 40.774"
+  },
+  {
+    "fecha": "2022-09-16",
+    "cliente": "EDEGAR VAZ MARTINS",
+    "comprobante": "e-Ticket A 2144",
+    "precio_usd": 94990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58438693 | Pago: Contado | TC: 40.774"
+  },
+  {
+    "fecha": "2022-09-16",
+    "cliente": "ENRIQUE ERMOGLIO",
+    "comprobante": "e-Ticket A 2145",
+    "precio_usd": 117900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19815125 | Pago: Contado | TC: 40.774"
+  },
+  {
+    "fecha": "2022-09-02",
+    "cliente": "DANIEL ARAJA",
+    "comprobante": "e-Ticket A 2142",
+    "precio_usd": 115000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12088040 | Pago: Contado | TC: 40.794"
+  },
+  {
+    "fecha": "2022-09-02",
+    "cliente": "ARDAX S.A.",
+    "comprobante": "e-Factura A 1120",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216288440012 | Pago: Contado | TC: 40.794"
+  },
+  {
+    "fecha": "2022-09-02",
+    "cliente": "HALMON S.A.",
+    "comprobante": "e-Factura A 1121",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219110000017 | Pago: Contado | TC: 40.794"
+  },
+  {
+    "fecha": "2022-09-01",
+    "cliente": "MARIA AGUSTINA GONZALEZ",
+    "comprobante": "e-Ticket A 2141",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 45539018 | Pago: Contado | TC: 40.96"
+  },
+  {
+    "fecha": "2022-08-31",
+    "cliente": "Narelux s.a",
+    "comprobante": "e-Factura A 1119",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213581640017 | Pago: Contado | TC: 40.775"
+  },
+  {
+    "fecha": "2022-08-31",
+    "cliente": "Paula Andrea Rodríguez",
+    "comprobante": "e-Ticket A 2139",
+    "precio_usd": 110000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65113696 | Pago: Contado | TC: 40.775"
+  },
+  {
+    "fecha": "2022-08-31",
+    "cliente": "Martin Troisi",
+    "comprobante": "e-Ticket A 2140",
+    "precio_usd": 71990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28962791 | Pago: Contado | TC: 40.775"
+  },
+  {
+    "fecha": "2022-08-11",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 1118",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 40.087"
+  },
+  {
+    "fecha": "2022-08-09",
+    "cliente": "BIRRIEL LIMITADA",
+    "comprobante": "e-Factura A 1117",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150129490019 | Pago: Contado | TC: 40.178"
+  },
+  {
+    "fecha": "2022-08-06",
+    "cliente": "RICARDO OKS",
+    "comprobante": "e-Ticket A 2138",
+    "precio_usd": 84000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36688072 | Pago: Contado | TC: 40.612"
+  },
+  {
+    "fecha": "2022-08-04",
+    "cliente": "DIANA MILDRE CORNA GARCIA",
+    "comprobante": "e-Ticket A 2137",
+    "precio_usd": 198900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37540207 | Pago: Contado | TC: 40.906"
+  },
+  {
+    "fecha": "2022-07-28",
+    "cliente": "Maximo Baccanelli",
+    "comprobante": "e-Ticket A 2134",
+    "precio_usd": 210000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62466163 | Pago: Contado | TC: 41.514"
+  },
+  {
+    "fecha": "2022-07-28",
+    "cliente": "Santiago Sartori",
+    "comprobante": "e-Ticket A 2135",
+    "precio_usd": 67000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 41943102 | Pago: Contado | TC: 41.514"
+  },
+  {
+    "fecha": "2022-07-28",
+    "cliente": "Fabian Vecchiet",
+    "comprobante": "e-Ticket A 2136",
+    "precio_usd": 66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17783635 | Pago: Contado | TC: 41.514"
+  },
+  {
+    "fecha": "2022-07-27",
+    "cliente": "FABIAN LEYTON",
+    "comprobante": "e-Factura A 1116",
+    "precio_usd": 21990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214263830015 | Pago: Contado | TC: 41.669"
+  },
+  {
+    "fecha": "2022-07-20",
+    "cliente": "Pablo Sebastián Villar",
+    "comprobante": "e-Ticket A 2133",
+    "precio_usd": 93990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64973661 | Pago: Contado | TC: 41.993"
+  },
+  {
+    "fecha": "2022-07-13",
+    "cliente": "LEO KRAKOWIAK",
+    "comprobante": "e-Ticket A 2132",
+    "precio_usd": 123999.99,
+    "moneda": "USD",
+    "detalle": "Doc: FT153207 | Pago: Contado | TC: 41.006"
+  },
+  {
+    "fecha": "2022-07-07",
+    "cliente": "Florencia Beledo",
+    "comprobante": "e-Ticket A 2131",
+    "precio_usd": 52990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25560394 | Pago: Contado | TC: 40.228"
+  },
+  {
+    "fecha": "2022-06-29",
+    "cliente": "Rigoberto Ciavaglia Castro",
+    "comprobante": "e-Ticket A 2130",
+    "precio_usd": 66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 50421224 | Pago: Contado | TC: 39.074"
+  },
+  {
+    "fecha": "2022-06-28",
+    "cliente": "Ricardo Gomara del Castillo",
+    "comprobante": "e-Ticket A 2125",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28508595 | Pago: Contado | TC: 39.478"
+  },
+  {
+    "fecha": "2022-06-28",
+    "cliente": "Gabriel Ackermann",
+    "comprobante": "e-Ticket A 2126",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 55328247 | Pago: Contado | TC: 39.478"
+  },
+  {
+    "fecha": "2022-06-28",
+    "cliente": "Mario Alberto Angelastro",
+    "comprobante": "e-Ticket A 2127",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65218256 | Pago: Contado | TC: 39.478"
+  },
+  {
+    "fecha": "2022-06-28",
+    "cliente": "Andrea Raquel Ferreira",
+    "comprobante": "e-Ticket A 2128",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 64858516 | Pago: Contado | TC: 39.478"
+  },
+  {
+    "fecha": "2022-06-28",
+    "cliente": "Andrea Raquel Ferreira",
+    "comprobante": "e-Ticket A 2129",
+    "precio_usd": 186000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64858516 | Pago: Contado | TC: 39.478"
+  },
+  {
+    "fecha": "2022-06-22",
+    "cliente": "Eduardo Fernández",
+    "comprobante": "e-Ticket A 2124",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13638515 | Pago: Contado | TC: 39.814"
+  },
+  {
+    "fecha": "2022-06-20",
+    "cliente": "Transporte Sellanes ltda",
+    "comprobante": "e-Factura A 1115",
+    "precio_usd": 298000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 170076160014 | Pago: Contado | TC: 40.105"
+  },
+  {
+    "fecha": "2022-06-17",
+    "cliente": "PEDRO BOGADO  PARODI",
+    "comprobante": "e-Factura A 1114",
+    "precio_usd": 34990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217372440018 | Pago: Contado | TC: 40.044"
+  },
+  {
+    "fecha": "2022-06-16",
+    "cliente": "RIVER OAK S.A.",
+    "comprobante": "e-Factura A 1113",
+    "precio_usd": 116000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218010700019 | Pago: Contado | TC: 40.084"
+  },
+  {
+    "fecha": "2022-06-16",
+    "cliente": "Carlos Ripoll",
+    "comprobante": "e-Ticket A 2123",
+    "precio_usd": 245999.99,
+    "moneda": "USD",
+    "detalle": "Doc: 65232214 | Pago: Contado | TC: 40.084"
+  },
+  {
+    "fecha": "2022-06-09",
+    "cliente": "SANTIAGO ALOY  S.A",
+    "comprobante": "e-Factura A 1112",
+    "precio_usd": 120000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 211616830015 | Pago: Contado | TC: 39.48"
+  },
+  {
+    "fecha": "2022-06-04",
+    "cliente": "Maria Victoria Mateo Jaumandreu",
+    "comprobante": "e-Factura A 1111",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216825070014 | Pago: Contado | TC: 39.876"
+  },
+  {
+    "fecha": "2022-06-02",
+    "cliente": "SHIRLEY MARIA PETROCELLI SORIA",
+    "comprobante": "e-Ticket A 2122",
+    "precio_usd": 83000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17032842 | Pago: Contado | TC: 40.033"
+  },
+  {
+    "fecha": "2022-05-31",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 1110",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 40.205"
+  },
+  {
+    "fecha": "2022-05-31",
+    "cliente": "Alejandra Traini",
+    "comprobante": "e-Ticket A 2121",
+    "precio_usd": 58000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64739738 | Pago: Contado | TC: 40.205"
+  },
+  {
+    "fecha": "2022-05-25",
+    "cliente": "Damian Furriol",
+    "comprobante": "e-Ticket A 2117",
+    "precio_usd": 122000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18707945 | Pago: Contado | TC: 39.912"
+  },
+  {
+    "fecha": "2022-05-25",
+    "cliente": "Magdalena Troncoso Amaral",
+    "comprobante": "e-Ticket A 2118",
+    "precio_usd": 122000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 43756832 | Pago: Contado | TC: 39.912"
+  },
+  {
+    "fecha": "2022-05-25",
+    "cliente": "Federico Perez Invidio",
+    "comprobante": "e-Ticket A 2119",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 42254225 | Pago: Contado | TC: 39.912"
+  },
+  {
+    "fecha": "2022-05-25",
+    "cliente": "ELIANA MORETTI",
+    "comprobante": "e-Ticket A 2120",
+    "precio_usd": 90000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 47343190 | Pago: Contado | TC: 39.912"
+  },
+  {
+    "fecha": "2022-05-19",
+    "cliente": "Willy roland Furtado Aguilar",
+    "comprobante": "e-Factura A 1109",
+    "precio_usd": 46900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217052430011 | Pago: Contado | TC: 40.481"
+  },
+  {
+    "fecha": "2022-04-28",
+    "cliente": "Javier Giangarelli",
+    "comprobante": "e-Ticket A 2115",
+    "precio_usd": 57990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61457345 | Pago: Contado | TC: 41.444"
+  },
+  {
+    "fecha": "2022-04-28",
+    "cliente": "Federico Shcolnik",
+    "comprobante": "e-Ticket A 2116",
+    "precio_usd": 109999.99,
+    "moneda": "USD",
+    "detalle": "Doc: 50350700 | Pago: Contado | TC: 41.444"
+  },
+  {
+    "fecha": "2022-04-27",
+    "cliente": "OSVALDO CALVANI",
+    "comprobante": "e-Ticket A 2114",
+    "precio_usd": 120000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 64715695 | Pago: Contado | TC: 40.91"
+  },
+  {
+    "fecha": "2022-04-23",
+    "cliente": "Karina Patricia Saez",
+    "comprobante": "e-Ticket A 2112",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64709858 | Pago: Contado | TC: 40.049"
+  },
+  {
+    "fecha": "2022-04-23",
+    "cliente": "Pedro Sporleder",
+    "comprobante": "e-Ticket A 2113",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 59979048 | Pago: Contado | TC: 40.049"
+  },
+  {
+    "fecha": "2022-04-22",
+    "cliente": "Gustavo voituret",
+    "comprobante": "e-Factura A 1108",
+    "precio_usd": 168000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214975360011 | Pago: Contado | TC: 40.126"
+  },
+  {
+    "fecha": "2022-04-20",
+    "cliente": "GRUPO SUPRABOND S.A.S",
+    "comprobante": "e-Factura A 1107",
+    "precio_usd": 83000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218826790017 | Pago: Contado | TC: 41.128"
+  },
+  {
+    "fecha": "2022-04-18",
+    "cliente": "FRANCISCO  ROSALES",
+    "comprobante": "e-Ticket A 2110",
+    "precio_usd": 114900.0,
+    "moneda": "UYU",
+    "detalle": "Doc: 47988310 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2022-04-18",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 1106",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 41.247"
+  },
+  {
+    "fecha": "2022-04-18",
+    "cliente": "JOSE SANTERO",
+    "comprobante": "e-Ticket A 2111",
+    "precio_usd": 147900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29748100 | Pago: Contado | TC: 41.247"
+  },
+  {
+    "fecha": "2022-04-07",
+    "cliente": "International consulting bureau ltda",
+    "comprobante": "e-Factura A 1105",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215916110010 | Pago: Contado | TC: 41.74"
+  },
+  {
+    "fecha": "2022-04-02",
+    "cliente": "Carlos gilberto  silva ribeiro",
+    "comprobante": "e-Factura A 1104",
+    "precio_usd": 77900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 030131850018 | Pago: Contado | TC: 41.119"
+  },
+  {
+    "fecha": "2022-04-01",
+    "cliente": "Barbara Bengolea",
+    "comprobante": "e-Ticket A 2108",
+    "precio_usd": 155000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64572330 | Pago: Contado | TC: 41.115"
+  },
+  {
+    "fecha": "2022-04-01",
+    "cliente": "ANGELES AZAR",
+    "comprobante": "e-Ticket A 2109",
+    "precio_usd": 56989.99,
+    "moneda": "USD",
+    "detalle": "Doc: 65403150 | Pago: Contado | TC: 41.115"
+  },
+  {
+    "fecha": "2022-03-24",
+    "cliente": "Milton raimondo",
+    "comprobante": "e-Factura A 1103",
+    "precio_usd": 171990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 040106450017 | Pago: Contado | TC: 42.052"
+  },
+  {
+    "fecha": "2022-03-23",
+    "cliente": "Nadetir s.a",
+    "comprobante": "e-Factura A 1102",
+    "precio_usd": 149990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215132810019 | Pago: Contado | TC: 42.322"
+  },
+  {
+    "fecha": "2022-03-16",
+    "cliente": "JOSE IGNACIO VASQUEZ",
+    "comprobante": "e-Ticket A 2104",
+    "precio_usd": 109900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35091248 | Pago: Contado | TC: 42.799"
+  },
+  {
+    "fecha": "2022-03-16",
+    "cliente": "OLGA CAIRO",
+    "comprobante": "e-Ticket A 2105",
+    "precio_usd": 50000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25728332 | Pago: Contado | TC: 42.799"
+  },
+  {
+    "fecha": "2022-03-16",
+    "cliente": "LUIS  SALAVERRIA",
+    "comprobante": "e-Ticket A 2106",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15921142 | Pago: Contado | TC: 42.799"
+  },
+  {
+    "fecha": "2022-03-16",
+    "cliente": "LUIS  SALAVERRIA",
+    "comprobante": "e-Ticket A 2107",
+    "precio_usd": 96900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15921142 | Pago: Contado | TC: 42.799"
+  },
+  {
+    "fecha": "2022-03-12",
+    "cliente": "Carlos gilberto  silva ribeiro",
+    "comprobante": "e-Factura A 1101",
+    "precio_usd": 119895.5,
+    "moneda": "USD",
+    "detalle": "Doc: 030131850018 | Pago: Contado | TC: 42.604"
+  },
+  {
+    "fecha": "2022-03-09",
+    "cliente": "ALEJANDRO DI CHIARA",
+    "comprobante": "e-Ticket A 2102",
+    "precio_usd": 139000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19868122 | Pago: Contado | TC: 42.75"
+  },
+  {
+    "fecha": "2022-03-09",
+    "cliente": "AGUSTIN BENITEZ",
+    "comprobante": "e-Ticket A 2103",
+    "precio_usd": 95900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19237218 | Pago: Contado | TC: 42.75"
+  },
+  {
+    "fecha": "2022-03-07",
+    "cliente": "SONIA MABEL LASSO ZUNINO",
+    "comprobante": "e-Ticket A 2101",
+    "precio_usd": 65990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35328097 | Pago: Contado | TC: 42.661"
+  },
+  {
+    "fecha": "2022-03-03",
+    "cliente": "",
+    "comprobante": "e-Factura A 168",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2022-03-03",
+    "cliente": "",
+    "comprobante": "e-Ticket A 217",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2022-03-03",
+    "cliente": "",
+    "comprobante": "NC eTicket A 105",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2022-03-03",
+    "cliente": "",
+    "comprobante": "NC eFactura A 102",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2022-03-02",
+    "cliente": "GIANFRANCO MACRI",
+    "comprobante": "e-Ticket A 216",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64052704 | Pago: Contado | TC: 42.533"
+  },
+  {
+    "fecha": "2022-02-24",
+    "cliente": "Tania echenagusia",
+    "comprobante": "e-Ticket A 214",
+    "precio_usd": 155000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25284077 | Pago: Contado | TC: 42.268"
+  },
+  {
+    "fecha": "2022-02-24",
+    "cliente": "GONZALO AGUIAR",
+    "comprobante": "e-Ticket A 215",
+    "precio_usd": 159000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33001114 | Pago: Contado | TC: 42.268"
+  },
+  {
+    "fecha": "2022-02-21",
+    "cliente": "MARIA EUGENIA BALBIS FARINHA",
+    "comprobante": "e-Ticket A 213",
+    "precio_usd": 52990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40565599 | Pago: Contado | TC: 43.023"
+  },
+  {
+    "fecha": "2022-02-21",
+    "cliente": "Raquel Pulido",
+    "comprobante": "NC eTicket A 104",
+    "precio_usd": -66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62686696 | Pago: Contado | TC: 43.023"
+  },
+  {
+    "fecha": "2022-02-21",
+    "cliente": "Full Cat s.a",
+    "comprobante": "e-Factura A 167",
+    "precio_usd": 119990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213738820010 | Pago: Contado | TC: 43.023"
+  },
+  {
+    "fecha": "2022-02-15",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "NC eTicket A 103",
+    "precio_usd": -59000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 36212629 | Pago: Contado | TC: 43.091"
+  },
+  {
+    "fecha": "2022-02-15",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "e-Factura A 166",
+    "precio_usd": 59000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 120187600016 | Pago: Contado | TC: 43.091"
+  },
+  {
+    "fecha": "2022-02-15",
+    "cliente": "Raquel Pulido",
+    "comprobante": "ND eTicket A 1",
+    "precio_usd": 66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62686696 | Pago: Contado | TC: 43.091"
+  },
+  {
+    "fecha": "2022-02-14",
+    "cliente": "Varinter s.a",
+    "comprobante": "e-Factura A 165",
+    "precio_usd": 109000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216252530011 | Pago: Contado | TC: 43.047"
+  },
+  {
+    "fecha": "2022-02-11",
+    "cliente": "RODNEY DALTON PASTURA ORTIZ",
+    "comprobante": "e-Ticket A 212",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 7494133 | Pago: Contado | TC: 43.182"
+  },
+  {
+    "fecha": "2022-02-07",
+    "cliente": "BEATRIZ BALLA DEAK",
+    "comprobante": "e-Ticket A 211",
+    "precio_usd": 67000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 52797794 | Pago: Contado | TC: 43.738"
+  },
+  {
+    "fecha": "2022-02-04",
+    "cliente": "RAMIRO  PETRONE",
+    "comprobante": "e-Ticket A 210",
+    "precio_usd": 107000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64661921 | Pago: Contado | TC: 43.773"
+  },
+  {
+    "fecha": "2022-01-31",
+    "cliente": "Transporte Sellanes ltda",
+    "comprobante": "e-Factura A 164",
+    "precio_usd": 135900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170076160014 | Pago: Contado | TC: 44.165"
+  },
+  {
+    "fecha": "2022-01-31",
+    "cliente": "Stephani Acosta Silva",
+    "comprobante": "e-Ticket A 208",
+    "precio_usd": 54000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 52492895 | Pago: Contado | TC: 44.165"
+  },
+  {
+    "fecha": "2022-01-31",
+    "cliente": "Andrea Martinez Gularte",
+    "comprobante": "e-Ticket A 209",
+    "precio_usd": 67000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33802738 | Pago: Contado | TC: 44.165"
+  },
+  {
+    "fecha": "2022-01-28",
+    "cliente": "Vicente Matich",
+    "comprobante": "e-Ticket A 206",
+    "precio_usd": 70989.99,
+    "moneda": "USD",
+    "detalle": "Doc: 52868008 | Pago: Contado | TC: 44.074"
+  },
+  {
+    "fecha": "2022-01-28",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "e-Ticket A 207",
+    "precio_usd": 59000.01,
+    "moneda": "USD",
+    "detalle": "Doc: 36212629 | Pago: Contado | TC: 44.074"
+  },
+  {
+    "fecha": "2022-01-28",
+    "cliente": "ASFALIA SRL",
+    "comprobante": "e-Factura A 163",
+    "precio_usd": 67900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100741070010 | Pago: Contado | TC: 44.074"
+  },
+  {
+    "fecha": "2022-01-25",
+    "cliente": "MARIA ISABEL ESCASANY",
+    "comprobante": "e-Ticket A 202",
+    "precio_usd": 140000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64556192 | Pago: Contado | TC: 44.538"
+  },
+  {
+    "fecha": "2022-01-25",
+    "cliente": "JosE Luis Llugain",
+    "comprobante": "e-Ticket A 203",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12727553 | Pago: Contado | TC: 44.538"
+  },
+  {
+    "fecha": "2022-01-25",
+    "cliente": "Raquel Pulido",
+    "comprobante": "e-Ticket A 204",
+    "precio_usd": 66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62686696 | Pago: Contado | TC: 44.538"
+  },
+  {
+    "fecha": "2022-01-25",
+    "cliente": "Raquel Pulido",
+    "comprobante": "NC eTicket A 102",
+    "precio_usd": -66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62686696 | Pago: Contado | TC: 44.538"
+  },
+  {
+    "fecha": "2022-01-25",
+    "cliente": "Raquel Pulido",
+    "comprobante": "e-Ticket A 205",
+    "precio_usd": 66000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62686696 | Pago: Contado | TC: 44.538"
+  },
+  {
+    "fecha": "2022-01-18",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 162",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 44.563"
+  },
+  {
+    "fecha": "2022-01-06",
+    "cliente": "MAURICIO GIRSON",
+    "comprobante": "e-Ticket A 201",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13570789 | Pago: Contado | TC: 44.731"
+  },
+  {
+    "fecha": "2021-12-27",
+    "cliente": "PANADERIA LA VIENESA LTDA",
+    "comprobante": "e-Factura A 161",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 211388120019 | Pago: Contado | TC: 44.4"
+  },
+  {
+    "fecha": "2021-12-17",
+    "cliente": "GONZALO AGUIAR",
+    "comprobante": "e-Ticket A 200",
+    "precio_usd": 101900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33001114 | Pago: Contado | TC: 44.465"
+  },
+  {
+    "fecha": "2021-12-13",
+    "cliente": "Mario Casco",
+    "comprobante": "e-Ticket A 199",
+    "precio_usd": 81990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32188678 | Pago: Contado | TC: 44.258"
+  },
+  {
+    "fecha": "2021-12-07",
+    "cliente": "JUAN MARTIN MARQUES FERRARI",
+    "comprobante": "e-Ticket A 196",
+    "precio_usd": 65990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30604591 | Pago: Contado | TC: 44.152"
+  },
+  {
+    "fecha": "2021-12-07",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 197",
+    "precio_usd": 300000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 44.152"
+  },
+  {
+    "fecha": "2021-12-07",
+    "cliente": "Luciano menghini",
+    "comprobante": "e-Ticket A 198",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 60659590 | Pago: Contado | TC: 44.152"
+  },
+  {
+    "fecha": "2021-11-30",
+    "cliente": "SANDRA PASTORINI",
+    "comprobante": "e-Ticket A 195",
+    "precio_usd": 178000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34946165 | Pago: Contado | TC: 44.001"
+  },
+  {
+    "fecha": "2021-11-25",
+    "cliente": "JEAN PHILIP ZUCCHET AMAYA",
+    "comprobante": "e-Ticket A 194",
+    "precio_usd": 75000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65253418 | Pago: Contado | TC: 44.158"
+  },
+  {
+    "fecha": "2021-11-19",
+    "cliente": "Esteban Ferrari",
+    "comprobante": "e-Ticket A 193",
+    "precio_usd": 119900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64572346 | Pago: Contado | TC: 44.192"
+  },
+  {
+    "fecha": "2021-11-18",
+    "cliente": "Varinter s.a",
+    "comprobante": "e-Factura A 159",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 216252530011 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-11-18",
+    "cliente": "Varinter s.a",
+    "comprobante": "e-Factura A 160",
+    "precio_usd": 83500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216252530011 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-11-15",
+    "cliente": "Carace Albornoz",
+    "comprobante": "e-Factura A 158",
+    "precio_usd": 166000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212439870018 | Pago: Contado | TC: 44.097"
+  },
+  {
+    "fecha": "2021-11-12",
+    "cliente": "Felix Guastavino",
+    "comprobante": "e-Ticket A 192",
+    "precio_usd": 177900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63425293 | Pago: Contado | TC: 43.828"
+  },
+  {
+    "fecha": "2021-11-10",
+    "cliente": "Fred Chaoul",
+    "comprobante": "e-Ticket A 191",
+    "precio_usd": 106000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11898700 | Pago: Contado | TC: 43.51"
+  },
+  {
+    "fecha": "2021-11-08",
+    "cliente": "PETITMAR S.A",
+    "comprobante": "e-Factura A 157",
+    "precio_usd": 160000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212710110010 | Pago: Contado | TC: 43.609"
+  },
+  {
+    "fecha": "2021-11-06",
+    "cliente": "María Victoria Ressia Gatti",
+    "comprobante": "e-Ticket A 190",
+    "precio_usd": 70000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33185423 | Pago: Contado | TC: 43.609"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Miguel Baikovicius",
+    "comprobante": "e-Ticket A 183",
+    "precio_usd": 110000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 7735997 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Julio gerardo Pernas",
+    "comprobante": "e-Ticket A 184",
+    "precio_usd": 130000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13469912 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Fernando Rodríguez Ibarra",
+    "comprobante": "e-Factura A 156",
+    "precio_usd": 170000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216836830015 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Gloria Aneiros",
+    "comprobante": "e-Ticket A 185",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 9274414 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Federico Araujo",
+    "comprobante": "e-Ticket A 186",
+    "precio_usd": 164990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19710913 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "María Celia Rosas",
+    "comprobante": "e-Ticket A 187",
+    "precio_usd": 73990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40161181 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Eliana Carolina Castro",
+    "comprobante": "e-Ticket A 188",
+    "precio_usd": 45990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48270447 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-11-01",
+    "cliente": "Maria Martina Reboledo",
+    "comprobante": "e-Ticket A 189",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34702436 | Pago: Contado | TC: 44.181"
+  },
+  {
+    "fecha": "2021-10-15",
+    "cliente": "Victoria born",
+    "comprobante": "e-Ticket A 182",
+    "precio_usd": 75400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 57574719 | Pago: Contado | TC: 43.9"
+  },
+  {
+    "fecha": "2021-10-07",
+    "cliente": "SMAC SC",
+    "comprobante": "e-Factura A 155",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 210307320014 | Pago: Contado | TC: 43.295"
+  },
+  {
+    "fecha": "2021-10-06",
+    "cliente": "Sandra Vázquez",
+    "comprobante": "e-Ticket A 177",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 26945579 | Pago: Contado | TC: 43.034"
+  },
+  {
+    "fecha": "2021-10-06",
+    "cliente": "Ernesto Saslavsky",
+    "comprobante": "e-Ticket A 178",
+    "precio_usd": 62000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19360857 | Pago: Contado | TC: 43.034"
+  },
+  {
+    "fecha": "2021-10-06",
+    "cliente": "Paula Andrea Rodríguez",
+    "comprobante": "e-Ticket A 179",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65113696 | Pago: Contado | TC: 43.034"
+  },
+  {
+    "fecha": "2021-10-06",
+    "cliente": "Carlos Butron",
+    "comprobante": "e-Ticket A 180",
+    "precio_usd": 92900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12414477 | Pago: Contado | TC: 43.034"
+  },
+  {
+    "fecha": "2021-10-06",
+    "cliente": "Diego Besozzi",
+    "comprobante": "e-Ticket A 181",
+    "precio_usd": 149990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37836260 | Pago: Contado | TC: 43.034"
+  },
+  {
+    "fecha": "2021-10-02",
+    "cliente": "Carlos murara",
+    "comprobante": "e-Factura A 154",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 210888740018 | Pago: Contado | TC: 42.942"
+  },
+  {
+    "fecha": "2021-09-29",
+    "cliente": "Gustavo voituret",
+    "comprobante": "e-Factura A 153",
+    "precio_usd": 39000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214975360011 | Pago: Contado | TC: 42.816"
+  },
+  {
+    "fecha": "2021-09-21",
+    "cliente": "Nicolas Da Trindade",
+    "comprobante": "e-Factura A 150",
+    "precio_usd": 89900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150393000012 | Pago: Contado | TC: 42.841"
+  },
+  {
+    "fecha": "2021-09-21",
+    "cliente": "Juan Pablo Vicente pereyra",
+    "comprobante": "e-Ticket A 176",
+    "precio_usd": 38500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32848868 | Pago: Contado | TC: 42.841"
+  },
+  {
+    "fecha": "2021-09-21",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "e-Factura A 152",
+    "precio_usd": 71990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 42.841"
+  },
+  {
+    "fecha": "2021-09-21",
+    "cliente": "Nadelmar s.a",
+    "comprobante": "e-Factura A 151",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 216201900016 | Pago: Contado | TC: 42.841"
+  },
+  {
+    "fecha": "2021-09-13",
+    "cliente": "Sergio Morassi",
+    "comprobante": "e-Ticket A 175",
+    "precio_usd": 75900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11931298 | Pago: Contado | TC: 42.744"
+  },
+  {
+    "fecha": "2021-09-10",
+    "cliente": "Foresur G.I.E.",
+    "comprobante": "e-Factura A 149",
+    "precio_usd": 99000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213091540016 | Pago: Contado | TC: 42.685"
+  },
+  {
+    "fecha": "2021-09-10",
+    "cliente": "Carlos Butron",
+    "comprobante": "e-Ticket A 174",
+    "precio_usd": 180000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12414477 | Pago: Contado | TC: 42.685"
+  },
+  {
+    "fecha": "2021-09-04",
+    "cliente": "Alejandro Automoviles ltda",
+    "comprobante": "e-Factura A 148",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 110124990014 | Pago: Contado | TC: 42.688"
+  },
+  {
+    "fecha": "2021-09-03",
+    "cliente": "María Victoria Ressia Gatti",
+    "comprobante": "e-Ticket A 173",
+    "precio_usd": 61990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33185423 | Pago: Contado | TC: 42.582"
+  },
+  {
+    "fecha": "2021-08-16",
+    "cliente": "Arboreal s.a",
+    "comprobante": "e-Factura A 147",
+    "precio_usd": 119990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217274570014 | Pago: Contado | TC: 43.328"
+  },
+  {
+    "fecha": "2021-08-10",
+    "cliente": "Agustin Garcia mansilla",
+    "comprobante": "e-Ticket A 172",
+    "precio_usd": 53990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64321644 | Pago: Contado | TC: 43.652"
+  },
+  {
+    "fecha": "2021-08-04",
+    "cliente": "International consulting bureau ltda",
+    "comprobante": "e-Factura A 144",
+    "precio_usd": 149900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215916110010 | Pago: Contado | TC: 43.641"
+  },
+  {
+    "fecha": "2021-08-04",
+    "cliente": "Tadministra srl",
+    "comprobante": "e-Factura A 145",
+    "precio_usd": 49900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217497860012 | Pago: Contado | TC: 43.641"
+  },
+  {
+    "fecha": "2021-08-04",
+    "cliente": "Unisport s.a",
+    "comprobante": "e-Factura A 146",
+    "precio_usd": 128000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213372940018 | Pago: Contado | TC: 43.641"
+  },
+  {
+    "fecha": "2021-08-02",
+    "cliente": "Mavinan S.A.",
+    "comprobante": "e-Factura A 143",
+    "precio_usd": 48000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217024000016 | Pago: Contado | TC: 43.704"
+  },
+  {
+    "fecha": "2021-07-28",
+    "cliente": "Locitech S.A",
+    "comprobante": "e-Factura A 142",
+    "precio_usd": 128000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215340810018 | Pago: Contado | TC: 43.792"
+  },
+  {
+    "fecha": "2021-07-23",
+    "cliente": "Daniel Alejandro Segui",
+    "comprobante": "e-Ticket A 170",
+    "precio_usd": 149990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18626272 | Pago: Contado | TC: 43.741"
+  },
+  {
+    "fecha": "2021-07-23",
+    "cliente": "Daniel Alejandro Segui",
+    "comprobante": "NC eTicket A 101",
+    "precio_usd": -149990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18626272 | Pago: Contado | TC: 43.741"
+  },
+  {
+    "fecha": "2021-07-23",
+    "cliente": "Daniel Alejandro Emanuel Seguí",
+    "comprobante": "e-Ticket A 171",
+    "precio_usd": 149990.0,
+    "moneda": "USD",
+    "detalle": "Doc: AAD592383 | Pago: Contado | TC: 43.741"
+  },
+  {
+    "fecha": "2021-07-20",
+    "cliente": "Alvaro Izaguirre Saratsola",
+    "comprobante": "e-Ticket A 169",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37699335 | Pago: Contado | TC: 43.992"
+  },
+  {
+    "fecha": "2021-07-20",
+    "cliente": "Eduardo Griffin",
+    "comprobante": "e-Factura A 141",
+    "precio_usd": 89900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 120172970017 | Pago: Contado | TC: 43.992"
+  },
+  {
+    "fecha": "2021-07-12",
+    "cliente": "Mariana Strauss",
+    "comprobante": "e-Ticket A 168",
+    "precio_usd": 75000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62447945 | Pago: Contado | TC: 43.849"
+  },
+  {
+    "fecha": "2021-07-09",
+    "cliente": "Caselli Patricio",
+    "comprobante": "e-Ticket A 167",
+    "precio_usd": 157990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 23086397 | Pago: Contado | TC: 44.023"
+  },
+  {
+    "fecha": "2021-07-07",
+    "cliente": "Narelux s.a",
+    "comprobante": "e-Factura A 140",
+    "precio_usd": 145000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213581640017 | Pago: Contado | TC: 43.884"
+  },
+  {
+    "fecha": "2021-06-29",
+    "cliente": "F Pache industrial y comercial s.a",
+    "comprobante": "e-Factura A 139",
+    "precio_usd": 77990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213260240014 | Pago: Contado | TC: 43.547"
+  },
+  {
+    "fecha": "2021-06-17",
+    "cliente": "Jorge rey perretta",
+    "comprobante": "e-Factura A 138",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212010440018 | Pago: Contado | TC: 43.662"
+  },
+  {
+    "fecha": "2021-06-15",
+    "cliente": "Raquel Szeinman",
+    "comprobante": "e-Ticket A 166",
+    "precio_usd": 157990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 60207947 | Pago: Contado | TC: 43.634"
+  },
+  {
+    "fecha": "2021-06-15",
+    "cliente": "Juan Manuel Narbondo",
+    "comprobante": "e-Factura A 137",
+    "precio_usd": 44990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 140129530013 | Pago: Contado | TC: 43.634"
+  },
+  {
+    "fecha": "2021-05-31",
+    "cliente": "Kenilme s.a",
+    "comprobante": "e-Factura A 136",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213429210013 | Pago: Contado | TC: 43.847"
+  },
+  {
+    "fecha": "2021-05-24",
+    "cliente": "SYSDOS S.A.",
+    "comprobante": "e-Factura A 134",
+    "precio_usd": 99900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216820350019 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-05-24",
+    "cliente": "Carlos tarabochia",
+    "comprobante": "e-Ticket A 163",
+    "precio_usd": 99900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13097222 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-05-24",
+    "cliente": "Apibel s.a",
+    "comprobante": "e-Factura A 135",
+    "precio_usd": 60000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215067460012 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-05-24",
+    "cliente": "Nestor López mato",
+    "comprobante": "e-Ticket A 164",
+    "precio_usd": 120000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53539359 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-05-24",
+    "cliente": "Nestor López mato",
+    "comprobante": "e-Ticket A 165",
+    "precio_usd": 100000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53539359 | Pago: Contado | TC: 44.105"
+  },
+  {
+    "fecha": "2021-05-12",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 133",
+    "precio_usd": 105000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 43.976"
+  },
+  {
+    "fecha": "2021-05-12",
+    "cliente": "Martín stapff",
+    "comprobante": "e-Ticket A 161",
+    "precio_usd": 70990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25805386 | Pago: Contado | TC: 43.976"
+  },
+  {
+    "fecha": "2021-05-12",
+    "cliente": "Armando Federico campos",
+    "comprobante": "e-Ticket A 162",
+    "precio_usd": 144000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61922437 | Pago: Contado | TC: 43.976"
+  },
+  {
+    "fecha": "2021-04-23",
+    "cliente": "Matias Sagaseta",
+    "comprobante": "e-Ticket A 159",
+    "precio_usd": 159900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 44548204 | Pago: Contado | TC: 44.081"
+  },
+  {
+    "fecha": "2021-04-23",
+    "cliente": "Gustavo sellanes",
+    "comprobante": "e-Ticket A 160",
+    "precio_usd": 59000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25515082 | Pago: Contado | TC: 44.081"
+  },
+  {
+    "fecha": "2021-04-22",
+    "cliente": "Jennifer rossana arias caceres",
+    "comprobante": "e-Ticket A 155",
+    "precio_usd": 130000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 45137971 | Pago: Contado | TC: 44.18"
+  },
+  {
+    "fecha": "2021-04-22",
+    "cliente": "Alfredo langesfeld",
+    "comprobante": "e-Ticket A 156",
+    "precio_usd": 114000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64750396 | Pago: Contado | TC: 44.18"
+  },
+  {
+    "fecha": "2021-04-22",
+    "cliente": "Tania echenagusia",
+    "comprobante": "e-Ticket A 157",
+    "precio_usd": 132000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25284077 | Pago: Contado | TC: 44.18"
+  },
+  {
+    "fecha": "2021-04-22",
+    "cliente": "Carlos Butron",
+    "comprobante": "e-Ticket A 158",
+    "precio_usd": 125000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12414477 | Pago: Contado | TC: 44.18"
+  },
+  {
+    "fecha": "2021-04-22",
+    "cliente": "Transporte Sellanes ltda",
+    "comprobante": "e-Factura A 132",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 170076160014 | Pago: Contado | TC: 44.18"
+  },
+  {
+    "fecha": "2021-04-21",
+    "cliente": "Dibenor s.a",
+    "comprobante": "e-Factura A 131",
+    "precio_usd": 180000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216605710014 | Pago: Contado | TC: 44.184"
+  },
+  {
+    "fecha": "2021-04-21",
+    "cliente": "Victor del orrio",
+    "comprobante": "e-Ticket A 153",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13042164 | Pago: Contado | TC: 44.184"
+  },
+  {
+    "fecha": "2021-04-21",
+    "cliente": "Alex Acosta",
+    "comprobante": "e-Ticket A 154",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14095968 | Pago: Contado | TC: 44.184"
+  },
+  {
+    "fecha": "2021-04-01",
+    "cliente": "Daniel Alejandro Segui",
+    "comprobante": "e-Ticket A 152",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18626272 | Pago: Contado | TC: 44.187"
+  },
+  {
+    "fecha": "2021-03-31",
+    "cliente": "Full Cat s.a",
+    "comprobante": "e-Factura A 130",
+    "precio_usd": 119400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213738820010 | Pago: Contado | TC: 44.359"
+  },
+  {
+    "fecha": "2021-03-30",
+    "cliente": "Punta piedras  srl",
+    "comprobante": "e-Factura A 129",
+    "precio_usd": 50990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100671380016 | Pago: Contado | TC: 44.521"
+  },
+  {
+    "fecha": "2021-03-20",
+    "cliente": "Willy roland Furtado Aguilar",
+    "comprobante": "e-Factura A 128",
+    "precio_usd": 8000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217052430011 | Pago: Contado | TC: 44.292"
+  },
+  {
+    "fecha": "2021-03-19",
+    "cliente": "Lubinfox s.a",
+    "comprobante": "e-Factura A 126",
+    "precio_usd": 35900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217298070011 | Pago: Contado | TC: 44.34"
+  },
+  {
+    "fecha": "2021-03-19",
+    "cliente": "Portizul s.a",
+    "comprobante": "e-Factura A 127",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215491460016 | Pago: Contado | TC: 44.34"
+  },
+  {
+    "fecha": "2021-03-17",
+    "cliente": "Lilia Pagani",
+    "comprobante": "e-Ticket A 151",
+    "precio_usd": 141000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64413293 | Pago: Contado | TC: 44.494"
+  },
+  {
+    "fecha": "2021-03-16",
+    "cliente": "ATARDECERES DORADOS S.A.",
+    "comprobante": "e-Factura A 125",
+    "precio_usd": 108000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216405110013 | Pago: Contado | TC: 44.502"
+  },
+  {
+    "fecha": "2021-03-16",
+    "cliente": "Veronica bertoletti",
+    "comprobante": "e-Ticket A 150",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32985898 | Pago: Contado | TC: 44.502"
+  },
+  {
+    "fecha": "2021-03-15",
+    "cliente": "Nadetir s.a",
+    "comprobante": "e-Factura A 124",
+    "precio_usd": 90000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215132810019 | Pago: Contado | TC: 44.534"
+  },
+  {
+    "fecha": "2021-03-01",
+    "cliente": "Maguinor s.a",
+    "comprobante": "e-Factura A 122",
+    "precio_usd": 110000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212691040016 | Pago: Contado | TC: 43.145"
+  },
+  {
+    "fecha": "2021-03-01",
+    "cliente": "Unilam  s.a",
+    "comprobante": "e-Factura A 123",
+    "precio_usd": 116000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215123530017 | Pago: Contado | TC: 43.145"
+  },
+  {
+    "fecha": "2021-03-01",
+    "cliente": "Maximiliano guaglianone",
+    "comprobante": "e-Ticket A 149",
+    "precio_usd": 158000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36361070 | Pago: Contado | TC: 43.145"
+  },
+  {
+    "fecha": "2021-02-19",
+    "cliente": "Siconel  ltda",
+    "comprobante": "e-Factura A 121",
+    "precio_usd": 84000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214388100012 | Pago: Contado | TC: 42.843"
+  },
+  {
+    "fecha": "2021-02-17",
+    "cliente": "OFINUL S.A",
+    "comprobante": "e-Factura A 120",
+    "precio_usd": 67990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213715980011 | Pago: Contado | TC: 42.612"
+  },
+  {
+    "fecha": "2021-02-11",
+    "cliente": "Marianela Melgar",
+    "comprobante": "e-Factura A 118",
+    "precio_usd": 88990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214611230014 | Pago: Contado | TC: 42.708"
+  },
+  {
+    "fecha": "2021-02-11",
+    "cliente": "Facundo fravega",
+    "comprobante": "e-Ticket A 148",
+    "precio_usd": 167000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64597643 | Pago: Contado | TC: 42.708"
+  },
+  {
+    "fecha": "2021-02-11",
+    "cliente": "Kubal s.a",
+    "comprobante": "e-Factura A 119",
+    "precio_usd": 103990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 212491010016 | Pago: Contado | TC: 42.708"
+  },
+  {
+    "fecha": "2021-02-03",
+    "cliente": "Justin portman",
+    "comprobante": "e-Ticket A 147",
+    "precio_usd": 172470.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61474725 | Pago: Contado | TC: 42.313"
+  },
+  {
+    "fecha": "2021-01-14",
+    "cliente": "Maskini s.a",
+    "comprobante": "e-Factura A 115",
+    "precio_usd": 114900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 160305370014 | Pago: Contado | TC: 42.422"
+  },
+  {
+    "fecha": "2021-01-14",
+    "cliente": "Rola ltda",
+    "comprobante": "e-Factura A 116",
+    "precio_usd": 66200.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100101140017 | Pago: Contado | TC: 42.422"
+  },
+  {
+    "fecha": "2021-01-14",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 117",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 42.422"
+  },
+  {
+    "fecha": "2021-01-14",
+    "cliente": "Carlos rossati",
+    "comprobante": "e-Ticket A 145",
+    "precio_usd": 75900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13496737 | Pago: Contado | TC: 42.422"
+  },
+  {
+    "fecha": "2021-01-14",
+    "cliente": "Guillermo Roberto engles",
+    "comprobante": "e-Ticket A 146",
+    "precio_usd": 41990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 57794872 | Pago: Contado | TC: 42.422"
+  },
+  {
+    "fecha": "2026-03-16",
+    "cliente": "ESTANISLAO JUVENAL MUÑOZ",
+    "comprobante": "e-Ticket A 5113",
+    "precio_usd": 109990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 23327639 | Pago: Contado | TC: 40.64"
+  },
+  {
+    "fecha": "2026-03-14",
+    "cliente": "GOLDEN SAND S.R.L.",
+    "comprobante": "e-Factura A 6108",
+    "precio_usd": 86990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 040237560010 | Pago: Contado | TC: 40.64"
+  },
+  {
+    "fecha": "2026-03-12",
+    "cliente": "MONTE DE OMBUES SA",
+    "comprobante": "e-Factura A 6107",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215370730012 | Pago: Contado | TC: 40.158"
+  },
+  {
+    "fecha": "2026-03-12",
+    "cliente": "MARIA LYLIAM POPELKA",
+    "comprobante": "e-Ticket A 5112",
+    "precio_usd": 116990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64916712 | Pago: Contado | TC: 40.158"
+  },
+  {
+    "fecha": "2026-03-11",
+    "cliente": "ANGELO MACEDO DA SILVEIRA",
+    "comprobante": "e-Ticket A 5108",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66208737 | Pago: Contado | TC: 39.967"
+  },
+  {
+    "fecha": "2026-03-11",
+    "cliente": "TYLER LAWTON",
+    "comprobante": "e-Ticket A 5109",
+    "precio_usd": 111990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 587584200 | Pago: Contado | TC: 39.967"
+  },
+  {
+    "fecha": "2026-03-11",
+    "cliente": "CESAR CORREA NAYA",
+    "comprobante": "e-Ticket A 5110",
+    "precio_usd": 75000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 44706640 | Pago: Contado | TC: 39.967"
+  },
+  {
+    "fecha": "2026-03-11",
+    "cliente": "JORGE DANIEL FOSSATI LURACHI",
+    "comprobante": "e-Ticket A 5111",
+    "precio_usd": 52990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13219383 | Pago: Contado | TC: 39.967"
+  },
+  {
+    "fecha": "2026-03-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 18",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 40.209"
+  },
+  {
+    "fecha": "2026-03-10",
+    "cliente": "AUTOPAPINI Y ASOCIADOS SAS",
+    "comprobante": "e-Factura A 6106",
+    "precio_usd": 199900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219709510016 | Pago: Contado | TC: 40.209"
+  },
+  {
+    "fecha": "2026-03-05",
+    "cliente": "MAURICIO MALAQUINA CODURI",
+    "comprobante": "e-Ticket A 5107",
+    "precio_usd": 85990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 33385201 | Pago: Contado | TC: 39.33"
+  },
+  {
+    "fecha": "2026-02-27",
+    "cliente": "SILVIA VERONICA MAÑANA LUZARDO",
+    "comprobante": "e-Ticket A 5106",
+    "precio_usd": 79990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28195633 | Pago: Contado | TC: 38.436"
+  },
+  {
+    "fecha": "2026-02-23",
+    "cliente": "ROS CONSTRUCCIONES SAS",
+    "comprobante": "e-Factura A 6105",
+    "precio_usd": 86000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 220087720016 | Pago: Contado | TC: 38.708"
+  },
+  {
+    "fecha": "2026-02-20",
+    "cliente": "JULIAN EVANGELISTA PRIGOSHIN",
+    "comprobante": "e-Ticket A 5105",
+    "precio_usd": 116000.0,
+    "moneda": "USD",
+    "detalle": "Doc: YB9656157 | Pago: Contado | TC: 38.76"
+  },
+  {
+    "fecha": "2026-02-18",
+    "cliente": "SERGII SIKORSKYI",
+    "comprobante": "e-Ticket A 5104",
+    "precio_usd": 59500.0,
+    "moneda": "USD",
+    "detalle": "Doc: PU655428 | Pago: Contado | TC: 38.841"
+  },
+  {
+    "fecha": "2026-02-17",
+    "cliente": "Pablo papini",
+    "comprobante": "e-Factura A 6104",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216513130011 | Pago: Contado | TC: 38.841"
+  },
+  {
+    "fecha": "2026-02-13",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "e-Factura A 6103",
+    "precio_usd": 180990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 38.731"
+  },
+  {
+    "fecha": "2026-02-13",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "NC eFactura A 801",
+    "precio_usd": -180990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 38.731"
+  },
+  {
+    "fecha": "2026-02-12",
+    "cliente": "JUAN CARLOS MURDOCCA",
+    "comprobante": "e-Ticket A 5102",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64658750 | Pago: Contado | TC: 38.537"
+  },
+  {
+    "fecha": "2026-02-12",
+    "cliente": "MIGUEL LIBONATI",
+    "comprobante": "e-Ticket A 5103",
+    "precio_usd": 84000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25933646 | Pago: Contado | TC: 38.537"
+  },
+  {
+    "fecha": "2026-02-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 17",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 38.364"
+  },
+  {
+    "fecha": "2026-01-30",
+    "cliente": "IGNACIO FOMBELLA",
+    "comprobante": "e-Ticket A 5101",
+    "precio_usd": 103000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64788739 | Pago: Contado | TC: 38.784"
+  },
+  {
+    "fecha": "2026-01-29",
+    "cliente": "",
+    "comprobante": "ND eBoleta de entrada A 101",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-29",
+    "cliente": "VIA CONTACTO URUGUAY  S.R.L.",
+    "comprobante": "e-Factura A 6102",
+    "precio_usd": 129900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218733500019 | Pago: Contado | TC: 38.793"
+  },
+  {
+    "fecha": "2026-01-28",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "e-Factura A 6101",
+    "precio_usd": 0,
+    "moneda": "UYU",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 1"
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "e-Factura A 2208",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "e-Ticket A 3294",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "NC eTicket A 605",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "ND eTicket A 101",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "NC eFactura A 610",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "ND eFactura A 101",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-16",
+    "cliente": "",
+    "comprobante": "e-Factura A 4101",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": ""
+  },
+  {
+    "fecha": "2026-01-13",
+    "cliente": "EDUARDO  SIMON",
+    "comprobante": "e-Ticket A 3293",
+    "precio_usd": 75900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 12746436 | Pago: Contado | TC: 38.72"
+  },
+  {
+    "fecha": "2026-01-13",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 16",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 38.72"
+  },
+  {
+    "fecha": "2026-01-09",
+    "cliente": "PONTYN S A",
+    "comprobante": "e-Factura A 2207",
+    "precio_usd": 78900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 210182980014 | Pago: Contado | TC: 38.935"
+  },
+  {
+    "fecha": "2026-01-02",
+    "cliente": "MECOL PEREIRA LUIS FELIPE",
+    "comprobante": "e-Factura A 2205",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150620490015 | Pago: Contado | TC: 39.041"
+  },
+  {
+    "fecha": "2026-01-02",
+    "cliente": "MECOL PEREIRA LUIS FELIPE",
+    "comprobante": "NC eFactura A 609",
+    "precio_usd": -83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150620490015 | Pago: Contado | TC: 39.041"
+  },
+  {
+    "fecha": "2025-12-31",
+    "cliente": "MECOL PEREIRA LUIS FELIPE",
+    "comprobante": "e-Factura A 2206",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150620490015 | Pago: Contado | TC: 39.041"
+  },
+  {
+    "fecha": "2025-12-30",
+    "cliente": "BASILCAR SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2204",
+    "precio_usd": 78000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216197860019 | Pago: Contado | TC: 39.136"
+  },
+  {
+    "fecha": "2025-12-30",
+    "cliente": "RAYMOND KASSIN NASSER",
+    "comprobante": "e-Ticket A 3291",
+    "precio_usd": 109990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 43572468 | Pago: Contado | TC: 39.136"
+  },
+  {
+    "fecha": "2025-12-30",
+    "cliente": "LUIS  SALAVERRIA",
+    "comprobante": "e-Ticket A 3292",
+    "precio_usd": 172990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15921142 | Pago: Contado | TC: 39.136"
+  },
+  {
+    "fecha": "2025-12-23",
+    "cliente": "JORGE SANTOS",
+    "comprobante": "e-Ticket A 3290",
+    "precio_usd": 239900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 16607723 | Pago: Contado | TC: 39.07"
+  },
+  {
+    "fecha": "2025-12-15",
+    "cliente": "ALEJANDRO SUAREZ REICH",
+    "comprobante": "e-Ticket A 3289",
+    "precio_usd": 84000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18404840 | Pago: Contado | TC: 39.111"
+  },
+  {
+    "fecha": "2025-12-11",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 15",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 39.225"
+  },
+  {
+    "fecha": "2025-12-11",
+    "cliente": "PASTORINO BEJAR SERGIO DANIEL",
+    "comprobante": "e-Factura A 2203",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213085100018 | Pago: Contado | TC: 39.225"
+  },
+  {
+    "fecha": "2025-12-11",
+    "cliente": "PAVEL KAVERIN",
+    "comprobante": "e-Ticket A 3287",
+    "precio_usd": 85990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65898741 | Pago: Contado | TC: 39.225"
+  },
+  {
+    "fecha": "2025-12-11",
+    "cliente": "PATRICIA DIEGUEZ",
+    "comprobante": "e-Ticket A 3288",
+    "precio_usd": 112990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15741360 | Pago: Contado | TC: 39.225"
+  },
+  {
+    "fecha": "2025-12-10",
+    "cliente": "Carlos Ripoll",
+    "comprobante": "e-Ticket A 3286",
+    "precio_usd": 51990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65232214 | Pago: Contado | TC: 39.361"
+  },
+  {
+    "fecha": "2025-12-09",
+    "cliente": "Mario Casco",
+    "comprobante": "e-Ticket A 3285",
+    "precio_usd": 159990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 32188678 | Pago: Contado | TC: 39.178"
+  },
+  {
+    "fecha": "2025-12-05",
+    "cliente": "Caselli Patricio",
+    "comprobante": "e-Ticket A 3284",
+    "precio_usd": 109990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 23086397 | Pago: Contado | TC: 39.051"
+  },
+  {
+    "fecha": "2025-12-02",
+    "cliente": "JOAO GABRIEL PENA PEIXOTO",
+    "comprobante": "e-Ticket A 3283",
+    "precio_usd": 98000.0,
+    "moneda": "USD",
+    "detalle": "Doc: FX869152 | Pago: Contado | TC: 39.324"
+  },
+  {
+    "fecha": "2025-11-29",
+    "cliente": "AGRARISTA SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2202",
+    "precio_usd": 93990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216205280012 | Pago: Contado | TC: 39.264"
+  },
+  {
+    "fecha": "2025-11-25",
+    "cliente": "Cristian Sessa",
+    "comprobante": "e-Ticket A 3281",
+    "precio_usd": 63990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62234394 | Pago: Contado | TC: 39.719"
+  },
+  {
+    "fecha": "2025-11-25",
+    "cliente": "Cesar Cerrudo",
+    "comprobante": "e-Ticket A 3282",
+    "precio_usd": 159900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64909482 | Pago: Contado | TC: 39.719"
+  },
+  {
+    "fecha": "2025-11-24",
+    "cliente": "SILVIO GABRIEL HOCHBAUM",
+    "comprobante": "e-Ticket A 3279",
+    "precio_usd": 160990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64677730 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-24",
+    "cliente": "VELNED SA",
+    "comprobante": "e-Factura A 2201",
+    "precio_usd": 95900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219113190011 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-24",
+    "cliente": "SANCHEZ  SILVIA MARIA",
+    "comprobante": "e-Ticket A 3280",
+    "precio_usd": 85990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66506199 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-22",
+    "cliente": "FERNANDO OLIVA PIAZZA",
+    "comprobante": "e-Ticket A 3276",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 31888825 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-22",
+    "cliente": "FERNANDO OLIVA PIAZZA",
+    "comprobante": "e-Ticket A 3277",
+    "precio_usd": 116990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 31888825 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-22",
+    "cliente": "JOHANNA DENISE UGGINO",
+    "comprobante": "e-Ticket A 3278",
+    "precio_usd": 116990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66887999 | Pago: Contado | TC: 39.731"
+  },
+  {
+    "fecha": "2025-11-17",
+    "cliente": "GERARDO BENTANCOR",
+    "comprobante": "e-Ticket A 3275",
+    "precio_usd": 104990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 39391323 | Pago: Contado | TC: 39.778"
+  },
+  {
+    "fecha": "2025-11-15",
+    "cliente": "MAXIME URUGUAY SAS",
+    "comprobante": "e-Factura A 2200",
+    "precio_usd": 52000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219573280014 | Pago: Contado | TC: 39.778"
+  },
+  {
+    "fecha": "2025-11-14",
+    "cliente": "CABATIR SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2198",
+    "precio_usd": 192990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214958730019 | Pago: Contado | TC: 39.758"
+  },
+  {
+    "fecha": "2025-11-14",
+    "cliente": "PRADELAR SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2199",
+    "precio_usd": 173000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214766470019 | Pago: Contado | TC: 39.758"
+  },
+  {
+    "fecha": "2025-11-12",
+    "cliente": "Nestor López mato",
+    "comprobante": "e-Ticket A 3274",
+    "precio_usd": 165000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53539359 | Pago: Contado | TC: 39.75"
+  },
+  {
+    "fecha": "2025-11-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 14",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 39.777"
+  },
+  {
+    "fecha": "2025-11-08",
+    "cliente": "RAFAELA VASCONCELLOS MENDINA",
+    "comprobante": "e-Ticket A 3273",
+    "precio_usd": 50990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48102436 | Pago: Contado | TC: 39.777"
+  },
+  {
+    "fecha": "2025-11-07",
+    "cliente": "MARIA INES DREVER",
+    "comprobante": "e-Ticket A 3271",
+    "precio_usd": 111990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11565502 | Pago: Contado | TC: 39.774"
+  },
+  {
+    "fecha": "2025-11-07",
+    "cliente": "RICHARD JESUS ALVAREZ IBANES",
+    "comprobante": "e-Ticket A 3272",
+    "precio_usd": 199990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17503706 | Pago: Contado | TC: 39.774"
+  },
+  {
+    "fecha": "2025-11-03",
+    "cliente": "BRATSCHI ETTLIN ALEX BERE",
+    "comprobante": "e-Factura A 2196",
+    "precio_usd": 116990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213735420011 | Pago: Contado | TC: 39.799"
+  },
+  {
+    "fecha": "2025-10-31",
+    "cliente": "THOMAS JOSEPH KODNER",
+    "comprobante": "e-Ticket A 3270",
+    "precio_usd": 65650.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65623304 | Pago: Contado | TC: 39.843"
+  },
+  {
+    "fecha": "2025-10-31",
+    "cliente": "Norventure s.a",
+    "comprobante": "e-Factura A 2197",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216476480018 | Pago: Contado | TC: 39.843"
+  },
+  {
+    "fecha": "2025-10-27",
+    "cliente": "FERNANDO PAVON",
+    "comprobante": "e-Ticket A 3268",
+    "precio_usd": 85990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19455555 | Pago: Contado | TC: 39.913"
+  },
+  {
+    "fecha": "2025-10-27",
+    "cliente": "JUAN IGNACIO MORO GESTO",
+    "comprobante": "e-Ticket A 3269",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 38470114 | Pago: Contado | TC: 39.913"
+  },
+  {
+    "fecha": "2025-10-24",
+    "cliente": "GRUPOESTE S.R.L.",
+    "comprobante": "e-Factura A 2194",
+    "precio_usd": 112990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100543280019 | Pago: Contado | TC: 39.86"
+  },
+  {
+    "fecha": "2025-10-24",
+    "cliente": "GRUPOESTE S.R.L.",
+    "comprobante": "NC eFactura A 608",
+    "precio_usd": -112990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100543280019 | Pago: Contado | TC: 39.86"
+  },
+  {
+    "fecha": "2025-10-24",
+    "cliente": "GRUPOESTE S.R.L.",
+    "comprobante": "e-Factura A 2195",
+    "precio_usd": 112990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100543280019 | Pago: Contado | TC: 39.86"
+  },
+  {
+    "fecha": "2025-10-21",
+    "cliente": "SANTIGO GUZMAN KARABAJICH",
+    "comprobante": "e-Ticket A 3267",
+    "precio_usd": 68000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18836839 | Pago: Contado | TC: 39.795"
+  },
+  {
+    "fecha": "2025-10-17",
+    "cliente": "Luis Mariano Pataro",
+    "comprobante": "e-Ticket A 3265",
+    "precio_usd": 76990.0,
+    "moneda": "USD",
+    "detalle": "Doc: m7604895 | Pago: Contado | TC: 39.95"
+  },
+  {
+    "fecha": "2025-10-17",
+    "cliente": "SERGIO SESSA",
+    "comprobante": "e-Ticket A 3266",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62234388 | Pago: Contado | TC: 39.95"
+  },
+  {
+    "fecha": "2025-10-16",
+    "cliente": "MARTIN ANDRES RODE",
+    "comprobante": "e-Ticket A 3264",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 20009581 | Pago: Contado | TC: 40.016"
+  },
+  {
+    "fecha": "2025-10-15",
+    "cliente": "EDUARDO JAVIER POCHINKI",
+    "comprobante": "e-Ticket A 3263",
+    "precio_usd": 116000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 16937862 | Pago: Contado | TC: 40.139"
+  },
+  {
+    "fecha": "2025-10-15",
+    "cliente": "BIDOSOL SRL",
+    "comprobante": "e-Factura A 2193",
+    "precio_usd": 110000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216645720010 | Pago: Contado | TC: 40.139"
+  },
+  {
+    "fecha": "2025-10-10",
+    "cliente": "SOFIA LAURA TISNES CENDAN",
+    "comprobante": "e-Ticket A 3262",
+    "precio_usd": 39990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48737998 | Pago: Contado | TC: 40.055"
+  },
+  {
+    "fecha": "2025-10-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 13",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 40.055"
+  },
+  {
+    "fecha": "2025-10-04",
+    "cliente": "SAN ANTONIO S.R.L.",
+    "comprobante": "e-Factura A 2192",
+    "precio_usd": 78300.0,
+    "moneda": "USD",
+    "detalle": "Doc: 200082520014 | Pago: Contado | TC: 39.869"
+  },
+  {
+    "fecha": "2025-10-02",
+    "cliente": "NUÑEZ PIOLA NICOLAS",
+    "comprobante": "e-Factura A 2191",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218304550014 | Pago: Contado | TC: 39.875"
+  },
+  {
+    "fecha": "2025-09-25",
+    "cliente": "LUIS GOLDBERG",
+    "comprobante": "e-Ticket A 3261",
+    "precio_usd": 105830.0,
+    "moneda": "USD",
+    "detalle": "Doc: 67315098 | Pago: Contado | TC: 39.884"
+  },
+  {
+    "fecha": "2025-09-15",
+    "cliente": "VITACAL S.A.",
+    "comprobante": "e-Factura A 2190",
+    "precio_usd": 112990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216885900013 | Pago: Contado | TC: 40.16"
+  },
+  {
+    "fecha": "2025-09-11",
+    "cliente": "Omar Garbarino",
+    "comprobante": "e-Ticket A 3260",
+    "precio_usd": 94990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64534273 | Pago: Contado | TC: 40.036"
+  },
+  {
+    "fecha": "2025-09-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 12",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 40.007"
+  },
+  {
+    "fecha": "2025-09-05",
+    "cliente": "FLORENCIA GRAÑA FERRARI",
+    "comprobante": "e-Ticket A 3259",
+    "precio_usd": 79000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 41545801 | Pago: Contado | TC: 40.143"
+  },
+  {
+    "fecha": "2025-08-22",
+    "cliente": "FEDERICO ALEJANDRO TONINELLI",
+    "comprobante": "e-Ticket A 3258",
+    "precio_usd": 77000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 25864168 | Pago: Contado | TC: 40.06"
+  },
+  {
+    "fecha": "2025-08-21",
+    "cliente": "INVESTUY S.A.S.",
+    "comprobante": "e-Factura A 2188",
+    "precio_usd": 39900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218771460010 | Pago: Contado | TC: 40.006"
+  },
+  {
+    "fecha": "2025-08-21",
+    "cliente": "CASTECA SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2189",
+    "precio_usd": 180990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216193800011 | Pago: Contado | TC: 40.006"
+  },
+  {
+    "fecha": "2025-08-16",
+    "cliente": "SILVINA SALVO ALVAREZ",
+    "comprobante": "e-Ticket A 3257",
+    "precio_usd": 44990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37477371 | Pago: Contado | TC: 40.051"
+  },
+  {
+    "fecha": "2025-08-15",
+    "cliente": "METALURGICA CURBELO SAS",
+    "comprobante": "e-Factura A 2187",
+    "precio_usd": 66990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217324190015 | Pago: Contado | TC: 40.062"
+  },
+  {
+    "fecha": "2025-08-15",
+    "cliente": "GABRIELA PAGGIOLA SENCION",
+    "comprobante": "e-Ticket A 3256",
+    "precio_usd": 44990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29110583 | Pago: Contado | TC: 40.062"
+  },
+  {
+    "fecha": "2025-08-14",
+    "cliente": "JOSE MANUEL MARTIN",
+    "comprobante": "e-Ticket A 3255",
+    "precio_usd": 104500.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64419598 | Pago: Contado | TC: 39.987"
+  },
+  {
+    "fecha": "2025-08-13",
+    "cliente": "EDWARD NICOLAS CUÑA CALVETTI",
+    "comprobante": "e-Ticket A 3254",
+    "precio_usd": 62990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 49525063 | Pago: Contado | TC: 39.998"
+  },
+  {
+    "fecha": "2025-08-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 11",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 39.924"
+  },
+  {
+    "fecha": "2025-08-05",
+    "cliente": "ULTRASTEEL SAS",
+    "comprobante": "e-Factura A 2186",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219881770012 | Pago: Contado | TC: 40.113"
+  },
+  {
+    "fecha": "2025-08-01",
+    "cliente": "DAVID HENDERSON FOLEY",
+    "comprobante": "e-Ticket A 3252",
+    "precio_usd": 279990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 46684555 | Pago: Contado | TC: 40.196"
+  },
+  {
+    "fecha": "2025-08-01",
+    "cliente": "ALEJANDRO MARASCIO",
+    "comprobante": "e-Ticket A 3253",
+    "precio_usd": 55634.0,
+    "moneda": "USD",
+    "detalle": "Doc: 17565332 | Pago: Contado | TC: 40.196"
+  },
+  {
+    "fecha": "2025-07-31",
+    "cliente": "MARIO MACHIN BAEZ",
+    "comprobante": "e-Ticket A 3251",
+    "precio_usd": 104990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 36572849 | Pago: Contado | TC: 40.162"
+  },
+  {
+    "fecha": "2025-07-31",
+    "cliente": "PEREYRA VICENTE RAUL",
+    "comprobante": "e-Factura A 2185",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 150247190015 | Pago: Contado | TC: 40.162"
+  },
+  {
+    "fecha": "2025-07-24",
+    "cliente": "AUTOPAPINI Y ASOCIADOS SAS",
+    "comprobante": "e-Factura A 2184",
+    "precio_usd": 169990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219709510016 | Pago: Contado | TC: 40.036"
+  },
+  {
+    "fecha": "2025-07-23",
+    "cliente": "Seguros Sura S.A.",
+    "comprobante": "e-Factura Cobranza A 2183",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 213217030011 | Pago: Contado | TC: 39.981"
+  },
+  {
+    "fecha": "2025-07-21",
+    "cliente": "Seguros Sura S.A.",
+    "comprobante": "e-Factura A 2182",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213217030011 | Pago: Crédito | TC: 40.358"
+  },
+  {
+    "fecha": "2025-07-17",
+    "cliente": "Unilam  s.a",
+    "comprobante": "e-Factura A 2181",
+    "precio_usd": 203000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215123530017 | Pago: Contado | TC: 40.284"
+  },
+  {
+    "fecha": "2025-07-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 10",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 40.416"
+  },
+  {
+    "fecha": "2025-07-09",
+    "cliente": "MARCELO PUPKIN PITTA",
+    "comprobante": "e-Ticket A 3250",
+    "precio_usd": 129990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66190821 | Pago: Contado | TC: 40.613"
+  },
+  {
+    "fecha": "2025-07-08",
+    "cliente": "Carlos Ripoll",
+    "comprobante": "e-Ticket A 3248",
+    "precio_usd": 275000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 65232214 | Pago: Contado | TC: 40.442"
+  },
+  {
+    "fecha": "2025-07-08",
+    "cliente": "NICOLE ARAJA DONATO",
+    "comprobante": "e-Ticket A 3249",
+    "precio_usd": 190000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 45546558 | Pago: Contado | TC: 40.442"
+  },
+  {
+    "fecha": "2025-07-07",
+    "cliente": "GUERRA DEL ROSARIO RICARDO GABRIEL",
+    "comprobante": "e-Factura A 2180",
+    "precio_usd": 117000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 170095600016 | Pago: Contado | TC: 40.138"
+  },
+  {
+    "fecha": "2025-07-01",
+    "cliente": "DARDO CURBELO",
+    "comprobante": "e-Ticket A 3247",
+    "precio_usd": 78990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29262083 | Pago: Contado | TC: 39.548"
+  },
+  {
+    "fecha": "2025-06-25",
+    "cliente": "HILDA ALONSO",
+    "comprobante": "e-Ticket A 3246",
+    "precio_usd": 69000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 13369506 | Pago: Contado | TC: 40.197"
+  },
+  {
+    "fecha": "2025-06-23",
+    "cliente": "BECCARIA PESCE CARLOS MARIO",
+    "comprobante": "e-Factura A 2179",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 120050380010 | Pago: Contado | TC: 40.544"
+  },
+  {
+    "fecha": "2025-06-20",
+    "cliente": "PROYECTOS Y PROMOCIONES S.R.L.",
+    "comprobante": "e-Factura A 2178",
+    "precio_usd": 69900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 040238540013 | Pago: Contado | TC: 40.865"
+  },
+  {
+    "fecha": "2025-06-20",
+    "cliente": "ALICIA SUSANA CARAM",
+    "comprobante": "e-Ticket A 3245",
+    "precio_usd": 104000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62935239 | Pago: Contado | TC: 40.865"
+  },
+  {
+    "fecha": "2025-06-19",
+    "cliente": "Unilam  s.a",
+    "comprobante": "e-Factura A 2177",
+    "precio_usd": 170990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215123530017 | Pago: Contado | TC: 40.865"
+  },
+  {
+    "fecha": "2025-06-16",
+    "cliente": "PHONE HOUSE SAS",
+    "comprobante": "e-Factura A 2176",
+    "precio_usd": 150000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219654370013 | Pago: Contado | TC: 41.066"
+  },
+  {
+    "fecha": "2025-06-13",
+    "cliente": "VIA CONTACTO URUGUAY  S.R.L.",
+    "comprobante": "e-Factura A 2175",
+    "precio_usd": 126990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218733500019 | Pago: Contado | TC: 40.867"
+  },
+  {
+    "fecha": "2025-06-12",
+    "cliente": "OFINUL S.A",
+    "comprobante": "e-Factura A 2174",
+    "precio_usd": 82990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 213715980011 | Pago: Contado | TC: 41.093"
+  },
+  {
+    "fecha": "2025-06-11",
+    "cliente": "KARINA LUORDES D ALESANDRO IGUINI",
+    "comprobante": "e-Ticket A 3244",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14785890 | Pago: Contado | TC: 41.303"
+  },
+  {
+    "fecha": "2025-06-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 9",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 41.417"
+  },
+  {
+    "fecha": "2025-05-26",
+    "cliente": "MARCELO LUBNISKI POPLAWSKI",
+    "comprobante": "e-Ticket A 3242",
+    "precio_usd": 200000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 20110835 | Pago: Contado | TC: 41.64"
+  },
+  {
+    "fecha": "2025-05-26",
+    "cliente": "OMAR VIEYTES",
+    "comprobante": "e-Ticket A 3243",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14433794 | Pago: Contado | TC: 41.64"
+  },
+  {
+    "fecha": "2025-05-23",
+    "cliente": "SASHA ANDREA TOSO MARTINEZ",
+    "comprobante": "e-Ticket A 3241",
+    "precio_usd": 69990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 48747894 | Pago: Contado | TC: 41.596"
+  },
+  {
+    "fecha": "2025-05-20",
+    "cliente": "Patricia vinellii",
+    "comprobante": "e-Ticket A 3240",
+    "precio_usd": 108000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19667209 | Pago: Contado | TC: 41.633"
+  },
+  {
+    "fecha": "2025-05-17",
+    "cliente": "GARIMANNO ARREBILLAGA CAROLINA",
+    "comprobante": "e-Ticket A 3239",
+    "precio_usd": 83990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 61922465 | Pago: Contado | TC: 41.879"
+  },
+  {
+    "fecha": "2025-05-12",
+    "cliente": "RODRIGO PAPAZIAN  ARANEDA",
+    "comprobante": "e-Ticket A 3237",
+    "precio_usd": 89990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 62115958 | Pago: Contado | TC: 41.754"
+  },
+  {
+    "fecha": "2025-05-12",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Ticket A 3238",
+    "precio_usd": 0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 41.754"
+  },
+  {
+    "fecha": "2025-05-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 8",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 41.754"
+  },
+  {
+    "fecha": "2025-04-30",
+    "cliente": "SILVEIRA DUTRA ROMINA PAOLA",
+    "comprobante": "e-Factura A 2173",
+    "precio_usd": 85990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 100706240010 | Pago: Contado | TC: 41.999"
+  },
+  {
+    "fecha": "2025-04-30",
+    "cliente": "MARILIA CHRYSOSPATHI",
+    "comprobante": "e-Ticket A 3234",
+    "precio_usd": 60000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 59955212 | Pago: Contado | TC: 41.999"
+  },
+  {
+    "fecha": "2025-04-30",
+    "cliente": "GUILLERMO ODABACHIAN LURASCHI",
+    "comprobante": "e-Ticket A 3235",
+    "precio_usd": 49000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 53162772 | Pago: Contado | TC: 41.999"
+  },
+  {
+    "fecha": "2025-04-30",
+    "cliente": "MARTIN CAVALLI",
+    "comprobante": "e-Ticket A 3236",
+    "precio_usd": 209000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 63718583 | Pago: Contado | TC: 41.999"
+  },
+  {
+    "fecha": "2025-04-29",
+    "cliente": "Pablo Candia Dutra",
+    "comprobante": "e-Ticket A 3232",
+    "precio_usd": 110990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 31331208 | Pago: Contado | TC: 42.055"
+  },
+  {
+    "fecha": "2025-04-29",
+    "cliente": "DANIEL HORACIO UGGINO COSCARELLI",
+    "comprobante": "e-Ticket A 3233",
+    "precio_usd": 99990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66506149 | Pago: Contado | TC: 42.055"
+  },
+  {
+    "fecha": "2025-04-26",
+    "cliente": "MAXIMILIANO  SCHABSIS",
+    "comprobante": "e-Ticket A 3230",
+    "precio_usd": 229990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58304527 | Pago: Contado | TC: 42.085"
+  },
+  {
+    "fecha": "2025-04-26",
+    "cliente": "GRANBLESS SA",
+    "comprobante": "e-Factura A 2172",
+    "precio_usd": 50000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217991330010 | Pago: Contado | TC: 42.085"
+  },
+  {
+    "fecha": "2025-04-26",
+    "cliente": "JUAN ANDRES INNELLA GONZALEZ",
+    "comprobante": "e-Ticket A 3231",
+    "precio_usd": 124990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19305774 | Pago: Contado | TC: 42.085"
+  },
+  {
+    "fecha": "2025-04-24",
+    "cliente": "ARAJA DONATO MAXIMILIANO",
+    "comprobante": "e-Ticket A 3229",
+    "precio_usd": 93000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 45546649 | Pago: Contado | TC: 41.73"
+  },
+  {
+    "fecha": "2025-04-23",
+    "cliente": "Nadetir s.a",
+    "comprobante": "e-Factura A 2171",
+    "precio_usd": 160000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 215132810019 | Pago: Contado | TC: 41.923"
+  },
+  {
+    "fecha": "2025-04-22",
+    "cliente": "JORGE SANTOS",
+    "comprobante": "e-Ticket A 3228",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 16607723 | Pago: Contado | TC: 42.139"
+  },
+  {
+    "fecha": "2025-04-22",
+    "cliente": "TESALON SOCIEDAD ANONIMA",
+    "comprobante": "e-Factura A 2170",
+    "precio_usd": 199990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 219079730012 | Pago: Contado | TC: 42.139"
+  },
+  {
+    "fecha": "2025-04-14",
+    "cliente": "TAN MENG JIN",
+    "comprobante": "e-Factura A 2169",
+    "precio_usd": 82600.0,
+    "moneda": "USD",
+    "detalle": "Doc: 214953830015 | Pago: Contado | TC: 42.649"
+  },
+  {
+    "fecha": "2025-04-11",
+    "cliente": "MILTON MAZZA QUIROZ",
+    "comprobante": "e-Ticket A 3226",
+    "precio_usd": 95990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 18977859 | Pago: Contado | TC: 42.934"
+  },
+  {
+    "fecha": "2025-04-11",
+    "cliente": "JULIO DIONISIO OBIAGUE SILVA",
+    "comprobante": "e-Ticket A 3227",
+    "precio_usd": 110990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 38958063 | Pago: Contado | TC: 42.934"
+  },
+  {
+    "fecha": "2025-04-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 7",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 43.363"
+  },
+  {
+    "fecha": "2025-04-09",
+    "cliente": "GASTON TOGNAZZOLO",
+    "comprobante": "e-Ticket A 3225",
+    "precio_usd": 110990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35429980 | Pago: Contado | TC: 42.935"
+  },
+  {
+    "fecha": "2025-04-04",
+    "cliente": "OLPITUN SA",
+    "comprobante": "e-Factura A 2168",
+    "precio_usd": 114990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 217127780014 | Pago: Contado | TC: 42.108"
+  },
+  {
+    "fecha": "2025-04-04",
+    "cliente": "SERGEY SHEDOV",
+    "comprobante": "e-Ticket A 3224",
+    "precio_usd": 170000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 66634493 | Pago: Contado | TC: 42.108"
+  },
+  {
+    "fecha": "2025-04-01",
+    "cliente": "SONIA MABEL LASSO ZUNINO",
+    "comprobante": "e-Ticket A 3223",
+    "precio_usd": 79900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 35328097 | Pago: Contado | TC: 42.127"
+  },
+  {
+    "fecha": "2025-03-29",
+    "cliente": "TYDEO PATIÑO",
+    "comprobante": "e-Ticket A 3222",
+    "precio_usd": 49990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 14374613 | Pago: Contado | TC: 42.111"
+  },
+  {
+    "fecha": "2025-03-27",
+    "cliente": "ALAN LANDE",
+    "comprobante": "e-Ticket A 3221",
+    "precio_usd": 74000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 624611QS | Pago: Contado | TC: 42.11"
+  },
+  {
+    "fecha": "2025-03-26",
+    "cliente": "JULIE HOWELL ROHDE",
+    "comprobante": "e-Ticket A 3220",
+    "precio_usd": 230000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 673917241 | Pago: Contado | TC: 42.093"
+  },
+  {
+    "fecha": "2025-03-22",
+    "cliente": "MARIA LYLIAM POPELKA",
+    "comprobante": "e-Ticket A 3219",
+    "precio_usd": 80000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64916712 | Pago: Contado | TC: 42.226"
+  },
+  {
+    "fecha": "2025-03-22",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "e-Factura A 2166",
+    "precio_usd": 85000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 120187600016 | Pago: Contado | TC: 42.226"
+  },
+  {
+    "fecha": "2025-03-22",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "NC eFactura A 607",
+    "precio_usd": -85000.0,
+    "moneda": "USD",
+    "detalle": "Doc: 120187600016 | Pago: Contado | TC: 42.226"
+  },
+  {
+    "fecha": "2025-03-22",
+    "cliente": "Daniel Lijtenstein",
+    "comprobante": "e-Factura A 2167",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 120187600016 | Pago: Contado | TC: 42.226"
+  },
+  {
+    "fecha": "2025-03-15",
+    "cliente": "MAXIMILIANO  SCHABSIS",
+    "comprobante": "e-Ticket A 3218",
+    "precio_usd": 80999.0,
+    "moneda": "USD",
+    "detalle": "Doc: 58304527 | Pago: Contado | TC: 42.375"
+  },
+  {
+    "fecha": "2025-03-14",
+    "cliente": "La iluminada Ganadera SA",
+    "comprobante": "e-Factura A 2165",
+    "precio_usd": 199900.0,
+    "moneda": "USD",
+    "detalle": "Doc: 218799660014 | Pago: Contado | TC: 42.603"
+  },
+  {
+    "fecha": "2025-03-14",
+    "cliente": "EDUARDO PANDOLFI LERMAN",
+    "comprobante": "e-Ticket A 3217",
+    "precio_usd": 161990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 19266796 | Pago: Contado | TC: 42.603"
+  },
+  {
+    "fecha": "2025-03-13",
+    "cliente": "ALEJANDRO DANIEL VELAZQUEZ FERNANDEZ",
+    "comprobante": "e-Ticket A 3215",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15399303 | Pago: Contado | TC: 42.457"
+  },
+  {
+    "fecha": "2025-03-13",
+    "cliente": "MARTIN ESTEBAN TRIGUB CLOVER",
+    "comprobante": "e-Ticket A 3216",
+    "precio_usd": 108990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 64375708 | Pago: Contado | TC: 42.457"
+  },
+  {
+    "fecha": "2025-03-12",
+    "cliente": "Mariana Dardano",
+    "comprobante": "e-Ticket A 3212",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 37319620 | Pago: Contado | TC: 42.41"
+  },
+  {
+    "fecha": "2025-03-12",
+    "cliente": "Carlos Schargorodsky",
+    "comprobante": "e-Ticket A 3213",
+    "precio_usd": 239990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 47624718 | Pago: Contado | TC: 42.41"
+  },
+  {
+    "fecha": "2025-03-12",
+    "cliente": "DANIEL BIZOZA LOPEZ",
+    "comprobante": "e-Ticket A 3214",
+    "precio_usd": 189990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 30708298 | Pago: Contado | TC: 42.41"
+  },
+  {
+    "fecha": "2025-03-11",
+    "cliente": "GUILLERMO GARCIA ABAL",
+    "comprobante": "e-Ticket A 3211",
+    "precio_usd": 49400.0,
+    "moneda": "USD",
+    "detalle": "Doc: 40238273 | Pago: Contado | TC: 42.246"
+  },
+  {
+    "fecha": "2025-03-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 6",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 42.392"
+  },
+  {
+    "fecha": "2025-03-06",
+    "cliente": "RODNEY DALTON PASTURA ORTIZ",
+    "comprobante": "e-Ticket A 3209",
+    "precio_usd": 189990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 7494133 | Pago: Contado | TC: 42.594"
+  },
+  {
+    "fecha": "2025-03-06",
+    "cliente": "GERARDO MALLO ZOANI",
+    "comprobante": "e-Ticket A 3210",
+    "precio_usd": 104990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 15645411 | Pago: Contado | TC: 42.594"
+  },
+  {
+    "fecha": "2025-03-04",
+    "cliente": "VERA MENDEZ DIEGO DANIEL",
+    "comprobante": "e-Ticket A 3207",
+    "precio_usd": 100990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 39627849 | Pago: Contado | TC: 42.585"
+  },
+  {
+    "fecha": "2025-03-04",
+    "cliente": "CARLOS LEOCATA LOWE",
+    "comprobante": "e-Ticket A 3208",
+    "precio_usd": 101840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 29781881 | Pago: Contado | TC: 42.585"
+  },
+  {
+    "fecha": "2025-03-03",
+    "cliente": "ANDRES OJEDA SPITZ",
+    "comprobante": "e-Ticket A 3206",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 34368236 | Pago: Contado | TC: 42.585"
+  },
+  {
+    "fecha": "2025-02-25",
+    "cliente": "FREDA RUDASEVSKAS SCHER",
+    "comprobante": "e-Ticket A 3204",
+    "precio_usd": 68990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 11893593 | Pago: Contado | TC: 42.69"
+  },
+  {
+    "fecha": "2025-02-25",
+    "cliente": "GEORGE ALFREDO TRONCA",
+    "comprobante": "e-Ticket A 3205",
+    "precio_usd": 215000.0,
+    "moneda": "USD",
+    "detalle": "Doc: GJ401067 | Pago: Contado | TC: 42.69"
+  },
+  {
+    "fecha": "2025-02-21",
+    "cliente": "BRUM COSTA ABOGADOS SAS",
+    "comprobante": "e-Factura A 2164",
+    "precio_usd": 84990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 216035150016 | Pago: Contado | TC: 43.122"
+  },
+  {
+    "fecha": "2025-02-21",
+    "cliente": "GABRIELA BERRUTTI",
+    "comprobante": "e-Ticket A 3203",
+    "precio_usd": 75990.0,
+    "moneda": "USD",
+    "detalle": "Doc: 28161707 | Pago: Contado | TC: 43.122"
+  },
+  {
+    "fecha": "2025-02-20",
+    "cliente": "ROBERT ALLEN BRUSH",
+    "comprobante": "e-Ticket A 3202",
+    "precio_usd": 44500.0,
+    "moneda": "USD",
+    "detalle": "Doc: A0473817 | Pago: Contado | TC: 43.206"
+  },
+  {
+    "fecha": "2025-02-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 5",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 43.428"
+  },
+  {
+    "fecha": "2025-01-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 4",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 43.683"
+  },
+  {
+    "fecha": "2024-12-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 3",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 43.726"
+  },
+  {
+    "fecha": "2024-11-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 2",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 42.146"
+  },
+  {
+    "fecha": "2024-10-10",
+    "cliente": "ALMA MIRTHA PRIETO GONELLA  -IRPF",
+    "comprobante": "e-Resguardo A 1",
+    "precio_usd": 840.0,
+    "moneda": "USD",
+    "detalle": "Doc: 10140626 | Pago: Contado | TC: 41.796"
+  }
+]
