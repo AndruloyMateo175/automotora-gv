@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# deploy: v3
 import json, sqlite3, hashlib, os, secrets
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
