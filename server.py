@@ -118,12 +118,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM compras ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM compras ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
@@ -133,12 +133,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM ventas WHERE cliente LIKE ? OR detalle LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM ventas WHERE cliente LIKE ? OR detalle LIKE ? ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM ventas WHERE cliente LIKE ? OR detalle LIKE ?",
                     ('%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM ventas ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM ventas ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM ventas').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
@@ -148,12 +148,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM clientes WHERE nombre LIKE ? OR documento LIKE ? ORDER BY nombre LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM clientes WHERE nombre LIKE ? OR documento LIKE ? ORDER BY nombre COLLATE NOCASE LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM clientes WHERE nombre LIKE ? OR documento LIKE ?",
                     ('%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM clientes ORDER BY nombre LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM clientes ORDER BY nombre COLLATE NOCASE LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM clientes').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
