@@ -8,7 +8,7 @@ DB_PATH = '/data/automotora.db'
 
 USERS = {
     'aacosta':    {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'A. Acosta',    'rol': 'Admin'},
-    'gvillasuso': {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Villasuso', 'rol': 'Admin'},
+    'gvillasuso': {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Villasuso', 'rol': 'Vendedor'},
     'gyozzi':     {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Yozzi',     'rol': 'Vendedor'},
 }
 SESSIONS = {}
@@ -42,27 +42,47 @@ def init_db():
 
 def auto_import():
     conn = get_db()
-    count = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
+    c_count = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
+    v_count = conn.execute('SELECT COUNT(*) FROM ventas').fetchone()[0]
     conn.close()
-    if count > 0:
-        return
-    try:
-        with open('compras_data.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        conn = get_db()
-        for r in data:
-            conn.execute(
-                'INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
-                (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
-                 float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''),
-                 r.get('marca',''), r.get('modelo',''), r.get('anio',''),
-                 r.get('motor',''), r.get('chasis',''), r.get('color',''))
-            )
-        conn.commit()
-        conn.close()
-        print('Auto-import: ' + str(len(data)) + ' compras')
-    except Exception as e:
-        print('Auto-import error: ' + str(e))
+
+    # Importar compras
+    if c_count == 0:
+        try:
+            with open('compras_data.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            conn = get_db()
+            for r in data:
+                conn.execute(
+                    'INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+                    (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
+                     float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''),
+                     r.get('marca',''), r.get('modelo',''), r.get('anio',''),
+                     r.get('motor',''), r.get('chasis',''), r.get('color',''))
+                )
+            conn.commit()
+            conn.close()
+            print('Auto-import: ' + str(len(data)) + ' compras')
+        except Exception as e:
+            print('Auto-import compras error: ' + str(e))
+
+    # Importar ventas
+    if v_count == 0:
+        try:
+            with open('ventas_data.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            conn = get_db()
+            for r in data:
+                conn.execute(
+                    'INSERT INTO ventas (fecha,cliente,detalle,precio_usd,moneda,comprobante) VALUES (?,?,?,?,?,?)',
+                    (r.get('fecha',''), r.get('cliente',''), r.get('detalle',''),
+                     float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('comprobante',''))
+                )
+            conn.commit()
+            conn.close()
+            print('Auto-import: ' + str(len(data)) + ' ventas')
+        except Exception as e:
+            print('Auto-import ventas error: ' + str(e))
 
 def check_auth(handler):
     tok = handler.headers.get('Authorization','').replace('Bearer ','').strip()
@@ -118,12 +138,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM compras ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM compras ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
@@ -133,12 +153,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM ventas WHERE cliente LIKE ? OR detalle LIKE ? ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM ventas WHERE cliente LIKE ? OR detalle LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM ventas WHERE cliente LIKE ? OR detalle LIKE ?",
                     ('%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM ventas ORDER BY substr(fecha,7)||substr(fecha,4,2)||substr(fecha,1,2) DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM ventas ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM ventas').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
@@ -148,12 +168,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM clientes WHERE nombre LIKE ? OR documento LIKE ? ORDER BY nombre COLLATE NOCASE LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM clientes WHERE nombre LIKE ? OR documento LIKE ? ORDER BY nombre LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM clientes WHERE nombre LIKE ? OR documento LIKE ?",
                     ('%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM clientes ORDER BY nombre COLLATE NOCASE LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute('SELECT * FROM clientes ORDER BY nombre LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM clientes').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
@@ -241,15 +261,16 @@ class Handler(BaseHTTPRequestHandler):
             conn.close()
             self.send_json({'ok':True})
 
-
         elif path == '/api/reset':
+            # Borrar todas las tablas y reimportar desde JSON
+            conn.execute('DELETE FROM compras')
+            conn.execute('DELETE FROM ventas')
+            conn.execute('DELETE FROM clientes')
+            conn.commit()
             conn.close()
-            import os
-            if os.path.exists(DB_PATH):
-                os.remove(DB_PATH)
-            init_db()
             auto_import()
-            self.send_json({'ok':True,'msg':'DB recreada'})
+            self.send_json({'ok':True})
+
         else:
             conn.close()
             self.send_json({'error':'not found'}, 404)
