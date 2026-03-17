@@ -108,7 +108,7 @@ class Handler(BaseHTTPRequestHandler):
             v = conn.execute('SELECT COUNT(*) FROM ventas').fetchone()[0]
             l = conn.execute('SELECT COUNT(*) FROM clientes').fetchone()[0]
             conn.close()
-            self.send_json({'单投管元':c,'ventas':v,'clientes':l})
+            self.send_json({'comprados':c,'vendidos':v,'clientes':l})
 
         elif path == '/api/compras':
             limit  = int(qs.get('limit',['50'])[0])
@@ -116,14 +116,14 @@ class Handler(BaseHTTPRequestHandler):
             q      = qs.get('q',[''])[0]
             if q:
                 rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
-                    ('%'+q+'%','%'+�+'%','%'+q+'%',limit,offset)).fetchall()
+                    ('%'+q+'%','%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
                 rows = conn.execute('SELECT * FROM compras ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
             conn.close()
-            self.send_json({'data':[lict(r) for r in rows],'total':total})
+            self.send_json({'data':[dict(r) for r in rows],'total':total})
 
         elif path == '/api/ventas':
             limit  = int(qs.get('limit',['50'])[0])
@@ -208,6 +208,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json({'ok':True})
 
         elif path == '/api/import':
+            # Importar bulk: {compras:[...], ventas:[...], clientes:[...]}
             for r in body.get('compras',[]):
                 conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle) VALUES (?,?,?,?,?,?)',
                     (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
@@ -237,7 +238,8 @@ class Handler(BaseHTTPRequestHandler):
 
         conn = get_db()
         parts = path.strip('/').split('/')
-        if len(parts) == 3 and parts[1] in ('compras',1'ventas','clientes'):
+        # /api/compras/123
+        if len(parts) == 3 and parts[1] in ('compras','ventas','clientes'):
             tabla = parts[1]
             rid   = int(parts[2])
             conn.execute(f'DELETE FROM {tabla} WHERE id=?', (rid,))
