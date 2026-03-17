@@ -47,6 +47,20 @@ def init_db():
     )''')
     conn.commit()
     conn.close()
+    # Agregar columnas nuevas si no existen
+    try:
+        conn2 = get_db()
+        conn2.execute('ALTER TABLE compras ADD COLUMN moneda TEXT')
+        conn2.commit()
+        conn2.close()
+    except: pass
+    try:
+        conn2 = get_db()
+        conn2.execute('ALTER TABLE compras ADD COLUMN detalle TEXT')
+        conn2.commit()
+        conn2.close()
+    except: pass
+
 
 def check_session(handler):
     auth = handler.headers.get('Authorization', '')
