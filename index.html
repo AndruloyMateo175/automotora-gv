@@ -220,23 +220,35 @@ function fmtD(s){return s?(s+'').substring(0,10):'-';}
 function fmtU(v){return(v||v===0)?'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}):'-';}
 function badgeDoc(t){if(!t)return '';const tl=t.toUpperCase();if(tl==='RUT')return '<span class="badge-rut">RUT</span>';if(tl==='CI')return '<span class="badge-ci">CI</span>';return '<span class="badge-pas">'+t+'</span>';}
 
-function openModal(r){
-  const fields=[
-    {l:'Fecha',v:fmtD(r.fecha)},
-    {l:'Proveedor',v:r.proveedor||'-'},
-    {l:'Comprobante',v:r.comprobante||'-'},
-    {l:'Precio USD',v:fmtU(r.precio_usd)},
-    {l:'Marca',v:r.marca||'-'},
-    {l:'Modelo',v:r.modelo||'-'},
-    {l:'Anio',v:r.anio||'-'},
-    {l:'Chasis',v:r.chasis||'-'},
-    {l:'Motor',v:r.motor||'-'},
-    {l:'Color',v:r.color||'-'},
-  ];
-  document.getElementById('modal-title').textContent=(r.marca||'')+(r.modelo?' - '+r.modelo:'');
+function openModal(r,tipo){
+  let fields,title;
+  if(tipo==='venta'){
+    fields=[
+      {l:'Fecha',v:fmtD(r.fecha)},
+      {l:'Comprobante',v:r.comprobante||'-'},
+      {l:'Cliente',v:r.cliente||'-'},
+      {l:'Precio USD',v:fmtU(r.precio_usd)},
+    ];
+    title=r.cliente||'Venta';
+  } else {
+    fields=[
+      {l:'Fecha',v:fmtD(r.fecha)},
+      {l:'Proveedor',v:r.proveedor||'-'},
+      {l:'Comprobante',v:r.comprobante||'-'},
+      {l:'Precio USD',v:fmtU(r.precio_usd)},
+      {l:'Marca',v:r.marca||'-'},
+      {l:'Modelo',v:r.modelo||'-'},
+      {l:'Año',v:r.anio||'-'},
+      {l:'Chasis',v:r.chasis||'-'},
+      {l:'Motor',v:r.motor||'-'},
+      {l:'Color',v:r.color||'-'},
+    ];
+    title=(r.marca||'')+(r.modelo?' '+r.modelo:'');
+  }
+  document.getElementById('modal-title').textContent=title;
   document.getElementById('modal-body').innerHTML=
     fields.map(f=>'<div class="modal-field"><label>'+f.l+'</label><p>'+f.v+'</p></div>').join('')+
-    (r.detalle?'<div class="modal-field full"><label>Detalle completo</label><div class="modal-detalle">'+r.detalle+'</div></div>':'');
+    (r.detalle?'<div class="modal-field full"><label>Detalle</label><div class="modal-detalle">'+r.detalle+'</div></div>':'');
   document.getElementById('modal-overlay').classList.add('open');
 }
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open');}
@@ -262,7 +274,7 @@ function renderC(){
 function renderV(){
   const {rows,page,pages,tot}=pg(fV,pV);pV=page;
   document.getElementById('tbody-ventas').innerHTML=rows.length
-    ?rows.map(r=>'<tr onclick=\'openModal('+JSON.stringify(r).replace(/'/g,"\\'")+')\'>'
+    ?rows.map(r=>'<tr onclick=\'openModal('+JSON.stringify(r).replace(/'/g,"\\'")+',"venta")\'>'
       +'<td>'+fmtD(r.fecha)+'</td>'
       +'<td>'+(r.cliente||'-')+'</td>'
       +'<td class="mono">'+(r.comprobante||'-')+'</td>'
