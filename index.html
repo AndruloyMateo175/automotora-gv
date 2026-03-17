@@ -133,9 +133,9 @@ tr:hover td{background:#334155}
 </div>
 <script>
 var eVI=null,eCI=null;
-function gT(){return sessionStorage.getItem('gv_token')}
-function sT(t){sessionStorage.setItem('gv_token',t)}
-function cT(){sessionStorage.removeItem('gv_token')}
+function gT(){return localStorage.getItem('gv_token')}
+function sT(t){localStorage.setItem('gv_token',t)}
+function cT(){localStorage.removeItem('gv_token')}
 function api(path,method,body){
   method=method||'GET';
   var o={method:method,headers:{'Content-Type':'application/json'}};
