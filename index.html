@@ -105,11 +105,11 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">AutomotoraGV</div>
-    <div class="login-sub">Sistema de gestiÃ³n vehicular</div>
+    <div class="login-sub">Sistema de gestiÃÂ³n vehicular</div>
     <label>Usuario</label>
     <input type="text" id="inp-user" placeholder="usuario">
-    <label>ContraseÃ±a</label>
-    <input type="password" id="inp-pass" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢">
+    <label>ContraseÃÂ±a</label>
+    <input type="password" id="inp-pass" placeholder="Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢Ã¢ÂÂ¢">
     <button class="btn-login" onclick="doLogin()">Ingresar</button>
     <div id="login-err"></div>
   </div>
@@ -134,9 +134,9 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
 
     <div class="section active" id="section-dashboard">
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-icon comp">ð</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
-        <div class="stat-card"><div class="stat-icon vent">ð°</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
-        <div class="stat-card"><div class="stat-icon cli">ð¥</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
+        <div class="stat-card"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
+        <div class="stat-card"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
+        <div class="stat-card"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
       </div>
     </div>
 
@@ -164,7 +164,7 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
       <div class="section-header"><div><div class="section-title">Clientes</div><div class="section-count" id="count-clientes"></div></div></div>
       <div class="search-bar"><input type="text" id="search-clientes" placeholder="Buscar por nombre, documento..." oninput="filterL()"></div>
       <div class="table-wrap">
-        <table><thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>TelÃ©fono</th><th>Email</th><th>PaÃ­s</th></tr></thead>
+        <table><thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>TelÃÂ©fono</th><th>Email</th><th>PaÃÂ­s</th></tr></thead>
         <tbody id="tbody-clientes"></tbody></table>
         <div class="pagination" id="pag-clientes"></div>
       </div>
@@ -208,7 +208,7 @@ async function doLogin(){
     document.getElementById('user-label').textContent=d.nombre;
     document.getElementById('user-initial').textContent=(d.nombre||'?')[0].toUpperCase();
     launchApp();
-  }else{err.textContent='Usuario o contraseÃ±a incorrectos';}
+  }else{err.textContent='Usuario o contraseÃÂ±a incorrectos';}
 }
 
 function doLogout(){TOK='';localStorage.removeItem('gv_tok');document.getElementById('app').style.display='none';document.getElementById('login-screen').style.display='flex';}
@@ -226,7 +226,7 @@ function filterV(){const q=document.getElementById('search-ventas').value.toLowe
 function filterL(){const q=document.getElementById('search-clientes').value.toLowerCase();fL=q?allL.filter(r=>['nombre','documento'].some(k=>(r[k]||'').toLowerCase().includes(q))):allL;pL=1;renderL();}
 
 function pg(arr,p){const tot=arr.length,pages=Math.max(1,Math.ceil(tot/PS)),cur=Math.min(p,pages);return{rows:arr.slice((cur-1)*PS,cur*PS),page:cur,pages,tot};}
-function pagHTML(p,pages,tot,fn){if(pages<=1)return '<span>'+tot+' registros</span>';let b='<button class="page-btn" onclick="'+fn+'('+(p-1)+')" '+(p>1?'':'disabled')+'>&#8592;</button>';const lo=Math.max(1,p-2),hi=Math.min(pages,p+2);if(lo>1)b+='<button class="page-btn" onclick="'+fn+'(1)">1</button>'+(lo>2?'<span style="padding:0 4px">â¦</span>':'');for(let i=lo;i<=hi;i++)b+='<button class="page-btn'+(i===p?' active-pg':'')+'" onclick="'+fn+'('+i+')">'+i+'</button>';if(hi<pages)b+=(hi<pages-1?'<span style="padding:0 4px">â¦</span>':'')+'<button class="page-btn" onclick="'+fn+'('+pages+')">'+pages+'</button>';b+='<button class="page-btn" onclick="'+fn+'('+(p+1)+')" '+(p<pages?'':'disabled')+'>&#8594;</button>';return '<span>'+tot+' registros</span><div class="page-btns">'+b+'</div>';}
+function pagHTML(p,pages,tot,fn){if(pages<=1)return '<span>'+tot+' registros</span>';let b='<button class="page-btn" onclick="'+fn+'('+(p-1)+')" '+(p>1?'':'disabled')+'>&#8592;</button>';const lo=Math.max(1,p-2),hi=Math.min(pages,p+2);if(lo>1)b+='<button class="page-btn" onclick="'+fn+'(1)">1</button>'+(lo>2?'<span style="padding:0 4px">Ã¢ÂÂ¦</span>':'');for(let i=lo;i<=hi;i++)b+='<button class="page-btn'+(i===p?' active-pg':'')+'" onclick="'+fn+'('+i+')">'+i+'</button>';if(hi<pages)b+=(hi<pages-1?'<span style="padding:0 4px">Ã¢ÂÂ¦</span>':'')+'<button class="page-btn" onclick="'+fn+'('+pages+')">'+pages+'</button>';b+='<button class="page-btn" onclick="'+fn+'('+(p+1)+')" '+(p<pages?'':'disabled')+'>&#8594;</button>';return '<span>'+tot+' registros</span><div class="page-btns">'+b+'</div>';}
 
 function fmtD(s){return s?(s+'').substring(0,10):'-';}
 function fmtU(v){return(v||v===0)?'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}):'-';}
@@ -255,7 +255,7 @@ function openModal(r){
     {l:'Precio USD',v:fmtU(r.precio_usd)},
     {l:'Marca',v:r.marca||'-'},
     {l:'Modelo',v:r.modelo||'-'},
-    {l:'Año',v:r.anio||'-'},
+    {l:'AÃ±o',v:r.anio||'-'},
     {l:'Chasis',v:r.chasis||'-'},
     {l:'Motor',v:r.motor||'-'},
     {l:'Color',v:r.color||'-'},
