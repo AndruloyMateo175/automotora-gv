@@ -24,7 +24,8 @@ def init_db():
     conn.execute('''CREATE TABLE IF NOT EXISTS compras (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         fecha TEXT, proveedor TEXT, comprobante TEXT,
-        precio_usd REAL, moneda TEXT, detalle TEXT
+        precio_usd REAL, moneda TEXT, detalle TEXT,
+        marca TEXT, modelo TEXT, anio TEXT, motor TEXT, chasis TEXT, color TEXT
     )''')
     conn.execute('''CREATE TABLE IF NOT EXISTS ventas (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -51,9 +52,11 @@ def auto_import():
         conn = get_db()
         for r in data:
             conn.execute(
-                'INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle) VALUES (?,?,?,?,?,?)',
+                'INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                 (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
-                 float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''))
+                 float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''),
+                 r.get('marca',''), r.get('modelo',''), r.get('anio',''),
+                 r.get('motor',''), r.get('chasis',''), r.get('color',''))
             )
         conn.commit()
         conn.close()
@@ -184,9 +187,11 @@ class Handler(BaseHTTPRequestHandler):
         conn = get_db()
 
         if path == '/api/compras':
-            conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle) VALUES (?,?,?,?,?,?)',
+            conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                 (body.get('fecha',''), body.get('proveedor',''), body.get('comprobante',''),
-                 float(body.get('precio_usd',0)), body.get('moneda','USD'), body.get('detalle','')))
+                 float(body.get('precio_usd',0)), body.get('moneda','USD'), body.get('detalle',''),
+                 body.get('marca',''), body.get('modelo',''), body.get('anio',''),
+                 body.get('motor',''), body.get('chasis',''), body.get('color','')))
             conn.commit()
             conn.close()
             self.send_json({'ok':True})
@@ -210,9 +215,11 @@ class Handler(BaseHTTPRequestHandler):
         elif path == '/api/import':
             # Importar bulk: {compras:[...], ventas:[...], clientes:[...]}
             for r in body.get('compras',[]):
-                conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle) VALUES (?,?,?,?,?,?)',
+                conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                     (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
-                     float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle','')))
+                     float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''),
+                     r.get('marca',''), r.get('modelo',''), r.get('anio',''),
+                     r.get('motor',''), r.get('chasis',''), r.get('color','')))
             for r in body.get('ventas',[]):
                 conn.execute('INSERT INTO ventas (fecha,cliente,detalle,precio_usd,moneda,comprobante) VALUES (?,?,?,?,?,?)',
                     (r.get('fecha',''), r.get('cliente',''), r.get('detalle',''),
@@ -222,6 +229,15 @@ class Handler(BaseHTTPRequestHandler):
                     (r.get('nombre',''), r.get('tipo_doc','CI'), r.get('documento',''),
                      r.get('telefono',''), r.get('email',''), r.get('pais','Uruguay')))
             conn.commit()
+            conn.close()
+            self.send_json({'ok':True})
+
+
+        elif path == '/api/clear':
+            tabla = body.get('tabla','')
+            if tabla in ('compras','ventas','clientes'):
+                conn.execute(f'DELETE FROM {tabla}')
+                conn.commit()
             conn.close()
             self.send_json({'ok':True})
 
