@@ -220,16 +220,41 @@ function fmtD(s){return s?(s+'').substring(0,10):'-';}
 function fmtU(v){return(v||v===0)?'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}):'-';}
 function badgeDoc(t){if(!t)return '';const tl=t.toUpperCase();if(tl==='RUT')return '<span class="badge-rut">RUT</span>';if(tl==='CI')return '<span class="badge-ci">CI</span>';return '<span class="badge-pas">'+t+'</span>';}
 
+function parseDetVenta(det){
+  // Extrae marca, modelo, motor, chasis del detalle de venta
+  if(!det||det.startsWith('Doc:')) return {marca:'-',modelo:'-',motor:'-',chasis:'-'};
+  const d=det.toUpperCase();
+  // Motor
+  let motor='-';
+  const mM=det.match(/MOTOR[:\s]+([A-Z0-9\-]+)/i);
+  if(mM) motor=mM[1];
+  // Chasis
+  let chasis='-';
+  const mC=det.match(/CHASIS[:\s]+([A-Z0-9\-]+)/i);
+  if(mC) chasis=mC[1];
+  // Marca y modelo: todo antes de MOTOR o CHASIS
+  let base=det.replace(/MOTOR[:\s]+[A-Z0-9\-]+/i,'').replace(/CHASIS[:\s]+[A-Z0-9\-]+/i,'').trim().replace(/\s+/g,' ').trim();
+  // Primera palabra = marca
+  const parts=base.split(' ');
+  const marca=parts[0]||'-';
+  const modelo=parts.slice(1).join(' ')||'-';
+  return {marca,modelo,motor,chasis};
+}
 function openModal(r,tipo){
   let fields,title;
   if(tipo==='venta'){
+    const pv=parseDetVenta(r.detalle);
     fields=[
       {l:'Fecha',v:fmtD(r.fecha)},
       {l:'Comprobante',v:r.comprobante||'-'},
       {l:'Cliente',v:r.cliente||'-'},
       {l:'Precio USD',v:fmtU(r.precio_usd)},
+      {l:'Marca',v:pv.marca},
+      {l:'Modelo',v:pv.modelo},
+      {l:'Motor',v:pv.motor},
+      {l:'Chasis',v:pv.chasis},
     ];
-    title=r.cliente||'Venta';
+    title=pv.marca!=='-'?(pv.marca+' '+pv.modelo).trim():(r.cliente||'Venta');
   } else {
     fields=[
       {l:'Fecha',v:fmtD(r.fecha)},
@@ -248,7 +273,7 @@ function openModal(r,tipo){
   document.getElementById('modal-title').textContent=title;
   document.getElementById('modal-body').innerHTML=
     fields.map(f=>'<div class="modal-field"><label>'+f.l+'</label><p>'+f.v+'</p></div>').join('')+
-    (r.detalle?'<div class="modal-field full"><label>Detalle</label><div class="modal-detalle">'+r.detalle+'</div></div>':'');
+    (r.detalle&&!r.detalle.startsWith('Doc:')?'<div class="modal-field full"><label>Detalle</label><div class="modal-detalle">'+r.detalle+'</div></div>':'');
   document.getElementById('modal-overlay').classList.add('open');
 }
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open');}
