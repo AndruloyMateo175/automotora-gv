@@ -39,7 +39,7 @@ def init_db():
     c.execute('''CREATE TABLE IF NOT EXISTS compras (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         fecha TEXT, proveedor TEXT, marca TEXT, modelo TEXT,
-        chasis TEXT, motor TEXT, precio_usd REAL, precio_uyu REAL
+        chasis TEXT, motor TEXT, precio_usd REAL, precio_uyu REAL, moneda TEXT, detalle TEXT
     )''')
     c.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -445,6 +445,29 @@ class Handler(BaseHTTPRequestHandler):
         if path=='/api/clear':
             conn=get_db();conn.execute('DELETE FROM ventas');conn.execute('DELETE FROM compras');conn.execute('DELETE FROM clientes');conn.commit();conn.close();self.send_json({'ok':True});return
         self.send_response(404); self.end_headers()
+
+
+def auto_import():
+    conn = get_db()
+    count = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
+    conn.close()
+    if count > 0:
+        return
+    try:
+        with open('compras_data.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        conn = get_db()
+        for r in data:
+            conn.execute(
+                'INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle) VALUES (?,?,?,?,?,?)',
+                (r.get('fecha',''), r.get('proveedor',''), r.get('comprobante',''),
+                 float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('detalle',''))
+            )
+        conn.commit()
+        conn.close()
+        print('Auto-import: ' + str(len(data)) + ' compras')
+    except Exception as e:
+        print('Auto-import error: ' + str(e))
 
 if __name__ == '__main__':
     init_db()
