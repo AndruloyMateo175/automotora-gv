@@ -369,7 +369,21 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        parsed = urlparse(self.path)
+        parsed = urlparse(
+        if self.path == '/import-tool':
+            try:
+                with open('import_tool.html', 'rb') as f:
+                    html = f.read()
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(html)
+            except Exception as e:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(str(e).encode())
+            return
+        self.path)
         path = parsed.path
         qs = parse_qs(parsed.query)
         if path in ('/', '/index.html'):
