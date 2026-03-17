@@ -8,7 +8,7 @@ DB_PATH = '/data/automotora.db'
 
 USERS = {
     'aacosta':    {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'A. Acosta',    'rol': 'Admin'},
-    'gvillasuso': {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Villasuso', 'rol': 'Vendedor'},
+    'gvillasuso': {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Villasuso', 'rol': 'Admin'},
     'gyozzi':     {'hash': hashlib.sha256(b'cincoestrellas').hexdigest(), 'nombre': 'G. Yozzi',     'rol': 'Vendedor'},
 }
 SESSIONS = {}
