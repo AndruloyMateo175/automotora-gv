@@ -241,6 +241,15 @@ class Handler(BaseHTTPRequestHandler):
             conn.close()
             self.send_json({'ok':True})
 
+
+        elif path == '/api/reset':
+            conn.close()
+            import os
+            if os.path.exists(DB_PATH):
+                os.remove(DB_PATH)
+            init_db()
+            auto_import()
+            self.send_json({'ok':True,'msg':'DB recreada'})
         else:
             conn.close()
             self.send_json({'error':'not found'}, 404)
