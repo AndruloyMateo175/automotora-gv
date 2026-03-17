@@ -86,6 +86,18 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
 .page-btn:hover:not(:disabled){background:var(--blueL);border-color:var(--blue2);color:var(--blue)}
 .page-btn:disabled{opacity:.4;cursor:default}
 .page-btn.active-pg{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:none;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:16px;padding:32px;max-width:520px;width:90%;box-shadow:0 24px 60px rgba(0,0,0,.2);position:relative}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#5A6A7A}
+.modal-title{font-family:'DM Serif Display',serif;font-size:20px;color:#1A6FB5;margin-bottom:20px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.modal-field label{font-size:11px;font-weight:600;color:#5A6A7A;text-transform:uppercase;letter-spacing:.06em}
+.modal-field p{font-size:14px;color:#1A2B3C;margin-top:2px;word-break:break-all}
+.modal-field.full{grid-column:1/-1}
+.row-click{cursor:pointer}
+.row-click:hover{background:#E8F4FD!important}
 </style>
 </head>
 <body>
@@ -93,11 +105,11 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">AutomotoraGV</div>
-    <div class="login-sub">Sistema de gestión vehicular</div>
+    <div class="login-sub">Sistema de gestiÃ³n vehicular</div>
     <label>Usuario</label>
     <input type="text" id="inp-user" placeholder="usuario">
-    <label>Contraseña</label>
-    <input type="password" id="inp-pass" placeholder="••••••••">
+    <label>ContraseÃ±a</label>
+    <input type="password" id="inp-pass" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢">
     <button class="btn-login" onclick="doLogin()">Ingresar</button>
     <div id="login-err"></div>
   </div>
@@ -122,9 +134,9 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
 
     <div class="section active" id="section-dashboard">
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-icon comp">🛒</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
-        <div class="stat-card"><div class="stat-icon vent">💰</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
-        <div class="stat-card"><div class="stat-icon cli">👥</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
+        <div class="stat-card"><div class="stat-icon comp">ð</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
+        <div class="stat-card"><div class="stat-icon vent">ð°</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
+        <div class="stat-card"><div class="stat-icon cli">ð¥</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
       </div>
     </div>
 
@@ -152,12 +164,20 @@ tbody td{padding:13px 16px;font-size:13.5px;color:var(--text)}
       <div class="section-header"><div><div class="section-title">Clientes</div><div class="section-count" id="count-clientes"></div></div></div>
       <div class="search-bar"><input type="text" id="search-clientes" placeholder="Buscar por nombre, documento..." oninput="filterL()"></div>
       <div class="table-wrap">
-        <table><thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>Teléfono</th><th>Email</th><th>País</th></tr></thead>
+        <table><thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>TelÃ©fono</th><th>Email</th><th>PaÃ­s</th></tr></thead>
         <tbody id="tbody-clientes"></tbody></table>
         <div class="pagination" id="pag-clientes"></div>
       </div>
     </div>
 
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <div class="modal-title" id="modal-title">Detalle</div>
+    <div class="modal-grid" id="modal-body"></div>
   </div>
 </div>
 
@@ -188,7 +208,7 @@ async function doLogin(){
     document.getElementById('user-label').textContent=d.nombre;
     document.getElementById('user-initial').textContent=(d.nombre||'?')[0].toUpperCase();
     launchApp();
-  }else{err.textContent='Usuario o contraseña incorrectos';}
+  }else{err.textContent='Usuario o contraseÃ±a incorrectos';}
 }
 
 function doLogout(){TOK='';localStorage.removeItem('gv_tok');document.getElementById('app').style.display='none';document.getElementById('login-screen').style.display='flex';}
@@ -206,13 +226,13 @@ function filterV(){const q=document.getElementById('search-ventas').value.toLowe
 function filterL(){const q=document.getElementById('search-clientes').value.toLowerCase();fL=q?allL.filter(r=>['nombre','documento'].some(k=>(r[k]||'').toLowerCase().includes(q))):allL;pL=1;renderL();}
 
 function pg(arr,p){const tot=arr.length,pages=Math.max(1,Math.ceil(tot/PS)),cur=Math.min(p,pages);return{rows:arr.slice((cur-1)*PS,cur*PS),page:cur,pages,tot};}
-function pagHTML(p,pages,tot,fn){if(pages<=1)return '<span>'+tot+' registros</span>';let b='<button class="page-btn" onclick="'+fn+'('+(p-1)+')" '+(p>1?'':'disabled')+'>&#8592;</button>';const lo=Math.max(1,p-2),hi=Math.min(pages,p+2);if(lo>1)b+='<button class="page-btn" onclick="'+fn+'(1)">1</button>'+(lo>2?'<span style="padding:0 4px">…</span>':'');for(let i=lo;i<=hi;i++)b+='<button class="page-btn'+(i===p?' active-pg':'')+'" onclick="'+fn+'('+i+')">'+i+'</button>';if(hi<pages)b+=(hi<pages-1?'<span style="padding:0 4px">…</span>':'')+'<button class="page-btn" onclick="'+fn+'('+pages+')">'+pages+'</button>';b+='<button class="page-btn" onclick="'+fn+'('+(p+1)+')" '+(p<pages?'':'disabled')+'>&#8594;</button>';return '<span>'+tot+' registros</span><div class="page-btns">'+b+'</div>';}
+function pagHTML(p,pages,tot,fn){if(pages<=1)return '<span>'+tot+' registros</span>';let b='<button class="page-btn" onclick="'+fn+'('+(p-1)+')" '+(p>1?'':'disabled')+'>&#8592;</button>';const lo=Math.max(1,p-2),hi=Math.min(pages,p+2);if(lo>1)b+='<button class="page-btn" onclick="'+fn+'(1)">1</button>'+(lo>2?'<span style="padding:0 4px">â¦</span>':'');for(let i=lo;i<=hi;i++)b+='<button class="page-btn'+(i===p?' active-pg':'')+'" onclick="'+fn+'('+i+')">'+i+'</button>';if(hi<pages)b+=(hi<pages-1?'<span style="padding:0 4px">â¦</span>':'')+'<button class="page-btn" onclick="'+fn+'('+pages+')">'+pages+'</button>';b+='<button class="page-btn" onclick="'+fn+'('+(p+1)+')" '+(p<pages?'':'disabled')+'>&#8594;</button>';return '<span>'+tot+' registros</span><div class="page-btns">'+b+'</div>';}
 
 function fmtD(s){return s?(s+'').substring(0,10):'-';}
 function fmtU(v){return(v||v===0)?'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}):'-';}
 function badgeDoc(t){if(!t)return '';const tl=t.toUpperCase();if(tl==='RUT')return '<span class="badge-rut">RUT</span>';if(tl==='CI')return '<span class="badge-ci">CI</span>';return '<span class="badge-pas">'+t+'</span>';}
 
-function renderC(){const{rows,page,pages,tot}=pg(fC,pC);pC=page;document.getElementById('tbody-compras').innerHTML=rows.length?rows.map(r=>'<tr><td>'+fmtD(r.fecha)+'</td><td>'+(r.proveedor||'-')+'</td><td class="mono">'+(r.comprobante||'-')+'</td><td><div class="detalle-cell" title="'+(r.detalle||'').replace(/"/g,"'")+'">'+(r.detalle||'-')+'</div></td><td class="price">'+fmtU(r.precio_usd)+'</td></tr>').join(''):'<tr class="empty-row"><td colspan="5">Sin registros</td></tr>';document.getElementById('pag-compras').innerHTML=pagHTML(page,pages,tot,'goC');}
+function renderC(){const{rows,page,pages,tot}=pg(fC,pC);pC=page;document.getElementById('tbody-compras').innerHTML=rows.length?rows.map((r,i)=>'<tr class="row-click" onclick="openModal(r)"<td>'+fmtD(r.fecha)+'</td><td>'+(r.proveedor||'-')+'</td><td class="mono">'+(r.comprobante||'-')+'</td><td><div class="detalle-cell" title="'+(r.detalle||'').replace(/"/g,"'")+'">'+(r.detalle||'-')+'</div></td><td class="price">'+fmtU(r.precio_usd)+'</td></tr>').join(''):'<tr class="empty-row"><td colspan="5">Sin registros</td></tr>';document.getElementById('pag-compras').innerHTML=pagHTML(page,pages,tot,'goC');}
 function renderV(){const{rows,page,pages,tot}=pg(fV,pV);pV=page;document.getElementById('tbody-ventas').innerHTML=rows.length?rows.map(r=>'<tr><td>'+fmtD(r.fecha)+'</td><td>'+(r.cliente||'-')+'</td><td class="mono">'+(r.comprobante||'-')+'</td><td><div class="detalle-cell" title="'+(r.detalle||'').replace(/"/g,"'")+'">'+(r.detalle||'-')+'</div></td><td class="price">'+fmtU(r.precio_usd)+'</td></tr>').join(''):'<tr class="empty-row"><td colspan="5">Sin registros</td></tr>';document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV');}
 function renderL(){const{rows,page,pages,tot}=pg(fL,pL);pL=page;document.getElementById('tbody-clientes').innerHTML=rows.length?rows.map(r=>'<tr><td><b>'+(r.nombre||'-')+'</b></td><td>'+badgeDoc(r.tipo_doc)+'</td><td class="mono">'+(r.documento||'-')+'</td><td>'+(r.telefono||'-')+'</td><td>'+(r.email||'-')+'</td><td>'+(r.pais||'-')+'</td></tr>').join(''):'<tr class="empty-row"><td colspan="6">Sin registros</td></tr>';document.getElementById('pag-clientes').innerHTML=pagHTML(page,pages,tot,'goL');}
 
@@ -226,6 +246,29 @@ document.getElementById('inp-pass').addEventListener('keydown',e=>{if(e.key==='E
 document.getElementById('inp-user').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('inp-pass').focus();});
 
 if(TOK){api('/api/stats').then(d=>{if(d){const n=localStorage.getItem('gv_nombre')||'Usuario';document.getElementById('user-label').textContent=n;document.getElementById('user-initial').textContent=n[0].toUpperCase();launchApp();}else doLogout();});}
+
+function openModal(r){
+  const fields = [
+    {l:'Fecha',v:r.fecha||'-'},
+    {l:'Proveedor',v:r.proveedor||'-'},
+    {l:'Comprobante',v:r.comprobante||'-'},
+    {l:'Precio USD',v:fmtU(r.precio_usd)},
+    {l:'Marca',v:r.marca||'-'},
+    {l:'Modelo',v:r.modelo||'-'},
+    {l:'Año',v:r.anio||'-'},
+    {l:'Chasis',v:r.chasis||'-'},
+    {l:'Motor',v:r.motor||'-'},
+    {l:'Color',v:r.color||'-'},
+    {l:'Detalle completo',v:r.detalle||'-',full:true},
+  ];
+  document.getElementById('modal-title').textContent=(r.marca||'')+' '+(r.modelo||'');
+  document.getElementById('modal-body').innerHTML=fields.map(f=>
+    '<div class="modal-field'+(f.full?' full':'')+'"><label>'+f.l+'</label><p>'+f.v+'</p></div>'
+  ).join('');
+  document.getElementById('modal-overlay').classList.add('open');
+}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
 </body>
 </html>
