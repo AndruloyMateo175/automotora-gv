@@ -229,7 +229,7 @@ async function doLogin(){
     localStorage.setItem('gv_nombre',d.nombre);
     document.getElementById('user-label').textContent=d.nombre;
     document.getElementById('user-initial').textContent=(d.nombre||'?')[0].toUpperCase();
-    if(!d.nombre||!d.nombre.toLowerCase().includes('villasuso')){document.body.classList.add('hide-price');}else{document.body.classList.remove('hide-price');}launchApp();
+    if(!d.nombre||!d.nombre.includes('Villasuso')){document.body.classList.add('hide-price');}else{document.body.classList.remove('hide-price');}launchApp();
   }else{err.textContent='Usuario o contrasena incorrectos';}
 }
 
@@ -295,7 +295,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -371,7 +371,7 @@ function showSection(name,btn){
 document.getElementById('inp-pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
 document.getElementById('inp-user').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('inp-pass').focus();});
 
-if(TOK){api('/api/stats').then(d=>{if(d){const n=localStorage.getItem('gv_nombre')||'Usuario';document.getElementById('user-label').textContent=n;document.getElementById('user-initial').textContent=n[0].toUpperCase();if(!d.nombre||!d.nombre.toLowerCase().includes('villasuso')){document.body.classList.add('hide-price');}else{document.body.classList.remove('hide-price');}launchApp();}else doLogout();});}
+if(TOK){api('/api/stats').then(d=>{if(d){const n=localStorage.getItem('gv_nombre')||'Usuario';document.getElementById('user-label').textContent=n;document.getElementById('user-initial').textContent=n[0].toUpperCase();if(!d.nombre||!d.nombre.includes('Villasuso')){document.body.classList.add('hide-price');}else{document.body.classList.remove('hide-price');}launchApp();}else doLogout();});}
 </script>
 </body>
 </html>
