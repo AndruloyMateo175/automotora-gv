@@ -183,7 +183,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
       <div class="search-bar"><input type="text" id="search-clientes" placeholder="Buscar por nombre, documento..." oninput="filterL()"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>Telefono</th><th>Email</th><th>Direccion</th><th>Pais</th></tr></thead>
+          <thead><tr><th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>Telefono</th><th>Email</th><th>Pais</th></tr></thead>
           <tbody id="tbody-clientes"></tbody>
         </table>
         <div class="pagination" id="pag-clientes"></div>
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂ±o',v:r.anio||'-'},
+      {l:'AÃ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -350,10 +350,9 @@ function renderL(){
       +'<td class="mono">'+(r.documento||'-')+'</td>'
       +'<td>'+(r.telefono||'-')+'</td>'
       +'<td>'+(r.email||'-')+'</td>'
-      +'<td><div class="cell-cut">'+(r.direccion||'-')+'</div></td>'
       +'<td>'+(r.pais||'-')+'</td>'
       +'</tr>').join('')
-    :'<tr class="empty-row"><td colspan="7">Sin registros</td></tr>';
+    :'<tr class="empty-row"><td colspan="6">Sin registros</td></tr>';
   document.getElementById('pag-clientes').innerHTML=pagHTML(page,pages,tot,'goL');
 }
 
