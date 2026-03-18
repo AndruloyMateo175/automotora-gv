@@ -148,9 +148,9 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
 
     <div class="section active" id="section-dashboard">
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
-        <div class="stat-card"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
-        <div class="stat-card"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
+        <div class="stat-card" onclick="showSection('compras',document.getElementById('nav-compras'))" style="cursor:pointer"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
+        <div class="stat-card" onclick="showSection('ventas',document.getElementById('nav-ventas'))" style="cursor:pointer"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
+        <div class="stat-card" onclick="showSection('clientes',document.getElementById('nav-clientes'))" style="cursor:pointer"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
       </div>
     </div>
 
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
