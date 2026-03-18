@@ -250,7 +250,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃ±o',v:r.anio||'-'},
+      {l:'AÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -283,22 +283,7 @@ function renderC(){
   document.getElementById('pag-compras').innerHTML=pagHTML(page,pages,tot,'goC');
 }
 
-function renderV(){
-  const {rows,page,pages,tot}=pg(fV,pV);pV=page;
-  document.getElementById('tbody-ventas').innerHTML=rows.length
-    ?rows.map(r=>'<tr onclick=\'openModal('+JSON.stringify(r).replace(/'/g,"\\'")+',"venta")\'>'
-      +'<td>'+fmtD(r.fecha)+'</td>'
-      +'<td>'+(r.cliente||'-')+'</td>'
-      +'<td class="mono">'+(r.comprobante||'-')+'</td>'
-      +'<td><b>'+(r.marca||'')+'</b>'+(r.modelo?' '+r.modelo:'')+'</td>'
-      +'<td class="mono">'+(r.chasis||'-')+'</td>'
-      +fmtU(r.precio_usd)+'</td>'
-      +'</tr>').join('')
-    :'<tr class="empty-row"><td colspan="6">Sin registros</td></tr>';
-  document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV');
-}
-
-function renderL(){
+function renderV(){ const {rows,page,pages,tot}=pg(fV,pV);pV=page; document.getElementById('tbody-ventas').innerHTML=rows.length ?rows.map(r=>'<tr onclick=\'openModal('+JSON.stringify(r).replace(/'/g,"\\\'")+',\'venta\')\'>'\'+'<td>'+fmtD(r.fecha)+'</td>'\'+'<td>'+(r.cliente||'-')+'</td>'\'+'<td class=\'mono\'>'+(r.comprobante||'-')+'</td>'\'+'<td><b>'+(r.marca||'')+'</b>'+(r.modelo?' '+r.modelo:'')+'</td>'\'+'<td class=\'mono\'>'+(r.chasis||'-')+'</td>'\'+'<td class=\'price\'>'+fmtU(r.precio_usd)+'</td>'\'+'</tr>').join('') :'<tr class=\'empty-row\'><td colspan=\'6\'>Sin registros</td></tr>'; document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV'); } function renderL(){
   const {rows,page,pages,tot}=pg(fL,pL);pL=page;
   document.getElementById('tbody-clientes').innerHTML=rows.length
     ?rows.map(r=>'<tr>'
