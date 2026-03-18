@@ -40,8 +40,12 @@ def init_db():
     conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT, tipo_doc TEXT, documento TEXT,
-        telefono TEXT, email TEXT, pais TEXT
+        telefono TEXT, email TEXT, pais TEXT,
+        direccion TEXT, ciudad TEXT
     )''')
+    for _col in ['direccion','ciudad']:
+        try: conn.execute(f'ALTER TABLE clientes ADD COLUMN {_col} TEXT DEFAULT ""')
+        except: pass
     conn.commit()
     conn.close()
 
@@ -266,9 +270,10 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json({'ok':True})
 
         elif path == '/api/clientes':
-            conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais) VALUES (?,?,?,?,?,?)',
+            conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais,direccion,ciudad) VALUES (?,?,?,?,?,?,?,?)',
                 (body.get('nombre',''), body.get('tipo_doc','CI'), body.get('documento',''),
-                 body.get('telefono',''), body.get('email',''), body.get('pais','Uruguay')))
+                 body.get('telefono',''), body.get('email',''), body.get('pais','Uruguay'),
+                 body.get('direccion',''), body.get('ciudad','')))
             conn.commit()
             conn.close()
             self.send_json({'ok':True})
@@ -286,9 +291,10 @@ class Handler(BaseHTTPRequestHandler):
                     (r.get('fecha',''), r.get('cliente',''), r.get('detalle',''),
                      float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('comprobante','')))
             for r in body.get('clientes',[]):
-                conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais) VALUES (?,?,?,?,?,?)',
+                conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais,direccion,ciudad) VALUES (?,?,?,?,?,?,?,?)',
                     (r.get('nombre',''), r.get('tipo_doc','CI'), r.get('documento',''),
-                     r.get('telefono',''), r.get('email',''), r.get('pais','Uruguay')))
+                     r.get('telefono',''), r.get('email',''), r.get('pais','Uruguay'),
+                     r.get('direccion',''), r.get('ciudad','')))
             conn.commit()
             conn.close()
             self.send_json({'ok':True})
