@@ -146,11 +146,11 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
   </div>
   <div class="main">
 
-    <div class="section active" id="section-dashboard"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button id="btn-sync" onclick="doSync()" style="background:#1A6FB5;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">&#x21BB; Sincronizar eFáctura</button></div>
+    <div class="section active" id="section-dashboard"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button id="btn-sync" onclick="doSync()" style="background:#1A6FB5;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">&#x21BB; Sincronizar eFÃ¡ctura</button></div>
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-icon comp" onclick="showSection('compras',document.getElementById('nav-compras'))" style="cursor:pointer">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
-        <div class="stat-card"><div class="stat-icon vent" onclick="showSection('ventas',document.getElementById('nav-ventas'))" style="cursor:pointer">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
-        <div class="stat-card"><div class="stat-icon cli" onclick="showSection('clientes',document.getElementById('nav-clientes'))" style="cursor:pointer">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
+        <div class="stat-card" onclick="showSection('compras',document.getElementById('nav-compras'))" style="cursor:pointer"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
+        <div class="stat-card" onclick="showSection('ventas',document.getElementById('nav-ventas'))" style="cursor:pointer"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
+        <div class="stat-card" onclick="showSection('clientes',document.getElementById('nav-clientes'))" style="cursor:pointer"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
       </div>
     </div>
 
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -377,7 +377,7 @@ async function doSync(){
   if(!btn)return;
   btn.textContent='Sincronizando...';btn.disabled=true;
   try{
-    // Fetch ventas CSV desde eFáctura (el browser ya tiene la sesión)
+    // Fetch ventas CSV desde eFÃ¡ctura (el browser ya tiene la sesiÃ³n)
     const EF='https://sc.220efactura.info/online';
     const csvV=await fetch(EF+'/ListadoComprobantesExcel/ListadoComprobantesExcel_config_csv.php?script_case_init=9170&summary_export_columns=S&password=n&nm_res_cons=n&nm_ini_csv_res=grid&nm_all_modules=grid&nm_delim_line=1&nm_delim_col=1&nm_delim_dados=1&nm_label_csv=N&language=es&origem=cons',{credentials:'include'});
     const csvC=await fetch(EF+'/ListadoFacturasCompra/ListadoFacturasCompra_config_csv.php?script_case_init=9170&summary_export_columns=S&password=n&nm_res_cons=n&nm_ini_csv_res=grid&nm_all_modules=grid&nm_delim_line=1&nm_delim_col=1&nm_delim_dados=1&nm_label_csv=N&language=es&origem=cons',{credentials:'include'});
@@ -390,12 +390,12 @@ async function doSync(){
       loadV();loadC();loadStats();
     } else {
       // Si hay error CORS, avisar
-      alert('Para sincronizar debés tener eFáctura abierto en el mismo browser.');
+      alert('Para sincronizar debÃ©s tener eFÃ¡ctura abierto en el mismo browser.');
     }
   }catch(e){
-    alert('Para sincronizar abrí eFáctura en este browser primero.');
+    alert('Para sincronizar abrÃ­ eFÃ¡ctura en este browser primero.');
   }
-  btn.textContent='\u21BB Sincronizar eFáctura';btn.disabled=false;
+  btn.textContent='\u21BB Sincronizar eFÃ¡ctura';btn.disabled=false;
 }
 // Auto-sync cada hora (silencioso)
 setInterval(function(){doSync&&doSync();},3600000);
