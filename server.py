@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # deploy: v5
-import json, re, csv, io, sqlite3, hashlib, os, secrets
+import json, re
+try:
+    import sync as _sync
+except: _sync = None, csv, io, sqlite3, hashlib, os, secrets
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
@@ -355,6 +358,13 @@ class Handler(BaseHTTPRequestHandler):
             conn.close()
             self.send_json({'ok':True})
 
+        elif path == '/api/sync':
+            if _sync:
+                result = _sync.run_sync(conn)
+            else:
+                result = {'ok': False, 'error': 'sync.py no disponible'}
+            conn.close()
+            self.send_json(result)
         elif path == '/api/reset':
             # Borrar todas las tablas y reimportar desde JSON
             conn.execute('DELETE FROM compras')
