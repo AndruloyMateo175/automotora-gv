@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # deploy: v5
-import json, re, sqlite3, hashlib, os, secrets
+import json, re, urllib.request, urllib.parse, csv, io, sqlite3, hashlib, os, secrets
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
@@ -302,6 +302,10 @@ class Handler(BaseHTTPRequestHandler):
             conn.close()
             self.send_json({'ok':True})
 
+        elif path == '/api/sync':
+            result = sync_efactura()
+            conn.close()
+            self.send_json(result)
         elif path == '/api/reset':
             # Borrar todas las tablas y reimportar desde JSON
             conn.execute('DELETE FROM compras')
@@ -358,6 +362,71 @@ class Handler(BaseHTTPRequestHandler):
         else:
             conn.close()
             self.send_json({'error':'not found'}, 404)
+
+
+def sync_efactura():
+    """Descarga ventas y compras de eFáctura y actualiza la DB"""
+    EF_USER = os.environ.get('EFACTURA_USER','')
+    EF_PASS = os.environ.get('EFACTURA_PASS','')
+    EF_URL = os.environ.get('EFACTURA_URL','https://sc.220efactura.info/online')
+    if not EF_USER or not EF_PASS:
+        return {'ok': False, 'error': 'Credenciales no configuradas'}
+    try:
+        import http.cookiejar
+        cj = http.cookiejar.CookieJar()
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+        opener.addheaders = [('User-Agent', 'Mozilla/5.0')]
+        # Login
+        login_data = urllib.parse.urlencode({
+            'nm_usr': EF_USER, 'nm_pass': EF_PASS, 'login': '1'
+        }).encode()
+        opener.open(EF_URL + '/Login/', login_data)
+        # Descargar CSV de ventas
+        csv_url = EF_URL + '/ListadoComprobantesExcel/ListadoComprobantesExcel_config_csv.php?script_case_init=9170&summary_export_columns=S&password=n&nm_res_cons=n&nm_ini_csv_res=grid&nm_all_modules=grid&nm_delim_line=1&nm_delim_col=1&nm_delim_dados=1&nm_label_csv=N&language=es&origem=cons'
+        r = opener.open(csv_url)
+        csv_content = r.read().decode('latin-1')
+        rows = list(csv.reader(io.StringIO(csv_content), delimiter=';'))
+        ventas_nuevas = 0
+        conn = get_db()
+        for row in rows[1:]:
+            if len(row) < 9: continue
+            tipo = row[0].strip().strip('"')
+            if tipo not in ('e-Ticket','e-Factura'): continue
+            numero = row[1].strip().strip('"')
+            comprobante = tipo + ' ' + numero
+            fecha_raw = row[2].strip().strip('"')
+            # Convertir fecha DD/MM/YYYY
+            try:
+                from datetime import datetime
+                fecha = datetime.strptime(fecha_raw, '%d/%m/%Y').strftime('%d/%m/%Y')
+            except:
+                fecha = fecha_raw
+            cliente = row[4].strip().strip('"')
+            # Extraer nombre sin documento
+            import re as _re
+            cm = _re.match(r'^(.+?)\s*\([^)]+\)
+    init_db()
+    auto_import()
+    print(f'AutomotoraGV en puerto {PORT}')
+    HTTPServer(('', PORT), Handler).serve_forever()
+, cliente)
+            cliente_nombre = cm.group(1).strip() if cm else cliente
+            detalle = row[5].strip().strip('"') if len(row) > 5 else ''
+            precio_str = row[7].strip().strip('"').replace('.','').replace(',','.') if len(row) > 7 else '0'
+            try: precio = float(precio_str)
+            except: precio = 0
+            moneda = row[8].strip().strip('"') if len(row) > 8 else 'USD'
+            # Verificar si ya existe
+            exists = conn.execute('SELECT id FROM ventas WHERE comprobante=?', (comprobante,)).fetchone()
+            if not exists:
+                conn.execute('INSERT INTO ventas (fecha,cliente,detalle,precio_usd,moneda,comprobante) VALUES (?,?,?,?,?,?)',
+                    (fecha, cliente_nombre, detalle, precio, moneda, comprobante))
+                ventas_nuevas += 1
+        conn.commit()
+        conn.close()
+        return {'ok': True, 'ventas_nuevas': ventas_nuevas}
+    except Exception as e:
+        return {'ok': False, 'error': str(e)}
 
 if __name__ == '__main__':
     init_db()
