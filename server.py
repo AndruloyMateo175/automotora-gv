@@ -37,6 +37,8 @@ def init_db():
     for _col in ['marca','modelo','motor','chasis']:
         try: conn.execute(f'ALTER TABLE ventas ADD COLUMN {_col} TEXT DEFAULT ""')
         except: pass
+    try: conn.execute('ALTER TABLE clientes ADD COLUMN direccion TEXT DEFAULT ""')
+    except: pass
     conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT, tipo_doc TEXT, documento TEXT,
