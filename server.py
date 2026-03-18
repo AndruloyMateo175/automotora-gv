@@ -147,12 +147,12 @@ class Handler(BaseHTTPRequestHandler):
             offset = int(qs.get('offset',['0'])[0])
             q      = qs.get('q',[''])[0]
             if q:
-                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY fecha DESC LIMIT ? OFFSET ?",
+                rows = conn.execute("SELECT * FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ? ORDER BY CASE WHEN fecha LIKE '__/__/____' THEN substr(fecha,7,4)||'-'||substr(fecha,4,2)||'-'||substr(fecha,1,2) ELSE fecha END DESC LIMIT ? OFFSET ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%',limit,offset)).fetchall()
                 total = conn.execute("SELECT COUNT(*) FROM compras WHERE proveedor LIKE ? OR detalle LIKE ? OR comprobante LIKE ?",
                     ('%'+q+'%','%'+q+'%','%'+q+'%')).fetchone()[0]
             else:
-                rows = conn.execute('SELECT * FROM compras ORDER BY fecha DESC LIMIT ? OFFSET ?',(limit,offset)).fetchall()
+                rows = conn.execute("SELECT * FROM compras ORDER BY CASE WHEN fecha LIKE '__/__/____' THEN substr(fecha,7,4)||'-'||substr(fecha,4,2)||'-'||substr(fecha,1,2) ELSE fecha END DESC LIMIT ? OFFSET ?",(limit,offset)).fetchall()
                 total = conn.execute('SELECT COUNT(*) FROM compras').fetchone()[0]
             conn.close()
             self.send_json({'data':[dict(r) for r in rows],'total':total})
