@@ -159,7 +159,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
       <div class="search-bar"><input type="text" id="search-compras" placeholder="Buscar por proveedor, comprobante, modelo, chasis..." oninput="filterC()"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Fecha</th><th>Proveedor</th><th>Comprobante</th><th>Marca / Modelo</th><th>Anio</th><th>Chasis</th><th>Color</th><th>Precio USD</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Proveedor</th><th>Comprobante</th><th>Marca / Modelo</th><th>Anio</th><th>Chasis</th><th>Color</th><th class="col-price">Precio USD</th></tr></thead>
           <tbody id="tbody-compras"></tbody>
         </table>
         <div class="pagination" id="pag-compras"></div>
@@ -171,7 +171,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
       <div class="search-bar"><input type="text" id="search-ventas" placeholder="Buscar por cliente, detalle..." oninput="filterV()"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Fecha</th><th>Cliente</th><th>Comprobante</th><th>Detalle</th><th>Precio USD</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Cliente</th><th>Comprobante</th><th>Detalle</th><th class="col-price">Precio USD</th></tr></thead>
           <tbody id="tbody-ventas"></tbody>
         </table>
         <div class="pagination" id="pag-ventas"></div>
@@ -203,7 +203,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
 </div>
 
 <script>
-const PS=50;
+const PS=50; let canSeePrice=false;
 let TOK=localStorage.getItem('gv_tok')||'';
 let allC=[],allV=[],allL=[],fC=[],fV=[],fL=[],pC=1,pV=1,pL=1;
 
@@ -224,7 +224,7 @@ async function doLogin(){
   const d=await r.json();
   if(d.ok){
     TOK=d.token;
-    localStorage.setItem('gv_tok',TOK);
+    localStorage.setItem('gv_tok',TOK);localStorage.setItem('gv_usr',d.nombre?d.nombre.toLowerCase():'');
     localStorage.setItem('gv_nombre',d.nombre);
     document.getElementById('user-label').textContent=d.nombre;
     document.getElementById('user-initial').textContent=(d.nombre||'?')[0].toUpperCase();
@@ -233,7 +233,10 @@ async function doLogin(){
 }
 
 function doLogout(){TOK='';localStorage.removeItem('gv_tok');document.getElementById('app').style.display='none';document.getElementById('login-screen').style.display='flex';}
-function launchApp(){document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';loadStats();loadC();loadV();loadL();}
+function launchApp(){
+  const usr=localStorage.getItem('gv_usr')||'';
+  const canSeePrice=usr.includes('villasuso');
+  document.querySelectorAll('.col-price').forEach(el=>el.style.display=canSeePrice?'':'none');document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';loadStats();loadC();loadV();loadL();}
 
 async function loadStats(){const d=await api('/api/stats');if(!d)return;document.getElementById('stat-comprados').textContent=d.comprados;document.getElementById('stat-vendidos').textContent=d.vendidos;document.getElementById('stat-clientes').textContent=d.clientes;}
 async function loadC(){const d=await api('/api/compras?limit=5000');if(!d)return;allC=(d.data||[]).sort((a,b)=>{const fd=s=>{const p=s.split('/');return p.length===3?p[2]+p[1]+p[0]:s};return fd(b.fecha||'').localeCompare(fd(a.fecha||''))});fC=allC;pC=1;document.getElementById('count-compras').textContent=allC.length+' registros';renderC();}
@@ -294,7 +297,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -321,7 +324,7 @@ function renderC(){
       +'<td>'+(r.anio||'-')+'</td>'
       +'<td class="mono">'+(r.chasis||'-')+'</td>'
       +'<td><div class="cell-cut">'+(r.color||'-')+'</div></td>'
-      +'<td class="price">'+fmtU(r.precio_usd)+'</td>'
+      +(canSeePrice?'<td class="price">'+fmtU(r.precio_usd)+'</td>':'')
       +'</tr>').join('')
     :'<tr class="empty-row"><td colspan="8">Sin registros</td></tr>';
   document.getElementById('pag-compras').innerHTML=pagHTML(page,pages,tot,'goC');
@@ -335,7 +338,7 @@ function renderV(){
       +'<td>'+(r.cliente||'-')+'</td>'
       +'<td class="mono">'+(r.comprobante||'-')+'</td>'
       +'<td><div class="cell-cut">'+(r.detalle||'-')+'</div></td>'
-      +'<td class="price">'+fmtU(r.precio_usd)+'</td>'
+      +(canSeePrice?'<td class="price">'+fmtU(r.precio_usd)+'</td>':'')
       +'</tr>').join('')
     :'<tr class="empty-row"><td colspan="5">Sin registros</td></tr>';
   document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV');
