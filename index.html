@@ -236,7 +236,7 @@ function doLogout(){TOK='';localStorage.removeItem('gv_tok');document.getElement
 function launchApp(){document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';loadStats();loadC();loadV();loadL();}
 
 async function loadStats(){const d=await api('/api/stats');if(!d)return;document.getElementById('stat-comprados').textContent=d.comprados;document.getElementById('stat-vendidos').textContent=d.vendidos;document.getElementById('stat-clientes').textContent=d.clientes;}
-async function loadC(){const d=await api('/api/compras?limit=5000');if(!d)return;allC=d.data||[];fC=allC;pC=1;document.getElementById('count-compras').textContent=allC.length+' registros';renderC();}
+async function loadC(){const d=await api('/api/compras?limit=5000');if(!d)return;allC=(d.data||[]).sort((a,b)=>{const fd=s=>{const p=s.split('/');return p.length===3?p[2]+p[1]+p[0]:s};return fd(b.fecha||'').localeCompare(fd(a.fecha||''))});fC=allC;pC=1;document.getElementById('count-compras').textContent=allC.length+' registros';renderC();}
 async function loadV(){const d=await api('/api/ventas?limit=5000');if(!d)return;allV=d.data||[];fV=allV;pV=1;document.getElementById('count-ventas').textContent=allV.length+' registros';renderV();}
 async function loadL(){const d=await api('/api/clientes?limit=5000');if(!d)return;allL=d.data||[];fL=allL;pL=1;document.getElementById('count-clientes').textContent=allL.length+' registros';renderL();}
 
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃ±o',v:r.anio||'-'},
+      {l:'AÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
