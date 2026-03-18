@@ -34,20 +34,14 @@ def init_db():
         precio_usd REAL, moneda TEXT, comprobante TEXT,
         marca TEXT, modelo TEXT, motor TEXT, chasis TEXT
     )''')
-    try: conn.execute('ALTER TABLE clientes ADD COLUMN direccion TEXT DEFAULT ""')
-except: pass
     for _col in ['marca','modelo','motor','chasis']:
         try: conn.execute(f'ALTER TABLE ventas ADD COLUMN {_col} TEXT DEFAULT ""')
         except: pass
     conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT, tipo_doc TEXT, documento TEXT,
-        telefono TEXT, email TEXT, pais TEXT, direccion TEXT,
-        direccion TEXT, ciudad TEXT
+        telefono TEXT, email TEXT, pais TEXT
     )''')
-    for _col in ['direccion','ciudad']:
-        try: conn.execute(f'ALTER TABLE clientes ADD COLUMN {_col} TEXT DEFAULT ""')
-        except: pass
     conn.commit()
     conn.close()
 
@@ -272,10 +266,9 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json({'ok':True})
 
         elif path == '/api/clientes':
-            conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais,direccion,ciudad) VALUES (?,?,?,?,?,?,?,?)',
+            conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais) VALUES (?,?,?,?,?,?)',
                 (body.get('nombre',''), body.get('tipo_doc','CI'), body.get('documento',''),
-                 body.get('telefono',''), body.get('email',''), body.get('pais','Uruguay'),
-                 body.get('direccion',''), body.get('ciudad','')))
+                 body.get('telefono',''), body.get('email',''), body.get('pais','Uruguay')))
             conn.commit()
             conn.close()
             self.send_json({'ok':True})
@@ -293,10 +286,9 @@ class Handler(BaseHTTPRequestHandler):
                     (r.get('fecha',''), r.get('cliente',''), r.get('detalle',''),
                      float(r.get('precio_usd',0)), r.get('moneda','USD'), r.get('comprobante','')))
             for r in body.get('clientes',[]):
-                conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais,direccion,ciudad) VALUES (?,?,?,?,?,?,?,?)',
+                conn.execute('INSERT INTO clientes (nombre,tipo_doc,documento,telefono,email,pais) VALUES (?,?,?,?,?,?)',
                     (r.get('nombre',''), r.get('tipo_doc','CI'), r.get('documento',''),
-                     r.get('telefono',''), r.get('email',''), r.get('pais','Uruguay'),
-                     r.get('direccion',''), r.get('ciudad','')))
+                     r.get('telefono',''), r.get('email',''), r.get('pais','Uruguay')))
             conn.commit()
             conn.close()
             self.send_json({'ok':True})
