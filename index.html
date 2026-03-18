@@ -146,7 +146,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
   </div>
   <div class="main">
 
-    <div class="section active" id="section-dashboard"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button onclick="doSync()" id="btn-sync" style="background:#1A6FB5;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">&#x21BB; Sincronizar con eFáctura</button></div>
+    <div class="section active" id="section-dashboard"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button onclick="doSync()" id="btn-sync" style="background:#1A6FB5;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">&#x21BB; Sincronizar con eFÃ¡ctura</button></div>
       <div class="stats-grid">
         <div class="stat-card" onclick="showSection('compras',document.getElementById('nav-compras'))" style="cursor:pointer"><div class="stat-icon comp" onclick="showSection('compras',document.getElementById('nav-compras'))">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
         <div class="stat-card" onclick="showSection('ventas',document.getElementById('nav-ventas'))" style="cursor:pointer"><div class="stat-icon vent" onclick="showSection('ventas',document.getElementById('nav-ventas'))">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -360,8 +360,8 @@ async function doSync(){
   const btn=document.getElementById('btn-sync');
   btn.textContent='Sincronizando...';btn.disabled=true;
   const r=await api('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
-  btn.textContent='&#x21BB; Sincronizar con eFáctura';btn.disabled=false;
-  if(r&&r.ok){alert('Sincronizado! '+r.ventas_nuevas+' ventas nuevas.');loadV();loadStats();}
+  btn.textContent='&#x21BB; Sincronizar con eFÃ¡ctura';btn.disabled=false;
+  if(r&&r.ok){alert('Sincronizado!\n'+r.ventas_nuevas+' ventas nuevas\n'+r.compras_nuevas+' compras nuevas');loadV();loadC();loadStats();}
   else{alert('Error: '+(r&&r.error?r.error:'Sin respuesta'));}
 }
 function goC(p){pC=p;renderC();scrollTo(0,0);}
@@ -379,6 +379,15 @@ document.getElementById('inp-pass').addEventListener('keydown',e=>{if(e.key==='E
 document.getElementById('inp-user').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('inp-pass').focus();});
 
 if(TOK){api('/api/stats').then(d=>{if(d){const n=localStorage.getItem('gv_nombre')||'Usuario';document.getElementById('user-label').textContent=n;document.getElementById('user-initial').textContent=n[0].toUpperCase();launchApp();}else doLogout();});}
+
+// Auto-sync cada hora
+setInterval(function(){
+  api('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}).then(r=>{
+    if(r&&r.ok&&(r.ventas_nuevas>0||r.compras_nuevas>0)){
+      loadV();loadC();loadStats();
+    }
+  });
+}, 3600000);
 </script>
 </body>
 </html>
