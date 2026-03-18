@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# deploy: v3
-import json, sqlite3, hashlib, os, secrets
+# deploy: v4
+import json, re, sqlite3, hashlib, os, secrets
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
@@ -31,8 +31,12 @@ def init_db():
     conn.execute('''CREATE TABLE IF NOT EXISTS ventas (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         fecha TEXT, cliente TEXT, detalle TEXT,
-        precio_usd REAL, moneda TEXT, comprobante TEXT
+        precio_usd REAL, moneda TEXT, comprobante TEXT,
+        marca TEXT, modelo TEXT, motor TEXT, chasis TEXT
     )''')
+    for _col in ['marca','modelo','motor','chasis']:
+        try: conn.execute(f'ALTER TABLE ventas ADD COLUMN {_col} TEXT DEFAULT ""')
+        except: pass
     conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT, tipo_doc TEXT, documento TEXT,
@@ -86,7 +90,9 @@ def auto_import():
             print('Auto-import ventas error: ' + str(e))
 
 def check_auth(handler):
-    tok = handler.headers.get('Authorization','').replace('Bearer ','').strip()
+    tok = handler.headers.get('X-Auth-Token','').strip()
+    if not tok:
+        tok = handler.headers.get('Authorization','').replace('Bearer ','').strip()
     return SESSIONS.get(tok)
 
 HTML = open('index.html', 'rb').read() if os.path.exists('index.html') else b'<h1>AutomotoraGV</h1>'
@@ -105,8 +111,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin','*')
-        self.send_header('Access-Control-Allow-Methods','GET,POST,DELETE,OPTIONS')
-        self.send_header('Access-Control-Allow-Headers','Content-Type,Authorization')
+        self.send_header('Access-Control-Allow-Methods','GET,POST,PUT,DELETE,OPTIONS')
+        self.send_header('Access-Control-Allow-Headers','Content-Type,Authorization,X-Auth-Token')
         self.end_headers()
 
     def do_GET(self):
@@ -207,7 +213,41 @@ class Handler(BaseHTTPRequestHandler):
 
         conn = get_db()
 
-        if path == '/api/compras':
+        if path == '/api/ventas/fix':
+            rows = conn.execute('SELECT id,comprobante,detalle FROM ventas').fetchall()
+            updated=0
+            for row in rows:
+                det = row['detalle'] or ''
+                mot=''; ch=''; mar=''; mod=''
+                if det and not det.startswith('Doc:'):
+                    m=re.search(r'MOTOR[:\s]+([A-Z0-9\-/]+)',det,re.IGNORECASE)
+                    if m: mot=m.group(1).strip()
+                    m=re.search(r'(?:CHASIS|CASIS|CH)[:\s]+([A-Z0-9]+)',det,re.IGNORECASE)
+                    if m: ch=m.group(1).strip()
+                    mod=re.split(r'\s+(?:MOTOR|CHASIS|CASIS|CH)[:\s]',det,flags=re.IGNORECASE)[0].strip().rstrip(',;: ')
+                    u=mod.upper()
+                    if u.startswith('BMW') or u.startswith('BME'): mar='BMW'
+                    elif u.startswith('MINI'): mar='MINI'
+                    elif u.startswith('VOLVO'): mar='VOLVO'
+                    elif u.startswith('MAZDA'): mar='MAZDA'
+                    elif 'LAND ROVER' in u or 'RANGE ROVER' in u: mar='LAND ROVER'
+                    elif u.startswith('FERRARI'): mar='FERRARI'
+                    elif u.startswith('JEEP'): mar='JEEP'
+                    elif u.startswith('JAGUAR'): mar='JAGUAR'
+                    elif u.startswith('AUDI'): mar='AUDI'
+                    elif u.startswith('PORSCHE'): mar='PORSCHE'
+                    elif 'RAPTOR' in u or u.startswith('FORD'): mar='FORD'
+                    elif u.startswith('HONDA'): mar='HONDA'
+                    elif u.startswith('SUBARU'): mar='SUBARU'
+                    elif 'MERCEDES' in u: mar='MERCEDES BENZ'
+                    elif 'TIGUAN' in u or u.startswith('VOLKSWAGEN'): mar='VOLKSWAGEN'
+                    elif 'FRONTIER' in u: mar='NISSAN'
+                    elif 'TOYOTA' in u: mar='TOYOTA'
+                conn.execute('UPDATE ventas SET marca=?,modelo=?,motor=?,chasis=? WHERE id=?',(mar,mod,mot,ch,row['id']))
+                updated+=1
+            conn.commit(); conn.close()
+            self.send_json({'ok':True,'updated':updated})
+        elif path == '/api/compras':
             conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                 (body.get('fecha',''), body.get('proveedor',''), body.get('comprobante',''),
                  float(body.get('precio_usd',0)), body.get('moneda','USD'), body.get('detalle',''),
@@ -275,6 +315,28 @@ class Handler(BaseHTTPRequestHandler):
         else:
             conn.close()
             self.send_json({'error':'not found'}, 404)
+
+
+    def do_PUT(self):
+        path = urlparse(self.path).path
+        usr = check_auth(self)
+        if not usr: self.send_json({'error':'unauthorized'},401); return
+        length = int(self.headers.get('Content-Length',0))
+        body = json.loads(self.rfile.read(length)) if length else {}
+        conn = get_db()
+        parts = path.strip('/').split('/')
+        if len(parts)==3 and parts[1]=='ventas':
+            rid = int(parts[2])
+            conn.execute('UPDATE ventas SET fecha=?,cliente=?,detalle=?,precio_usd=?,moneda=?,comprobante=?,marca=?,modelo=?,motor=?,chasis=? WHERE id=?',
+                (body.get('fecha',''),body.get('cliente',''),body.get('detalle',''),float(body.get('precio_usd',0)),body.get('moneda','USD'),body.get('comprobante',''),body.get('marca',''),body.get('modelo',''),body.get('motor',''),body.get('chasis',''),rid))
+            conn.commit(); conn.close(); self.send_json({'ok':True})
+        elif len(parts)==3 and parts[1]=='compras':
+            rid = int(parts[2])
+            conn.execute('UPDATE compras SET fecha=?,proveedor=?,comprobante=?,precio_usd=?,moneda=?,detalle=?,marca=?,modelo=?,anio=?,motor=?,chasis=?,color=? WHERE id=?',
+                (body.get('fecha',''),body.get('proveedor',''),body.get('comprobante',''),float(body.get('precio_usd',0)),body.get('moneda','USD'),body.get('detalle',''),body.get('marca',''),body.get('modelo',''),body.get('anio',''),body.get('motor',''),body.get('chasis',''),body.get('color',''),rid))
+            conn.commit(); conn.close(); self.send_json({'ok':True})
+        else:
+            conn.close(); self.send_json({'error':'not found'},404)
 
     def do_DELETE(self):
         path = urlparse(self.path).path
