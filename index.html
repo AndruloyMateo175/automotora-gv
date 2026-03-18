@@ -140,7 +140,7 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
       <div class="search-bar"><input type="text" id="search-ventas" placeholder="Buscar por cliente, detalle..." oninput="filterV()"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Fecha</th><th>Cliente</th><th>Comprobante</th><th>Marca / Modelo</th><th>Chasis</th><th>Precio USD</th></tr></thead>
+          <thead><tr><th>Fecha</th><th>Cliente</th><th>Comprobante</th><th>Detalle</th><th>Precio USD</th></tr></thead>
           <tbody id="tbody-ventas"></tbody>
         </table>
         <div class="pagination" id="pag-ventas"></div>
@@ -210,7 +210,7 @@ async function loadV(){const d=await api('/api/ventas?limit=5000');if(!d)return;
 async function loadL(){const d=await api('/api/clientes?limit=5000');if(!d)return;allL=d.data||[];fL=allL;pL=1;document.getElementById('count-clientes').textContent=allL.length+' registros';renderL();}
 
 function filterC(){const q=document.getElementById('search-compras').value.toLowerCase();fC=q?allC.filter(r=>['proveedor','comprobante','marca','modelo','chasis','detalle'].some(k=>(r[k]||'').toLowerCase().includes(q))):allC;pC=1;renderC();}
-function filterV(){const q=document.getElementById('search-ventas').value.toLowerCase();fV=q?allV.filter(r=>['cliente','detalle','comprobante','marca','modelo','chasis'].some(k=>(r[k]||'').toLowerCase().includes(q))):allV;pV=1;renderV();}
+function filterV(){const q=document.getElementById('search-ventas').value.toLowerCase();fV=q?allV.filter(r=>['cliente','detalle','comprobante'].some(k=>(r[k]||'').toLowerCase().includes(q))):allV;pV=1;renderV();}
 function filterL(){const q=document.getElementById('search-clientes').value.toLowerCase();fL=q?allL.filter(r=>['nombre','documento'].some(k=>(r[k]||'').toLowerCase().includes(q))):allL;pL=1;renderL();}
 
 function pg(arr,p){const tot=arr.length,pages=Math.max(1,Math.ceil(tot/PS)),cur=Math.min(p,pages);return{rows:arr.slice((cur-1)*PS,cur*PS),page:cur,pages,tot};}
@@ -242,7 +242,20 @@ function parseDetVenta(det){
 }
 function openModal(r,tipo){
   let fields,title;
-  if(tipo==='venta'){ fields=[ {l:'Fecha',v:fmtD(r.fecha)}, {l:'Comprobante',v:r.comprobante||'-'}, {l:'Cliente',v:r.cliente||'-'}, {l:'Precio USD',v:fmtU(r.precio_usd)}, {l:'Marca',v:r.marca||'-'}, {l:'Modelo',v:r.modelo||'-'}, {l:'Motor',v:r.motor||'-'}, {l:'Chasis',v:r.chasis||'-'}, ]; title=r.marca?(r.marca+(r.modelo?' '+r.modelo:'')).trim():(r.cliente||'Venta');} else {
+  if(tipo==='venta'){
+    const pv=parseDetVenta(r.detalle);
+    fields=[
+      {l:'Fecha',v:fmtD(r.fecha)},
+      {l:'Comprobante',v:r.comprobante||'-'},
+      {l:'Cliente',v:r.cliente||'-'},
+      {l:'Precio USD',v:fmtU(r.precio_usd)},
+      {l:'Marca',v:pv.marca},
+      {l:'Modelo',v:pv.modelo},
+      {l:'Motor',v:pv.motor},
+      {l:'Chasis',v:pv.chasis},
+    ];
+    title=pv.marca!=='-'?(pv.marca+' '+pv.modelo).trim():(r.cliente||'Venta');
+  } else {
     fields=[
       {l:'Fecha',v:fmtD(r.fecha)},
       {l:'Proveedor',v:r.proveedor||'-'},
@@ -250,7 +263,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'Año',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -283,14 +296,21 @@ function renderC(){
   document.getElementById('pag-compras').innerHTML=pagHTML(page,pages,tot,'goC');
 }
 
-function renderV(){ const {rows,page,pages,tot}=pg(fV,pV);pV=page; document.getElementById('tbody-ventas').innerHTML=rows.length ?rows.map(r=>'<tr onclick='openModal('+JSON.stringify(r).replace(/'/g,"\'")+',\"venta\")'>'
+function renderV(){
+  const {rows,page,pages,tot}=pg(fV,pV);pV=page;
+  document.getElementById('tbody-ventas').innerHTML=rows.length
+    ?rows.map(r=>'<tr onclick=\'openModal('+JSON.stringify(r).replace(/'/g,"\\'")+',"venta")\'>'
       +'<td>'+fmtD(r.fecha)+'</td>'
       +'<td>'+(r.cliente||'-')+'</td>'
       +'<td class="mono">'+(r.comprobante||'-')+'</td>'
-      +'<td><b>'+(r.marca||'')+'</b>'+(r.modelo?' '+r.modelo:'')+'</td>'
-      +'<td class="mono">'+(r.chasis||'-')+'</td>'
+      +'<td><div class="cell-cut">'+(r.detalle||'-')+'</div></td>'
       +'<td class="price">'+fmtU(r.precio_usd)+'</td>'
-      +'</tr>').join('') :'<tr class="empty-row"><td colspan="6">Sin registros</td></tr>'; document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV'); } function renderL(){
+      +'</tr>').join('')
+    :'<tr class="empty-row"><td colspan="5">Sin registros</td></tr>';
+  document.getElementById('pag-ventas').innerHTML=pagHTML(page,pages,tot,'goV');
+}
+
+function renderL(){
   const {rows,page,pages,tot}=pg(fL,pL);pL=page;
   document.getElementById('tbody-clientes').innerHTML=rows.length
     ?rows.map(r=>'<tr>'
