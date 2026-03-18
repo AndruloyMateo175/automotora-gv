@@ -146,11 +146,11 @@ tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
   </div>
   <div class="main">
 
-    <div class="section active" id="section-dashboard"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button id="btn-sync" onclick="doSync()" style="background:#1A6FB5;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">&#x21BB; Sincronizar eFactura</button></div>
+    <div class="section active" id="section-dashboard">
       <div class="stats-grid">
-        <div class="stat-card" onclick="showSection('compras',document.getElementById('nav-compras'))" style="cursor:pointer"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
-        <div class="stat-card" onclick="showSection('ventas',document.getElementById('nav-ventas'))" style="cursor:pointer"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
-        <div class="stat-card" onclick="showSection('clientes',document.getElementById('nav-clientes'))" style="cursor:pointer"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
+        <div class="stat-card"><div class="stat-icon comp">C</div><div><div class="stat-num" id="stat-comprados">-</div><div class="stat-label">Compras</div></div></div>
+        <div class="stat-card"><div class="stat-icon vent">V</div><div><div class="stat-num" id="stat-vendidos">-</div><div class="stat-label">Ventas</div></div></div>
+        <div class="stat-card"><div class="stat-icon cli">CL</div><div><div class="stat-num" id="stat-clientes">-</div><div class="stat-label">Clientes</div></div></div>
       </div>
     </div>
 
@@ -294,7 +294,7 @@ function openModal(r,tipo){
       {l:'Precio USD',v:fmtU(r.precio_usd)},
       {l:'Marca',v:r.marca||'-'},
       {l:'Modelo',v:r.modelo||'-'},
-      {l:'AÃÂÃÂ±o',v:r.anio||'-'},
+      {l:'AÃÂ±o',v:r.anio||'-'},
       {l:'Chasis',v:r.chasis||'-'},
       {l:'Motor',v:r.motor||'-'},
       {l:'Color',v:r.color||'-'},
@@ -371,35 +371,6 @@ document.getElementById('inp-pass').addEventListener('keydown',e=>{if(e.key==='E
 document.getElementById('inp-user').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('inp-pass').focus();});
 
 if(TOK){api('/api/stats').then(d=>{if(d){const n=localStorage.getItem('gv_nombre')||'Usuario';document.getElementById('user-label').textContent=n;document.getElementById('user-initial').textContent=n[0].toUpperCase();launchApp();}else doLogout();});}
-
-async function doSync(){
-  const btn=document.getElementById('btn-sync');
-  if(btn){btn.textContent='Sincronizando...';btn.disabled=true;}
-  const r=await api('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
-  if(r&&r.ok){
-    let tries=0;
-    const poll=setInterval(async function(){
-      tries++;
-      const s=await api('/api/sync_status',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
-      if(tries>20||(s&&(s.ventas_nuevas>0||s.compras_nuevas>0||(s.error&&s.error!='No sincronizado aun')))){
-        clearInterval(poll);
-        if(btn){btn.textContent='↻ Sincronizar eFactura';btn.disabled=false;}
-        if(s&&s.ok&&(s.ventas_nuevas>0||s.compras_nuevas>0)){
-          alert('✓ Sincronizado!
-'+s.ventas_nuevas+' ventas nuevas
-'+s.compras_nuevas+' compras nuevas');
-          loadV();loadC();loadStats();
-        } else if(tries>20){
-          if(btn){btn.textContent='↻ Sincronizar eFactura';btn.disabled=false;}
-        }
-      }
-    },3000);
-  } else {
-    if(btn){btn.textContent='↻ Sincronizar eFactura';btn.disabled=false;}
-    if(r&&r.error) alert('Error: '+r.error);
-  }
-}
-setInterval(function(){doSync();},3600000);
 </script>
 </body>
 </html>
