@@ -365,7 +365,7 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def sync_efactura():
-    """Descarga ventas y compras de eFáctura y actualiza la DB"""
+    """Descarga ventas y compras de eFÃ¡ctura y actualiza la DB"""
     EF_USER = os.environ.get('EFACTURA_USER','')
     EF_PASS = os.environ.get('EFACTURA_PASS','')
     EF_URL = os.environ.get('EFACTURA_URL','https://sc.220efactura.info/online')
@@ -424,7 +424,41 @@ def sync_efactura():
                 ventas_nuevas += 1
         conn.commit()
         conn.close()
-        return {'ok': True, 'ventas_nuevas': ventas_nuevas}
+        # Descargar CSV de compras
+        compras_url = EF_URL + '/ListadoFacturasCompra/ListadoFacturasCompra_config_csv.php?script_case_init=9170&summary_export_columns=S&password=n&nm_res_cons=n&nm_ini_csv_res=grid&nm_all_modules=grid&nm_delim_line=1&nm_delim_col=1&nm_delim_dados=1&nm_label_csv=N&language=es&origem=cons'
+        compras_nuevas = 0
+        try:
+            r2 = opener.open(compras_url)
+            csv2 = r2.read().decode('latin-1')
+            rows2 = list(csv.reader(io.StringIO(csv2), delimiter=';'))
+            conn2 = get_db()
+            PROVEEDORES_VEHICULOS = ['BMW','MINI','MAZDA','LAND ROVER','VOLVO','JEEP','FERRARI','PORSCHE','AUDI','JAGUAR','MOTOR HAUS','GRESMOL']
+            for row in rows2[1:]:
+                if len(row) < 8: continue
+                tipo = row[0].strip().strip('"')
+                if tipo not in ('e-Ticket','e-Factura','e-Remito'): continue
+                numero = row[1].strip().strip('"')
+                comprobante = tipo + ' ' + numero
+                fecha_raw = row[2].strip().strip('"')
+                proveedor = row[4].strip().strip('"') if len(row) > 4 else ''
+                detalle = row[5].strip().strip('"') if len(row) > 5 else ''
+                precio_str = row[7].strip().strip('"').replace('.','').replace(',','.') if len(row) > 7 else '0'
+                try: precio = float(precio_str)
+                except: precio = 0
+                moneda = row[8].strip().strip('"') if len(row) > 8 else 'USD'
+                # Filtrar solo proveedores de vehiculos
+                prov_upper = proveedor.upper()
+                if not any(v in prov_upper for v in PROVEEDORES_VEHICULOS): continue
+                exists = conn2.execute('SELECT id FROM compras WHERE comprobante=?', (comprobante,)).fetchone()
+                if not exists:
+                    conn2.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+                        (fecha_raw, proveedor, comprobante, precio, moneda, detalle, '','','','','',''))
+                    compras_nuevas += 1
+            conn2.commit()
+            conn2.close()
+        except Exception as e2:
+            compras_nuevas = -1
+        return {'ok': True, 'ventas_nuevas': ventas_nuevas, 'compras_nuevas': compras_nuevas}
     except Exception as e:
         return {'ok': False, 'error': str(e)}
 
