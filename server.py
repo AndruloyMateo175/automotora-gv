@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # deploy: v5
-import json, re, sqlite3, hashlib, os, secrets
+import json, re, csv, io, sqlite3, hashlib, os, secrets
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
@@ -247,6 +247,59 @@ class Handler(BaseHTTPRequestHandler):
                 updated+=1
             conn.commit(); conn.close()
             self.send_json({'ok':True,'updated':updated})
+        elif path == '/api/import_csv':
+            import csv as _csv, io as _io, re as _re
+            ventas_csv = body.get('ventas_csv','')
+            compras_csv = body.get('compras_csv','')
+            ventas_nuevas = 0
+            compras_nuevas = 0
+            PROVS = ['BMW','MINI','MAZDA','LAND ROVER','VOLVO','JEEP','FERRARI','PORSCHE','AUDI','JAGUAR','MOTOR HAUS','GRESMOL']
+            # Procesar ventas
+            if ventas_csv:
+                rows = list(_csv.reader(_io.StringIO(ventas_csv), delimiter=';'))
+                for row in rows[1:]:
+                    if len(row) < 8: continue
+                    tipo = row[0].strip().strip('"')
+                    if tipo not in ('e-Ticket','e-Factura'): continue
+                    numero = row[1].strip().strip('"')
+                    comprobante = tipo + ' ' + numero
+                    fecha = row[2].strip().strip('"')
+                    cliente_raw = row[4].strip().strip('"') if len(row) > 4 else ''
+                    cm = _re.match(r'^(.+?)\s*\([^)]+\)$', cliente_raw)
+                    cliente = cm.group(1).strip() if cm else cliente_raw
+                    detalle = row[5].strip().strip('"') if len(row) > 5 else ''
+                    try: precio = float(row[7].strip().strip('"').replace('.','').replace(',','.'))
+                    except: precio = 0
+                    moneda = row[8].strip().strip('"') if len(row) > 8 else 'USD'
+                    exists = conn.execute('SELECT id FROM ventas WHERE comprobante=?',(comprobante,)).fetchone()
+                    if not exists:
+                        conn.execute('INSERT INTO ventas (fecha,cliente,detalle,precio_usd,moneda,comprobante) VALUES (?,?,?,?,?,?)',
+                            (fecha,cliente,detalle,precio,moneda,comprobante))
+                        ventas_nuevas += 1
+            # Procesar compras
+            if compras_csv:
+                rows2 = list(_csv.reader(_io.StringIO(compras_csv), delimiter=';'))
+                for row in rows2[1:]:
+                    if len(row) < 8: continue
+                    tipo = row[0].strip().strip('"')
+                    if tipo not in ('e-Ticket','e-Factura','e-Remito'): continue
+                    numero = row[1].strip().strip('"')
+                    comprobante = tipo + ' ' + numero
+                    fecha = row[2].strip().strip('"')
+                    proveedor = row[4].strip().strip('"') if len(row) > 4 else ''
+                    if not any(v in proveedor.upper() for v in PROVS): continue
+                    detalle = row[5].strip().strip('"') if len(row) > 5 else ''
+                    try: precio = float(row[7].strip().strip('"').replace('.','').replace(',','.'))
+                    except: precio = 0
+                    moneda = row[8].strip().strip('"') if len(row) > 8 else 'USD'
+                    exists = conn.execute('SELECT id FROM compras WHERE comprobante=?',(comprobante,)).fetchone()
+                    if not exists:
+                        conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+                            (fecha,proveedor,comprobante,precio,moneda,detalle,'','','','','',''))
+                        compras_nuevas += 1
+            conn.commit()
+            conn.close()
+            self.send_json({'ok':True,'ventas_nuevas':ventas_nuevas,'compras_nuevas':compras_nuevas})
         elif path == '/api/compras':
             conn.execute('INSERT INTO compras (fecha,proveedor,comprobante,precio_usd,moneda,detalle,marca,modelo,anio,motor,chasis,color) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                 (body.get('fecha',''), body.get('proveedor',''), body.get('comprobante',''),
