@@ -302,6 +302,20 @@ class Handler(BaseHTTPRequestHandler):
             conn.close()
             self.send_json({'ok':True})
 
+        elif path == '/api/sync':
+            conn.close()
+            try:
+                import sync as _sync_mod
+                self.send_json(_sync_mod.run_sync(get_db))
+            except Exception as _e:
+                self.send_json({'ok': False, 'error': str(_e)})
+        elif path == '/api/sync_status':
+            conn.close()
+            try:
+                import sync as _sync_mod
+                self.send_json(_sync_mod.get_last_result())
+            except Exception as _e:
+                self.send_json({'ok': False, 'error': str(_e)})
         elif path == '/api/reset':
             # Borrar todas las tablas y reimportar desde JSON
             conn.execute('DELETE FROM compras')
