@@ -34,13 +34,15 @@ def init_db():
         precio_usd REAL, moneda TEXT, comprobante TEXT,
         marca TEXT, modelo TEXT, motor TEXT, chasis TEXT
     )''')
+    try: conn.execute('ALTER TABLE clientes ADD COLUMN direccion TEXT DEFAULT ""')
+except: pass
     for _col in ['marca','modelo','motor','chasis']:
         try: conn.execute(f'ALTER TABLE ventas ADD COLUMN {_col} TEXT DEFAULT ""')
         except: pass
     conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT, tipo_doc TEXT, documento TEXT,
-        telefono TEXT, email TEXT, pais TEXT,
+        telefono TEXT, email TEXT, pais TEXT, direccion TEXT,
         direccion TEXT, ciudad TEXT
     )''')
     for _col in ['direccion','ciudad']:
