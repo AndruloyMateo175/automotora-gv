@@ -12,10 +12,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
 /* ── LOGIN ─────────────────────────────────── */
 #login-page{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#000}
 .login-box{background:transparent;padding:40px;width:420px;text-align:center}
-.login-logo-wrap{margin-bottom:32px}
-.login-logo-wrap svg{width:140px;height:140px;margin-bottom:16px}
-.login-brand{font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:3px;margin-bottom:4px;font-family:'Georgia',serif}
-.login-sub{font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:2px;margin-bottom:28px}
+.login-logo{max-width:380px;width:100%;margin-bottom:28px}
 .login-box input{width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,.25);border-radius:8px;font-size:1rem;margin-bottom:14px;background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(4px);transition:border-color .2s}
 .login-box input::placeholder{color:rgba(255,255,255,.5)}
 .login-box input:focus{outline:none;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.12)}
@@ -108,26 +105,7 @@ tr:hover{background:#f8f9fa}
 <!-- LOGIN PAGE -->
 <div id="login-page">
   <div class="login-box">
-    <div class="login-logo-wrap">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="98" fill="#111" stroke="#333" stroke-width="2"/>
-        <!-- Car silhouette -->
-        <path d="M 35 105 Q 38 78 55 72 Q 65 68 80 62 Q 95 56 110 56 Q 130 56 148 65 Q 158 70 165 82 Q 170 90 170 105 Z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M 55 72 Q 70 60 100 57 Q 130 57 148 65" fill="none" stroke="#fff" stroke-width="1.5" opacity=".6"/>
-        <!-- Horizontal lines (grille/accent) -->
-        <line x1="40" y1="108" x2="162" y2="108" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="50" y1="116" x2="152" y2="116" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-        <line x1="58" y1="123" x2="144" y2="123" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
-        <!-- 3 Stars -->
-        <g fill="#fff" transform="translate(100,148)">
-          <polygon points="0,-12 3,-4 11,-4 5,1 7,9 0,5 -7,9 -5,1 -11,-4 -3,-4" transform="translate(-30,0)"/>
-          <polygon points="0,-12 3,-4 11,-4 5,1 7,9 0,5 -7,9 -5,1 -11,-4 -3,-4"/>
-          <polygon points="0,-12 3,-4 11,-4 5,1 7,9 0,5 -7,9 -5,1 -11,-4 -3,-4" transform="translate(30,0)"/>
-        </g>
-      </svg>
-      <div class="login-brand">GONZALO VILLASUSO</div>
-      <div class="login-sub">PUNTA DEL ESTE</div>
-    </div>
+    <img src="/logo.png" alt="Gonzalo Villasuso - Autos Punta del Este" class="login-logo">
     <input type="text" id="login-user" placeholder="Usuario">
     <input type="password" id="login-pass" placeholder="Contrasena">
     <button onclick="doLogin()">INGRESAR</button>
@@ -164,7 +142,7 @@ tr:hover{background:#f8f9fa}
       <table>
         <thead><tr>
           <th>Fecha</th><th>Proveedor</th><th>Comprobante</th><th>Marca</th><th>Modelo</th>
-          <th>Anio</th><th>Chasis</th><th>Motor</th><th>Color</th><th>Precio</th><th>Mon</th><th>Acciones</th>
+          <th>Year</th><th>Chasis</th><th>Motor</th><th>Color</th><th>Precio</th><th>Mon</th><th>Acciones</th>
         </tr></thead>
         <tbody id="tbody-compras"></tbody>
       </table>
@@ -226,7 +204,7 @@ tr:hover{background:#f8f9fa}
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Tipo</th><th>Marca</th><th>Modelo</th><th>Anio</th><th>Chasis</th><th>Motor</th>
+          <th>Tipo</th><th>Marca</th><th>Modelo</th><th>Year</th><th>Chasis</th><th>Motor</th>
           <th>Matricula</th><th>Padron</th><th>Precio</th><th>Acciones</th>
         </tr></thead>
         <tbody id="tbody-stock"></tbody>
@@ -249,7 +227,7 @@ tr:hover{background:#f8f9fa}
         <div class="form-group"><label>Precio</label><input type="number" step="0.01" id="compra-precio"></div>
         <div class="form-group"><label>Marca</label><input type="text" id="compra-marca" placeholder="BMW, MINI, VOLVO..."></div>
         <div class="form-group"><label>Modelo</label><input type="text" id="compra-modelo"></div>
-        <div class="form-group"><label>Anio</label><input type="text" id="compra-anio"></div>
+        <div class="form-group"><label>Year</label><input type="text" id="compra-anio"></div>
         <div class="form-group"><label>Motor</label><input type="text" id="compra-motor"></div>
         <div class="form-group"><label>Chasis</label><input type="text" id="compra-chasis"></div>
         <div class="form-group"><label>Color</label><input type="text" id="compra-color"></div>
@@ -321,7 +299,7 @@ tr:hover{background:#f8f9fa}
       <div class="form-grid">
         <div class="form-group"><label>Marca</label><input type="text" id="stock-marca"></div>
         <div class="form-group"><label>Modelo</label><input type="text" id="stock-modelo"></div>
-        <div class="form-group"><label>Anio</label><input type="text" id="stock-anio"></div>
+        <div class="form-group"><label>Year</label><input type="text" id="stock-anio"></div>
         <div class="form-group"><label>Color</label><input type="text" id="stock-color"></div>
         <div class="form-group"><label>Chasis</label><input type="text" id="stock-chasis"></div>
         <div class="form-group"><label>Motor</label><input type="text" id="stock-motor"></div>
