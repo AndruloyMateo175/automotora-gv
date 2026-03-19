@@ -8,7 +8,7 @@
 :root{--primary:#3b9eff;--primary-dark:#2680db;--danger:#ff4d5e;--success:#2ecc71;--warn:#f1c40f;--bg:#0a0a0a;--card:#161616;--card2:#1e1e1e;--text:#e8e8e8;--text2:#999;--border:#2a2a2a;--shadow:0 2px 8px rgba(0,0,0,.4)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-/* ── LOGIN ─────────────────────────────────── */
+/* ââ LOGIN âââââââââââââââââââââââââââââââââââ */
 #login-page{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#000}
 .login-box{background:transparent;padding:40px;width:420px;text-align:center}
 .login-logo{max-width:380px;width:100%;margin-bottom:28px}
@@ -18,7 +18,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
 .login-box button{width:100%;padding:14px;background:#fff;color:#000;border:none;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:700;letter-spacing:.5px;transition:all .2s;margin-top:4px}
 .login-box button:hover{background:#e0e0e0;transform:translateY(-1px)}
 #login-error{color:#ff6b6b;margin-top:12px;font-size:.85rem;display:none}
-/* ── APP ───────────────────────────────────── */
+/* ââ APP âââââââââââââââââââââââââââââââââââââ */
 #app{display:none}
 header{background:#111;box-shadow:0 1px 0 var(--border);padding:0 24px;display:flex;align-items:center;height:56px;position:sticky;top:0;z-index:100}
 .header-logo{height:36px;margin-right:24px}
@@ -29,12 +29,12 @@ nav button.active{background:var(--primary);color:#fff}
 #user-info{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text2)}
 #btn-logout{padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text2);cursor:pointer;font-size:.8rem}
 #btn-logout:hover{background:#222;color:#fff}
-/* ── PAGES ─────────────────────────────────── */
+/* ââ PAGES âââââââââââââââââââââââââââââââââââ */
 .page{display:none;padding:24px;max-width:1400px;margin:0 auto}
 .page.active{display:block}
 .page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .page-header h2{font-size:1.4rem;color:var(--text)}
-/* ── BUTTONS ───────────────────────────────── */
+/* ââ BUTTONS âââââââââââââââââââââââââââââââââ */
 .btn{padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:500;transition:all .15s}
 .btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}
 .btn-success{background:var(--success);color:#fff}.btn-success:hover{opacity:.9}
@@ -42,7 +42,7 @@ nav button.active{background:var(--primary);color:#fff}
 .btn-warn{background:var(--warn);color:#222}.btn-warn:hover{opacity:.9}
 .btn-sm{padding:4px 10px;font-size:.78rem}
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}.btn-outline:hover{background:#222}
-/* ── TABLE ─────────────────────────────────── */
+/* ââ TABLE âââââââââââââââââââââââââââââââââââ */
 .table-wrap{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow-x:auto;border:1px solid var(--border)}
 table{width:100%;border-collapse:collapse;font-size:.85rem}
 th{background:var(--card2);padding:12px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap}
@@ -51,7 +51,7 @@ tr:hover{background:#1a1a1a}
 .badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
 .badge-0km{background:#1a3a5c;color:#5bb8ff}
 .badge-usado{background:#3a2a0a;color:#ffb347}
-/* ── MODAL ─────────────────────────────────── */
+/* ââ MODAL âââââââââââââââââââââââââââââââââââ */
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding-top:60px;overflow-y:auto}
 .modal-overlay.open{display:flex}
 .modal{background:#1a1a1a;border:1px solid var(--border);border-radius:12px;width:600px;max-width:95vw;box-shadow:0 12px 48px rgba(0,0,0,.5);margin-bottom:40px}
@@ -60,7 +60,7 @@ tr:hover{background:#1a1a1a}
 .modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text2);line-height:1}
 .modal-body{padding:24px}
 .modal-footer{padding:12px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
-/* ── FORM ──────────────────────────────────── */
+/* ââ FORM ââââââââââââââââââââââââââââââââââââ */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-group{display:flex;flex-direction:column}
 .form-group.full{grid-column:1/-1}
@@ -70,22 +70,21 @@ tr:hover{background:#1a1a1a}
 .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(59,158,255,.15)}
 .form-group select{background:#111;color:var(--text)}
 .form-group select option{background:#111;color:var(--text)}
-/* ── SEARCH ────────────────────────────────── */
+/* ââ SEARCH ââââââââââââââââââââââââââââââââââ */
 .search-bar{display:flex;gap:8px;margin-bottom:16px}
 .search-bar input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:var(--card);color:var(--text)}
 .search-bar input:focus{outline:none;border-color:var(--primary)}
 .search-bar select{padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text)}
-/* ── RESPONSIVE ────────────────────────────── */
+/* ââ RESPONSIVE ââââââââââââââââââââââââââââââ */
 @media(max-width:768px){
-  /* Header: logo + usuario arriba, nav abajo fija */
+  /* Header: logo + usuario arriba, nav abajo del header */
   header{flex-wrap:wrap;height:auto;padding:10px 12px;gap:0}
   .header-logo{height:26px;margin-right:auto}
   #user-info{font-size:.75rem;gap:6px}
   #btn-logout{padding:4px 10px;font-size:.7rem}
-  nav{position:fixed;bottom:0;left:0;right:0;z-index:100;background:#111;border-top:1px solid var(--border);display:flex;gap:0;padding:0;order:unset;width:100%}
-  nav button{flex:1;padding:12px 4px;font-size:.7rem;border-radius:0;text-align:center;white-space:nowrap}
+  nav{order:3;width:100%;display:flex;gap:0;padding:0;margin-top:8px;background:#111;border-top:1px solid var(--border)}
+  nav button{flex:1;padding:10px 4px;font-size:.7rem;border-radius:0;text-align:center;white-space:nowrap}
   nav button.active{background:var(--primary);border-radius:0}
-  body{padding-bottom:52px}
   /* Pages */
   .page{padding:12px 10px}
   .page-header{flex-direction:column;gap:10px;align-items:flex-start}
@@ -94,13 +93,13 @@ tr:hover{background:#1a1a1a}
   /* Search */
   .search-bar{flex-direction:column;gap:6px}
   .search-bar input,.search-bar select{width:100%;font-size:.85rem;padding:10px 12px}
-  /* Tables: scroll horizontal con columnas más compactas */
+  /* Tables: scroll horizontal con columnas mÃ¡s compactas */
   .table-wrap{border-radius:8px;margin:0 -10px;width:calc(100% + 20px)}
   table{font-size:.75rem}
   th{padding:8px 6px;font-size:.68rem}
   td{padding:7px 6px;font-size:.75rem}
   .btn-sm{padding:3px 7px;font-size:.68rem}
-  /* Modals full-screen en móvil */
+  /* Modals full-screen en mÃ³vil */
   .modal-overlay{padding-top:0;align-items:stretch}
   .modal{width:100vw;max-width:100vw;min-height:100vh;border-radius:0;border:none;margin:0}
   .modal-header{padding:14px 16px;position:sticky;top:0;background:#1a1a1a;z-index:1}
@@ -117,7 +116,7 @@ tr:hover{background:#1a1a1a}
   /* Badges */
   .badge{font-size:.65rem;padding:1px 7px}
 }
-/* ── TOAST ─────────────────────────────────── */
+/* ââ TOAST âââââââââââââââââââââââââââââââââââ */
 .toast{position:fixed;bottom:24px;right:24px;padding:14px 24px;border-radius:8px;color:#fff;font-size:.9rem;z-index:999;animation:slideIn .3s ease;box-shadow:0 4px 16px rgba(0,0,0,.4)}
 .toast-success{background:var(--success)}
 .toast-error{background:var(--danger)}
@@ -167,7 +166,7 @@ tr:hover{background:#1a1a1a}
       <table>
         <thead><tr>
           <th style="cursor:pointer;user-select:none" onclick="toggleSortCompras()">Fecha <span id="sort-compras-icon">&#9660;</span></th><th>Proveedor</th><th>Comprobante</th><th>Marca</th><th>Modelo</th>
-          <th>Año</th><th>Chasis</th><th>Motor</th><th>Color</th><th>Precio</th><th>Mon</th><th>Acciones</th>
+          <th>AÃ±o</th><th>Chasis</th><th>Motor</th><th>Color</th><th>Precio</th><th>Mon</th><th>Acciones</th>
         </tr></thead>
         <tbody id="tbody-compras"></tbody>
       </table>
@@ -226,7 +225,7 @@ tr:hover{background:#1a1a1a}
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Tipo</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Chasis</th><th>Motor</th>
+          <th>Tipo</th><th>Marca</th><th>Modelo</th><th>AÃ±o</th><th>Chasis</th><th>Motor</th>
           <th>Matricula</th><th>Padron</th><th>Venta</th><th>Acciones</th>
         </tr></thead>
         <tbody id="tbody-stock"></tbody>
@@ -248,7 +247,7 @@ tr:hover{background:#1a1a1a}
         <div class="form-group" id="fg-compra-precio"><label>Precio</label><input type="number" step="0.01" id="compra-precio"></div>
         <div class="form-group"><label>Marca</label><input type="text" id="compra-marca" placeholder="BMW, MINI, VOLVO..."></div>
         <div class="form-group"><label>Modelo</label><input type="text" id="compra-modelo"></div>
-        <div class="form-group"><label>Año</label><input type="text" id="compra-anio"></div>
+        <div class="form-group"><label>AÃ±o</label><input type="text" id="compra-anio"></div>
         <div class="form-group"><label>Motor</label><input type="text" id="compra-motor"></div>
         <div class="form-group"><label>Chasis</label><input type="text" id="compra-chasis"></div>
         <div class="form-group"><label>Color</label><input type="text" id="compra-color"></div>
@@ -317,7 +316,7 @@ tr:hover{background:#1a1a1a}
       <div class="form-grid">
         <div class="form-group"><label>Marca</label><input type="text" id="stock-marca"></div>
         <div class="form-group"><label>Modelo</label><input type="text" id="stock-modelo"></div>
-        <div class="form-group"><label>Año</label><input type="text" id="stock-anio"></div>
+        <div class="form-group"><label>AÃ±o</label><input type="text" id="stock-anio"></div>
         <div class="form-group"><label>Color</label><input type="text" id="stock-color"></div>
         <div class="form-group"><label>Chasis</label><input type="text" id="stock-chasis"></div>
         <div class="form-group"><label>Motor</label><input type="text" id="stock-motor"></div>
@@ -413,7 +412,7 @@ tr:hover{background:#1a1a1a}
         <div id="perfil-username" style="font-size:.8rem;color:var(--text2)"></div>
       </div>
       <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
-      <!-- Cambiar contraseña -->
+      <!-- Cambiar contraseÃ±a -->
       <div style="font-size:.85rem;font-weight:600;color:var(--text2);margin-bottom:12px">Cambiar contrase&ntilde;a</div>
       <div class="form-grid" style="grid-template-columns:1fr">
         <div class="form-group"><label>Contrase&ntilde;a actual</label><input type="password" id="perfil-pass-actual" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
