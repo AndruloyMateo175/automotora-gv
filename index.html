@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutomotoraGV</title>
+<style>
+:root{--primary:#3b9eff;--primary-dark:#2680db;--danger:#ff4d5e;--success:#2ecc71;--warn:#f1c40f;--bg:#0a0a0a;--card:#161616;--card2:#1e1e1e;--text:#e8e8e8;--text2:#999;--border:#2a2a2a;--shadow:0 2px 8px rgba(0,0,0,.4)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── LOGIN ─────────────────────────────────── */
+#login-page{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#000}
+.login-box{background:transparent;padding:40px;width:420px;text-align:center}
+.login-logo{max-width:380px;width:100%;margin-bottom:28px}
+.login-box input{width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,.25);border-radius:8px;font-size:1rem;margin-bottom:14px;background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(4px);transition:border-color .2s}
+.login-box input::placeholder{color:rgba(255,255,255,.5)}
+.login-box input:focus{outline:none;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.12)}
+.login-box button{width:100%;padding:14px;background:#fff;color:#000;border:none;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:700;letter-spacing:.5px;transition:all .2s;margin-top:4px}
+.login-box button:hover{background:#e0e0e0;transform:translateY(-1px)}
+#login-error{color:#ff6b6b;margin-top:12px;font-size:.85rem;display:none}
+
+/* ── APP ───────────────────────────────────── */
+#app{display:none}
+header{background:#111;box-shadow:0 1px 0 var(--border);padding:0 24px;display:flex;align-items:center;height:56px;position:sticky;top:0;z-index:100}
+.header-logo{height:36px;margin-right:24px}
+nav{display:flex;gap:4px;flex:1}
+nav button{padding:10px 20px;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:500;border-radius:8px 8px 0 0;color:var(--text2);transition:all .2s}
+nav button:hover{background:#222;color:var(--text)}
+nav button.active{background:var(--primary);color:#fff}
+#user-info{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text2)}
+#btn-logout{padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text2);cursor:pointer;font-size:.8rem}
+#btn-logout:hover{background:#222;color:#fff}
+
+/* ── PAGES ─────────────────────────────────── */
+.page{display:none;padding:24px;max-width:1400px;margin:0 auto}
+.page.active{display:block}
+.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.page-header h2{font-size:1.4rem;color:var(--text)}
+
+/* ── BUTTONS ───────────────────────────────── */
+.btn{padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:500;transition:all .15s}
+.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}
+.btn-success{background:var(--success);color:#fff}.btn-success:hover{opacity:.9}
+.btn-danger{background:var(--danger);color:#fff}.btn-danger:hover{opacity:.9}
+.btn-warn{background:var(--warn);color:#222}.btn-warn:hover{opacity:.9}
+.btn-sm{padding:4px 10px;font-size:.78rem}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}.btn-outline:hover{background:#222}
+
+/* ── TABLE ─────────────────────────────────── */
+.table-wrap{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow-x:auto;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:var(--card2);padding:12px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--text)}
+tr:hover{background:#1a1a1a}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
+.badge-0km{background:#1a3a5c;color:#5bb8ff}
+.badge-usado{background:#3a2a0a;color:#ffb347}
+
+/* ── MODAL ─────────────────────────────────── */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding-top:60px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:#1a1a1a;border:1px solid var(--border);border-radius:12px;width:600px;max-width:95vw;box-shadow:0 12px 48px rgba(0,0,0,.5);margin-bottom:40px}
+.modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:1.1rem;color:var(--text)}
+.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text2);line-height:1}
+.modal-body{padding:24px}
+.modal-footer{padding:12px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
+
+/* ── FORM ──────────────────────────────────── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group{display:flex;flex-direction:column}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:.8rem;font-weight:600;color:var(--text2);margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{padding:10px;border:1px solid var(--border);border-radius:6px;font-size:.9rem;background:#111;color:var(--text)}
+.form-group textarea{resize:vertical;min-height:60px}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(59,158,255,.15)}
+.form-group select{background:#111;color:var(--text)}
+.form-group select option{background:#111;color:var(--text)}
+
+/* ── SEARCH ────────────────────────────────── */
+.search-bar{display:flex;gap:8px;margin-bottom:16px}
+.search-bar input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:var(--card);color:var(--text)}
+.search-bar input:focus{outline:none;border-color:var(--primary)}
+.search-bar select{padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text)}
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media(max-width:768px){
+  /* Header: logo + usuario arriba, nav abajo fija */
+  header{flex-wrap:wrap;height:auto;padding:10px 12px;gap:0}
+  .header-logo{height:26px;margin-right:auto}
+  #user-info{font-size:.75rem;gap:6px}
+  #btn-logout{padding:4px 10px;font-size:.7rem}
+  nav{position:fixed;bottom:0;left:0;right:0;z-index:100;background:#111;border-top:1px solid var(--border);display:flex;gap:0;padding:0;order:unset;width:100%}
+  nav button{flex:1;padding:12px 4px;font-size:.7rem;border-radius:0;text-align:center;white-space:nowrap}
+  nav button.active{background:var(--primary);border-radius:0}
+  body{padding-bottom:52px}
+
+  /* Pages */
+  .page{padding:12px 10px}
+  .page-header{flex-direction:column;gap:10px;align-items:flex-start}
+  .page-header h2{font-size:1.15rem}
+  .page-header .btn{width:100%;text-align:center}
+
+  /* Search */
+  .search-bar{flex-direction:column;gap:6px}
+  .search-bar input,.search-bar select{width:100%;font-size:.85rem;padding:10px 12px}
+
+  /* Tables: scroll horizontal con columnas más compactas */
+  .table-wrap{border-radius:8px;margin:0 -10px;width:calc(100% + 20px)}
+  table{font-size:.75rem}
+  th{padding:8px 6px;font-size:.68rem}
+  td{padding:7px 6px;font-size:.75rem}
+  .btn-sm{padding:3px 7px;font-size:.68rem}
+
+  /* Modals full-screen en móvil */
+  .modal-overlay{padding-top:0;align-items:stretch}
+  .modal{width:100vw;max-width:100vw;min-height:100vh;border-radius:0;border:none;margin:0}
+  .modal-header{padding:14px 16px;position:sticky;top:0;background:#1a1a1a;z-index:1}
+  .modal-header h3{font-size:1rem}
+  .modal-body{padding:16px}
+  .modal-footer{padding:12px 16px;position:sticky;bottom:0;background:#1a1a1a}
+  .form-grid{grid-template-columns:1fr}
+  .form-group input,.form-group select,.form-group textarea{font-size:16px;padding:12px}
+
+  /* Login */
+  .login-box{width:100%;padding:24px 20px}
+  .login-logo{max-width:280px}
+  .login-box input{padding:12px 14px;font-size:16px}
+  .login-box button{padding:12px;font-size:1rem}
+
+  /* Badges */
+  .badge{font-size:.65rem;padding:1px 7px}
+}
+
+/* ── TOAST ─────────────────────────────────── */
+.toast{position:fixed;bottom:24px;right:24px;padding:14px 24px;border-radius:8px;color:#fff;font-size:.9rem;z-index:999;animation:slideIn .3s ease;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.toast-success{background:var(--success)}
+.toast-error{background:var(--danger)}
+@keyframes slideIn{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="login-page">
+  <div class="login-box">
+    <img src="/logo.png" alt="Gonzalo Villasuso - Autos Punta del Este" class="login-logo">
+    <input type="text" id="login-user" placeholder="Usuario">
+    <input type="password" id="login-pass" placeholder="Contrasena">
+    <button onclick="doLogin()">INGRESAR</button>
+    <div id="login-error"></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <header>
+    <img src="/logo.png" alt="GV" class="header-logo">
+    <nav>
+      <button class="active" onclick="showPage('compras',this)">Compras</button>
+      <button onclick="showPage('ventas',this)">Ventas</button>
+      <button onclick="showPage('clientes',this)">Clientes</button>
+      <button onclick="showPage('stock',this)">Inventario Stock</button>
+    </nav>
+    <div id="user-info">
+      <span id="user-name"></span>
+      <button id="btn-logout" onclick="doLogout()">Salir</button>
+    </div>
+  </header>
+
+  <!-- COMPRAS -->
+  <div id="page-compras" class="page active">
+    <div class="page-header">
+      <h2>Compras</h2>
+      <button class="btn btn-primary" onclick="openCompraModal()">+ Nueva Compra</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-compras" placeholder="Buscar por marca, modelo, proveedor, chasis..." oninput="filterCompras()">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th style="cursor:pointer;user-select:none" onclick="toggleSortCompras()">Fecha <span id="sort-compras-icon">▼</span></th><th>Proveedor</th><th>Comprobante</th><th>Marca</th><th>Modelo</th>
+          <th>Año</th><th>Chasis</th><th>Motor</th><th>Color</th><th>Precio</th><th>Mon</th><th>Acciones</th>
+        </tr></thead>
+        <tbody id="tbody-compras"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VENTAS -->
+  <div id="page-ventas" class="page">
+    <div class="page-header">
+      <h2>Ventas</h2>
+      <button class="btn btn-primary" onclick="openVentaModal()">+ Nueva Venta</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-ventas" placeholder="Buscar por cliente, marca, modelo, chasis..." oninput="filterVentas()">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th style="cursor:pointer;user-select:none" onclick="toggleSortVentas()">Fecha <span id="sort-ventas-icon">▼</span></th><th>Cliente</th><th>Comprobante</th><th>Marca</th><th>Modelo</th>
+          <th>Chasis</th><th>Motor</th><th>Precio</th><th>Mon</th><th>Acciones</th>
+        </tr></thead>
+        <tbody id="tbody-ventas"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLIENTES -->
+  <div id="page-clientes" class="page">
+    <div class="page-header">
+      <h2>Clientes</h2>
+      <button class="btn btn-primary" onclick="openClienteModal()">+ Nuevo Cliente</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-clientes" placeholder="Buscar por nombre, documento, telefono..." oninput="filterClientes()">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Nombre</th><th>Tipo Doc</th><th>Documento</th><th>Telefono</th><th>Email</th><th>Pais</th><th>Acciones</th>
+        </tr></thead>
+        <tbody id="tbody-clientes"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- INVENTARIO STOCK -->
+  <div id="page-stock" class="page">
+    <div class="page-header">
+      <h2>Inventario Stock</h2>
+      <button class="btn btn-primary" onclick="openStockModal()">+ Agregar Usado</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-stock" placeholder="Buscar por marca, modelo, chasis, matricula..." oninput="filterStock()">
+      <select id="filter-stock-vendido" onchange="loadStock()">
+        <option value="0">En Stock</option>
+        <option value="1">Vendidos</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Tipo</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Chasis</th><th>Motor</th>
+          <th>Matricula</th><th>Padron</th><th>Venta</th><th>Acciones</th>
+        </tr></thead>
+        <tbody id="tbody-stock"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL COMPRA -->
+<div class="modal-overlay" id="modal-compra">
+  <div class="modal">
+    <div class="modal-header"><h3 id="modal-compra-title">Nueva Compra</h3><button class="modal-close" onclick="closeModal('modal-compra')">&times;</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="compra-id">
+      <div class="form-grid">
+        <div class="form-group"><label>Fecha</label><input type="date" id="compra-fecha"></div>
+        <div class="form-group"><label>Proveedor</label><input type="text" id="compra-proveedor"></div>
+        <div class="form-group"><label>Comprobante</label><input type="text" id="compra-comprobante" placeholder="Ej: A 533"></div>
+        <div class="form-group" id="fg-compra-moneda"><label>Moneda</label><select id="compra-moneda"><option value="USD">USD</option><option value="UYU">UYU</option></select></div>
+        <div class="form-group" id="fg-compra-precio"><label>Precio</label><input type="number" step="0.01" id="compra-precio"></div>
+        <div class="form-group"><label>Marca</label><input type="text" id="compra-marca" placeholder="BMW, MINI, VOLVO..."></div>
+        <div class="form-group"><label>Modelo</label><input type="text" id="compra-modelo"></div>
+        <div class="form-group"><label>Año</label><input type="text" id="compra-anio"></div>
+        <div class="form-group"><label>Motor</label><input type="text" id="compra-motor"></div>
+        <div class="form-group"><label>Chasis</label><input type="text" id="compra-chasis"></div>
+        <div class="form-group"><label>Color</label><input type="text" id="compra-color"></div>
+        <div class="form-group full"><label>Detalle</label><textarea id="compra-detalle" placeholder="Detalle adicional (opcional)"></textarea></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-compra')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveCompra()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL VENTA -->
+<div class="modal-overlay" id="modal-venta">
+  <div class="modal">
+    <div class="modal-header"><h3 id="modal-venta-title">Nueva Venta</h3><button class="modal-close" onclick="closeModal('modal-venta')">&times;</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="venta-id">
+      <div class="form-grid">
+        <div class="form-group"><label>Fecha</label><input type="date" id="venta-fecha"></div>
+        <div class="form-group"><label>Cliente</label><input type="text" id="venta-cliente" list="dl-clientes"></div>
+        <datalist id="dl-clientes"></datalist>
+        <div class="form-group"><label>Comprobante</label><input type="text" id="venta-comprobante"></div>
+        <div class="form-group"><label>Moneda</label><select id="venta-moneda"><option value="USD">USD</option><option value="UYU">UYU</option></select></div>
+        <div class="form-group"><label>Precio</label><input type="number" step="0.01" id="venta-precio"></div>
+        <div class="form-group"><label>Marca</label><input type="text" id="venta-marca"></div>
+        <div class="form-group"><label>Modelo</label><input type="text" id="venta-modelo"></div>
+        <div class="form-group"><label>Chasis</label><input type="text" id="venta-chasis"></div>
+        <div class="form-group"><label>Motor</label><input type="text" id="venta-motor"></div>
+        <div class="form-group full"><label>Detalle</label><textarea id="venta-detalle"></textarea></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-venta')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveVenta()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CLIENTE -->
+<div class="modal-overlay" id="modal-cliente">
+  <div class="modal">
+    <div class="modal-header"><h3 id="modal-cliente-title">Nuevo Cliente</h3><button class="modal-close" onclick="closeModal('modal-cliente')">&times;</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="cliente-id">
+      <div class="form-grid">
+        <div class="form-group full"><label>Nombre</label><input type="text" id="cliente-nombre"></div>
+        <div class="form-group"><label>Tipo Documento</label><select id="cliente-tipo_doc"><option value="RUT">RUT</option><option value="CI">CI</option><option value="Pasaporte">Pasaporte</option><option value="Otro">Otro</option></select></div>
+        <div class="form-group"><label>Documento</label><input type="text" id="cliente-documento"></div>
+        <div class="form-group"><label>Telefono</label><input type="text" id="cliente-telefono"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="cliente-email"></div>
+        <div class="form-group full"><label>Pais</label><input type="text" id="cliente-pais" value="Uruguay"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-cliente')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveCliente()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL STOCK -->
+<div class="modal-overlay" id="modal-stock">
+  <div class="modal">
+    <div class="modal-header"><h3 id="modal-stock-title">Agregar Vehiculo Usado</h3><button class="modal-close" onclick="closeModal('modal-stock')">&times;</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="stock-id">
+      <div class="form-grid">
+        <div class="form-group"><label>Marca</label><input type="text" id="stock-marca"></div>
+        <div class="form-group"><label>Modelo</label><input type="text" id="stock-modelo"></div>
+        <div class="form-group"><label>Año</label><input type="text" id="stock-anio"></div>
+        <div class="form-group"><label>Color</label><input type="text" id="stock-color"></div>
+        <div class="form-group"><label>Chasis</label><input type="text" id="stock-chasis"></div>
+        <div class="form-group"><label>Motor</label><input type="text" id="stock-motor"></div>
+        <div class="form-group"><label>Matricula</label><input type="text" id="stock-matricula"></div>
+        <div class="form-group"><label>Padron</label><input type="text" id="stock-padron"></div>
+        <div class="form-group"><label>Costo (USD)</label><input type="number" step="0.01" id="stock-precio" readonly style="opacity:.6"></div>
+        <div class="form-group"><label>Precio Venta (USD)</label><input type="number" step="0.01" id="stock-precio_venta"></div>
+        <div class="form-group"><label>Tipo</label><select id="stock-tipo"><option value="Usado">Usado</option><option value="0km">0km</option></select></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-stock')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveStock()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL VENDER STOCK -->
+<div class="modal-overlay" id="modal-vender">
+  <div class="modal" style="width:560px">
+    <div class="modal-header"><h3 id="modal-vender-title">Registrar Venta</h3><button class="modal-close" onclick="closeModal('modal-vender')">&times;</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="vender-stock-id">
+      <div style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:16px">
+        <div style="font-size:.75rem;color:var(--text2);margin-bottom:6px">Vehículo</div>
+        <div id="vender-vehiculo-info" style="font-size:.95rem;font-weight:600"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Cliente</label>
+          <div style="display:flex;gap:8px">
+            <input type="text" id="vender-cliente" list="dl-vender-clientes" placeholder="Buscar o escribir nombre..." style="flex:1">
+            <datalist id="dl-vender-clientes"></datalist>
+            <button class="btn btn-primary" onclick="openNewClienteFromVenta()" title="Crear nuevo cliente" style="padding:8px 14px;font-size:1rem;line-height:1">+</button>
+          </div>
+        </div>
+        <div class="form-group"><label>Fecha</label><input type="date" id="vender-fecha"></div>
+        <div class="form-group"><label>Comprobante</label><input type="text" id="vender-comprobante" placeholder="Ej: F 001"></div>
+        <div class="form-group"><label>Precio Venta (USD)</label><input type="number" step="0.01" id="vender-precio"></div>
+        <div class="form-group"><label>Moneda</label><select id="vender-moneda"><option value="USD">USD</option><option value="UYU">UYU</option></select></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-vender')">Cancelar</button>
+      <button class="btn btn-success" onclick="confirmSell()">Confirmar Venta</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NUEVO CLIENTE (desde venta) -->
+<div class="modal-overlay" id="modal-nuevo-cliente-venta" style="z-index:210">
+  <div class="modal" style="width:480px">
+    <div class="modal-header"><h3>Nuevo Cliente</h3><button class="modal-close" onclick="closeModal('modal-nuevo-cliente-venta')">&times;</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group full"><label>Nombre</label><input type="text" id="ncv-nombre"></div>
+        <div class="form-group"><label>Tipo Documento</label><select id="ncv-tipo_doc"><option value="RUT">RUT</option><option value="CI">CI</option><option value="Pasaporte">Pasaporte</option><option value="Otro">Otro</option></select></div>
+        <div class="form-group"><label>Documento</label><input type="text" id="ncv-documento"></div>
+        <div class="form-group"><label>Teléfono</label><input type="text" id="ncv-telefono"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="ncv-email"></div>
+        <div class="form-group full"><label>País</label><input type="text" id="ncv-pais" value="Uruguay"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-nuevo-cliente-venta')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveClienteFromVenta()">Crear y Seleccionar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DETALLE COMPRA -->
+<div class="modal-overlay" id="modal-detalle-compra">
+  <div class="modal" style="width:560px">
+    <div class="modal-header"><h3 id="detalle-compra-title">Detalle Compra</h3><button class="modal-close" onclick="closeModal('modal-detalle-compra')">&times;</button></div>
+    <div class="modal-body" id="detalle-compra-body" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-detalle-compra')">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* AutomotoraGV - Frontend v8 Dark Theme */
+const API='';let comprasData=[],ventasData=[],clientesData=[],stockData=[];
+let ventasSortAsc=false,comprasSortAsc=false;
+function toISO(f){if(!f)return'';if(/^\d{4}-\d{2}-\d{2}/.test(f))return f;if(/^\d{2}\/\d{2}\/\d{4}/.test(f)){const p=f.split('/');return p[2]+'-'+p[1]+'-'+p[0]}return f}
+function sortByFecha(arr,asc){return[...arr].sort((a,b)=>{const da=toISO(a.fecha),db=toISO(b.fecha);return asc?da.localeCompare(db):db.localeCompare(da)})}
+function $(id){return document.getElementById(id)}
+function toast(msg,type='success'){const d=document.createElement('div');d.className='toast toast-'+type;d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
+async function api(path,opts={}){const r=await fetch(API+path,{...opts,headers:{'Content-Type':'application/json',...(opts.headers||{})}});if(r.status===401&&!path.includes('/api/login')&&!path.includes('/api/me')){$('login-page').style.display='flex';$('app').style.display='none';toast('Sesion expirada, ingresa de nuevo','error');return{error:'unauthorized'}}return r.json()}
+function fmt(n){return n?Number(n).toLocaleString('es-UY',{minimumFractionDigits:0}):'0'}
+function fmtFecha(f){if(!f)return'—';if(/^\d{4}-\d{2}-\d{2}/.test(f)){const p=f.split('-');return p[2].substring(0,2)+'/'+p[1]+'/'+p[0]}if(/^\d{2}\/\d{2}\/\d{4}/.test(f))return f;return f}
+function esc(s){return s?String(s).replace(/</g,'&lt;'):''}
+let currentUser='';
+
+async function checkAuth(){try{const r=await api('/api/me');if(r.ok){currentUser=r.user;$('user-name').textContent=r.user;$('login-page').style.display='none';$('app').style.display='block';loadAll();return}}catch(e){}$('login-page').style.display='flex';$('app').style.display='none'}
+async function doLogin(){const u=$('login-user').value,p=$('login-pass').value;const r=await api('/api/login',{method:'POST',body:JSON.stringify({user:u,pass:p})});if(r.ok){$('login-error').style.display='none';checkAuth()}else{$('login-error').textContent=r.error||'Error';$('login-error').style.display='block'}}
+async function doLogout(){await api('/api/logout',{method:'POST'});checkAuth()}
+$('login-pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+
+function showPage(page,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));$('page-'+page).classList.add('active');if(btn)btn.classList.add('active');if(page==='stock')loadStock();if(page==='clientes')loadClientes();if(page==='ventas')loadVentas();if(page==='compras')loadCompras()}
+async function loadAll(){loadCompras();loadVentas();loadClientes();loadStock()}
+
+// COMPRAS
+async function loadCompras(){const res=await api('/api/compras?limit=10000');comprasData=Array.isArray(res)?res:(res.data||[]);comprasData=sortByFecha(comprasData,comprasSortAsc);renderCompras(comprasData)}
+function toggleSortCompras(){comprasSortAsc=!comprasSortAsc;comprasData=sortByFecha(comprasData,comprasSortAsc);renderCompras(comprasData);$('sort-compras-icon').textContent=comprasSortAsc?'▲':'▼'}
+function filterCompras(){const q=$('search-compras').value.toLowerCase();renderCompras(sortByFecha(comprasData.filter(r=>[r.marca,r.modelo,r.proveedor,r.chasis,r.motor,r.comprobante,r.color].join(' ').toLowerCase().includes(q)),comprasSortAsc))}
+function renderCompras(data){const hp=currentUser.toLowerCase()==='gyozzi';$('tbody-compras').innerHTML=data.map(r=>`<tr style="cursor:pointer" onclick="viewCompra(${r.id})"><td>${fmtFecha(r.fecha)}</td><td>${esc(r.proveedor)}</td><td>${esc(r.comprobante)}</td><td><b>${esc(r.marca)}</b></td><td>${esc(r.modelo)}</td><td>${esc(r.anio)}</td><td style="font-size:.78rem">${esc(r.chasis)}</td><td style="font-size:.78rem">${esc(r.motor)}</td><td>${esc(r.color)}</td><td style="text-align:right"><b>${hp?'—':fmt(r.precio_usd)}</b></td><td>${hp?'—':esc(r.moneda)}</td><td style="white-space:nowrap" onclick="event.stopPropagation()"><button class="btn btn-success btn-sm" onclick="addToStock(${r.id})">Stock</button> <button class="btn btn-warn btn-sm" onclick="editCompra(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteCompra(${r.id})">X</button></td></tr>`).join('')}
+function viewCompra(id){const r=comprasData.find(c=>c.id===id);if(!r)return;const hp=currentUser.toLowerCase()==='gyozzi';$('detalle-compra-title').textContent=(r.marca||'')+' '+(r.modelo||'');const fields=[['Fecha',fmtFecha(r.fecha)],['Proveedor',r.proveedor],['Comprobante',r.comprobante],['Marca',r.marca],['Modelo',r.modelo],['Año',r.anio],['Chasis',r.chasis],['Motor',r.motor],['Color',r.color],...(hp?[]:[['Precio','USD '+fmt(r.precio_usd)],['Moneda',r.moneda]]),['Detalle',r.detalle]];$('detalle-compra-body').innerHTML=fields.map(([l,v])=>`<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="font-size:.75rem;color:var(--text2);margin-bottom:2px">${l}</div><div style="font-size:.9rem;font-weight:500">${esc(v)||'—'}</div></div>`).join('');$('modal-detalle-compra').classList.add('open')}
+function openCompraModal(r=null){const hp=currentUser.toLowerCase()==='gyozzi';$('modal-compra-title').textContent=r?'Editar Compra':'Nueva Compra';$('compra-id').value=r?r.id:'';$('compra-fecha').value=r?r.fecha:'';$('compra-proveedor').value=r?r.proveedor:'';$('compra-comprobante').value=r?r.comprobante:'';$('compra-moneda').value=r?r.moneda:'USD';$('compra-precio').value=r?r.precio_usd:'';$('compra-marca').value=r?r.marca:'';$('compra-modelo').value=r?r.modelo:'';$('compra-anio').value=r?r.anio:'';$('compra-motor').value=r?r.motor:'';$('compra-chasis').value=r?r.chasis:'';$('compra-color').value=r?r.color:'';$('compra-detalle').value=r?r.detalle:'';$('fg-compra-precio').style.display=hp?'none':'';$('fg-compra-moneda').style.display=hp?'none':'';$('modal-compra').classList.add('open')}
+async function editCompra(id){const r=await api('/api/compras/'+id);openCompraModal(r)}
+async function saveCompra(){const id=$('compra-id').value;const body={fecha:$('compra-fecha').value,proveedor:$('compra-proveedor').value,comprobante:$('compra-comprobante').value,moneda:$('compra-moneda').value,precio_usd:parseFloat($('compra-precio').value)||0,marca:$('compra-marca').value,modelo:$('compra-modelo').value,anio:$('compra-anio').value,motor:$('compra-motor').value,chasis:$('compra-chasis').value,color:$('compra-color').value,detalle:$('compra-detalle').value};if(id){await api('/api/compras/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/compras',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-compra');toast(id?'Compra actualizada':'Compra agregada');loadCompras()}
+async function deleteCompra(id){if(confirm('Eliminar esta compra?')){await api('/api/compras/'+id,{method:'DELETE'});toast('Compra eliminada');loadCompras()}}
+async function addToStock(id){const r=await api('/api/stock/from-compra/'+id,{method:'POST'});if(r.ok){toast('Vehiculo 0km agregado a Stock!')}else{toast(r.error||'Error','error')}}
+
+// VENTAS
+async function loadVentas(){const res=await api('/api/ventas?limit=10000');ventasData=Array.isArray(res)?res:(res.data||[]);ventasData=sortByFecha(ventasData,ventasSortAsc);renderVentas(ventasData)}
+function toggleSortVentas(){ventasSortAsc=!ventasSortAsc;ventasData=sortByFecha(ventasData,ventasSortAsc);renderVentas(ventasData);$('sort-ventas-icon').textContent=ventasSortAsc?'▲':'▼'}
+function filterVentas(){const q=$('search-ventas').value.toLowerCase();renderVentas(sortByFecha(ventasData.filter(r=>[r.cliente,r.marca,r.modelo,r.chasis,r.comprobante].join(' ').toLowerCase().includes(q)),ventasSortAsc))}
+function renderVentas(data){$('tbody-ventas').innerHTML=data.map(r=>`<tr><td>${fmtFecha(r.fecha)}</td><td>${esc(r.cliente)}</td><td>${esc(r.comprobante)}</td><td><b>${esc(r.marca)}</b></td><td>${esc(r.modelo)}</td><td style="font-size:.78rem">${esc(r.chasis)}</td><td style="font-size:.78rem">${esc(r.motor)}</td><td style="text-align:right"><b>${fmt(r.precio_usd)}</b></td><td>${esc(r.moneda)}</td><td style="white-space:nowrap"><button class="btn btn-warn btn-sm" onclick="editVenta(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteVenta(${r.id})">X</button></td></tr>`).join('')}
+function openVentaModal(r=null){$('modal-venta-title').textContent=r?'Editar Venta':'Nueva Venta';$('venta-id').value=r?r.id:'';$('venta-fecha').value=r?r.fecha:'';$('venta-cliente').value=r?r.cliente:'';$('venta-comprobante').value=r?r.comprobante:'';$('venta-moneda').value=r?r.moneda:'USD';$('venta-precio').value=r?r.precio_usd:'';$('venta-marca').value=r?r.marca:'';$('venta-modelo').value=r?r.modelo:'';$('venta-chasis').value=r?r.chasis:'';$('venta-motor').value=r?r.motor:'';$('venta-detalle').value=r?r.detalle:'';$('dl-clientes').innerHTML=clientesData.map(c=>`<option value="${esc(c.nombre)}">`).join('');$('modal-venta').classList.add('open')}
+async function editVenta(id){const r=await api('/api/ventas/'+id);openVentaModal(r)}
+async function saveVenta(){const id=$('venta-id').value;const body={fecha:$('venta-fecha').value,cliente:$('venta-cliente').value,comprobante:$('venta-comprobante').value,moneda:$('venta-moneda').value,precio_usd:parseFloat($('venta-precio').value)||0,marca:$('venta-marca').value,modelo:$('venta-modelo').value,chasis:$('venta-chasis').value,motor:$('venta-motor').value,detalle:$('venta-detalle').value};if(id){await api('/api/ventas/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/ventas',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-venta');toast(id?'Venta actualizada':'Venta agregada');loadVentas()}
+async function deleteVenta(id){if(confirm('Eliminar esta venta?')){await api('/api/ventas/'+id,{method:'DELETE'});toast('Venta eliminada');loadVentas()}}
+
+// CLIENTES
+async function loadClientes(){const res=await api('/api/clientes?limit=10000');clientesData=Array.isArray(res)?res:(res.data||[]);renderClientes(clientesData)}
+function filterClientes(){const q=$('search-clientes').value.toLowerCase();renderClientes(clientesData.filter(r=>[r.nombre,r.documento,r.telefono,r.email].join(' ').toLowerCase().includes(q)))}
+function renderClientes(data){$('tbody-clientes').innerHTML=data.map(r=>`<tr><td><b>${esc(r.nombre)}</b></td><td>${esc(r.tipo_doc)}</td><td>${esc(r.documento)}</td><td>${esc(r.telefono)}</td><td>${esc(r.email)}</td><td>${esc(r.pais)}</td><td style="white-space:nowrap"><button class="btn btn-warn btn-sm" onclick="editCliente(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteCliente(${r.id})">X</button></td></tr>`).join('')}
+function openClienteModal(r=null){$('modal-cliente-title').textContent=r?'Editar Cliente':'Nuevo Cliente';$('cliente-id').value=r?r.id:'';$('cliente-nombre').value=r?r.nombre:'';$('cliente-tipo_doc').value=r?r.tipo_doc:'RUT';$('cliente-documento').value=r?r.documento:'';$('cliente-telefono').value=r?r.telefono:'';$('cliente-email').value=r?r.email:'';$('cliente-pais').value=r?r.pais:'Uruguay';$('modal-cliente').classList.add('open')}
+async function editCliente(id){const r=await api('/api/clientes/'+id);openClienteModal(r)}
+async function saveCliente(){const id=$('cliente-id').value;const body={nombre:$('cliente-nombre').value,tipo_doc:$('cliente-tipo_doc').value,documento:$('cliente-documento').value,telefono:$('cliente-telefono').value,email:$('cliente-email').value,pais:$('cliente-pais').value};if(id){await api('/api/clientes/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/clientes',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-cliente');toast(id?'Cliente actualizado':'Cliente agregado');loadClientes()}
+async function deleteCliente(id){if(confirm('Eliminar este cliente?')){await api('/api/clientes/'+id,{method:'DELETE'});toast('Cliente eliminado');loadClientes()}}
+
+// STOCK
+async function loadStock(){const v=$('filter-stock-vendido').value;stockData=await api('/api/stock?vendido='+v);renderStock(stockData)}
+function filterStock(){const q=$('search-stock').value.toLowerCase();renderStock(stockData.filter(r=>[r.marca,r.modelo,r.chasis,r.motor,r.matricula,r.padron].join(' ').toLowerCase().includes(q)))}
+function renderStock(data){const vm=$('filter-stock-vendido').value==='1';$('tbody-stock').innerHTML=data.map(r=>`<tr><td><span class="badge badge-${r.tipo==='0km'?'0km':'usado'}">${esc(r.tipo)}</span></td><td><b>${esc(r.marca)}</b></td><td>${esc(r.modelo)}</td><td>${esc(r.anio)}</td><td style="font-size:.78rem">${esc(r.chasis)}</td><td style="font-size:.78rem">${esc(r.motor)}</td><td>${esc(r.matricula)}</td><td>${esc(r.padron)}</td><td style="text-align:right"><b>${r.precio_venta?fmt(r.precio_venta):'—'}</b></td><td style="white-space:nowrap">${!vm?`<button class="btn btn-success btn-sm" onclick="markSold(${r.id})">Vendido</button> `:''}<button class="btn btn-warn btn-sm" onclick="editStock(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteStock(${r.id})">X</button></td></tr>`).join('')}
+function openStockModal(r=null){$('modal-stock-title').textContent=r?'Editar Vehiculo':'Agregar Vehiculo Usado';$('stock-id').value=r?r.id:'';$('stock-marca').value=r?r.marca:'';$('stock-modelo').value=r?r.modelo:'';$('stock-anio').value=r?r.anio:'';$('stock-color').value=r?r.color:'';$('stock-chasis').value=r?r.chasis:'';$('stock-motor').value=r?r.motor:'';$('stock-matricula').value=r?r.matricula:'';$('stock-padron').value=r?r.padron:'';$('stock-precio').value=r?r.precio:'';$('stock-precio_venta').value=r?r.precio_venta||'':'';$('stock-tipo').value=r?r.tipo:'Usado';$('modal-stock').classList.add('open')}
+async function editStock(id){const r=await api('/api/stock/'+id);openStockModal(r)}
+async function saveStock(){const id=$('stock-id').value;const body={marca:$('stock-marca').value,modelo:$('stock-modelo').value,chasis:$('stock-chasis').value,motor:$('stock-motor').value,matricula:$('stock-matricula').value,padron:$('stock-padron').value,precio:parseFloat($('stock-precio').value)||0,precio_venta:parseFloat($('stock-precio_venta').value)||0,tipo:$('stock-tipo').value,anio:$('stock-anio').value,color:$('stock-color').value,vendido:0};if(id){await api('/api/stock/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/stock',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-stock');toast(id?'Vehiculo actualizado':'Vehiculo agregado a Stock');loadStock()}
+async function deleteStock(id){if(confirm('Eliminar este vehiculo del stock?')){await api('/api/stock/'+id,{method:'DELETE'});toast('Vehiculo eliminado');loadStock()}}
+async function markSold(id){
+  const r=await api('/api/stock/'+id);
+  if(!r||r.error)return;
+  $('vender-stock-id').value=id;
+  $('vender-vehiculo-info').innerHTML=`<span style="color:var(--text)">${esc(r.marca)} ${esc(r.modelo)}</span> <span style="color:var(--text2);font-weight:400;font-size:.8rem">${esc(r.anio)||''} · Chasis: ${esc(r.chasis)||'—'}</span>`;
+  $('vender-fecha').value=new Date().toISOString().split('T')[0];
+  $('vender-comprobante').value='';
+  $('vender-precio').value=r.precio_venta||'';
+  $('vender-moneda').value='USD';
+  $('vender-cliente').value='';
+  $('dl-vender-clientes').innerHTML=clientesData.map(c=>`<option value="${esc(c.nombre)}">`).join('');
+  $('modal-vender').classList.add('open');
+}
+function openNewClienteFromVenta(){
+  $('ncv-nombre').value='';$('ncv-tipo_doc').value='RUT';$('ncv-documento').value='';
+  $('ncv-telefono').value='';$('ncv-email').value='';$('ncv-pais').value='Uruguay';
+  $('modal-nuevo-cliente-venta').classList.add('open');
+}
+async function saveClienteFromVenta(){
+  const body={nombre:$('ncv-nombre').value,tipo_doc:$('ncv-tipo_doc').value,documento:$('ncv-documento').value,telefono:$('ncv-telefono').value,email:$('ncv-email').value,pais:$('ncv-pais').value};
+  if(!body.nombre){toast('El nombre es requerido','error');return}
+  const res=await api('/api/clientes',{method:'POST',body:JSON.stringify(body)});
+  closeModal('modal-nuevo-cliente-venta');
+  toast('Cliente creado ✓');
+  await loadClientes();
+  $('dl-vender-clientes').innerHTML=clientesData.map(c=>`<option value="${esc(c.nombre)}">`).join('');
+  $('vender-cliente').value=body.nombre;
+}
+async function confirmSell(){
+  const stockId=$('vender-stock-id').value;
+  const cliente=$('vender-cliente').value.trim();
+  if(!cliente){toast('Selecciona o crea un cliente','error');return}
+  const r=await api('/api/stock/'+stockId);
+  if(!r||r.error)return;
+  const venta={fecha:$('vender-fecha').value,cliente:cliente,comprobante:$('vender-comprobante').value,moneda:$('vender-moneda').value,precio_usd:parseFloat($('vender-precio').value)||0,marca:r.marca,modelo:r.modelo,chasis:r.chasis,motor:r.motor};
+  await api('/api/ventas',{method:'POST',body:JSON.stringify(venta)});
+  r.vendido=1;
+  await api('/api/stock/'+stockId,{method:'PUT',body:JSON.stringify(r)});
+  closeModal('modal-vender');
+  toast('Venta registrada y vehículo marcado como vendido ✓');
+  loadStock();loadVentas();
+}
+
+function closeModal(id){$(id).classList.remove('open')}
+document.querySelectorAll('.modal-overlay').forEach(el=>{el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open')})});
+checkAuth();
+</script>
+</body>
+</html>
