@@ -157,11 +157,11 @@ class Handler(BaseHTTPRequestHandler):
         conn = get_db()
 
         if path == '/api/compras':
-            rows = conn.execute('SELECT * FROM compras ORDER BY id DESC').fetchall()
+            rows = conn.execute("SELECT * FROM compras ORDER BY substr(fecha,7,4)||substr(fecha,4,2)||substr(fecha,1,2) DESC, id DESC").fetchall()
             self.send_json([dict(r) for r in rows])
 
         elif path == '/api/ventas':
-            rows = conn.execute('SELECT * FROM ventas ORDER BY id DESC').fetchall()
+            rows = conn.execute("SELECT * FROM ventas ORDER BY substr(fecha,7,4)||substr(fecha,4,2)||substr(fecha,1,2) DESC, id DESC").fetchall()
             self.send_json([dict(r) for r in rows])
 
         elif path == '/api/clientes':
