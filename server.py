@@ -170,6 +170,17 @@ def init_db():
     except:
         pass  # Ya existe
 
+    # Rellenar fecha_ingreso para registros existentes que no la tienen
+    # 0km: buscar la fecha de la compra por chasis
+    c.execute("""UPDATE stock SET fecha_ingreso = (
+        SELECT compras.fecha FROM compras WHERE compras.chasis = stock.chasis AND compras.chasis != '' LIMIT 1
+    ) WHERE fecha_ingreso IS NULL AND tipo = '0km' AND chasis IS NOT NULL AND chasis != ''""")
+    # Usados y cualquier restante: usar created_at o fecha de hoy
+    c.execute("""UPDATE stock SET fecha_ingreso = COALESCE(
+        substr(created_at, 1, 10), date('now')
+    ) WHERE fecha_ingreso IS NULL""")
+    conn.commit()
+
     # Crear usuarios por defecto si no existen
     usuarios_default = [
         ('aacosta',    'A. Acosta',    'cincoestrellas', 'admin'),
