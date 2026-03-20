@@ -158,6 +158,7 @@ def init_db():
         precio_venta REAL DEFAULT 0,
         vendido INTEGER DEFAULT 0,
         fecha_ingreso TEXT,
+        estado TEXT DEFAULT 'Stock',
         created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )''')
 
@@ -169,6 +170,14 @@ def init_db():
         conn.commit()
     except:
         pass  # Ya existe
+
+    # Migración: agregar estado si no existe
+    try:
+        c.execute("ALTER TABLE stock ADD COLUMN estado TEXT DEFAULT 'Stock'")
+        c.execute("UPDATE stock SET estado = 'Stock' WHERE estado IS NULL")
+        conn.commit()
+    except:
+        pass
 
     # Rellenar fecha_ingreso para registros existentes que no la tienen
     # 0km: buscar la fecha de la compra por chasis
@@ -582,12 +591,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
         conn = get_db()
         c = conn.cursor()
         fecha_ing = v.get('fecha_ingreso') or datetime.date.today().isoformat()
-        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,matricula,padron,precio,precio_venta,vendido,fecha_ingreso)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,matricula,padron,precio,precio_venta,vendido,fecha_ingreso,estado)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (v.get('tipo', 'Usado'), v.get('marca'), v.get('modelo'), v.get('anio'),
              v.get('chasis'), v.get('motor'), v.get('color'),
              v.get('matricula'), v.get('padron'),
-             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0), fecha_ing))
+             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0), fecha_ing,
+             v.get('estado', 'Stock')))
         conn.commit()
         row = dict(conn.execute("SELECT * FROM stock WHERE id=?", (c.lastrowid,)).fetchone())
         conn.close()
@@ -660,11 +670,12 @@ class Handler(http.server.BaseHTTPRequestHandler):
         v = read_body(self)
         conn = get_db()
         conn.execute("""UPDATE stock SET tipo=?,marca=?,modelo=?,anio=?,chasis=?,motor=?,color=?,
-            matricula=?,padron=?,precio=?,precio_venta=?,vendido=? WHERE id=?""",
+            matricula=?,padron=?,precio=?,precio_venta=?,vendido=?,estado=? WHERE id=?""",
             (v.get('tipo', 'Usado'), v.get('marca'), v.get('modelo'), v.get('anio'),
              v.get('chasis'), v.get('motor'), v.get('color'),
              v.get('matricula'), v.get('padron'),
-             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0), sid))
+             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0),
+             v.get('estado', 'Stock'), sid))
         conn.commit()
         row = dict(conn.execute("SELECT * FROM stock WHERE id=?", (sid,)).fetchone())
         conn.close()
