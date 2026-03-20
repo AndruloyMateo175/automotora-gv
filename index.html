@@ -457,6 +457,20 @@ tr:hover{background:#1a1a1a}
     </div>
   </div>
 </div>
+<!-- MODAL DETALLE CLIENTE -->
+<div class="modal-overlay" id="modal-detalle-cliente">
+  <div class="modal" style="width:620px">
+    <div class="modal-header"><div style="display:flex;align-items:center;gap:10px"><button class="btn btn-warn btn-sm" id="btn-editar-detalle-cliente" onclick="">Editar</button><h3 id="detalle-cliente-title">Cliente</h3></div><button class="modal-close" onclick="closeModal('modal-detalle-cliente')">&times;</button></div>
+    <div class="modal-body">
+      <div id="detalle-cliente-info" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px"></div>
+      <div style="font-size:.85rem;font-weight:600;color:var(--gold);margin-bottom:10px" id="detalle-cliente-vehiculos-title"></div>
+      <div id="detalle-cliente-vehiculos"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-detalle-cliente')">Cerrar</button>
+    </div>
+  </div>
+</div>
 <!-- MODAL DETALLE STOCK -->
 <div class="modal-overlay" id="modal-detalle-stock">
   <div class="modal" style="width:560px">
@@ -587,7 +601,8 @@ async function deleteVenta(id){if(confirm('Eliminar esta venta?')){await api('/a
 // CLIENTES
 async function loadClientes(){const res=await api('/api/clientes?limit=10000');clientesData=Array.isArray(res)?res:(res.data||[]);renderClientes(clientesData)}
 function filterClientes(){const q=$('search-clientes').value.toLowerCase();renderClientes(clientesData.filter(r=>[r.nombre,r.documento,r.telefono,r.email].join(' ').toLowerCase().includes(q)))}
-function renderClientes(data){$('tbody-clientes').innerHTML=data.map(r=>`<tr><td><b>${esc(r.nombre)}</b></td><td>${esc(r.tipo_doc)}</td><td>${esc(r.documento)}</td><td>${esc(r.telefono)}</td><td>${esc(r.email)}</td><td>${esc(r.pais)}</td><td style="white-space:nowrap"><button class="btn btn-warn btn-sm" onclick="editCliente(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteCliente(${r.id})">X</button></td></tr>`).join('')}
+function renderClientes(data){$('tbody-clientes').innerHTML=data.map(r=>`<tr style="cursor:pointer" onclick="viewCliente(${r.id})"><td><b>${esc(r.nombre)}</b></td><td>${esc(r.tipo_doc)}</td><td>${esc(r.documento)}</td><td>${esc(r.telefono)}</td><td>${esc(r.email)}</td><td>${esc(r.pais)}</td><td style="white-space:nowrap" onclick="event.stopPropagation()"><button class="btn btn-warn btn-sm" onclick="editCliente(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteCliente(${r.id})">X</button></td></tr>`).join('')}
+function viewCliente(id){const r=clientesData.find(c=>c.id===id);if(!r)return;$('detalle-cliente-title').textContent=r.nombre||'Cliente';$('btn-editar-detalle-cliente').onclick=function(){closeModal('modal-detalle-cliente');editCliente(id)};const fields=[['Nombre',r.nombre],['Tipo Doc',r.tipo_doc],['Documento',r.documento],['Tel\u00e9fono',r.telefono],['Email',r.email],['Pa\u00eds',r.pais]];$('detalle-cliente-info').innerHTML=fields.map(([l,v])=>`<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="font-size:.75rem;color:var(--text2);margin-bottom:2px">${l}</div><div style="font-size:.9rem;font-weight:500">${esc(v)||'\u2014'}</div></div>`).join('');const vehiculos=ventasData.filter(v=>v.cliente&&r.nombre&&v.cliente.toLowerCase()===r.nombre.toLowerCase());$('detalle-cliente-vehiculos-title').textContent=vehiculos.length?'Veh\u00edculos comprados ('+vehiculos.length+')':'Sin veh\u00edculos registrados';if(vehiculos.length){$('detalle-cliente-vehiculos').innerHTML='<div style="border:1px solid var(--border);border-radius:8px;overflow:hidden"><table style="width:100%;font-size:.82rem"><thead><tr><th>Fecha</th><th>Marca</th><th>Modelo</th><th>A\u00f1o</th><th>Chasis</th><th>Motor</th></tr></thead><tbody>'+vehiculos.map(v=>`<tr><td>${fmtFecha(v.fecha)}</td><td><b>${esc(v.marca)}</b></td><td>${esc(v.modelo)}</td><td>${esc(v.anio)||'\u2014'}</td><td style="font-size:.75rem">${esc(v.chasis)}</td><td style="font-size:.75rem">${esc(v.motor)}</td></tr>`).join('')+'</tbody></table></div>'}else{$('detalle-cliente-vehiculos').innerHTML='<div style="color:var(--text2);font-size:.85rem;padding:12px 0">No hay compras registradas para este cliente.</div>'}$('modal-detalle-cliente').classList.add('open')}
 function openClienteModal(r=null){$('modal-cliente-title').textContent=r?'Editar Cliente':'Nuevo Cliente';$('cliente-id').value=r?r.id:'';$('cliente-nombre').value=r?r.nombre:'';$('cliente-tipo_doc').value=r?r.tipo_doc:'RUT';$('cliente-documento').value=r?r.documento:'';$('cliente-telefono').value=r?r.telefono:'';$('cliente-email').value=r?r.email:'';$('cliente-pais').value=r?r.pais:'Uruguay';$('modal-cliente').classList.add('open')}
 async function editCliente(id){const r=await api('/api/clientes/'+id);openClienteModal(r)}
 async function saveCliente(){const id=$('cliente-id').value;const body={nombre:$('cliente-nombre').value,tipo_doc:$('cliente-tipo_doc').value,documento:$('cliente-documento').value,telefono:$('cliente-telefono').value,email:$('cliente-email').value,pais:$('cliente-pais').value};if(id){await api('/api/clientes/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/clientes',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-cliente');toast(id?'Cliente actualizado':'Cliente agregado');loadClientes()}
