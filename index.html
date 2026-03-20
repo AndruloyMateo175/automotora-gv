@@ -298,7 +298,7 @@ tr:hover{background:#1a1a1a}
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Fecha</th><th>Tipo</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Chasis</th><th>Motor</th>
+          <th style="cursor:pointer;user-select:none" onclick="toggleSortStock()">Fecha <span id="sort-stock-icon">&#9660;</span></th><th>Tipo</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Chasis</th><th>Motor</th>
           <th>Matricula</th><th>Padron</th><th>Venta</th><th>Acciones</th>
         </tr></thead>
         <tbody id="tbody-stock"></tbody>
@@ -502,7 +502,7 @@ tr:hover{background:#1a1a1a}
 <script>
 /* AutomotoraGV - Frontend v8 Dark Theme */
 const API='';let comprasData=[],ventasData=[],clientesData=[],stockData=[];
-let ventasSortAsc=false,comprasSortAsc=false;
+let ventasSortAsc=false,comprasSortAsc=false,stockSortAsc=false;
 function toISO(f){if(!f)return'';if(/^\d{4}-\d{2}-\d{2}/.test(f))return f;if(/^\d{2}\/\d{2}\/\d{4}/.test(f)){const p=f.split('/');return p[2]+'-'+p[1]+'-'+p[0]}return f}
 function sortByFecha(arr,asc){return[...arr].sort((a,b)=>{const da=toISO(a.fecha),db=toISO(b.fecha);return asc?da.localeCompare(db):db.localeCompare(da)})}
 function $(id){return document.getElementById(id)}
@@ -583,7 +583,9 @@ async function editCliente(id){const r=await api('/api/clientes/'+id);openClient
 async function saveCliente(){const id=$('cliente-id').value;const body={nombre:$('cliente-nombre').value,tipo_doc:$('cliente-tipo_doc').value,documento:$('cliente-documento').value,telefono:$('cliente-telefono').value,email:$('cliente-email').value,pais:$('cliente-pais').value};if(id){await api('/api/clientes/'+id,{method:'PUT',body:JSON.stringify(body)})}else{await api('/api/clientes',{method:'POST',body:JSON.stringify(body)})}closeModal('modal-cliente');toast(id?'Cliente actualizado':'Cliente agregado');loadClientes()}
 async function deleteCliente(id){if(confirm('Eliminar este cliente?')){await api('/api/clientes/'+id,{method:'DELETE'});toast('Cliente eliminado');loadClientes()}}
 // STOCK
-async function loadStock(){const v=$('filter-stock-vendido').value;stockData=await api('/api/stock?vendido='+v);renderStock(stockData)}
+function sortStockByFecha(arr,asc){return[...arr].sort((a,b)=>{const da=toISO(a.fecha_ingreso||''),db=toISO(b.fecha_ingreso||'');return asc?da.localeCompare(db):db.localeCompare(da)})}
+async function loadStock(){const v=$('filter-stock-vendido').value;stockData=await api('/api/stock?vendido='+v);stockData=sortStockByFecha(stockData,stockSortAsc);renderStock(stockData)}
+function toggleSortStock(){stockSortAsc=!stockSortAsc;stockData=sortStockByFecha(stockData,stockSortAsc);renderStock(stockData);$('sort-stock-icon').textContent=stockSortAsc?'\u25B2':'\u25BC'}
 function filterStock(){const q=$('search-stock').value.toLowerCase();renderStock(stockData.filter(r=>[r.marca,r.modelo,r.chasis,r.motor,r.matricula,r.padron,r.fecha_ingreso].join(' ').toLowerCase().includes(q)))}
 function renderStock(data){const vm=$('filter-stock-vendido').value==='1';$('tbody-stock').innerHTML=data.map(r=>`<tr><td>${fmtFecha(r.fecha_ingreso)}</td><td><span class="badge badge-${r.tipo==='0km'?'0km':'usado'}">${esc(r.tipo)}</span></td><td><b>${esc(r.marca)}</b></td><td>${esc(r.modelo)}</td><td>${esc(r.anio)}</td><td style="font-size:.78rem">${esc(r.chasis)}</td><td style="font-size:.78rem">${esc(r.motor)}</td><td>${esc(r.matricula)}</td><td>${esc(r.padron)}</td><td style="text-align:right"><b>${r.precio_venta?fmt(r.precio_venta):'\u2014'}</b></td><td style="white-space:nowrap">${!vm?`<button class="btn btn-success btn-sm" onclick="markSold(${r.id})">Vendido</button> `:''}<button class="btn btn-warn btn-sm" onclick="editStock(${r.id})">Editar</button> <button class="btn btn-danger btn-sm" onclick="deleteStock(${r.id})">X</button></td></tr>`).join('')}
 function openStockModal(r=null){$('modal-stock-title').textContent=r?'Editar Vehiculo':'Agregar Vehiculo Usado';$('stock-id').value=r?r.id:'';$('stock-marca').value=r?r.marca:'';$('stock-modelo').value=r?r.modelo:'';$('stock-anio').value=r?r.anio:'';$('stock-color').value=r?r.color:'';$('stock-chasis').value=r?r.chasis:'';$('stock-motor').value=r?r.motor:'';$('stock-matricula').value=r?r.matricula:'';$('stock-padron').value=r?r.padron:'';$('stock-precio').value=r?r.precio:'';$('stock-precio_venta').value=r?r.precio_venta||'':'';$('stock-tipo').value=r?r.tipo:'Usado';$('modal-stock').classList.add('open')}
