@@ -157,10 +157,18 @@ def init_db():
         precio REAL DEFAULT 0,
         precio_venta REAL DEFAULT 0,
         vendido INTEGER DEFAULT 0,
+        fecha_ingreso TEXT,
         created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )''')
 
     conn.commit()
+
+    # Migración: agregar fecha_ingreso si no existe
+    try:
+        c.execute("ALTER TABLE stock ADD COLUMN fecha_ingreso TEXT")
+        conn.commit()
+    except:
+        pass  # Ya existe
 
     # Crear usuarios por defecto si no existen
     usuarios_default = [
@@ -562,12 +570,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
         v = read_body(self)
         conn = get_db()
         c = conn.cursor()
-        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,matricula,padron,precio,precio_venta,vendido)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
+        fecha_ing = v.get('fecha_ingreso') or datetime.date.today().isoformat()
+        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,matricula,padron,precio,precio_venta,vendido,fecha_ingreso)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (v.get('tipo', 'Usado'), v.get('marca'), v.get('modelo'), v.get('anio'),
              v.get('chasis'), v.get('motor'), v.get('color'),
              v.get('matricula'), v.get('padron'),
-             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0)))
+             v.get('precio', 0), v.get('precio_venta', 0), v.get('vendido', 0), fecha_ing))
         conn.commit()
         row = dict(conn.execute("SELECT * FROM stock WHERE id=?", (c.lastrowid,)).fetchone())
         conn.close()
@@ -588,10 +597,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 json_response(self, {'error': 'Este vehículo ya está en stock'}, 400)
                 return
         c = conn.cursor()
-        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,precio,vendido)
-            VALUES (?,?,?,?,?,?,?,?,0)""",
+        c.execute("""INSERT INTO stock (tipo,marca,modelo,anio,chasis,motor,color,precio,vendido,fecha_ingreso)
+            VALUES (?,?,?,?,?,?,?,?,0,?)""",
             ('0km', compra['marca'], compra['modelo'], compra['anio'],
-             compra['chasis'], compra['motor'], compra['color'], compra['precio_usd']))
+             compra['chasis'], compra['motor'], compra['color'], compra['precio_usd'],
+             compra['fecha']))
         conn.commit()
         conn.close()
         json_response(self, {'ok': True, 'id': c.lastrowid}, 201)
